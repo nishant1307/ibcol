@@ -56,6 +56,8 @@ routes
   .add({ name: 'registration', pattern: '/:locale/registration/', page: 'registration' })
   .add({ name: 'registrationLogin', pattern: '/:locale/registration/login/', page: 'registration/login' })
   .add({ name: 'registrationVerification', pattern: '/:locale/registration/verify/:verificationCode/:email/', page: 'registration/verify' })
+  .add({ name: 'adminLogin', pattern: '/:locale/admin/', page: 'admin' })
+  .add({ name: 'adminVerification', pattern: '/:locale/admin/verify/:verificationCode/:email/', page: 'admin/verify' })
 
 
 
