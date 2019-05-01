@@ -26,7 +26,7 @@
     { "src": "next.config.js", "use": "@now/next" }
   ],
   "routes": [
-
+    
     { 
       "src": "/service-worker.js",  
       "dest": "/_next/static/service-worker.js",
@@ -35,7 +35,7 @@
         "Service-Worker-Allowed": "/"
       }
     },
-
+    
 
     {
       "src": "/(how|ambassadors|sponsors|contact|registration)?([/]*)",
@@ -44,10 +44,22 @@
     
     {
       "src": "/file([/]*)",
-      "dest": "/node-routes/filepondRoute.js"
+      "dest": "/node-routes/filepondRoute.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
+    {
+      "src": "/file/(.*)",
+      "dest": "/node-routes/filepondRoute.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      }
     },
     
     
+    
+
     { 
       "src": "/(?<locale>[^/]*)/", 
       "dest": "/home?locale=$locale"
@@ -129,7 +141,7 @@
       "headers": { "Location": "/$locale/registration/verify/$2/$3/" }
     },
     
-
+    
     { "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+", "headers": { "cache-control": "immutable" } }
     
   ]

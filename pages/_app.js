@@ -160,7 +160,7 @@ class MyApp extends App {
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
 
-      // console.debug('incoming pageProps >>>', pageProps);
+      console.debug('incoming pageProps >>>', pageProps);
       
     }
 
