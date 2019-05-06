@@ -676,7 +676,25 @@ export default class extends React.PureComponent {
           </section>
         }
 
+        {(this.state.hasValidToken && this.state.tokenCookie !== undefined) &&
+          <section className="s-section target-section first last">
+            <div className="row">
+              <div className="col-full">
+                <h1>{this.translate('subhead')}</h1>
+              </div>
+            </div>
+            <div className="row section-header">
+              <div className="col-full">
+                <div className="full-width" style={{textAlign: 'center'}}>
+                  <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                </div>
 
+
+                
+              </div>
+            </div>
+          </section>
+        }
 
         {(!this.state.hasValidToken && this.state.tokenCookie !== undefined) &&
           <section className="s-section target-section first last">
