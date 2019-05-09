@@ -295,7 +295,7 @@ export default class extends React.PureComponent {
     cookies.set('token', token, {expires: 365});
     cookies.set('email', this.state.cookie.loginAttemptEmail, {expires: 365});
 
-    Router.replaceRoute('registration', {
+    Router.replaceRoute('adminDashboard', {
       locale: this.props.query.locale
     });
       

@@ -3,9 +3,13 @@ import styled from 'styled-components';
 
 import configs from 'configs';
 
-import { media, style } from 'helpers/styledComponents.js';
+// import { media, style } from 'helpers/styledComponents.js';
+
+import _ from 'lodash'; 
 
 import {translate} from 'helpers/translate.js';
+import translations from 'translations';
+
 import { transparentize } from 'polished'
 
 import { Link } from '/routes';
@@ -28,7 +32,24 @@ const $ = jQuery;
 // }
 
 
+const getLocaleObject = (requestedLocale) => {
+  const requestedLocaleObject = _.find(translations, {
+    _locale: {
+      id: requestedLocale
+    }
+  });
 
+  if (requestedLocaleObject !== undefined) {
+    if (process.env.ENV === 'production') {
+      // check to see if requestedLocaleObject has been disabled
+      if (requestedLocaleObject._locale.disabled === true) {
+        return undefined
+      }
+    }
+  }
+
+  return requestedLocaleObject;
+}
 
 
 const ThisPageContainerComponent = styled(PageContainerComponent)`
@@ -40,8 +61,13 @@ const ThisPageContainerComponent = styled(PageContainerComponent)`
 
 
 export default class extends React.Component {
-  static async getInitialProps({ query }) {
-    
+  static async getInitialProps({ req, res, query }) {
+    // if (!getLocaleObject(query.locale)) {
+    //   // cannot find matching locale object
+    //   res.statusCode = 404;
+    //   res.end(`Page not found: /${query.locale}/`);
+    // }
+
     return { query }
   }
   

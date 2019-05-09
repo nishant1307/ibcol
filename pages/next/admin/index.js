@@ -708,7 +708,7 @@ export default class extends React.PureComponent {
                       if (!data.isTokenValid) {
                         this.clearCookie()
                       } else {
-                        Router.replaceRoute('registration', {
+                        Router.replaceRoute('adminDashboard', {
                           locale: this.props.query.locale
                         });
                       }

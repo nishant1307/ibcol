@@ -8,7 +8,12 @@ import {translate, localeSupported} from 'helpers/translate.js';
 import ReactGA from 'react-ga';
 import { StickyContainer, Sticky } from 'react-sticky';
 
+
+import dynamic from 'next/dynamic';
+
 import routes from '/routes';
+// import Router from 'next/router';
+// import { Router } from '/routes';
 
 // import Router from 'next/router';
 // import css from 'styled-jsx/css';
@@ -108,28 +113,28 @@ class MyApp extends App {
 
     
     // client side locale check
-    if (typeof(window) === "object") {
-      // console.log('constructor props', props)
-      if (props.pageProps.query !== undefined && props.pageProps.query.locale !== undefined) {
-        // console.log('requested locale:', pageProps.query.locale);
-      //   // console.log('localeSupported?', localeSupported(pageProps.query.locale));
-      //   console.log('constructor pageProps', props.pageProps)
-      //   // console.log('router', router);
-        if (!localeSupported(props.pageProps.query.locale)) {
+    // if (typeof(window) === "object") {
+    //   // console.log('constructor props', props)
+    //   if (props.pageProps.query !== undefined && props.pageProps.query.locale !== undefined) {
+    //     // console.log('requested locale:', pageProps.query.locale);
+    //   //   // console.log('localeSupported?', localeSupported(pageProps.query.locale));
+    //   //   console.log('constructor pageProps', props.pageProps)
+    //   //   // console.log('router', router);
+    //     if (!localeSupported(props.pageProps.query.locale)) {
           
 
-          // const requestedRoute = routes.findAndGetUrls(props.router.route.replace('/',''), {locale: props.pageProps.query.locale}).route;
+    //       // const requestedRoute = routes.findAndGetUrls(props.router.route.replace('/',''), {locale: props.pageProps.query.locale}).route;
 
-          // console.log("----->>>>>", requestedRoute);
+    //       // console.log("----->>>>>", requestedRoute);
 
-          // if (requestedRoute !== undefined && requestedRoute.name !== undefined) {
-            document.location = props.router.route;
-          // }
+    //       // if (requestedRoute !== undefined && requestedRoute.name !== undefined) {
+    //         document.location = props.router.route;
+    //       // }
 
           
-        }
-      }
-    }
+    //     }
+    //   }
+    // }
 
     
   }
@@ -154,14 +159,39 @@ class MyApp extends App {
 
 
 
-  static async getInitialProps({ Component, ctx }) {
+  static async getInitialProps({ Component, ctx, router }) {
     let pageProps = {}
 
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
 
-      console.debug('incoming pageProps >>>', pageProps);
-      
+      // console.debug('incoming pageProps >>>', pageProps);
+      // console.debug('router', router);
+      // console.debug('ctx.req.url', ctx.req.url);
+
+      // const requestedRoute = routes.findAndGetUrls(ctx.req.url, {locale: pageProps.query.locale});
+
+      // console.log('requestedRoute >>>>>', requestedRoute);
+
+      if (typeof window === 'undefined') {
+
+        // correct invalid locale
+        if (pageProps.query !== undefined && pageProps.query.locale !== undefined) {
+          if (!localeSupported(pageProps.query.locale)) {
+            console.debug('incoming pageProps >>>', pageProps);
+            console.debug('router', router);
+            console.debug('ctx.req.url', ctx.req.url);
+
+            ctx.res.writeHead((process.env.ENV === 'production') ? 301 : 302, {"Location": `/_${router.route === '/next' ? router.asPath : router.route.replace('/next', '')}`});
+            ctx.res.end();
+
+            
+          }
+        }
+
+
+        
+      }
     }
 
     // client-side only, run on page changes, do not run on server (SSR)
