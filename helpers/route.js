@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const geoip = require('geoip-lite');
+const geoip = require('geoip-country');
 const { parse } = require('url')
 
 const translations = require('../translations');
