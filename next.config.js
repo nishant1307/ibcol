@@ -15,9 +15,9 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 
-const withOffline = moduleExists('next-offline')
-  ? require('next-offline')
-  : {};
+// const withOffline = moduleExists('next-offline')
+//   ? require('next-offline')
+//   : {};
 
 /**
  * If some of the envs are public, like a google maps key, but you still
@@ -100,32 +100,34 @@ console.log('process.env.NODE_ENV:', process.env.NODE_ENV);
 console.log("=========================");
 
 
-module.exports = (process.env.NODE_ENV === 'production') 
-? moduleExists('next-offline')
-? withOffline(withCSS(Object.assign({}, nextConfig, {
-  workboxOpts: {
-    swDest: 'static/service-worker.js',
-    runtimeCaching: [
-      {
-        urlPattern: /^https?.*/,
-        handler: 'networkFirst',
-        options: {
-          cacheName: 'https-calls',
-          networkTimeoutSeconds: 15,
-          expiration: {
-            maxEntries: 150,
-            maxAgeSeconds: 30 * 24 * 60 * 60, // 1 month
-          },
-          cacheableResponse: {
-            statuses: [0, 200],
-          },
-        },
-      },
-    ],
-  }
-})))
-: withCSS(nextConfig)
-: withCSS(nextConfig);
+// module.exports = (process.env.NODE_ENV === 'production') 
+// ? moduleExists('next-offline')
+// ? withOffline(withCSS(Object.assign({}, nextConfig, {
+//   workboxOpts: {
+//     swDest: 'static/service-worker.js',
+//     runtimeCaching: [
+//       {
+//         urlPattern: /^https?.*/,
+//         handler: 'networkFirst',
+//         options: {
+//           cacheName: 'https-calls',
+//           networkTimeoutSeconds: 15,
+//           expiration: {
+//             maxEntries: 150,
+//             maxAgeSeconds: 30 * 24 * 60 * 60, // 1 month
+//           },
+//           cacheableResponse: {
+//             statuses: [0, 200],
+//           },
+//         },
+//       },
+//     ],
+//   }
+// })))
+// : withCSS(nextConfig)
+// : withCSS(nextConfig);
+
+module.exports = withCSS(nextConfig);
 
 
 
