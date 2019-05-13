@@ -31,7 +31,7 @@ import withApollo from 'next-with-apollo'
 //   AccountsGraphQLClient
 // } from '@accounts/graphql-client';
 
-import * as ApolloClientBoost from 'apollo-boost';
+// import * as ApolloClientBoost from 'apollo-boost';
 
 import {
   graphqlURL,
