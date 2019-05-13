@@ -1,5 +1,6 @@
 import App, { Container } from 'next/app';
 import React from 'react';
+import Error from 'next/error';
 // import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -161,37 +162,54 @@ class MyApp extends App {
 
   static async getInitialProps({ Component, ctx, router }) {
     let pageProps = {}
-
+    
     if (Component.getInitialProps) {
+      
       pageProps = await Component.getInitialProps(ctx);
-
-      // console.debug('incoming pageProps >>>', pageProps);
       // console.debug('router', router);
-      // console.debug('ctx.req.url', ctx.req.url);
-
-      // const requestedRoute = routes.findAndGetUrls(ctx.req.url, {locale: pageProps.query.locale});
-
-      // console.log('requestedRoute >>>>>', requestedRoute);
-
+      // console.debug('pageProps', pageProps);
       if (typeof window === 'undefined') {
+        
+        
 
         // correct invalid locale
         if (pageProps.query !== undefined && pageProps.query.locale !== undefined) {
           if (!localeSupported(pageProps.query.locale)) {
-            console.debug('incoming pageProps >>>', pageProps);
-            console.debug('router', router);
-            console.debug('ctx.req.url', ctx.req.url);
+            // console.debug('incoming pageProps >>>', pageProps);
+            // console.debug('router', router);
+            // console.debug('ctx.req.url', ctx.req.url);
 
             ctx.res.writeHead((process.env.ENV === 'production') ? 301 : 302, {"Location": `/_${router.route === '/next' ? router.asPath : router.route.replace('/next', '')}`});
             ctx.res.end();
 
             
           }
+
+          
+
+
         }
 
+        console.debug('> router', router);
+        // console.debug('> pageProps', pageProps);
+
+        const requestedRoute = routes.findAndGetUrls(router.asPath);
+
+        console.log('> requestedRoute', requestedRoute);
+
+        if (requestedRoute.route === undefined)
+          ctx.res.statusCode = 404;
 
         
+
+        
+
+        pageProps.statusCode = ctx.res.statusCode;
+        
       }
+
+      
+
     }
 
     // client-side only, run on page changes, do not run on server (SSR)
@@ -201,10 +219,9 @@ class MyApp extends App {
 
     
     
-
-
     
 
+    
     return { pageProps }
   }
   
@@ -233,7 +250,11 @@ class MyApp extends App {
     const query = router.query;
     const locale = query !== undefined ? query.locale !== undefined ? query.locale : translations["_default"]._locale.id : translations["_default"]._locale.id;
 
+    // console.log('props', this.props);
+    // console.log('pageProps', pageProps);
 
+    
+    
 
     return <Container>
       <ApolloProvider client={apollo}>
@@ -266,9 +287,11 @@ class MyApp extends App {
             )}
           </Sticky>
         
-
-          <Component {...pageProps} locale={locale} />
-
+          {
+            (pageProps.statusCode && pageProps.statusCode >= 400) ? 
+              <Error statusCode={pageProps.statusCode} /> :
+              <Component {...pageProps} locale={locale} />
+          }
 
         </StickyContainer>
 

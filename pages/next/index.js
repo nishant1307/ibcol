@@ -62,11 +62,6 @@ const ThisPageContainerComponent = styled(PageContainerComponent)`
 
 export default class extends React.Component {
   static async getInitialProps({ req, res, query }) {
-    // if (!getLocaleObject(query.locale)) {
-    //   // cannot find matching locale object
-    //   res.statusCode = 404;
-    //   res.end(`Page not found: /${query.locale}/`);
-    // }
 
     return { query }
   }

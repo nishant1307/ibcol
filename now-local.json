@@ -68,8 +68,13 @@
     
 
     { 
+      "src": "/(?<locale>[^/]*)/?(how|ambassadors|sponsors|contact|registration)/", 
+      "dest": "/next/$2?locale=$locale",
+      "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
+    },
+    { 
       "src": "/(?<locale>[^/]*)/(?<page>[^/]*)/", 
-      "dest": "/next/$page?locale=$locale",
+      "dest": "/next/?locale=$locale",
       "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
     },
     { 
