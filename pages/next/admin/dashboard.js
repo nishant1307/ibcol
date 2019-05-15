@@ -2,7 +2,9 @@ import React from 'react';
 import classNames from 'classnames';
 import styled from 'styled-components';
 import _ from 'lodash-checkit';
-import update from 'immutability-helper';
+// import update from 'immutability-helper';
+
+import jsoncsv from 'json-csv';
 
 import configs from 'configs';
 
@@ -401,6 +403,66 @@ export default class extends React.PureComponent {
 
       console.log('applications', applications);
 
+      const studentRecords = [];
+
+      applications.map((application)=>{
+        application.studentRecords.map((studentRecord)=>{
+          studentRecords.push({
+            firstName: studentRecord.firstName,
+            lastName: studentRecord.lastName,
+            phoneNumber: studentRecord.phoneNumber,
+            email: studentRecord.email,
+            teamName: application.teamName,
+            ref: application.ref
+          })
+        })
+      })
+
+      console.log('studentRecords', studentRecords);
+
+      jsoncsv.csvBuffered(studentRecords, {
+        fields: [
+          {name: "firstName", label: "First Name"},
+          {name: "lastName", label: "Last Name"},
+          {name: "phoneNumber", label: "Phone Number"},
+          {name: "email", label: "Email"},
+          {name: "teamName", label: "Team Name"},
+          {name: "ref", label: "Application #"},
+        ]
+      }, (err, csv)=>{
+
+        if (err)
+          console.error('error', err);
+
+        this.setState({
+          isLoading: false
+        })
+
+        console.log('csv', csv);
+        // const uri = "data:text/csv;charset=utf-8," + encodeURIComponent(csv);
+        // window.location.href = uri;
+
+        const exportedFilenmae = 'StudentContacts.csv';
+
+        var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        if (navigator.msSaveBlob) { // IE 10+
+            navigator.msSaveBlob(blob, exportedFilenmae);
+        } else {
+            var link = document.createElement("a");
+            if (link.download !== undefined) { // feature detection
+                // Browsers that support HTML5 download attribute
+                var url = URL.createObjectURL(blob);
+                link.setAttribute("href", url);
+                link.setAttribute("download", exportedFilenmae);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
+
+      })
+
       
 
     } catch (err) {
@@ -409,9 +471,7 @@ export default class extends React.PureComponent {
 
 
 
-    this.setState({
-      isLoading: false
-    })
+    
   }
 
   
