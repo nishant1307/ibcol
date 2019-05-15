@@ -24,8 +24,11 @@ import { Mutation, Query } from "react-apollo";
 import gql from 'graphql-tag'
 
 
+import { createHttpLink } from "apollo-link-http";
+import ApolloClient from "apollo-client";
+import { InMemoryCache } from "apollo-cache-inmemory";
 
-
+import { graphqlURL } from 'configs';
 
 // const REQUEST_ADMIN_ACCESS_TOKEN = gql`
 //   mutation RequestAdminAccessToken($email: String!, $seed: String!, $locale: String!) {
@@ -43,7 +46,25 @@ const IS_TOKEN_VALID = gql`
 `;
 
 
+const GET_APPLICATIONS_AS_ADMIN = gql`
+  query getApplicationsAsAdmin {
+    getApplicationsAsAdmin {
+      teamName
+      ref
+      studentRecords {
+        firstName
+        lastName
+        phoneNumber
+        email
+      }
+    }
+  }
+`;
 
+const graphqlClient = new ApolloClient({
+  link: createHttpLink({ uri: graphqlURL }),
+  cache: new InMemoryCache()
+});
 
 
 const ThisPageContainerComponent = styled(PageContainerComponent)`
@@ -278,7 +299,7 @@ export default class extends React.PureComponent {
     return {
       tokenCookie: undefined,
       hasValidToken: false,
-      
+      isLoading: false,
       
       cookie: {
         loginAttemptEmail: "",
@@ -346,7 +367,7 @@ export default class extends React.PureComponent {
 
     this.setState({
       tokenCookie: undefined,
-      hasValidToken: false
+      // hasValidToken: false
     })
   }
 
@@ -356,6 +377,41 @@ export default class extends React.PureComponent {
     //   locale: this.props.query.locale
     // });
 
+  }
+
+  doDownloadContactList = async () => {
+
+    this.setState({
+      isLoading: true
+    })
+
+    
+    try {
+      const results = await graphqlClient.query({
+        query: GET_APPLICATIONS_AS_ADMIN,
+        context: {
+          headers: {
+            token: this.state.tokenCookie.token,
+            email: this.state.tokenCookie.email
+          }
+        }
+      });
+    
+      const applications = results.data.getApplicationsAsAdmin;
+
+      console.log('applications', applications);
+
+      
+
+    } catch (err) {
+      console.error('error', err);
+    }
+
+
+
+    this.setState({
+      isLoading: false
+    })
   }
 
   
@@ -382,9 +438,7 @@ export default class extends React.PureComponent {
 
     // const locale = this.props.query.locale;
 
-    const isLoggedIn = this.state.hasValidToken && this.state.tokenCookie !== undefined;
-    const isLoggingIn = !this.state.hasValidToken && this.state.tokenCookie !== undefined;
-
+    
     
     
 
@@ -405,10 +459,9 @@ export default class extends React.PureComponent {
             </div>
           </div>
 
-          { isLoggingIn &&
+          { this.state.tokenCookie !== undefined &&
             <div className="row section-header">
               <div className="col-full">
-
                 <Query query={IS_TOKEN_VALID} variables={{ accessToken: {email: this.state.tokenCookie.email, token: this.state.tokenCookie.token} }}>
                   {({ loading, error, data, refetch, networkStatus }) => {
                     {/* console.log('querying graphql...');
@@ -432,64 +485,63 @@ export default class extends React.PureComponent {
                         Router.replaceRoute('adminLogin', {
                           locale: this.props.query.locale
                         });
+                        return null
                       } else {
-                        this.setState({
-                          hasValidToken: true
-                        });
+                        return <>
+                          {/* <div className="row section">
+                            <div className="col-full">
+
+                              <a className="btn btn--stroke btn--primary full-width btn--large" style={{"margin": "1rem auto 6rem"}} onClick={()=>{
+                                this.logout();
+                              }}>
+                                  {this.translate('adminLogout')}
+                              </a>
+
+
+                              
+                            </div>
+                          </div> */}
+
+
+
+                          <div className="row section">
+                            <div className="col-full">
+
+                              <ul className="adminTools">
+                                <li><a onClick={()=>{this.doDownloadContactList();}}>{this.translate('downloadContactList')}</a></li>
+                                <li><a onClick={()=>{this.logout();}}>{this.translate('adminLogout')}</a></li>
+                              </ul>
+
+                              
+
+                              {
+                                this.state.isLoading &&
+                                <div className="full-width" style={{textAlign: 'center'}}>
+                                  <><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></>
+                                </div>
+                              }
+                              
+
+
+                              
+                            </div>
+                          </div>
+                        
+                        </>
                       }
                     }
 
-                    return null
+                    
                   }}
                 </Query>
                 
               </div>
             </div>
           }
+        
 
 
-          {
-            isLoggedIn && 
-              <>
-              {/* <div className="row section">
-                <div className="col-full">
-
-                  <a className="btn btn--stroke btn--primary full-width btn--large" style={{"margin": "1rem auto 6rem"}} onClick={()=>{
-                    this.logout();
-                  }}>
-                      {this.translate('adminLogout')}
-                  </a>
-
-
-                  
-                </div>
-              </div> */}
-
-
-
-              <div className="row section">
-                <div className="col-full">
-
-                  <ul className="adminTools">
-                    <li><a onClick={()=>{}}>{this.translate('downloadContactList')}</a></li>
-                    <li><a onClick={()=>{this.logout();}}>{this.translate('adminLogout')}</a></li>
-                  </ul>
-
-                  
-
-
-                  <div className="full-width" style={{textAlign: 'center'}}>
-                    <><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></>
-                  </div>
-
-
-                  
-                </div>
-              </div>
-            
-            </>
-          }
-
+          
 
 
         </section>
