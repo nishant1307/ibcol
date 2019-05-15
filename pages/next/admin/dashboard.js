@@ -401,7 +401,7 @@ export default class extends React.PureComponent {
     
       const applications = results.data.getApplicationsAsAdmin;
 
-      console.log('applications', applications);
+      // console.log('applications', applications);
 
       const studentRecords = [];
 
@@ -418,7 +418,7 @@ export default class extends React.PureComponent {
         })
       })
 
-      console.log('studentRecords', studentRecords);
+      // console.log('studentRecords', studentRecords);
 
       jsoncsv.csvBuffered(studentRecords, {
         fields: [
@@ -438,7 +438,7 @@ export default class extends React.PureComponent {
           isLoading: false
         })
 
-        console.log('csv', csv);
+        // console.log('csv', csv);
         // const uri = "data:text/csv;charset=utf-8," + encodeURIComponent(csv);
         // window.location.href = uri;
 
