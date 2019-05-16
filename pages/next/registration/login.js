@@ -677,7 +677,6 @@ export default class extends React.PureComponent {
         }
 
 
-
         {(!this.state.hasValidToken && this.state.tokenCookie !== undefined) &&
           <section className="s-section target-section first last">
             <div className="row">
@@ -687,7 +686,6 @@ export default class extends React.PureComponent {
             </div>
             <div className="row section-header">
               <div className="col-full">
-
                 <Query query={IS_TOKEN_VALID} variables={{ accessToken: {email: this.state.tokenCookie.email, token: this.state.tokenCookie.token} }}>
                   {({ loading, error, data, refetch, networkStatus }) => {
                     {/* console.log('querying graphql...');
@@ -704,9 +702,7 @@ export default class extends React.PureComponent {
                     if (!_.isEmpty(data)) {
                       console.log('data', data.isTokenValid);
 
-                      this.setState({
-                        hasValidToken: data.isTokenValid
-                      })
+                      
 
                       if (!data.isTokenValid) {
                         this.clearCookie()

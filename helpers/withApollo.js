@@ -23,6 +23,7 @@ import {
 } from 'apollo-utilities';
 import withApollo from 'next-with-apollo'
 
+import cookies from 'browser-cookies';
 
 // import {
 //   accountsLink
@@ -31,7 +32,7 @@ import withApollo from 'next-with-apollo'
 //   AccountsGraphQLClient
 // } from '@accounts/graphql-client';
 
-import * as ApolloClientBoost from 'apollo-boost';
+// import * as ApolloClientBoost from 'apollo-boost';
 
 import {
   graphqlURL,
@@ -69,13 +70,19 @@ export default withApollo(({
   //   }
   // })
 
-  const contextLink = setContext(
-    async () => ({
+  const contextLink = setContext((_, { headers }) => {
+    // get the authentication token from local storage if it exists
+    const token = cookies.get('token');
+    const email = cookies.get('email');
+    // return the headers to the context so httpLink can read them
+    return {
       headers: {
-        authorization: headers.authorization
+        ...headers,
+        token, 
+        email
       }
-    })
-  )
+    }
+  });
 
   const errorLink = onError(
     ({

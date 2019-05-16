@@ -99,7 +99,7 @@
   "teamLogin": "Registration Management - Login",
   "teamLogout": "Registration Management - Logout",
   "loginEmail": "Email",
-  "loginAction": "Login as Existing Team",
+  "loginAction": "Login",
   "loginAwaitingTitle": "Awaiting Verification",
   "loginAwaitingEmail": "We sent an email to <b>{email}</b>",
   "loginAwaitingMessage": "Verify that the provided seed code matches the following text:",
@@ -110,5 +110,6 @@
   "loginVerifyingMessage": "Verifying the following seed code against <b>{verificationCode}</b>:",
   "loginVerifyingErrorMessage": "Login verification failed. Please try to verify again on the same browser login was initiated.",
   
-  "managingApplicationTitle": "Managing Registration"
+  "managingApplicationTitle": "Managing Registration",
+  "noApplicationToManage": "There is no registration to manage."
 }
