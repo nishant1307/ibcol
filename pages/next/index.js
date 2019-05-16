@@ -3,9 +3,13 @@ import styled from 'styled-components';
 
 import configs from 'configs';
 
-import { media, style } from 'helpers/styledComponents.js';
+// import { media, style } from 'helpers/styledComponents.js';
+
+import _ from 'lodash'; 
 
 import {translate} from 'helpers/translate.js';
+import translations from 'translations';
+
 import { transparentize } from 'polished'
 
 import { Link } from '/routes';
@@ -29,12 +33,30 @@ const $ = jQuery;
 //   xxLarge: style.dimension.normal.pagePadding.xxLarge
 // }
 
+
+const getLocaleObject = (requestedLocale) => {
+  const requestedLocaleObject = _.find(translations, {
+    _locale: {
+      id: requestedLocale
+    }
+  });
+
+  if (requestedLocaleObject !== undefined) {
+    if (process.env.ENV === 'production') {
+      // check to see if requestedLocaleObject has been disabled
+      if (requestedLocaleObject._locale.disabled === true) {
+        return undefined
+      }
+    }
+  }
+
+  return requestedLocaleObject;
+}
+
 const renderer = ({ days, hours, minutes, seconds }) => {
   // Render a countdown
   return <span>{days} Days, {hours} Hrs, {minutes} Mins, {seconds} Secs</span>;
 };
-
-
 
 const ThisPageContainerComponent = styled(PageContainerComponent)`
 
@@ -45,8 +67,8 @@ const ThisPageContainerComponent = styled(PageContainerComponent)`
 
 
 export default class extends React.Component {
-  static async getInitialProps({ query }) {
-    
+  static async getInitialProps({ req, res, query }) {
+
     return { query }
   }
   
@@ -124,13 +146,13 @@ export default class extends React.Component {
 
             </div>
 
-            <div className="home-content__scroll">
+            {/* <div className="home-content__scroll">
               <Link prefetch route="home" params={{ locale }} hash="about">
                 <a className="scroll-link smoothscroll">
                   {this.translate('scroll')}
                 </a>
               </Link>
-            </div>
+            </div> */}
 
           </div>
         </section>

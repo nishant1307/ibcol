@@ -54,7 +54,7 @@ translate = (t) => translate(t, 'ambassadors', this.props.query.locale);
   
   render() {
   
-  // console.log(">>> query", this.props.query);
+  console.log(">>> query", this.props.query);
 
 
   const locale = this.props.query.locale;
