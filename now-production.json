@@ -74,7 +74,7 @@
     
 
     { 
-      "src": "/(?<locale>[^/]*)/?(how|ambassadors|sponsors|contact|registration)/", 
+      "src": "/(?<locale>[^/]*)/?(how|ambassadors|sponsors|contact|registration|admin)/", 
       "dest": "/next/$2?locale=$locale",
       "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
     },
@@ -110,6 +110,31 @@
       "status": 301,
       "headers": { "Location": "/$locale/registration/verify/$2/$3/" }
     },
+
+
+    { 
+      "src": "/(?<locale>[^/]*)/admin/verify/(.*)/(.*)/", 
+      "dest": "/next/admin/verify?locale=$locale&verificationCode=$2&email=$3"
+    },
+    { 
+      "src": "/(?<locale>[^/]*)/admin/verify/(.*)/(.*)", 
+      "status": 301,
+      "headers": { "Location": "/$locale/admin/verify/$2/$3/" }
+    },
+
+
+    { 
+      "src": "/(?<locale>[^/]*)/admin/dashboard/", 
+      "dest": "/next/admin/dashboard?locale=$locale"
+    },
+    { 
+      "src": "/(?<locale>[^/]*)/admin/dashboard", 
+      "status": 301,
+      "headers": { "Location": "/$locale/admin/dashboard/" }
+    },
+
+
+
     
     
     { "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+", "headers": { "cache-control": "immutable,max-age=31536000" } }
