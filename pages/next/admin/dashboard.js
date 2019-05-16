@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import styled from 'styled-components';
 import _ from 'lodash-checkit';
 // import update from 'immutability-helper';
-
+import Link from "next/link";
 import jsoncsv from 'json-csv';
 import CryptoJS from "crypto-js";
 import moment from 'moment';
@@ -128,6 +128,14 @@ const ThisPageContainerComponent = styled(PageContainerComponent)`
       tr {
         &:hover {
           background-color: #ECECEC;
+
+          td {
+            &.viewApplicationLink {
+              img {
+                display: block;
+              }
+            }
+          }
         }
         th {
           font-size: 1.2rem;
@@ -137,9 +145,26 @@ const ThisPageContainerComponent = styled(PageContainerComponent)`
         th, td {
           padding: 0.5rem 0.2rem;
           vertical-align: top;
+
+          &.viewApplicationLink {
+            width: 20px;
+            img {
+              width: 15px;
+              display: none;
+            }
+          }
+
+          a {
+            color: #000;
+            /* text-decoration: underline; */
+          }
         }
 
         td {
+          .whitepaperContainer {
+            padding-left: 0.8rem;
+
+          }
           ul {
             margin-bottom: 0;
             li {
@@ -684,19 +709,24 @@ export default class extends React.PureComponent {
                                       <table>
                                         <thead>
                                           <tr>
+                                            <th></th>
                                             <th>Reference</th>
                                             <th>Team Name</th>
                                             <th>Students</th>
                                             <th>Projects</th>
                                             <th>Updated</th>
-                                            <th></th>
                                           </tr>
                                         </thead>
                                         <tbody>
                                         {
                                           applications.map((application, index)=>{
                                             return <tr key={index}>
-                                              <td>{application.ref}</td>
+                                              <td className="viewApplicationLink">
+                                                <Link>
+                                                  <a><img src="/static/images/application_icon.png"/></a>
+                                                </Link>
+                                              </td>
+                                              <td><a>{application.ref}</a></td>
                                               <td>{application.teamName}</td>
                                               <td>
                                                 {
@@ -712,11 +742,19 @@ export default class extends React.PureComponent {
                                                   application.projectRecords.slice().reverse().map((projectRecord, index)=>{
                                                     return <div key={index}>
                                                       {projectRecord.name}
-                                                      <ul className="files">
-                                                        {projectRecord.whitepaperFileIds.map((dropfile, index)=>{
-                                                          return <li key={index}><a target="_blank" href={`${process.env.FILEPOND_API_URL}${process.env.FILEPOND_API_ENDPOINT}${process.env.FILEPOND_API_URL}${process.env.FILEPOND_API_ENDPOINT}${dropfile.fileId}`}>{getFilenameFromFileId(dropfile.fileId)}</a> {dropfile.receivedAt && <span>- {moment(dropfile.receivedAt).fromNow()}</span>}</li>
-                                                        })}
-                                                      </ul>
+                                                      {
+                                                        projectRecord.whitepaperFileIds.length > 0 &&
+
+                                                        
+                                                        <div className="whitepaperContainer">
+                                                          {this.translate('whitepaperFile')}
+                                                          <ul className="files">
+                                                            {projectRecord.whitepaperFileIds.map((dropfile, index)=>{
+                                                              return <li key={index}><a target="_blank" href={`${process.env.FILEPOND_API_URL}${process.env.FILEPOND_API_ENDPOINT}${process.env.FILEPOND_API_URL}${process.env.FILEPOND_API_ENDPOINT}${dropfile.fileId}`}>{getFilenameFromFileId(dropfile.fileId)}</a> {dropfile.receivedAt && <span>- {moment(dropfile.receivedAt).fromNow()}</span>}</li>
+                                                            })}
+                                                          </ul>
+                                                        </div>
+                                                      }
                                                     </div>
                                                   })
                                                 }
