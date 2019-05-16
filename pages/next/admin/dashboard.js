@@ -5,7 +5,8 @@ import _ from 'lodash-checkit';
 // import update from 'immutability-helper';
 
 import jsoncsv from 'json-csv';
-
+import CryptoJS from "crypto-js";
+import moment from 'moment';
 import configs from 'configs';
 
 import { media, style } from 'helpers/styledComponents.js';
@@ -40,6 +41,21 @@ import { graphqlURL } from 'configs';
 //   }
 // `;
 
+const SALT = process.env.SALT ? process.env.SALT : ")6Dc1UP*S9Night-Age-Doll-Famous-8as81*@()#@";
+
+const getFilenameFromFileId = (fileId) => {
+  // console.log('getFilenameFromFileId', fileId, SALT);
+  try {
+    const filename = _.last(CryptoJS.AES.decrypt(fileId, SALT).toString(CryptoJS.enc.Utf8).split('/'));
+    // console.log('fileId', fileId);
+    // console.log('SALT', SALT);
+    // console.log('filename', filename);
+    return filename;
+  } catch (e) {
+    return "";
+  }
+}
+
 
 const IS_TOKEN_VALID = gql`
   query IsTokenValid($accessToken: TokenInput!) {
@@ -48,7 +64,7 @@ const IS_TOKEN_VALID = gql`
 `;
 
 
-const GET_APPLICATIONS_AS_ADMIN = gql`
+const GET_APPLICATIONS_AS_ADMIN_FOR_CONTACTS = gql`
   query getApplicationsAsAdmin {
     getApplicationsAsAdmin {
       teamName
@@ -63,6 +79,37 @@ const GET_APPLICATIONS_AS_ADMIN = gql`
   }
 `;
 
+const GET_APPLICATIONS_AS_ADMIN = gql`
+  query getApplicationsAsAdmin {
+    getApplicationsAsAdmin {
+      teamName
+      ref
+      studentRecords {
+        firstName
+        lastName
+        phoneNumber
+        email
+      }
+      projectRecords {
+        ref
+        name
+        description
+        whitepaperFileIds {
+          receivedAt
+          fileId
+        }
+        presentationFileIds {
+          receivedAt
+          fileId
+        }
+      }
+      meta {
+        updatedAt
+      }
+    }
+  }
+`;
+
 const graphqlClient = new ApolloClient({
   link: createHttpLink({ uri: graphqlURL }),
   cache: new InMemoryCache()
@@ -70,7 +117,41 @@ const graphqlClient = new ApolloClient({
 
 
 const ThisPageContainerComponent = styled(PageContainerComponent)`
+  .tableContainer {
+    width: 100%;
+    overflow: scroll;
+    table {
+      margin-top: 2rem;
+      font-size: 1rem;
+      min-width: 800px;
 
+      tr {
+        &:hover {
+          background-color: #ECECEC;
+        }
+        th {
+          font-size: 1.2rem;
+          text-align: left;
+        }
+
+        th, td {
+          padding: 0.5rem 0.2rem;
+          vertical-align: top;
+        }
+
+        td {
+          ul {
+            margin-bottom: 0;
+            li {
+              padding-left: 0rem;
+            }
+          }
+        }
+      }
+    }
+
+  }
+  
   .lds-ellipsis {
     display: inline-block;
     position: relative;
@@ -390,7 +471,7 @@ export default class extends React.PureComponent {
     
     try {
       const results = await graphqlClient.query({
-        query: GET_APPLICATIONS_AS_ADMIN,
+        query: GET_APPLICATIONS_AS_ADMIN_FOR_CONTACTS,
         context: {
           headers: {
             token: this.state.tokenCookie.token,
@@ -427,7 +508,7 @@ export default class extends React.PureComponent {
           {name: "phoneNumber", label: "Phone Number"},
           {name: "email", label: "Email"},
           {name: "teamName", label: "Team Name"},
-          {name: "ref", label: "Application #"},
+          {name: "ref", label: "Reference"},
         ]
       }, (err, csv)=>{
 
@@ -495,10 +576,8 @@ export default class extends React.PureComponent {
     // console.log("===>", process.env.FILEPOND_API);
     // console.log("===>", process.env.ENV);
 
-
-    // const locale = this.props.query.locale;
-
-    
+    const locale = this.props.query.locale;
+    moment.locale(locale);
     
     
 
@@ -536,7 +615,7 @@ export default class extends React.PureComponent {
                     if (error) return `Error! ${error.message}`;
 
                     if (!_.isEmpty(data)) {
-                      console.log('data', data.isTokenValid);
+                      {/* console.log('data', data.isTokenValid); */}
 
                       
 
@@ -580,6 +659,83 @@ export default class extends React.PureComponent {
                                   <><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></>
                                 </div>
                               }
+
+
+                              <Query query={GET_APPLICATIONS_AS_ADMIN}>
+                                {({ loading, error, data, refetch, networkStatus }) => {
+                                  {/* console.log('querying graphql...');
+                                  console.log('loading:', loading);
+                                  console.log('networkStatus:', networkStatus); */}
+                                  {/* console.log('error', error);
+                                  console.log('data', data); */}
+                                  if ((networkStatus === 4) || loading) return <div className="full-width" style={{textAlign: 'center'}}>
+                                      <><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></>
+                                    </div>;
+                                  
+                                  if (error) return `Error! ${error.message}`;
+
+                                  if (!_.isEmpty(data)) {
+                                    console.log('data', data.getApplicationsAsAdmin);
+
+                                    const applications = data.getApplicationsAsAdmin;
+
+
+                                    return <div className="tableContainer">
+                                      <table>
+                                        <thead>
+                                          <tr>
+                                            <th>Reference</th>
+                                            <th>Team Name</th>
+                                            <th>Students</th>
+                                            <th>Projects</th>
+                                            <th>Updated</th>
+                                            <th></th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                        {
+                                          applications.map((application, index)=>{
+                                            return <tr key={index}>
+                                              <td>{application.ref}</td>
+                                              <td>{application.teamName}</td>
+                                              <td>
+                                                {
+                                                  application.studentRecords.map((studentRecord, index)=>{
+                                                    return <div key={index}>
+                                                      <a href={`mailto:${studentRecord.email}`}>{studentRecord.firstName} {studentRecord.lastName}</a>
+                                                    </div>
+                                                  })
+                                                }
+                                              </td>
+                                              <td>
+                                                {
+                                                  application.projectRecords.slice().reverse().map((projectRecord, index)=>{
+                                                    return <div key={index}>
+                                                      {projectRecord.name}
+                                                      <ul className="files">
+                                                        {projectRecord.whitepaperFileIds.map((dropfile, index)=>{
+                                                          return <li key={index}><a target="_blank" href={`${process.env.FILEPOND_API_URL}${process.env.FILEPOND_API_ENDPOINT}${process.env.FILEPOND_API_URL}${process.env.FILEPOND_API_ENDPOINT}${dropfile.fileId}`}>{getFilenameFromFileId(dropfile.fileId)}</a> {dropfile.receivedAt && <span>- {moment(dropfile.receivedAt).fromNow()}</span>}</li>
+                                                        })}
+                                                      </ul>
+                                                    </div>
+                                                  })
+                                                }
+                                              </td>
+                                              <td>
+                                                {moment(application.meta.updatedAt).fromNow()}
+                                              </td>
+                                            </tr>
+                                          })
+                                        }
+
+                                      </tbody></table>
+                                    </div>
+                                  
+                                  }
+
+                                  return null;
+                                }}
+                              </Query>
                               
 
 
