@@ -296,7 +296,7 @@ export default class extends React.Component {
                                   <p>10:30 AM - 11:30 AM</p>
                               </td>
                               <td class="session-schedule-detail">
-                                  <h5>Pitch Session 1</h5>
+                                  <h5>Pitch Session 3</h5>
                                   <p>Meeting Room 3 and 4</p>
                                   <p>HKSTP InnoCentre</p>
                               </td>
@@ -316,7 +316,7 @@ export default class extends React.Component {
                                   <p>1:30 PM - 2:30 PM</p>
                               </td>
                               <td class="session-schedule-detail">
-                                  <h5>Pitch Session 2</h5>
+                                  <h5>Pitch Session 4</h5>
                                   <p>Meeting Room 3 and 4</p>
                                   <p>HKSTP InnoCentre</p>
                               </td>
@@ -326,7 +326,7 @@ export default class extends React.Component {
                                   <p>3:15 PM - 4:15 PM</p>
                               </td>
                               <td class="session-schedule-detail">
-                                  <h5>Pitch Session 3</h5>
+                                  <h5>Pitch Session 5</h5>
                                   <p>Meeting Room 3 and 4</p>
                                   <p>HKSTP InnoCentre</p>
                               </td>
