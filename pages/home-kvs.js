@@ -103,14 +103,14 @@ export default class extends React.Component {
               </h3>
 
               <div className="home-content__button">
-                <Link prefetch route="registration" params={{ locale }}>
-                  <a className="btn btn--primary btn--large">
-                    {this.translate('register')}
-                  </a>
-                </Link>
                 <Link prefetch href="#timeline" params={{ locale }}>
                   <a className="btn btn--large">
                     {this.translate('competitionRules')}
+                  </a>
+                </Link>
+                <Link prefetch route="registration" params={{ locale }}>
+                  <a className="btn btn--primary btn--large">
+                    {this.translate('register')}
                   </a>
                 </Link>
               </div>
@@ -129,7 +129,7 @@ export default class extends React.Component {
         </section>
         
 
-        <section id="intro" className="s-section target-section">
+        {/* <section id="intro" className="s-section target-section">
           <div className="row">
               <div className="block-1-2 block-tab-full">
                   <div className="col-block no-results">
@@ -146,7 +146,7 @@ export default class extends React.Component {
                   </div>
               </div>
           </div>
-        </section>
+        </section> */}
 
         <section id="timeline" className="s-section target-section">
         <div className="row">
@@ -204,13 +204,6 @@ export default class extends React.Component {
             </div>
           </div>
         </section>
-
-
-
-
-        
-
-
 
 
     <section className="s-section target-section">
@@ -291,15 +284,11 @@ export default class extends React.Component {
 
 
 
-    <section className="s-section target-section" style={{"paddingBottom": "16rem"}}>
-
-        
+    <section className="s-section target-section">
         <div className="row">
-
             <div className="col-block">
                 <h1>{this.translate('section01.languageTitle')}</h1>
             </div>
-
             <div className="block-1-2 block-tab-full">
                 <div className="col-block">
                     <p>
@@ -315,10 +304,86 @@ export default class extends React.Component {
                 </div>
             </div>       
         </div>
-
-        
     </section>
-        
+
+    <section className="s-section target-section" style={{"paddingBottom": "16rem"}}>
+
+    <div className="row">
+        <div className="col-block">
+            <h1>{this.translate('section03.pageTitle')}</h1>
+            
+        </div>
+    </div>
+
+      <div className="row corporate-logo">
+          <div className="col-block">
+              <h3>{this.translate('section03.titleSponsorTitle')}</h3>
+          </div>
+          <div className="block-1-3 block-tab-full">
+              {
+                  this.translate('section03.titleSponsor').map((sponsor, index)=>{
+                      return <div className="col-block" key={index}>
+                          <a href={sponsor.url} target="_blank">
+                              <img src={sponsor.logo} alt={sponsor.name} />
+                          </a>
+                      </div>
+                  })
+              }
+          </div>
+      </div>
+      <div className="row corporate-logo">
+
+        <div className="col-block">
+            <h3>{this.translate('section03.generalSponsorTitle')}</h3>
+        </div>
+
+        <div className="block-1-3 block-tab-full">
+          {
+              this.translate('section03.generalSponsor').map((sponsor, index)=>{
+                  return <div className="col-block" key={index}>
+                      <a href={sponsor.url} target="_blank">
+                          <img src={sponsor.logo} alt={sponsor.name} />
+                      </a>
+                  </div>
+              })
+          }                       
+        </div>
+
+        <div className="col-block">
+            <h3>{this.translate('section03.academicPartnersTitle')}</h3>
+        </div>
+
+        <div className="block-1-3 block-tab-full">
+          {
+              this.translate('section03.academicPartners').map((sponsor, index)=>{
+                  return <div className="col-block" key={index}>
+                      <a href={sponsor.url} target="_blank">
+                          <img src={sponsor.logo} alt={sponsor.name} />
+                      </a>
+                  </div>
+              })
+          }                       
+        </div>
+
+        <div className="col-block">
+            <h3>{this.translate('section03.supportingOrganisationsTitle')}</h3>
+        </div>
+
+        <div className="block-1-3 block-tab-full">
+          {
+              this.translate('section03.supportingOrganisations').map((sponsor, index)=>{
+                  return <div className="col-block" key={index}>
+                      <a href={sponsor.url} target="_blank">
+                          <img src={sponsor.logo} alt={sponsor.name} />
+                      </a>
+                  </div>
+              })
+          }                       
+        </div> 
+            
+      </div>
+
+    </section>
         
       </ThisPageContainerComponent>
     )

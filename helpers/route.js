@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const geoip = require('geoip-lite');
+const geoip = require('geoip-country');
 const { parse } = require('url')
 
 const translations = require('../translations');
@@ -27,9 +27,9 @@ const getLocaleObject = (requestedLocale) => {
   return requestedLocaleObject;
 }
 
-const findDefaultPath = (req) => {
+const findDefaultPath = (req, prefix = "") => {
   // console.log('req', req);
-  const urlObject = parse(req.url);
+  const urlObject = parse(req.url.replace(prefix, ""));
   const pathname = urlObject.pathname;
   // console.log('pathname', pathname);
   const search = _.isEmpty(urlObject.search) ? '' : urlObject.search;
@@ -49,9 +49,13 @@ const findDefaultPath = (req) => {
   const requestedLocaleSupported = requestedLocaleObject !== undefined;
 
   let translationId;
-
+  // console.log('pathTokens', pathTokens);
+  // console.log('requestedLocaleSupported', requestedLocaleSupported);
   if (requestedLocaleSupported) {
     translationId = requestedLocaleObject._locale.id;
+    if (pathTokens.length === 3) {
+      return `/${translationId}/`;
+    }
   } else {
     let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     let geo = geoip.lookup(ip);
@@ -71,7 +75,7 @@ const findDefaultPath = (req) => {
 
   
   if (requestedLocale === undefined)
-    return `/${translationId}`;
+    return `/${translationId}/`;
 
   // maybe locale is missing and requestedLocale is really part of the requestedParams?
 
@@ -82,10 +86,20 @@ const findDefaultPath = (req) => {
 
 
 
-const routeToDefaultPath = (req, res) => {
+const routeToDefaultPath = (req, res, next, prefix = "") => {
   const status = (process.env.ENV === 'production') ? 301 : 302;
-  res.writeHead(status, {"Location": findDefaultPath(req)});
-  res.end();
+  const defaultPath = findDefaultPath(req, prefix);
+  console.log('defaultPath', defaultPath);
+  if (req.url.replace(prefix, "") !== defaultPath) {
+    console.log('req.url', req.url);
+    console.log('defaultPath', defaultPath);
+    res.writeHead(status, {"Location": defaultPath});
+    res.end();
+  } else {
+    if (next)
+      next();
+  }
+  
 }
 
 

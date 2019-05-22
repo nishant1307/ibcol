@@ -81,10 +81,13 @@ const router = express.Router({
 
 
 // redirect to default locale
-router.get('/:page(how|ambassadors|sponsors|contact|registration)?/', (req, res, next) => {
-  routeHelpers.routeToDefaultPath(req, res);
+router.get('/_/:page?/', (req, res, next) => {
+  routeHelpers.routeToDefaultPath(req, res, next, '/_');
 });
 
+router.get('/', (req, res, next) => {
+  routeHelpers.routeToDefaultPath(req, res, next);
+});
 
 //────────────────────────────────────────────────────────────────────────────────
 
