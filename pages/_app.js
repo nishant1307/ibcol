@@ -179,7 +179,7 @@ class MyApp extends App {
             // console.debug('router', router);
             // console.debug('ctx.req.url', ctx.req.url);
 
-            ctx.res.writeHead((process.env.ENV === 'production') ? 301 : 302, {"Location": `/_${router.route === '/next' ? router.asPath : router.route.replace('/next', '')}`});
+            ctx.res.writeHead((process.env.ENV === 'production') ? 301 : 302, {"Location": `/_${router.route === '/next/home' ? `/${router.query.locale}` : router.route.replace('/next', '')}`});
             ctx.res.end();
 
             
@@ -190,14 +190,14 @@ class MyApp extends App {
 
         }
 
-        console.debug('> router', router);
+        // console.debug('> router', router);
         // console.debug('> pageProps', pageProps);
 
-        const requestedRoute = routes.findAndGetUrls(router.asPath);
+        // const requestedRoute = routes.findAndGetUrls(router.asPath);
+        // console.log('req.url', ctx.req.url);
+        // console.log('> requestedRoute', requestedRoute);
 
-        console.log('> requestedRoute', requestedRoute);
-
-        if (requestedRoute.route === undefined)
+        if (router.query['catch-all'] !== undefined)
           ctx.res.statusCode = 404;
 
         

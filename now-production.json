@@ -34,6 +34,19 @@
     { "src": "next.config.js", "use": "@now/next" }
   ],
   "routes": [
+
+    { 
+      "src": "(((?!\\?|#|\\.|_next).)*((?!\\?|/|#|\\.).))", 
+      "status": 301,
+      "headers": { "Location": "$1/" }
+    },
+
+    { "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+", "headers": { "cache-control": "immutable,max-age=31536000" } },
+
+    {
+      "src": "/_next/(.*)", "dest": "/_next/$1"
+    },
+
     {
       "src": "/_/.*",
       "dest": "/node-routes/defaultRoute.js"
@@ -63,7 +76,7 @@
     
     { 
       "src": "/(?<locale>[^/]*)/", 
-      "dest": "/next/?locale=$locale"
+      "dest": "/next/home?locale=$locale"
     },
     { 
       "src": "/(?<locale>[^/]*)", 
@@ -74,20 +87,16 @@
     
 
     { 
-      "src": "/(?<locale>[^/]*)/?(how|ambassadors|sponsors|contact|registration|admin)/", 
-      "dest": "/next/$2?locale=$locale",
+      "src": "/(?<locale>[^/]*)/(?<page>(how|ambassadors|sponsors|contact|registration|admin))/", 
+      "dest": "/next/$page?locale=$locale",
       "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
     },
     { 
       "src": "/(?<locale>[^/]*)/(?<page>[^/]*)/", 
-      "dest": "/next/?locale=$locale",
+      "dest": "/next/home?locale=$locale&catch-all=true",
       "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
     },
-    { 
-      "src": "/(?<locale>[^/]*)/(?<page>[^/]*)", 
-      "status": 301,
-      "headers": { "Location": "/$locale/$page/" }
-    },
+    
 
 
 
@@ -95,49 +104,25 @@
       "src": "/(?<locale>[^/]*)/registration/login/", 
       "dest": "/next/registration/login?locale=$locale"
     },
-    { 
-      "src": "/(?<locale>[^/]*)/registration/login", 
-      "status": 301,
-      "headers": { "Location": "/$locale/registration/login/" }
-    },
+    
 
     { 
       "src": "/(?<locale>[^/]*)/registration/verify/(.*)/(.*)/", 
       "dest": "/next/registration/verify?locale=$locale&verificationCode=$2&email=$3"
     },
-    { 
-      "src": "/(?<locale>[^/]*)/registration/verify/(.*)/(.*)", 
-      "status": 301,
-      "headers": { "Location": "/$locale/registration/verify/$2/$3/" }
-    },
+    
 
 
     { 
       "src": "/(?<locale>[^/]*)/admin/verify/(.*)/(.*)/", 
       "dest": "/next/admin/verify?locale=$locale&verificationCode=$2&email=$3"
     },
-    { 
-      "src": "/(?<locale>[^/]*)/admin/verify/(.*)/(.*)", 
-      "status": 301,
-      "headers": { "Location": "/$locale/admin/verify/$2/$3/" }
-    },
-
+    
 
     { 
       "src": "/(?<locale>[^/]*)/admin/dashboard/", 
       "dest": "/next/admin/dashboard?locale=$locale"
-    },
-    { 
-      "src": "/(?<locale>[^/]*)/admin/dashboard", 
-      "status": 301,
-      "headers": { "Location": "/$locale/admin/dashboard/" }
-    },
-
-
-
-    
-    
-    { "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+", "headers": { "cache-control": "immutable,max-age=31536000" } }
+    }
     
   ]
 }
