@@ -11,13 +11,13 @@
   "generalSponsorTitle":"一般赞助商",
   "generalSponsor":[
     {"name":"EMALI","url":"https://emali.io","logo":"/static/images/logo-emali.png","description":"EMALI是一家企业技术公司，为亚太地区开发、许可、支持和销售fintech软件，解决方案和相关服务，专注于AI、区块链、加密、安全和隐私技术。"},
-    {"name":"CredProof","url":"http://www.credproof.net/","logo":"/static/images/logo-credproof.png","description":"CredProof 是一种身份认证技术，适用于验证学历证书或工作证明，以及作其他情况的认证，如无信任方的可靠身份，并在符合欧盟GDPR的保密及安全标准下完成身份认证。"},
+    {"name":"CredProof","url":"http://www.credproof.com/","logo":"/static/images/logo-credproof.png","description":"CredProof 是一种身份认证技术，适用于验证学历证书或工作证明，以及作其他情况的认证，如无信任方的可靠身份，并在符合欧盟GDPR的保密及安全标准下完成身份认证。"},
     {"name":"R3","url":"https://www.r3.com/","logo":"/static/images/logo-r3.png","description":"R3是一个企业blockchain软件公司与对面的私营和公共部门多个行业的300多名成员和合作伙伴的广泛的生态系统，开发开源blockchain平台琴弦工作。"}
   ],
   "academicPartnersTitle":"学术合作伙伴",
   "academicPartners":[
     {"name":"香港中文大学工程校友会 (ERGAA)","url":"https://www.facebook.com/groups/cuhk.ergaa.oc/","logo":"/static/images/logo-chinese-university-of-hong-kong,-engineering-alumni-association.png","description":"香港中文大学工程校友会（ERGAA）是有资格获得香港中文大学（CUHK）工程学院毕业生的官方校友会。"},
-    {"name":"香港城市大学 (CityU)","url":"https://www.cb.cityu.edu.hk/","logo":"/static/images/logo-city-university-of-hong-kong,-college-of-business.png","description":"企业在香港城市大学学院致力于培养全方位的毕业生谁是合格的专业人员，技术娴熟，关键的思想家和终身学习者。我们提供国家的最先进的学习，最前沿的研究和创新的教学设施，为学生准备在全球开放的挑战。"},
+    {"name":"香港城市大学 (CityU)","url":"https://www.cb.cityu.edu.hk/","logo":"/static/images/logo-city-university-of-hong-kong-(cityu)-college-of-business.png","description":"企业在香港城市大学学院致力于培养全方位的毕业生谁是合格的专业人员，技术娴熟，关键的思想家和终身学习者。我们提供国家的最先进的学习，最前沿的研究和创新的教学设施，为学生准备在全球开放的挑战。"},
     {"name":"香港理工大学 学生发展处 创业学会 (ES OSD PolyU)","url":"http://www.polyu.edu.hk/stars/co-curriculum/entrepreneurship-development/entrepreneurship-development.html","logo":"/static/images/logo-hong-kong-polytechnic-university,-office-of-student-development,-entrepreneurship-society-(es-osd-polyu).png","description":"OSD的创业协会，香港理工大学始建于2015年十一月正在由一个团队的创意，激情和才华的学生来自不同的院系和学校的领导，它提供了一个平台，可以连接的创新理念和创业经验的交流学生。"},
     {"name":"Moscow State University (MSU), Faculty of Law","url":"http://law.msu.ru/","logo":"/static/images/logo-moscow-state-university-(msu),-faculty-of-law.png","description":"莫斯科国立大学的法学院是俄罗斯领先的教育和法律研究机构。该校在其工作中融合了古典学术文化和就业市场的最新要求。这是有原因的，学校的座右铭是<I>传统和发展</ I>。约3000名学生和postgrads在学校学习。"},
     {"name":"台大创新设计学院 (NTU)","url":"https://dschool.ntu.edu.tw","logo":"/static/images/logo-national-taiwan-university,-d-school.png","description":"台大创新设计学院于 2014 年通过成立 , 并于 2015 年秋季正式授课 。目标是藉由建立台大师生跨领域合作的空间, 让不同系所、不同专业的师生可以一起学习创新与合作, 也期望用创新的方式解决社会上重要问题, 并实际动手实践, 提升台湾的整体竞争力。"},

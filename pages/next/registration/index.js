@@ -1277,6 +1277,10 @@ export default class extends React.PureComponent {
                 <Countdown date={new Date(2019, 5, 9, 23, 59, 59, 59)}
                   renderer={renderer}
                 />
+              
+                {this.translate('pmoReminder')}
+                <a href={`mailto:${this.translate('pmoEmailAddress')}`}>{this.translate('pmoEmailAddress')}</a>
+                
               </div>
             </div>
           </div>
@@ -2099,6 +2103,9 @@ export default class extends React.PureComponent {
                               {this.state.record.projectRecords.length < MAX_PROJECT_PER_TEAM && this.translate('addAnotherProject')}
                             </div>
                           </FormTools>
+                          <h5>{this.translate('wpReminder')}
+                          <a href={`mailto:${this.translate('wpEmailAddress')}`}>{this.translate('wpEmailAddress')}</a>
+                          </h5>
                           <FormTools>
                             <div className="full-width">
                               {this.state.hasValidToken !== true &&
