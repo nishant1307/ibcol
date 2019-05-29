@@ -50,7 +50,7 @@
   "projectRecords":{
     "name":"企划名称",
     "projectCategoryKey":"企划项目",
-    "description":"企划简介",
+    "description":"以一句简介你的企划",
     "presentationFile":"介绍",
     "presentationFileType":"只接受PDF / ZIP",
     "whitepaperFile":"白皮书",
