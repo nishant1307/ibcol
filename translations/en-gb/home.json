@@ -101,7 +101,7 @@
     "generalSponsorTitle":"General Sponsors",
     "generalSponsor":[
       {"name":"EMALI","url":"https://emali.io","logo":"/static/images/logo-emali.png"},
-      {"name":"CredProof","url":"http://www.credproof.net/","logo":"/static/images/logo-credproof.png"},
+      {"name":"CredProof","url":"http://www.credproof.com/","logo":"/static/images/logo-credproof.png"},
       {"name":"R3","url":"https://www.r3.com/","logo":"/static/images/logo-r3.png"}
     ],
     "academicPartnersTitle":"Academic Partners",
@@ -122,7 +122,9 @@
       {"name":"Hong Kong Science Park (HKSTP)","url":"https://www.hkstp.org","logo":"/static/images/logo-hong-kong-science-park-(hkstp).png"},
       {"name":"Jason Hsu Yu Jen","url":"https://www.jhsu.tw","logo":"/static/images/logo-jason-hsu-yu-jen.png"},
       {"name":"RNS Solutions","url":"https://rnssol.com/","logo":"/static/images/logo-rns-solutions.png"},
-      {"name":"UW Blockchain Club","url":"https://www.facebook.com/uwblockchain/","logo":"/static/images/logo-uw-blockchain-club.png"}
+      {"name":"UW Blockchain Club","url":"https://www.facebook.com/uwblockchain/","logo":"/static/images/logo-uw-blockchain-club.png"},
+      {"name":"Hong Kong Youth Internet Governance Forum","url":"http://hk.yigf.asia/","logo":"/static/images/logo-hong-kong-youth-internet-governance-forum(hkyigf).png"
+      }
     ]
   }
 }

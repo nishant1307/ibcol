@@ -11,13 +11,13 @@
   "generalSponsorTitle":"一般贊助商",
   "generalSponsor":[
     {"name":"EMALI","url":"https://emali.io","logo":"/static/images/logo-emali.png","description":"EMALI是一家企業技術公司，為亞太地區開發、許可、支持和銷售fintech軟件，解決方案和相關服務，專注於AI、區塊鏈、加密、安全和隱私技術。"},
-    {"name":"CredProof","url":"http://www.credproof.net/","logo":"/static/images/logo-credproof.png","description":"CredProof 是一種身份認證技術，適用於驗證學歷證書或工作證明，以及作其他情況的認証，如無信任方的可靠身份，并在符合歐盟GDPR的保密及安全標準下完成身份認證。"},
+    {"name":"CredProof","url":"http://www.credproof.com/","logo":"/static/images/logo-credproof.png","description":"CredProof 是一種身份認證技術，適用於驗證學歷證書或工作證明，以及作其他情況的認証，如無信任方的可靠身份，并在符合歐盟GDPR的保密及安全標準下完成身份認證。"},
     {"name":"R3","url":"https://www.r3.com/","logo":"/static/images/logo-r3.png","description":"R3是一個企業blockchain軟件公司與對面的私營和公共部門多個行業的300多名成員和合作夥伴的廣泛的生態系統，開發開源blockchain平台琴弦工作。"}
   ],
   "academicPartnersTitle":"學術合作夥伴",
   "academicPartners":[
     {"name":"香港中文大學工程校友會 (ERGAA)","url":"https://www.facebook.com/groups/cuhk.ergaa.oc/","logo":"/static/images/logo-chinese-university-of-hong-kong,-engineering-alumni-association.png","description":"香港中文大學工程校友會（ERGAA）是有資格獲得香港中文大學（CUHK）工程學院畢業生的官方校友會。"},
-    {"name":"香港城市大學 (CityU)","url":"https://www.cb.cityu.edu.hk/","logo":"/static/images/logo-city-university-of-hong-kong,-college-of-business.png","description":"企業在香港城市大學學院致力於培養全方位的畢業生誰是合格的專業人員，技術嫻熟，關鍵的思想家和終身學習者。我們提供國家的最先進的學習，最前沿的研究和創新的教學設施，為學生準備在全球開放的挑戰。"},
+    {"name":"香港城市大學 (CityU)","url":"https://www.cb.cityu.edu.hk/","logo":"/static/images/logo-city-university-of-hong-kong-(cityu)-college-of-business.png","description":"企業在香港城市大學學院致力於培養全方位的畢業生誰是合格的專業人員，技術嫻熟，關鍵的思想家和終身學習者。我們提供國家的最先進的學習，最前沿的研究和創新的教學設施，為學生準備在全球開放的挑戰。"},
     {"name":"香港理工大學 學生發展處 創業學會 (ES OSD PolyU)","url":"http://www.polyu.edu.hk/stars/co-curriculum/entrepreneurship-development/entrepreneurship-development.html","logo":"/static/images/logo-hong-kong-polytechnic-university,-office-of-student-development,-entrepreneurship-society-(es-osd-polyu).png","description":"OSD的創業協會，香港理工大學始建於2015年十一月正在由一個團隊的創意，激情和才華的學生來自不同的院系和學校的領導，它提供了一個平台，可以連接的創新理念和創業經驗的交流學生。"},
     {"name":"Moscow State University (MSU), Faculty of Law","url":"http://law.msu.ru/","logo":"/static/images/logo-moscow-state-university-(msu),-faculty-of-law.png","description":"莫斯科國立大學的法學院是俄羅斯領先的教育和法律研究機構。該校在其工作中融合了古典學術文化和就業市場的最新要求。這是有原因的，學校的座右銘是<I>傳統和發展</ I>。約3000名學生和postgrads在學校學習。"},
     {"name":"台大創新設計學院 (NTU)","url":"https://dschool.ntu.edu.tw","logo":"/static/images/logo-national-taiwan-university,-d-school.png","description":"台大創新設計學院於 2014 年通過成立 , 並於 2015 年秋季正式授課 。目標是藉由建立台大師生跨領域合作的空間 , 讓不同系所、不同 專業的師生可以一起學習創新與合作 , 也期望用創新的方式解決 社會上重要問題 , 並實際動手實踐 , 提昇台灣的整體競爭力。"},
@@ -37,7 +37,9 @@
     {"name":"立法委員許毓仁","url":"https://www.jhsu.tw","logo":"/static/images/logo-jason-hsu-yu-jen.png","description":"許毓仁是台灣議會成員，也是亞洲區塊鏈聯盟的創始人，在許多圈子中被稱為第一個“加密議員”。雖然他曾經是一名連續創業者，但他後來成為立法者，通過像金融這樣的法案。 技術實驗和創新法促進亞洲金融科技。"},
     {"name":"RNS Solutions","url":"https://rnssol.com/","logo":"/static/images/logo-rns-solutions.png","description":"RNS解決方案是blockchain解決方案和研究服務，和最有影響力的球員之一，在提供給孵化，實習，比賽，和獎學金的學生和畢業生的機會培育blockchain生態系統在巴基斯坦的領先供應商。"},
     {"name":"滑鐵盧大學 (UW)","url":"https://uwaterloo.ca/hong-kong-foundation/","logo":"/static/images/logo-university-of-waterloo,-hong-kong-foundation.png","description":"滑鐵盧的香港大學基金會於2011年開業，加強與亞裔社區的關係，充分發揮香港的地理優勢和獨特的中西結合西方文化融合作為威斯康星大學的戰略計劃，以在該地區建立一個強大的存在的一部分。 UWHKF位於香港中環的商業區。"},
-    {"name":"UW Blockchain Club","url":"https://www.facebook.com/uwblockchain/","logo":"/static/images/logo-uw-blockchain-club.png","description":"在滑鐵盧大學專注於一切blockchain和cryptocurrency相關學生跑組織。 UW Blockchain 5月成立2018年，旨在建立在UW Blockchain愛好者組成的社區，通過浸到一個接合套件的車間，這種形式的比賽，聯誼活動等。"}
+    {"name":"UW Blockchain Club","url":"https://www.facebook.com/uwblockchain/","logo":"/static/images/logo-uw-blockchain-club.png","description":"在滑鐵盧大學專注於一切blockchain和cryptocurrency相關學生跑組織。 UW Blockchain 5月成立2018年，旨在建立在UW Blockchain愛好者組成的社區，通過浸到一個接合套件的車間，這種形式的比賽，聯誼活動等。"},
+    {"name":"香港青年互聯網管治論壇","url":"http://hk.yigf.asia/","logo":"/static/images/logo-hong-kong-youth-internet-governance-forum(hkyigf).png","description":"<b>香港青年互聯網管治論壇</b>（HKYIGF）是當地青年學習互聯網治理和發表意見的平台。 它由聯合國IGF秘書處認可，也是更廣泛的亞洲青年社區和全球對話的橋樑。"
+    }  
   ],
   "prompt":"如果您有興趣支持國際奧林匹克區塊鏈競賽，請聯絡sponsors@ibcol.org"
 }
