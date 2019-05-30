@@ -1986,7 +1986,7 @@ export default class extends React.PureComponent {
 
                                 <FormRow>
                                   <FormField>
-                                    {this.getLabel('projectRecords.whitepaperFile')}
+                                    {this.getLabel('projectRecords.projectProposalFile')}
                                     <input disabled style={{display: "none"}} type="text" data-name="whitepaperFileId" data-section="projectRecords" data-project-index={projectIndex} value={_.isEmpty(projectRecord['whitepaperFileId']) ? "" : projectRecord['whitepaperFileId']} />
                                     <FilePond
                                       allowMultiple={false}
