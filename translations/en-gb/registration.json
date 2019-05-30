@@ -55,6 +55,7 @@
     "name":"Project Name",
     "projectCategoryKey":"Project Category",
     "description":"One-line Description of Your Project",
+    "descriptionPlaceholderText":"The elevator pitch. This is the most important part of the application. Make your one line count.",
     "presentationFile":"Presentation",
     "presentationFileType":"Only accepts PDF/ZIP",
     "presentationSubmitted": "Previous Presentation Revisions",

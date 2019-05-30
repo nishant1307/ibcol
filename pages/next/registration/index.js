@@ -238,7 +238,30 @@ const GET_APPLICATIONS = gql`
 
 
 const ThisPageContainerComponent = styled(PageContainerComponent)`
-  
+
+#collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+active, #collapsible:hover {
+  background-color: #555;
+}
+
+#content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
   #extraRegistration {
     h1, h3, a, span {
       width: 100%;
@@ -383,6 +406,7 @@ const FormSection = styled.section`
         text-decoration: underline;
       }
     }
+
   }
   
 `;
@@ -435,6 +459,17 @@ const FormField = styled.label`
 
   textarea {
     min-height: 300px;
+  }
+  input::-webkit-input-placeholder {
+    color: #828282;
+  }
+  
+  input:-moz-placeholder { 
+    color: #ff0000;
+  }
+  
+  input::-ms-input-placeholder  { 
+    color: #ff0000;
   }
 
 
@@ -1513,12 +1548,8 @@ export default class extends React.PureComponent {
                                     <input type="email" data-name="email" data-section="studentRecords" data-student-index={studentIndex} onChange={this.onRecordChange} value={_.isEmpty(studentRecord['email']) ? "" : studentRecord['email']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
                                   </FormField>
                                 </FormRow>
-                                
-
-
-
-
-
+                              
+                                 {/* Collapsible */}
                                 {
                                   studentRecord.educationRecords.map((educationRecord, studentEducationIndex) => {
 
@@ -1530,7 +1561,6 @@ export default class extends React.PureComponent {
                                             data-student-education-index={studentEducationIndex} onClick={this.removeStudentEducationRecord}>{this.translate('removeStudentEducationRecord')}</div>
                                         }
                                       </h3>
-
                                       <FormRow>
                                         <FormField>
                                           {this.getLabel('studentRecords.educationRecords.degree')}
@@ -1542,8 +1572,6 @@ export default class extends React.PureComponent {
                                           <input type="text" data-name="programme" data-section="studentEducationRecords" data-student-index={studentIndex} data-student-education-index={studentEducationIndex} onChange={this.onRecordChange} value={_.isEmpty(educationRecord['programme']) ? "" : educationRecord['programme']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
                                         </FormField>
                                       </FormRow>
-
-
                                       <FormRow>
                                         <FormField>
                                           {this.getLabel('studentRecords.educationRecords.institutionName')}
@@ -1562,17 +1590,12 @@ export default class extends React.PureComponent {
                                           </select>
                                         </FormField>
                                       </FormRow>
-
                                       <FormRow>
                                         <FormField>
                                           {this.getLabel('studentRecords.educationRecords.studentNumber')}
                                           <input type="text" data-name="studentNumber" data-section="studentEducationRecords" data-student-index={studentIndex} data-student-education-index={studentEducationIndex} onChange={this.onRecordChange} value={_.isEmpty(educationRecord['studentNumber']) ? "" : educationRecord['studentNumber']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                                        </FormField>
-
-                                        
+                                        </FormField>                                       
                                       </FormRow>
-
-
                                       <FormRow>
                                         <FormField>
                                           {this.getLabel('studentRecords.educationRecords.studentCardFrontFile')}
@@ -1609,15 +1632,8 @@ export default class extends React.PureComponent {
                                                 studentEducationIndex
                                               });
                                             }}
-
-                                            />
-                                          
-                                          
-                                          
+                                            />                                          
                                         </FormField>
-
-                                        
-
                                         <FormField>
                                           {this.getLabel('studentRecords.educationRecords.studentCardBackFile')}
                                           <input disabled style={{display: "none"}} type="text" data-name="studentCardBackFileId" data-section="studentEducationRecords" data-student-index={studentIndex} data-student-education-index={studentEducationIndex} value={_.isEmpty(educationRecord['studentCardBackFileId']) ? "" : educationRecord['studentCardBackFileId']} />
@@ -1653,11 +1669,7 @@ export default class extends React.PureComponent {
                                                 studentEducationIndex
                                               });
                                             }}
-
                                             />
-                                          
-                                          
-                                          
                                         </FormField>
                                       </FormRow>
 
@@ -1698,17 +1710,9 @@ export default class extends React.PureComponent {
                                                 studentEducationIndex
                                               });
                                             }}
-
-                                            />
-                                          
-                                          
-                                          
-                                        </FormField>
-
-                                        
+                                            />                               
+                                        </FormField>                                 
                                       </FormRow>
-
-
                                       <FormRow>
                                         <FormField>
                                           {this.getLabel('studentRecords.educationRecords.city')}
@@ -1721,16 +1725,9 @@ export default class extends React.PureComponent {
                                         </FormField>
                                       </FormRow>
 
-
-
-
-
-
                                       <FormRow>
-
                                         <FormField>
                                           {this.getLabel('studentRecords.educationRecords.countryCode')}
-
                                           <CountryInputSelectComponent
                                             locale={locale}
                                             dataName="countryCode"
@@ -1741,27 +1738,18 @@ export default class extends React.PureComponent {
                                             onFocus={this.onFieldFocused}
                                             onBlur={this.onFieldBlurred}
                                             onChange={this.onRecordChange}
-
                                           />
-
                                         </FormField>
                                       </FormRow>
-
-
-
-
-
                                     </FormSection>
-
                                   })
-                                }
-
+                                }    
                                 <FormTools>
                                   <div data-student-index={studentIndex} onClick={this.addStudentEducationRecord}>
                                     {this.translate('addAnotherStudentEducationRecord')}
                                   </div>
                                 </FormTools>
-
+                                {/* Collapsible End */}
                               </FormSection>
                             })
                           }
@@ -1976,7 +1964,7 @@ export default class extends React.PureComponent {
                                 <FormRow>
                                   <FormField>
                                     {this.getLabel('projectRecords.description')}
-                                    <input type="text" data-name="description" data-section="projectRecords" data-project-index={projectIndex} onChange={this.onRecordChange} value={_.isEmpty(projectRecord['description']) ? "" : projectRecord['description']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
+                                    <input type="text" placeholder={this.translate('projectRecords.descriptionPlaceholderText')} data-name="description" data-section="projectRecords" data-project-index={projectIndex} onChange={this.onRecordChange} value={_.isEmpty(projectRecord['description']) ? "" : projectRecord['description']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
                                   </FormField>
                                 </FormRow>
 
