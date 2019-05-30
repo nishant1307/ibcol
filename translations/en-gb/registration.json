@@ -60,7 +60,8 @@
     "presentationSubmitted": "Previous Presentation Revisions",
     "whitepaperFile":"Whitepaper",
     "whitepaperFileType":"Only accepts PDF/ZIP",
-    "whitepaperSubmitted": "Previous Whitepaper Revisions"
+    "whitepaperSubmitted": "Previous Whitepaper Revisions",
+    "projectProposalFile":"Project Proposal (Whitepaper or Presentation Slides)"
   },
 
   "studentEducationInfo": "Academic Credential",

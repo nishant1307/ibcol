@@ -58,7 +58,8 @@
     "presentationFile":"介紹",
     "presentationFileType":"只接受PDF / ZIP",
     "whitepaperFile":"白皮書",
-    "whitepaperFileType":"只接受PDF / ZIP"
+    "whitepaperFileType":"只接受PDF / ZIP",
+    "projectProposalFile":"項目建議書（白皮書或簡報）"
   },
   "studentEducationInfo":"學歷",
   "addAnotherStudent":"新增成員",
