@@ -30,7 +30,7 @@
     },
     "block3":{
       "title":"Interview",
-      "details":"All <a href='https://medium.com/international-blockchain-olympiad/ibcol-2019-how-to-join-8f903af68d6c' target='_blank'>interviews</a> to be finished before June 9"
+      "details":"Ongoing <a href='https://medium.com/international-blockchain-olympiad/ibcol-2019-how-to-join-8f903af68d6c' target='_blank'>interviews</a> from June - July"
     },
     "block4":{
       "title":"Demo",
@@ -111,7 +111,9 @@
       {"name":"Hong Kong Polytechnic University, Office of Student Development, Entrepreneurship Society (ES OSD PolyU)","url":"http://www.polyu.edu.hk/stars/co-curriculum/entrepreneurship-development/entrepreneurship-development.html","logo":"/static/images/logo-hong-kong-polytechnic-university,-office-of-student-development,-entrepreneurship-society-(es-osd-polyu).png"},
       {"name":"Moscow State University (MSU), Faculty of Law","url":"http://law.msu.ru/","logo":"/static/images/logo-moscow-state-university-(msu),-faculty-of-law.png"},
       {"name":"National Taiwan University, D-School","url":"https://dschool.ntu.edu.tw","logo":"/static/images/logo-national-taiwan-university,-d-school.png"},
-      {"name":"University of Waterloo, Faculty of Engineering","url":"https://uwaterloo.ca/engineering/","logo":"/static/images/logo-university-of-waterloo,-faculty-of-engineering.png"}
+      {"name":"University of Waterloo, Faculty of Engineering","url":"https://uwaterloo.ca/engineering/","logo":"/static/images/logo-university-of-waterloo,-faculty-of-engineering.png"},
+      {"name":"University of Waterloo, Faculty of Mathematics","url":"https://uwaterloo.ca/math","logo":"/static/images/logo-university-of-waterloo,-faculty-of-mathematics.png"},      
+      {"name":"Lazarski University ","url":"https://www.lazarski.pl/en/","logo":"/static/images/logo-lazarski-university.png"}
     ],
     "supportingOrganisationsTitle":"Supporting Organisations",
     "supportingOrganisations":[
@@ -123,8 +125,9 @@
       {"name":"Jason Hsu Yu Jen","url":"https://www.jhsu.tw","logo":"/static/images/logo-jason-hsu-yu-jen.png"},
       {"name":"RNS Solutions","url":"https://rnssol.com/","logo":"/static/images/logo-rns-solutions.png"},
       {"name":"UW Blockchain Club","url":"https://www.facebook.com/uwblockchain/","logo":"/static/images/logo-uw-blockchain-club.png"},
-      {"name":"Hong Kong Youth Internet Governance Forum","url":"http://hk.yigf.asia/","logo":"/static/images/logo-hong-kong-youth-internet-governance-forum(hkyigf).png"
-      }
+      {"name":"Hong Kong Youth Internet Governance Forum","url":"http://hk.yigf.asia/","logo":"/static/images/logo-hong-kong-youth-internet-governance-forum(hkyigf).png"},
+      {"name":"Lazarski Blockchain Technology Center","url":"http://blockchaintechnology.center/","logo":"/static/images/logo-lazarski-blockchain-technology-center.png"},  
+      {"name":"Air Canada","url":"https://www.aircanada.com/ca/en/aco/home.html","logo":"/static/images/logo-air-canada.png"}
     ]
   }
 }
