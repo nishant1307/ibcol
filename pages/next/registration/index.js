@@ -7,6 +7,7 @@ import moment from 'moment';
 import configs from 'configs';
 import cookies from 'browser-cookies';
 
+
 import { media, style } from 'helpers/styledComponents.js';
 import CryptoJS from "crypto-js";
 import {translate} from 'helpers/translate.js';
@@ -24,6 +25,7 @@ import gql from 'graphql-tag'
 
 import Countdown from 'react-countdown-now';
 
+// import Collapsible from 'react-collapsible';
 
 import axios from 'axios';
 // import FilePondComponent from 'components/FilePondComponent';
@@ -239,7 +241,7 @@ const GET_APPLICATIONS = gql`
 
 const ThisPageContainerComponent = styled(PageContainerComponent)`
 
-#collapsible {
+.collapsible {
   background-color: #777;
   color: white;
   cursor: pointer;
@@ -251,16 +253,16 @@ const ThisPageContainerComponent = styled(PageContainerComponent)`
   font-size: 15px;
 }
 
-active, #collapsible:hover {
-  background-color: #555;
-}
+// active, #collapsible:hover {
+//   background-color: #555;
+// }
 
-#content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #f1f1f1;
-}
+// #content {
+//   padding: 0 18px;
+//   display: none;
+//   overflow: hidden;
+//   background-color: #f1f1f1;
+// }
 
   #extraRegistration {
     h1, h3, a, span {
@@ -1311,11 +1313,15 @@ export default class extends React.PureComponent {
                 <h3>{this.translate('lastDayToSubmit')}:</h3>
                 <Countdown date={new Date(2019, 5, 9, 23, 59, 59, 59)}
                   renderer={renderer}
-                />
-              
-                {this.translate('pmoReminder')}
-                <a href={`mailto:${this.translate('pmoEmailAddress')}`}>{this.translate('pmoEmailAddress')}</a>
-                
+                />       
+                <div>   
+                  {this.translate('pmoReminder')}
+                  <a href={`mailto:${this.translate('pmoEmailAddress')}`}>{this.translate('pmoEmailAddress')}</a>
+                </div>
+                <div>
+                  <a href="https://medium.com/international-blockchain-olympiad/blockchain-backed-bubble-tea-58934348c4f3" target="_blank">
+                    {this.translate('seeSampleHere')}</a>
+                </div>
               </div>
             </div>
           </div>
@@ -1550,6 +1556,7 @@ export default class extends React.PureComponent {
                                 </FormRow>
                               
                                  {/* Collapsible */}
+                                 {/* <Collapsible class="collapsible" trigger="Add Credential Information"> */}
                                 {
                                   studentRecord.educationRecords.map((educationRecord, studentEducationIndex) => {
 
@@ -1749,6 +1756,7 @@ export default class extends React.PureComponent {
                                     {this.translate('addAnotherStudentEducationRecord')}
                                   </div>
                                 </FormTools>
+                                {/* </Collapsible> */}
                                 {/* Collapsible End */}
                               </FormSection>
                             })
