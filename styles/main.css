@@ -2061,10 +2061,10 @@ input::-moz-focus-inner {
   padding: 0 0.8rem;
   border: 1px solid #0086ca;
 }
+
 .desktop-nav .nav_list li.submissionTips a{
-  color: #00a44f;
+  color: #0086ca;
   font-weight: bold;
-  text-transform: uppercase;
   box-sizing: border-box;
 }
 
@@ -2077,7 +2077,6 @@ input::-moz-focus-inner {
 
 .desktop-nav .nav_list li.featured:hover {
   background: #FFF;
-  
 }
 
 .desktop-nav .nav_list li.featured:hover a {
