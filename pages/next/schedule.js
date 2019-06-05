@@ -19,6 +19,9 @@ iframe {
   width: 100%;
   height: 500px;
 }
+#schedule .row {
+    display: none;
+}
 .schedule td{
   padding: 20px;
   vertical-align: top;
@@ -127,7 +130,7 @@ export default class extends React.Component {
         </section>
         <div class="row section-header center" style={{textAlign:"center"}}>
           <div class="col-block">
-            <a href="#schedule"><h4 class="subhead">Schedule</h4></a>
+            {/* <a href="#schedule"><h4 class="subhead">Schedule</h4></a> */}
             <a href="#locations"><h4 class="subhead">Locations</h4></a>
             <a href="#tips"><h4 class="subhead">Local Tips</h4></a>
           </div>
@@ -149,7 +152,7 @@ export default class extends React.Component {
                   <h1>Schedule</h1>
                   <h4 class="item-title">Friday 5 July</h4>
               </div>
-              <div class="schedule">
+              <div class="schedule" >
                   <table class="day1">
                       <tbody>
                           <tr>
@@ -355,36 +358,19 @@ export default class extends React.Component {
                     
                     <div class="block-1-2 block-tab-full">
                         <div class="col-block">
-                        <h4 class="item-title">Symposium @ Innocentre</h4>
-                            <a href="https://goo.gl/maps/R2KUQ88SGkM2" target="_blank" >72 Tat Chee Ave, Kowloon Tong</a>
-                            <p>InnoCentre is located in the heart of Kowloon Tong amidst idyllic settings, and is surrounded by schools and is adjacent to one of the city’s most popular upscale shopping centres.</p>
-                            <p>Just as all roads lead to Rome, InnoCentre is one of Hong Kong’s key epicentres. The state-of-the-art facility is just 19 minutes from the city’s CBD, 42 minutes from Hong Kong International Airport and 43 minutes from the Shenzhen border, by Mass Transit Railway. </p>
-                            <p>In addition, buses, mini buses and taxis make InnoCentre even more accessible from anywhere in Hong Kong. </p> 
+                        <h4 class="item-title">Leung Ko Yuk Tak Lecture Theatre, Yeung Kin Man Academic Building (LT-14)<br/> @ City University of Hong Kong</h4>
+                            <a href="https://goo.gl/maps/9g11DNf6fwJt9pLN7" target="_blank" >83 Tat Chee Ave, Kowloon Tong</a>
+                            <p>City University of Hong Kong is located in the heart of Kowloon Tong amidst idyllic settings, and is surrounded by schools and is adjacent to one of the city’s most popular upscale shopping centres.</p>
+                            <p>Just as all roads lead to Rome, City University of Hong Kong is one of Hong Kong’s key epicentres. The state-of-the-art facility is just 19 minutes from the city’s CBD, 42 minutes from Hong Kong International Airport and 43 minutes from the Shenzhen border, by Mass Transit Railway. </p>
+                            <p>In addition, buses, mini buses and taxis make City University of Hong Kong even more accessible from anywhere in Hong Kong. </p> 
                         </div>
 
                         <div class="col-block">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.4868109714753!2d114.17398011495541!3d22.33524028530552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040733d1064c37%3A0x10adc684c3666ee2!2sInnocentre%2C+72+Tat+Chee+Ave%2C+Kowloon+Tong!5e0!3m2!1sen!2shk!4v1555060483729!5m2!1sen!2shk" frameborder="0" allowFullScreen></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14761.865903624534!2d114.1732325!3d22.3360087!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb13b4355bdf28a9d!2z6aaZ5riv5Z-O5biC5aSn5a245qWK5bu65paH5a246KGT5qiT!5e0!3m2!1szh-TW!2shk!4v1559725726775!5m2!1szh-TW!2shk" frameborder="0" allowFullScreen></iframe>
                         </div>
                     </div>
 
-                    <div class="block-1-2 block-tab-full">
-                        <div class="col-block">
-                          <h4 class="item-title">Lodging @ Jao Tsung-I Academy</h4>
-                          <a href="https://goo.gl/maps/9cMxGrSsEZG2" target="_blank">800 Castle Peak Rd, Lai Chi Kok</a>
-                          <p>The Academy is located at 800 Castle Peak Road, Kowloon. Free shuttle bus services between the Jao Tsung-I Academy, Heritage Lodge, Lai Chi Kok MTR Station, and Mei Foo MTR Station are available throughout the day.</p>
-                          <p><b>BY MTR</b><br></br>
-                              Take Exit B at the Mei Foo Station and walk towards the direction of the CLP Power Substation. Go up to the footbridge and turn left to the Castle Peak Road Sitting-out Area. Then cross the Castle Peak Road at the pedestrian crossing and arrive at the Jao Tsung-I Academy.
-                              <br></br><br></br>
-                              Or take Exit A at the Lai Chi Kok Station, walk to the bus stations next to the Cheung Sha Wan Plaza, and take bus No. 31B, 32, 35A, 36B or 286X. Alight at the Jao Tsung-I Academy stop.
-                          </p>
-                          <p><b>BY BUS</b><br></br>
-                              Take KMB bus No. 31B, 32, 35A, 36B, 40 or 286X. Alight at the Jao Tsung-I Academy stop.
-                          </p>
-                        </div>
-                        <div class="col-block">
-                          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7380.832421256784!2d114.141956!3d22.337908!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4b24f372187d88c0!2sJao+Tsung-I+Academy!5e0!3m2!1sen!2sus!4v1555060548365!5m2!1sen!2sus" frameborder="0" allowFullScreen></iframe>
-                        </div>
-                    </div> 
+
                 </div>
         </section>
 

@@ -101,7 +101,6 @@ a:active {
   text-decoration: underline;
 }
 
-
 .featured a:hover,
 .featured a:focus,
 .featured a:active {
@@ -2061,6 +2060,12 @@ input::-moz-focus-inner {
   background: #0086ca;
   padding: 0 0.8rem;
   border: 1px solid #0086ca;
+}
+.desktop-nav .nav_list li.submissionTips a{
+  color: #00a44f;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-sizing: border-box;
 }
 
 .desktop-nav .nav_list li.featured a {
