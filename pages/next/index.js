@@ -127,8 +127,8 @@ export default class extends React.Component {
 
               <h3>
                 {/* this.translate('subHeading') */}
-                <Countdown date={new Date(2019, 5, 9, 23, 59, 59, 59)}
-                  renderer={renderer}/><br/>left to submit your application
+                <Countdown date={new Date(2019, 6, 4, 23, 59, 59, 59)}
+                  renderer={renderer}/><br/>until the Olympiad
               </h3>
 
               <div className="home-content__button">

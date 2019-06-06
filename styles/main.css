@@ -101,7 +101,6 @@ a:active {
   text-decoration: underline;
 }
 
-
 .featured a:hover,
 .featured a:focus,
 .featured a:active {
@@ -2063,6 +2062,12 @@ input::-moz-focus-inner {
   border: 1px solid #0086ca;
 }
 
+.desktop-nav .nav_list li.submissionTips a{
+  color: #0086ca;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
 .desktop-nav .nav_list li.featured a {
   color: #FFF;
   text-transform: uppercase;
@@ -2072,7 +2077,6 @@ input::-moz-focus-inner {
 
 .desktop-nav .nav_list li.featured:hover {
   background: #FFF;
-  
 }
 
 .desktop-nav .nav_list li.featured:hover a {

@@ -490,7 +490,7 @@ const FormField = styled.label`
 
 const renderer = ({ days, hours, minutes, seconds }) => {
   // Render a countdown
-  return <span>{days} Days, {hours} Hrs, {minutes} Mins, {seconds} Secs</span>;
+  return <span>{days} Days, {hours} Hrs, {minutes} Mins, {seconds} Secs left to submit</span>;
 };
 
 export default class extends React.PureComponent {
@@ -1310,10 +1310,11 @@ export default class extends React.PureComponent {
           <div id="extraRegistration" className="row">
             <div className="col-full">
               <div id="trainingBox">              
-                <h3>{this.translate('lastDayToSubmit')}:</h3>
-                <Countdown date={new Date(2019, 5, 9, 23, 59, 59, 59)}
+                <h3>{this.translate('rollingDateToSubmit')}:</h3>
+                <Countdown date={new Date(2019, 6, 4, 23, 59, 59, 59)}
                   renderer={renderer}
-                />       
+                />
+                <font size="2">{this.translate('teamNotice')}</font> 
                 <div>   
                   {this.translate('pmoReminder')}
                   <a href={`mailto:${this.translate('pmoEmailAddress')}`}>{this.translate('pmoEmailAddress')}</a>
