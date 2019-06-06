@@ -1311,7 +1311,7 @@ export default class extends React.PureComponent {
             <div className="col-full">
               <div id="trainingBox">              
                 <h3>{this.translate('lastDayToSubmit')}:</h3>
-                <Countdown date={new Date(2019, 5, 9, 23, 59, 59, 59)}
+                <Countdown date={new Date(2019, 6, 4, 23, 59, 59, 59)}
                   renderer={renderer}
                 />       
                 <div>   
