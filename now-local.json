@@ -29,9 +29,9 @@
   "routes": [
 
     { 
-      "src": "(((?!\\?|#|\\.|_next).)*((?!\\?|/|#|\\.).))", 
+      "src": "/(((?!\\?|#|\\.|_next).)*((?!\\?|/|#|\\.).))", 
       "status": 301,
-      "headers": { "Location": "$1/" }
+      "headers": { "Location": "/$1/" }
     },
 
     { "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+", "headers": { "cache-control": "immutable,max-age=31536000" } },
@@ -70,11 +70,6 @@
     { 
       "src": "/(?<locale>[^/]*)/", 
       "dest": "/next/home?locale=$locale"
-    },
-    { 
-      "src": "/(?<locale>[^/]*)", 
-      "status": 301,
-      "headers": { "Location": "/$locale/" }
     },
     
     
