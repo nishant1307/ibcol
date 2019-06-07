@@ -591,6 +591,20 @@ export default class extends React.PureComponent {
     })
   }
 
+  componentDidUpdate = (prevProps, prevState) => {
+
+    if (prevState.lastEditorStateChange !== this.state.lastEditorStateChange) {
+      // console.log('componentDidUpdate', this.state.lastEditorStateChange);
+      this.setState({
+        recordIsValid: this.validateRecord(this.state.record)
+      });
+    }
+
+    if (prevState.currentSelectedRecordIndex !== this.state.currentSelectedRecordIndex) {
+      this.loadFilesToPonds();
+    }
+  }
+
   resetForm = () => {
     this.setState(this.getDefaultFormState());
   }
@@ -720,21 +734,6 @@ export default class extends React.PureComponent {
       presentationFileId: "",
       whitepaperFileId: ""
     }
-  }
-
-  componentDidUpdate = (prevProps, prevState) => {
-
-    if (prevState.lastEditorStateChange !== this.state.lastEditorStateChange) {
-      // console.log('componentDidUpdate', this.state.lastEditorStateChange);
-      this.setState({
-        recordIsValid: this.validateRecord(this.state.record)
-      });
-    }
-
-    if (prevState.currentSelectedRecordIndex !== this.state.currentSelectedRecordIndex) {
-      this.loadFilesToPonds();
-    }
-
   }
 
   onRecordChange = (e) => {
