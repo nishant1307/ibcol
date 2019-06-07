@@ -588,11 +588,6 @@ export default class extends React.PureComponent {
   componentDidMount = () => {
     this.setState({
       tokenCookie: this.getTokenFromCookie(),
-      cookie: {
-        loginAttemptEmail: cookies.get('loginAttemptEmail') || undefined,
-        seed: cookies.get('seed') || undefined,
-        token: cookies.get('token') || undefined
-      }
     })
   }
 
