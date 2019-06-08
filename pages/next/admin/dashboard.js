@@ -8,7 +8,7 @@ import jsoncsv from 'json-csv';
 import CryptoJS from "crypto-js";
 import moment from 'moment';
 import configs from 'configs';
-
+import fetch from 'node-fetch';
 import { media, style } from 'helpers/styledComponents.js';
 import randomWords from 'random-words';
 import cookies from 'browser-cookies';
@@ -111,7 +111,7 @@ const GET_APPLICATIONS_AS_ADMIN = gql`
 `;
 
 const graphqlClient = new ApolloClient({
-  link: createHttpLink({ uri: graphqlURL }),
+  link: createHttpLink({ uri: graphqlURL, fetch }),
   cache: new InMemoryCache()
 });
 
@@ -750,7 +750,7 @@ export default class extends React.PureComponent {
                                                           {this.translate('whitepaperFile')}
                                                           <ul className="files">
                                                             {projectRecord.whitepaperFileIds.map((dropfile, index)=>{
-                                                              return <li key={index}><a target="_blank" href={`${process.env.FILEPOND_API_URL}${process.env.FILEPOND_API_ENDPOINT}${process.env.FILEPOND_API_URL}${process.env.FILEPOND_API_ENDPOINT}${dropfile.fileId}`}>{getFilenameFromFileId(dropfile.fileId)}</a> {dropfile.receivedAt && <span>- {moment(dropfile.receivedAt).fromNow()}</span>}</li>
+                                                              return <li key={index}><a target="_blank" href={`${process.env.FILEPOND_API_URL}${process.env.FILEPOND_API_ENDPOINT}${dropfile.fileId}`}>{getFilenameFromFileId(dropfile.fileId)}</a> {dropfile.receivedAt && <span>- {moment(dropfile.receivedAt).fromNow()}</span>}</li>
                                                             })}
                                                           </ul>
                                                         </div>

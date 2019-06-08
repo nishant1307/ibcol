@@ -3,14 +3,15 @@
   "name": "ibcol-local",
   "env": {
     "ENV": "local",
-    "NODE_ENV": "local",
-    "FILEPOND_API_URL": "http://localhost:4004",
-    "FILEPOND_API_ENDPOINT": "/"
+    "SALT": ")6Dc1UP*S9Night-Age-Doll-Famous-8as81*@()#@",
+    "BUCKET_NAME": "ibcol-uploads-dev",
+    "GOOGLE_APPLICATION_CREDENTIALS_DATA": "@ibcol-gcloudserviceaccount-dev",
+    "FILEPOND_API_ENDPOINT": "/file/"
   },
   "build": {
     "env": {
+      "SALT": ")6Dc1UP*S9Night-Age-Doll-Famous-8as81*@()#@",
       "ENV": "local",
-      "NODE_ENV": "local",
       "FILEPOND_API_ENDPOINT": "/file/"
     }
   },
@@ -21,13 +22,25 @@
     "autoJobCancelation": true
   },
   "builds": [
-    { "src": "node-routes/defaultRoute.js", "use": "@now/node" },
-    { "src": "node-routes/filepondRoute.js", "use": "@now/node" },
+    { "src": "node-routes/defaultRoute.js", "use": "@now/node@0.7.4" },
+    { "src": "node-routes/filepondRoute.js", "use": "@now/node@0.7.4" },
     { "src": "next.config.js", "use": "@now/next" }
   ],
   "routes": [
     
-    
+    { 
+      "src": "/(((?!\\?|#|\\.|_next).)*((?!\\?|/|#|\\.).))", 
+      "status": 302,
+      
+      "headers": { "Location": "/$1/" }
+    },
+
+    { "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+", "headers": { "cache-control": "immutable,max-age=31536000" } },
+
+    {
+      "src": "/_next/(.*)", "dest": "/_next/$1"
+    },
+
     {
       "src": "/_/.*",
       "dest": "/node-routes/defaultRoute.js"
@@ -57,31 +70,22 @@
     
     { 
       "src": "/(?<locale>[^/]*)/", 
-      "dest": "/next/?locale=$locale"
-    },
-    { 
-      "src": "/(?<locale>[^/]*)", 
-      "status": 301,
-      "headers": { "Location": "/$locale/" }
+      "dest": "/next/home?locale=$locale"
     },
     
     
 
     { 
-      "src": "/(?<locale>[^/]*)/?(how|ambassadors|sponsors|contact|registration|admin)/", 
-      "dest": "/next/$2?locale=$locale",
+      "src": "/(?<locale>[^/]*)/(?<page>(how|ambassadors|sponsors|contact|registration|admin))/", 
+      "dest": "/next/$page?locale=$locale",
       "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
     },
     { 
       "src": "/(?<locale>[^/]*)/(?<page>[^/]*)/", 
-      "dest": "/next/?locale=$locale",
+      "dest": "/next/home?locale=$locale&catch-all=true",
       "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
     },
-    { 
-      "src": "/(?<locale>[^/]*)/(?<page>[^/]*)", 
-      "status": 301,
-      "headers": { "Location": "/$locale/$page/" }
-    },
+    
 
 
 
@@ -89,49 +93,25 @@
       "src": "/(?<locale>[^/]*)/registration/login/", 
       "dest": "/next/registration/login?locale=$locale"
     },
-    { 
-      "src": "/(?<locale>[^/]*)/registration/login", 
-      "status": 301,
-      "headers": { "Location": "/$locale/registration/login/" }
-    },
+    
 
     { 
       "src": "/(?<locale>[^/]*)/registration/verify/(.*)/(.*)/", 
       "dest": "/next/registration/verify?locale=$locale&verificationCode=$2&email=$3"
     },
-    { 
-      "src": "/(?<locale>[^/]*)/registration/verify/(.*)/(.*)", 
-      "status": 301,
-      "headers": { "Location": "/$locale/registration/verify/$2/$3/" }
-    },
+    
 
 
     { 
       "src": "/(?<locale>[^/]*)/admin/verify/(.*)/(.*)/", 
       "dest": "/next/admin/verify?locale=$locale&verificationCode=$2&email=$3"
     },
-    { 
-      "src": "/(?<locale>[^/]*)/admin/verify/(.*)/(.*)", 
-      "status": 301,
-      "headers": { "Location": "/$locale/admin/verify/$2/$3/" }
-    },
-
+    
 
     { 
       "src": "/(?<locale>[^/]*)/admin/dashboard/", 
       "dest": "/next/admin/dashboard?locale=$locale"
-    },
-    { 
-      "src": "/(?<locale>[^/]*)/admin/dashboard", 
-      "status": 301,
-      "headers": { "Location": "/$locale/admin/dashboard/" }
-    },
-
-
-
-    
-    
-    { "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+", "headers": { "cache-control": "immutable,max-age=31536000" } }
+    }
     
   ]
 }
