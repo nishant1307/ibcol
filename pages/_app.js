@@ -322,23 +322,23 @@ class MyApp extends App {
               <div>
                 <br/>
                 <a href="https://twitter.com/ibcolorg" target="_blank">
-                  <img src="../static/sm/tt.png"/>
+                  <img src="/static/sm/tt.png"/>
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://www.facebook.com/ibcol.org" target="_blank">
-                  <img src="../static/sm/fb.png"/>
+                  <img src="/static/sm/fb.png"/>
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://www.instagram.com/ibcol_org" target="_blank">
-                  <img src="../static/sm/ig.png"/>
+                  <img src="/static/sm/ig.png"/>
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://www.linkedin.com/company/ibcol" target="_blank">
-                  <img src="../static/sm/li.png"/>
+                  <img src="/static/sm/li.png"/>
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://www.youtube.com/channel/UCxN1ZN_bSlWlVWncT9QcTkg" target="_blank">
-                  <img src="../static/sm/yt.png"/>
+                  <img src="/static/sm/yt.png"/>
                 </a>
                 <br/>
               </div>
