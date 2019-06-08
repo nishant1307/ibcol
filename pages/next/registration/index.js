@@ -119,7 +119,30 @@ const graphqlClient = new ApolloClient({
 
 
 const ThisPageContainerComponent = styled(PageContainerComponent)`
-  
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+// active, #collapsible:hover {
+//   background-color: #555;
+// }
+
+// #content {
+//   padding: 0 18px;
+//   display: none;
+//   overflow: hidden;
+//   background-color: #f1f1f1;
+// }
+
   #extraRegistration {
     h1, h3, a, span {
       width: 100%;
@@ -229,7 +252,7 @@ const ThisPageContainerComponent = styled(PageContainerComponent)`
 
 const renderer = ({ days, hours, minutes, seconds }) => {
   // Render a countdown
-  return <span>{days} Days, {hours} Hrs, {minutes} Mins, {seconds} Secs</span>;
+  return <span>{days} Days, {hours} Hrs, {minutes} Mins, {seconds} Secs left to submit</span>;
 };
 
 export default class extends React.PureComponent {
@@ -401,10 +424,19 @@ export default class extends React.PureComponent {
           <div id="extraRegistration" className="row">
             <div className="col-full">
               <div id="trainingBox">              
-                <h3>{this.translate('lastDayToSubmit')}:</h3>
-                <Countdown date={new Date(2019, 5, 9, 23, 59, 59, 59)}
+                <h3>{this.translate('rollingDateToSubmit')}:</h3>
+                <Countdown date={new Date(2019, 6, 4, 23, 59, 59, 59)}
                   renderer={renderer}
                 />
+                <font size="2">{this.translate('teamNotice')}</font> 
+                <div>   
+                  {this.translate('pmoReminder')}
+                  <a href={`mailto:${this.translate('pmoEmailAddress')}`}>{this.translate('pmoEmailAddress')}</a>
+                </div>
+                <div>
+                  <a href="https://medium.com/international-blockchain-olympiad/blockchain-backed-bubble-tea-58934348c4f3" target="_blank">
+                    {this.translate('seeSampleHere')}</a>
+                </div>
               </div>
             </div>
           </div>
@@ -532,6 +564,7 @@ export default class extends React.PureComponent {
                             
                             }
 
+
                             return loader
                             
                           }}
@@ -558,6 +591,7 @@ export default class extends React.PureComponent {
 
 
         
+
 
 
 

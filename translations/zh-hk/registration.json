@@ -5,6 +5,10 @@
   "subhead":"團隊註冊",
   "1stDayToSubmit":"第一天接受白皮書",
   "lastDayToSubmit":"最後一天接受白皮書",
+  "pmoReminder":"如果您想了解更多項目，請聯繫",
+  "wpReminder":"如果在此網站提交項目有任何問題，請將其提交去",
+  "wpEmailAddress":"wp@ibcol.org",
+  "pmoEmailAddress":"pmo@ibcol.org",
   "teamInfo":"隊伍資料",
   "teamName":"隊名",
   "studentInfo":"學生資料",
@@ -50,11 +54,12 @@
   "projectRecords":{
     "name":"企劃名稱",
     "projectCategoryKey":"企劃項目",
-    "description":"企劃簡介",
+    "description":"以一句簡介你的企劃",
     "presentationFile":"介紹",
     "presentationFileType":"只接受PDF / ZIP",
     "whitepaperFile":"白皮書",
-    "whitepaperFileType":"只接受PDF / ZIP"
+    "whitepaperFileType":"只接受PDF / ZIP",
+    "projectProposalFile":"項目建議書（白皮書或簡報）"
   },
   "studentEducationInfo":"學歷",
   "addAnotherStudent":"新增成員",
