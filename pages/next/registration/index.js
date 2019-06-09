@@ -560,7 +560,7 @@ export default class extends React.PureComponent {
                               }
                               
 
-                              return <RegistrationFormComponent onShowConfirmation={this.onShowConfirmation} isLoggedIn={isLoggedIn} locale={locale} existingApplications={existingApplications}/>
+                              return <RegistrationFormComponent tokenCookie={this.state.tokenCookie} onShowConfirmation={this.onShowConfirmation} isLoggedIn={isLoggedIn} locale={locale} existingApplications={existingApplications}/>
                             
                             }
 
