@@ -179,7 +179,7 @@ class MyApp extends App {
             // console.debug('router', router);
             // console.debug('ctx.req.url', ctx.req.url);
 
-            ctx.res.writeHead((process.env.ENV === 'production') ? 301 : 302, {"Location": `/_${router.route === '/next' ? router.asPath : router.route.replace('/next', '')}`});
+            ctx.res.writeHead((process.env.ENV === 'production') ? 301 : 302, {"Location": `/_${router.route === '/next/home' ? `/${router.query.locale}` : router.route.replace('/next', '')}`});
             ctx.res.end();
 
             
@@ -190,14 +190,14 @@ class MyApp extends App {
 
         }
 
-        console.debug('> router', router);
+        // console.debug('> router', router);
         // console.debug('> pageProps', pageProps);
 
-        const requestedRoute = routes.findAndGetUrls(router.asPath);
+        // const requestedRoute = routes.findAndGetUrls(router.asPath);
+        // console.log('req.url', ctx.req.url);
+        // console.log('> requestedRoute', requestedRoute);
 
-        console.log('> requestedRoute', requestedRoute);
-
-        if (requestedRoute.route === undefined)
+        if (router.query['catch-all'] !== undefined)
           ctx.res.statusCode = 404;
 
         
@@ -322,23 +322,23 @@ class MyApp extends App {
               <div>
                 <br/>
                 <a href="https://twitter.com/ibcolorg" target="_blank">
-                  <img src="../static/sm/tt.png"/>
+                  <img src="/static/sm/tt.png"/>
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://www.facebook.com/ibcol.org" target="_blank">
-                  <img src="../static/sm/fb.png"/>
+                  <img src="/static/sm/fb.png"/>
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://www.instagram.com/ibcol_org" target="_blank">
-                  <img src="../static/sm/ig.png"/>
+                  <img src="/static/sm/ig.png"/>
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://www.linkedin.com/company/ibcol" target="_blank">
-                  <img src="../static/sm/li.png"/>
+                  <img src="/static/sm/li.png"/>
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://www.youtube.com/channel/UCxN1ZN_bSlWlVWncT9QcTkg" target="_blank">
-                  <img src="../static/sm/yt.png"/>
+                  <img src="/static/sm/yt.png"/>
                 </a>
                 <br/>
               </div>
