@@ -124,7 +124,9 @@ export default class extends React.Component {
               <h1>
                 {this.translate('mainHeading')}
               </h1>
-
+              <h3>
+              We have received a deluge of submission and finalists, itinerary, and travel arrangements will be announced shortly
+              </h3>
               <h3>
                 {/* this.translate('subHeading') */}
                 <Countdown date={new Date(2019, 6, 4, 23, 59, 59, 59)}
