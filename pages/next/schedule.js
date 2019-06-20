@@ -644,12 +644,15 @@ export default class extends React.Component {
 
                         <div class="block-1-2 block-tab-full">
                             <div class="col-block">
-                                <h4 class="item-title">HKSTP InnoCentre</h4>
-                                <a href="https://www.google.com.hk/maps/search/hkspt+InnoCentre/@22.3352452,114.1739801,17z/data=!3m1!4b1?hl=en&authuser=0" target="_blank" >72 Tat Chee Ave Kowloon Tong</a>
+                                <h4 class="item-title">Symposium @ Innocentre</h4>
+                                <a href="https://goo.gl/maps/R2KUQ88SGkM2" target="_blank" >72 Tat Chee Ave, Kowloon Tong</a>
+                                <p>InnoCentre is located in the heart of Kowloon Tong amidst idyllic settings, and is surrounded by schools and is adjacent to one of the city’s most popular upscale shopping centres.</p>
+                                <p>Just as all roads lead to Rome, InnoCentre is one of Hong Kong’s key epicentres. The state-of-the-art facility is just 19 minutes from the city’s CBD, 42 minutes from Hong Kong International Airport and 43 minutes from the Shenzhen border, by Mass Transit Railway. </p>
+                                <p>In addition, buses, mini buses and taxis make InnoCentre even more accessible from anywhere in Hong Kong. </p>
                             </div>
 
                             <div class="col-block">
-                                <iframe src="https://maps.google.com/maps?q=hkspt%20InnoCentre&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.4868109714753!2d114.17398011495541!3d22.33524028530552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040733d1064c37%3A0x10adc684c3666ee2!2sInnocentre%2C+72+Tat+Chee+Ave%2C+Kowloon+Tong!5e0!3m2!1sen!2shk!4v1555060483729!5m2!1sen!2shk" frameborder="0" allowFullScreen></iframe>
                             </div>
                         </div>
 
