@@ -10,7 +10,7 @@
   ],
   "travelPartnersTitle":"Travel Partners",
   "travelPartners":[
-    {"name":"Cathay Pacific","url":"https://www.cathaypacific.com","logo":"/static/images/logo-cathay-pacific2.png","description":"<b>Cathay Pacific</b> is the flag carrier of Hong Kong, with its head office and main hub located at Hong Kong International Airport. The airline's operations and subsidiaries have scheduled passenger and cargo services to more than 190 destinations in more than 60 countries worldwide including codeshares and joint ventures."}
+    {"name":"Cathay Pacific","url":"https://www.cathaypacific.com","logo":"/static/images/cathay_pacific_logo_detail.png","description":"<b>Cathay Pacific</b> is the flag carrier of Hong Kong, with its head office and main hub located at Hong Kong International Airport. The airline's operations and subsidiaries have scheduled passenger and cargo services to more than 190 destinations in more than 60 countries worldwide including codeshares and joint ventures."}
   ],
   "coHostTitle":"Co-Host",
   "coHost":[
