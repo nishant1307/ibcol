@@ -93,6 +93,9 @@ export default class extends React.Component {
                         
                     </div>
 
+                    
+
+
                 </div>
 
             </section>
@@ -112,6 +115,40 @@ export default class extends React.Component {
                     <div className="block-1-3 block-tab-full">
                         {
                             this.translate('generalSponsor').map((sponsor, index)=>{
+                                return <div className="col-block" key={index}>
+                                    <a href={sponsor.url} target="_blank">
+                                        <img src={sponsor.logo} alt={sponsor.name} />
+                                    </a>
+                                    <p dangerouslySetInnerHTML={{__html: sponsor.description}}/>
+                                </div>
+                            })
+                        }                       
+                    </div>
+
+                    <div className="col-block">
+                        <h1>{this.translate('coHostTitle')}</h1>
+                    </div>
+
+                    <div className="block-1-3 block-tab-full">
+                        {
+                            this.translate('coHost').map((sponsor, index)=>{
+                                return <div className="col-block" key={index}>
+                                    <a href={sponsor.url} target="_blank">
+                                        <img src={sponsor.logo} alt={sponsor.name} />
+                                    </a>
+                                    <p dangerouslySetInnerHTML={{__html: sponsor.description}}/>
+                                </div>
+                            })
+                        }                       
+                    </div>
+
+                    <div className="col-block">
+                        <h1>{this.translate('travelPartnersTitle')}</h1>
+                    </div>
+
+                    <div className="block-1-3 block-tab-full">
+                        {
+                            this.translate('travelPartners').map((sponsor, index)=>{
                                 return <div className="col-block" key={index}>
                                     <a href={sponsor.url} target="_blank">
                                         <img src={sponsor.logo} alt={sponsor.name} />
