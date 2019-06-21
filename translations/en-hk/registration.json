@@ -79,5 +79,15 @@
     "message":"We have received your registration. Finalists will be announced before June 9.",
     "refTitle":"Application Reference:",
     "TteamNameTitle":"Team Name:"
-  }
+  },
+  "specialAirfares":"Special Airfares from Cathay Pacific & Cathay Dragon",
+  "specialAirfaresContent":"Cathay Pacific, the home carrier of Hong Kong, together with Cathay Dragon, offer registered participants and travel companions of the 2019 International Blockchain Olympiad an exclusive opportunity to enjoy great savings on flights to Hong Kong.",
+  "specialAirfaresBook":"Book online ",
+  "specialAirfaresCodeContent":"via the MICE online offer page or contact your nearest ",
+  "specialAirfaresCathayPacific":"Cathay Pacific ",
+  "specialAirfaresAnd":"and ",
+  "specialAirfaresCathayDragon":"Cathay Dragon ",
+  "specialAirfaresCodeContent2":" reservations office and quote the MICE Event Code ",
+  "specialAirfaresCode":"'MICE227'",
+  "specialAirfaresContent2":"<a href='http://eventsoffer.cathaypacific.com' target='_blank'>Book online</a> via the MICE online offer page or contact your nearest <a href='http://www.cathaypacific.com/cx/en_HK/about-us/contact-us/worldwide-offices.html' target='_blank'>Cathay Pacific</a> and <a href='http://www.cathaypacific.com/cx/en_HK/about-us/contact-us/worldwide-offices.html' target='_blank'>Cathay Dragon</a> reservations office and quote the MICE Event Code <font color='red'>“MICE227”<font>. "
 }
