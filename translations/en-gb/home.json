@@ -129,5 +129,12 @@
       {"name":"Lazarski Blockchain Technology Center","url":"http://blockchaintechnology.center/","logo":"/static/images/logo-lazarski-blockchain-technology-center.png"},  
       {"name":"Cathay Pacific","url":"https://www.cathaypacific.com","logo":"/static/images/cathay_pacific_logo_detail.png"}
     ]
+  },
+  "section04":{
+    "pageTitle":"Our Judge",
+    "judge":[
+      {"name":"Mr. Chi Man Ngan ","post":"Blockchain Lead","icon":"/static/images/judge/icon_mrchimanngan.jpeg","company":"AIA"},
+      {"name":"Dr. Micheal Wong","post":"Associate Professor of Finance","icon":"/static/images/judge/icon_drmichealwong.jpeg","company":"City University of Hong Kong"}
+    ]
   }
 }
