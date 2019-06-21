@@ -139,9 +139,10 @@ export default class extends React.Component {
                     {this.translate('register')}
                   </a>
                 </Link>
-                <Link prefetch href="#timeline" params={{ locale }}>
+                <Link prefetch href="schedule" params={{ locale }}>
                   <a className="btn btn--large">
-                    {this.translate('competitionRules')}
+                    Agenda
+                    {/* {this.translate('competitionRules')} */}
                   </a>
                 </Link>
               </div>
@@ -159,7 +160,7 @@ export default class extends React.Component {
           </div>
         </section>
         
-
+{/* 
         <section id="intro" className="s-section target-section">
           <div className="row">
               <div className="block-1-2 block-tab-full">
@@ -234,7 +235,7 @@ export default class extends React.Component {
                 </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
 
 
@@ -242,8 +243,8 @@ export default class extends React.Component {
         
 
 
-
-
+{/* AWARDS */}
+{/* 
     <section className="s-section target-section">
         <div className="row">
             <div className="col-block">
@@ -278,35 +279,34 @@ export default class extends React.Component {
                             </p>
                         </div>
                     </div>
-{/*}
-                    <div className="col-block item-process">
-                        <div className="item-process__text">
-                            <i className="blue">{this.translate('section02.awards.nominee.quantity')}</i>
-                            <h4 className="item-title">{this.translate('section02.awards.nominee.title')}</h4>
-                            <p>
-                                {this.translate('section02.awards.nominee.description')}
-                            </p>
-                        </div>
-                    </div>
-                    <div className="col-block item-process">
-                        <div className="item-process__text">
-                            <i className="green">{this.translate('section02.awards.finalist.quantity')}</i>
-                            <h4 className="item-title">{this.translate('section02.awards.finalist.title')}</h4>
-                            <p>
-                                {this.translate('section02.awards.finalist.description')}
-                            </p>
-                        </div>
-                    </div>
-                    <div className="col-block item-process">
-                        <div className="item-process__text">
-                            <i className="red">{this.translate('section02.awards.merit.quantity')}</i>
-                            <h4 className="item-title">{this.translate('section02.awards.merit.title')}</h4>
-                            <p>
-                                {this.translate('section02.awards.merit.description')}
-                            </p>
-                        </div>
-                    </div>
-*/}
+                     <div className="col-block item-process">
+                         <div className="item-process__text">
+                             <i className="blue">{this.translate('section02.awards.nominee.quantity')}</i>
+                             <h4 className="item-title">{this.translate('section02.awards.nominee.title')}</h4>
+                             <p>
+                                 {this.translate('section02.awards.nominee.description')}
+                             </p>
+                         </div>
+                     </div>
+                     <div className="col-block item-process">
+                         <div className="item-process__text">
+                             <i className="green">{this.translate('section02.awards.finalist.quantity')}</i>
+                             <h4 className="item-title">{this.translate('section02.awards.finalist.title')}</h4>
+                             <p>
+                                 {this.translate('section02.awards.finalist.description')}
+                             </p>
+                         </div>
+                     </div>
+                     <div className="col-block item-process">
+                         <div className="item-process__text">
+                             <i className="red">{this.translate('section02.awards.merit.quantity')}</i>
+                             <h4 className="item-title">{this.translate('section02.awards.merit.title')}</h4>
+                             <p>
+                                 {this.translate('section02.awards.merit.description')}
+                             </p>
+                         </div>
+                     </div>
+
                 </div>
             </div>
         </div> 
@@ -319,11 +319,11 @@ export default class extends React.Component {
                 </div>
             </div>  
         </div>
-    </section>
+    </section> */}
 
 
 
-    <section className="s-section target-section" style={{"paddingBottom": "16rem"}}>
+    {/* <section className="s-section target-section" style={{"paddingBottom": "16rem"}}>
         <div className="row">
             <div className="col-block">
                 <h1>{this.translate('section01.languageTitle')}</h1>
@@ -343,78 +343,108 @@ export default class extends React.Component {
                 </div>
             </div>       
         </div>
-    </section>
+    </section> */}
 
     {/* THIS SECTION CAUSES SCROLLING ISSUES WITH THE HERO BANNER */}    
     <section className="s-section target-section" style={{"paddingBottom": "16rem"}}>
-        <div className="row">
+        {/* "Our Sponsors" */}
+        {/* <div className="row">
             <div className="col-block">
                 <h1>{this.translate('section03.pageTitle')}</h1>
             </div>
-        </div>
+        </div> */}
 
-        <div className="row corporate-logo">
-            <div className="col-block">
-                <h3>{this.translate('section03.titleSponsorTitle')}</h3>
-            </div>
-            <div className="block-1-3 block-tab-full">
-                {
-                    this.translate('section03.titleSponsor').map((sponsor, index)=>{
-                        return <div className="col-block" key={index}>
-                            <a href={sponsor.url} target="_blank">
-                                <img src={sponsor.logo} alt={sponsor.name} />
-                            </a>
-                        </div>
-                    })
-                }
-            </div>
-        </div>
+       <div className="row corporate-logo">
 
-        <div className="row corporate-logo">
-            <div className="col-block">
-                <h3>{this.translate('section03.generalSponsorTitle')}</h3>
-            </div>
-            <div className="block-1-3 block-tab-full">
-            {
-                this.translate('section03.generalSponsor').map((sponsor, index)=>{
-                    return <div className="col-block" key={index}>
-                        <a href={sponsor.url} target="_blank">
-                            <img src={sponsor.logo} alt={sponsor.name} />
-                        </a>
+                    <div className="col-block">
+                        <h1>{this.translate('section03.titleSponsorTitle')}</h1>
                     </div>
-                })
-            }                       
-            </div>
-            <div className="col-block">
-                <h3>{this.translate('section03.academicPartnersTitle')}</h3>
-            </div>
 
-            <div className="block-1-3 block-tab-full">
-            {
-                this.translate('section03.academicPartners').map((sponsor, index)=>{
-                    return <div className="col-block" key={index}>
-                        <a href={sponsor.url} target="_blank">
-                            <img src={sponsor.logo} alt={sponsor.name} />
-                        </a>
+                    <div className="block-1-2 block-tab-full">
+
+                        {
+                            this.translate('section03.titleSponsor').map((sponsor, index)=>{
+                                return <div className="col-block" key={index}>
+                                    <a href={sponsor.url} target="_blank">
+                                        <img src={sponsor.logo} alt={sponsor.name} />
+                                    </a>
+                                    {/* <p dangerouslySetInnerHTML={{__html: sponsor.description}}/> */}
+                                </div>
+                            })
+                        }
+                        
                     </div>
-                })
-            }                       
-            </div>
-            <div className="col-block">
-                <h3>{this.translate('section03.supportingOrganisationsTitle')}</h3>
-            </div>
-            <div className="block-1-3 block-tab-full">
-            {
-                this.translate('section03.supportingOrganisations').map((sponsor, index)=>{
-                    return <div className="col-block" key={index}>
-                        <a href={sponsor.url} target="_blank">
-                            <img src={sponsor.logo} alt={sponsor.name} />
-                        </a>
+
+                    <div className="col-block">
+                        <h1>{this.translate('section03.generalSponsorTitle')}</h1>
                     </div>
-                })
-            }                       
-            </div> 
-        </div>
+
+                    <div className="block-1-3 block-tab-full">
+                        {
+                            this.translate('section03.generalSponsor').map((sponsor, index)=>{
+                                return <div className="col-block" key={index}>
+                                    <a href={sponsor.url} target="_blank">
+                                        <img src={sponsor.logo} alt={sponsor.name} />
+                                    </a>
+                                    {/* <p dangerouslySetInnerHTML={{__html: sponsor.description}}/> */}
+                                </div>
+                            })
+                        }                       
+                    </div>
+
+                    <div className="col-block">
+                        <h1>{this.translate('section03.coHostTitle')}</h1>
+                    </div>
+
+                    <div className="block-1-3 block-tab-full">
+                        {
+                            this.translate('section03.coHost').map((sponsor, index)=>{
+                                return <div className="col-block" key={index}>
+                                    <a href={sponsor.url} target="_blank">
+                                        <img src={sponsor.logo} alt={sponsor.name} />
+                                    </a>
+                                    {/* <p dangerouslySetInnerHTML={{__html: sponsor.description}}/> */}
+                                </div>
+                            })
+                        }                       
+                    </div>
+
+                    <div className="col-block">
+                        <h1>{this.translate('section03.travelPartnersTitle')}</h1>
+                    </div>
+
+                    <div className="block-1-3 block-tab-full">
+                        {
+                            this.translate('section03.travelPartners').map((sponsor, index)=>{
+                                return <div className="col-block" key={index}>
+                                    <a href={sponsor.url} target="_blank">
+                                        <img src={sponsor.logo} alt={sponsor.name} />
+                                    </a>
+                                    {/* <p dangerouslySetInnerHTML={{__html: sponsor.description}}/> */}
+                                </div>
+                            })
+                        }                       
+                    </div>
+
+                    <div className="col-block">
+                        <h1>{this.translate('section03.otherPartnersTitle')}</h1>
+                    </div>
+
+                    <div className="block-1-6 block-tab-full">
+                        {
+                            this.translate('section03.others').map((sponsor, index)=>{
+                                return <div className="col-block" key={index}>
+                                    <a href={sponsor.url} target="_blank">
+                                        <img src={sponsor.logo} alt={sponsor.name} />
+                                    </a>
+                                    {/* <p dangerouslySetInnerHTML={{__html: sponsor.description}}/> */}
+                                </div>
+                            })
+                        }                       
+                    </div>
+                           
+                </div>
+        
     </section>
 
     </ThisPageContainerComponent>

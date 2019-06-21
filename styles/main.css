@@ -2065,7 +2065,7 @@ input::-moz-focus-inner {
 .desktop-nav .nav_list li.submissionTips a{
   color: #0086ca;
   font-weight: bold;
-  box-sizing: border-box;
+  box-sizing: border-b ox;
 }
 
 .desktop-nav .nav_list li.featured a {
