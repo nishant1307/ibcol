@@ -135,6 +135,12 @@
     {"name":"Hong Kong Youth Internet Governance Forum","url":"http://hk.yigf.asia/","logo":"/static/images/logo-hong-kong-youth-internet-governance-forum(hkyigf).png","description":"<b>Hong Kong Youth Internet Governance Forum</b> (HKYIGF) is a platform for local youth to learn about Internet governance and voice out their opinions. Recognized by the IGF secretariat of United Nations, it also serves as the bridge to the wider Asia youth community and the global dialogue."},
     {"name":"Lazarski Blockchain Technology Center","url":"http://blockchaintechnology.center/","logo":"/static/images/logo-lazarski-blockchain-technology-center.png","description":"<b>The Blockchain Technology Center</b> is the first research unit in Central and Eastern Europe specialising in blockchain technology founded. It was founded in 2016 at the Lazarski University, one of the best private universities in Poland. Apart from research, the Centre also conducts educational and popularizing activities. It gathers around 30 Polish scientists and experts in the fields of business, economics and finance, IT and cyber security, as well as law and regulation. They advise to companies and to the government, as well."} 
     
-  ]
+  ]},
+  "section04":{
+    "pageTitle":"Our Judges",
+    "judge":[
+      {"name":"Mr. Chi Man Ngan ","post":"Blockchain Lead","icon":"/static/images/judge/icon_mrchimanngan.jpeg","company":"AIA"},
+      {"name":"Dr. Micheal Wong","post":"Associate Professor of Finance","icon":"/static/images/judge/icon_drmichealwong.jpeg","company":"City University of Hong Kong"}
+    ]
   }
 }
