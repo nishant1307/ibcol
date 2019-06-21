@@ -9,7 +9,7 @@ import cookies from 'browser-cookies';
 
 
 
-import {translate} from 'helpers/translate.js';
+import { translate } from 'helpers/translate.js';
 // import { transparentize } from 'polished'
 
 import { Link } from '/routes';
@@ -268,14 +268,14 @@ export default class extends React.PureComponent {
     };
   }
 
-  onShowConfirmation = ({teamName, ref}) => {
+  onShowConfirmation = ({ teamName, ref }) => {
     this.setState({
       showConfirmation: true,
-      confirmation: {teamName, ref}
+      confirmation: { teamName, ref }
     })
   }
 
-  
+
 
   logout = () => {
     this.clearCookie();
@@ -304,7 +304,7 @@ export default class extends React.PureComponent {
     return (cookies.get('email') !== null && cookies.get('token') !== null) ? {
       email: cookies.get('email'),
       token: cookies.get('token')
-    }: undefined;
+    } : undefined;
   }
 
   componentDidMount = () => {
@@ -322,13 +322,13 @@ export default class extends React.PureComponent {
       this.validateToken(tokenCookie);
     }
 
-    
+
   }
 
-  validateToken  = async (accessToken) => {
-    
+  validateToken = async (accessToken) => {
+
     try {
-      const {isTokenValid} = (await graphqlClient.query({
+      const { isTokenValid } = (await graphqlClient.query({
         query: IS_TOKEN_VALID,
         variables: {
           accessToken
@@ -348,9 +348,9 @@ export default class extends React.PureComponent {
       })
 
       return;
-    
-      
-      
+
+
+
 
     } catch (err) {
       console.error('error', err);
@@ -369,7 +369,7 @@ export default class extends React.PureComponent {
   });
 
 
-  
+
 
   render() {
 
@@ -378,16 +378,16 @@ export default class extends React.PureComponent {
     // console.log("===> FILEPOND_API_URL", process.env.FILEPOND_API_URL);
     // console.log("===>", process.env.ENV);
 
-    
+
 
 
     const locale = this.props.query.locale;
-    
+
 
     const loader = <section className="target-section">
       <div className="row">
         <div className="col-full">
-          <div className="full-width" style={{textAlign: 'center'}}>
+          <div className="full-width" style={{ textAlign: 'center' }}>
             <><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></>
           </div>
         </div>
@@ -399,7 +399,7 @@ export default class extends React.PureComponent {
     const isValidatingToken = this.state.tokenCookie !== undefined && !this.state.hasValidToken;
     const isLoggedIn = !isValidatingToken && this.state.hasValidToken;
 
-    
+
 
     return (
       <ThisPageContainerComponent>
@@ -411,7 +411,7 @@ export default class extends React.PureComponent {
           <meta property="og:type" content="website" />
         </Head>
 
-        
+
 
         <section className="s-section target-section first">
           <div className="row">
@@ -423,13 +423,13 @@ export default class extends React.PureComponent {
         <section className="target-section">
           <div id="extraRegistration" className="row">
             <div className="col-full">
-              <div id="trainingBox">              
+              <div id="trainingBox">
                 <h3>{this.translate('rollingDateToSubmit')}:</h3>
                 <Countdown date={new Date(2019, 6, 4, 23, 59, 59, 59)}
                   renderer={renderer}
                 />
-                <font size="2">{this.translate('teamNotice')}</font> 
-                <div>   
+                <font size="2">{this.translate('teamNotice')}</font>
+                <div>
                   {this.translate('pmoReminder')}
                   <a href={`mailto:${this.translate('pmoEmailAddress')}`}>{this.translate('pmoEmailAddress')}</a>
                 </div>
@@ -440,6 +440,27 @@ export default class extends React.PureComponent {
               </div>
             </div>
           </div>
+
+          {
+            isLoggedIn &&
+            <div id="extraRegistration" className="row">
+              <div className="col-full">
+                <div id="trainingBox">
+                  <h3>{this.translate('specialAirfares')}</h3>
+                  <h5>{this.translate('specialAirfaresContent')}</h5>
+                  {/* <h5><a href="http://eventsoffer.cathaypacific.com" target="_blank">{this.translate('specialAirfaresBook')}</a>
+                    {this.translate('specialAirfaresCodeContent')}
+                    <a href="http://www.cathaypacific.com/cx/en_HK/about-us/contact-us/worldwide-offices.html" target="_blank">{this.translate('specialAirfaresCathayPacific')}</a>
+                    {this.translate('specialAirfaresAnd')}
+                    <a href="http://www.cathaypacific.com/cx/en_HK/about-us/contact-us/worldwide-offices.html" target="_blank">{this.translate('specialAirfaresCathayDragon')}</a>
+                    {this.translate('specialAirfaresCodeContent2')}
+                    <font color="red">{this.translate('specialAirfaresCode')}</font>
+                  </h5> */}
+                   <h5 dangerouslySetInnerHTML={{__html: this.translate('specialAirfaresContent2')}}/>
+                </div>
+              </div>
+            </div>
+          }
         </section>
 
         {
@@ -456,40 +477,40 @@ export default class extends React.PureComponent {
                   {
                     !isLoggedIn &&
                     <Link route="registrationLogin" params={{ locale }}>
-                        <a className="btn btn--stroke btn--primary full-width btn--large" style={{"margin": "1rem auto 6rem"}}>
-                            {this.translate('teamLogin')}
-                        </a>
+                      <a className="btn btn--stroke btn--primary full-width btn--large" style={{ "margin": "1rem auto 6rem" }}>
+                        {this.translate('teamLogin')}
+                      </a>
                     </Link>
                   }
                   {
                     isLoggedIn &&
-                    
-                    <a className="btn btn--stroke btn--primary full-width btn--large" style={{"margin": "1rem auto 6rem"}} onClick={()=>{
+
+                    <a className="btn btn--stroke btn--primary full-width btn--large" style={{ "margin": "1rem auto 6rem" }} onClick={() => {
                       this.logout();
                     }}>
-                        {this.translate('teamLogout')}
+                      {this.translate('teamLogout')}
                     </a>
                   }
 
-                  
+
 
                 </div>
               </div>
-                
+
             </section>
 
 
-            { this.state.showConfirmation &&
+            {this.state.showConfirmation &&
               <section className="target-section last">
 
                 <div className="row section-header">
                   <div className="col-full">
                     <h3 className="subhead">{isLoggedIn ? this.translate('confirmation.updateTitle') : this.translate('confirmation.title')}</h3>
                   </div>
-                  
+
                 </div>
-                
-                
+
+
                 <div className="row">
 
                   <div className="block-tab-full">
@@ -503,8 +524,8 @@ export default class extends React.PureComponent {
                           <b>{this.translate('confirmation.teamNameTitle')}</b><br />{this.state.confirmation.teamName}
                         </p>
                       </div>
-                      <div className="full-width" style={{marginBottom: "4rem"}}>
-                        <button onClick={()=>{
+                      <div className="full-width" style={{ marginBottom: "4rem" }}>
+                        <button onClick={() => {
                           // if (isLoggedIn) {
                           //   location.reload();
                           // } else {
@@ -526,54 +547,54 @@ export default class extends React.PureComponent {
 
             {!this.state.showConfirmation &&
               <section className="target-section last">
-                  
+
                 <div className="row section-header">
                   <div className="col-full">
 
-                    { isLoggedIn ?
-                        <Query query={GET_APPLICATIONS} variables={{ accessToken: {email: this.state.tokenCookie.email, token: this.state.tokenCookie.token }}}>
-                          {({ loading, error, data, refetch, networkStatus }) => {
-                            console.log('querying graphql...');
-                            {/*console.log('loading:', loading);
+                    {isLoggedIn ?
+                      <Query query={GET_APPLICATIONS} variables={{ accessToken: { email: this.state.tokenCookie.email, token: this.state.tokenCookie.token } }}>
+                        {({ loading, error, data, refetch, networkStatus }) => {
+                          console.log('querying graphql...');
+                          {/*console.log('loading:', loading);
                             console.log('networkStatus:', networkStatus); */}
-                            {/* console.log('error', error);
+                          {/* console.log('error', error);
                             console.log('data', data); */}
-                            {/* if ((networkStatus === 4) || loading) return <div className="full-width" style={{textAlign: 'center'}}>
+                          {/* if ((networkStatus === 4) || loading) return <div className="full-width" style={{textAlign: 'center'}}>
                                 <><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></>
                               </div>; */}
-                            
-                            if (error) return `Error! ${error.message}`;
 
-                            if (!_.isEmpty(data)) {
-                              
-                              const existingApplications = data.getApplications;
+                          if (error) return `Error! ${error.message}`;
 
-                              {/* console.log('existingApplications', existingApplications); */}
+                          if (!_.isEmpty(data)) {
 
-                              if (this.state.currentSelectedRecordIndex === undefined) {
-                                //console.log('data', data);
-                                //this.setState({
-                                //  existingApplications,
-                                //  currentSelectedRecordIndex: 0,
-                                //  record: existingApplications[0]
-                                //})
-                              }
-                              
+                            const existingApplications = data.getApplications;
 
-                              return <RegistrationFormComponent tokenCookie={this.state.tokenCookie} onShowConfirmation={this.onShowConfirmation} isLoggedIn={isLoggedIn} locale={locale} existingApplications={existingApplications}/>
-                            
+                            {/* console.log('existingApplications', existingApplications); */ }
+
+                            if (this.state.currentSelectedRecordIndex === undefined) {
+                              //console.log('data', data);
+                              //this.setState({
+                              //  existingApplications,
+                              //  currentSelectedRecordIndex: 0,
+                              //  record: existingApplications[0]
+                              //})
                             }
 
 
-                            return loader
-                            
-                          }}
-                        </Query> :
-                        <RegistrationFormComponent onShowConfirmation={this.onShowConfirmation} locale={locale}/>
+                            return <RegistrationFormComponent tokenCookie={this.state.tokenCookie} onShowConfirmation={this.onShowConfirmation} isLoggedIn={isLoggedIn} locale={locale} existingApplications={existingApplications} />
+
+                          }
+
+
+                          return loader
+
+                        }}
+                      </Query> :
+                      <RegistrationFormComponent onShowConfirmation={this.onShowConfirmation} locale={locale} />
                     }
 
-                    
-                    
+
+
                   </div>
                 </div>
               </section>
@@ -584,19 +605,19 @@ export default class extends React.PureComponent {
         }
 
 
-        
-              
-              
-
-
-
-        
 
 
 
 
 
-        
+
+
+
+
+
+
+
+
       </ThisPageContainerComponent>
     )
   }
