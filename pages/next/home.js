@@ -345,6 +345,54 @@ export default class extends React.Component {
         </div>
     </section>
 
+
+    <section className="s-section target-section" style={{"paddingBottom": "16rem"}}>
+        <div className="row">
+            <div className="col-block">
+                <h1>{this.translate('section04.pageTitle')}</h1>
+            </div>
+        </div>
+
+        <div className="row corporate-logo">
+            <div className="judge block-1-3 block-tab-full">
+                {
+                    this.translate('section04.judge').map((sponsor, index)=>{
+                        return <div className="col-block" key={index}>
+                           
+                            <img src={sponsor.icon} alt={sponsor.name} />
+                            
+                            <h5>{sponsor.name}</h5>
+                            <p className="judgepost"><b>{sponsor.post}</b></p>
+                            <p>{sponsor.company}</p>
+                        </div>
+                    })
+                }
+            </div>
+        </div>
+        {/* <div id="judges" class="container mb-5">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 mb-4">
+                    <div class="prof-container">
+                        <div class="card-body">
+                            <div class="image">
+                                <img class="rules-icon" src="/static/images/judge/icon_mralanchan.jpeg" alt="Dr. Michael Wong" />
+                            </div>
+                            <div class="content">
+                                <h5 class="text-left">Dr. Michael Wong</h5>
+                                <p class="text-left"><b>Director</b><br />University of Waterloo HK Foundation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div> */}
+
+            
+    </section>
+
+
+
     {/* THIS SECTION CAUSES SCROLLING ISSUES WITH THE HERO BANNER */}    
     <section className="s-section target-section" style={{"paddingBottom": "16rem"}}>
         <div className="row">
