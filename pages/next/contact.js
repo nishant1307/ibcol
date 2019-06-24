@@ -129,12 +129,12 @@ export default class extends React.Component {
         </section>
 
         <section className="s-section target-section last">
-          <div className="row">
+          {/* <div className="row">
             <div className="col-block">
               <h3>{this.translate('officialCommunitiesTitle')}</h3>
               {getOfficialCommunitiesInfo}
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
         </section>
       </ThisPageContainerComponent>
     )
