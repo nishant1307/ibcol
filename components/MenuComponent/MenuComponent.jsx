@@ -278,9 +278,9 @@ class MenuComponent extends React.Component {
 
 
 
-        <div onClick={this.props.onToggleLanguageSelector} className="languageMenuHeaderTriggerMobile" alt={this.translate('_locale.name')} title={this.translate('_locale.name')} style={{
+        {/*<div onClick={this.props.onToggleLanguageSelector} className="languageMenuHeaderTriggerMobile" alt={this.translate('_locale.name')} title={this.translate('_locale.name')} style={{
         backgroundImage: `url("/static/images/flags/1x1/${this.translate('_locale.flag')}")`
-      }}></div>
+      }}></div> */}
 
         <a className="header-menu-toggle" onClick={this.toggleMobileMenu}>
           <span className="header-menu-icon"></span>
