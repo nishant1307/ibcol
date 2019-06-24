@@ -1,5 +1,6 @@
 module.exports = {
   "_locale":{
+    "disabled": true,
     "id":"ko-kr",
     "name":"한국",
     "label":"환영",
