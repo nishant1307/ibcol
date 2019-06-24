@@ -219,9 +219,9 @@ class MenuComponent extends React.Component {
         </NavLinkComponent>
       </li>
 
-      <li onClick={this.props.onToggleLanguageSelector} className="languageMenuHeaderTrigger" alt={this.translate('_locale.name')} title={this.translate('_locale.name')} style={{
+      {/*<li onClick={this.props.onToggleLanguageSelector} className="languageMenuHeaderTrigger" alt={this.translate('_locale.name')} title={this.translate('_locale.name')} style={{
         backgroundImage: `url("/static/images/flags/1x1/${this.translate('_locale.flag')}")`
-      }}></li>
+      }}></li>*/}
     </>
 
     return (

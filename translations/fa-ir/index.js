@@ -1,10 +1,11 @@
 module.exports = {
   "_locale":{
+    "disabled": true,
     "id":"fa-ir",
     "name":"ایران",
     "label":"خوش آمدید",
     "flag": "ir.svg",
-    "disabled": false
+        "disabled": true
   },
   "_global":require('./_global.json'),
   "_countries": require('./_countries.json'),

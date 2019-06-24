@@ -1,5 +1,6 @@
 module.exports = {
   "_locale": {
+    "disable": true,
     "id": "en-bb",
     "name": "Barbados",
     "label": "Welcome",

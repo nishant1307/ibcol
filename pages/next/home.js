@@ -124,21 +124,19 @@ export default class extends React.Component {
               <h1>
                 {this.translate('mainHeading')}
               </h1>
+             
               <h3>
-              We have received a deluge of submission and finalists, itinerary, and travel arrangements will be announced shortly
-              </h3>
-              <h3>
-                {/* this.translate('subHeading') */}
-                <Countdown date={new Date(2019, 6, 4, 23, 59, 59, 59)}
-                  renderer={renderer}/><br/>until the Olympiad
+                Please join us for the event at City University of Hong Kong &#38; InnoCentre on Saturday, July 6, at 9:00 a.m.
+                {/* <Countdown date={new Date(2019, 6, 4, 23, 59, 59, 59)}
+                  renderer={renderer}/><br/>until the Olympiad */}
               </h3>
 
               <div className="home-content__button">
-                <Link prefetch route="registration" params={{ locale }}>
-                  <a className="btn btn--primary btn--large">
+                {/* <Link prefetch href="registration" params={{ locale }}> */}
+                  <a href="https://qrs.ly/f7a7y0r" target="_blank" className="btn btn--primary btn--large">
                     {this.translate('register')}
                   </a>
-                </Link>
+                {/* </Link> */}
                 <Link prefetch href="schedule" params={{ locale }}>
                   <a className="btn btn--large">
                     Agenda

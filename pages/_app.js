@@ -342,12 +342,12 @@ class MyApp extends App {
                 </a>
                 <br/>
               </div>
-              <div className="languageMenuFooterTrigger" onClick={this.toggleLanguageSelector}>
+              {/* <div className="languageMenuFooterTrigger" onClick={this.toggleLanguageSelector}>
                 <div className="languageMenuFooterTriggerIcon" alt={this.translate('_locale.name')} title={this.translate('_locale.name')} style={{
                   backgroundImage: `url("/static/images/flags/1x1/${this.translate('_locale.flag')}")`
                 }}></div>
                 {this.translate('_locale.name')}
-              </div>
+              </div> */}
 
             </div>
             <div></div>
