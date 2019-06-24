@@ -124,7 +124,8 @@ export default class extends React.Component {
               <h1>
                 {this.translate('mainHeading')}
               </h1>
-             
+             <br />
+             <br />
               <h3>
                 Please join us for the event at City University of Hong Kong &#38; InnoCentre on Saturday, July 6, at 9:00 a.m.
                 {/* <Countdown date={new Date(2019, 6, 4, 23, 59, 59, 59)}
@@ -342,7 +343,28 @@ export default class extends React.Component {
             </div>       
         </div>
     </section> */}
-
+    <section className="s-section target-section" >
+        <div className="row">
+            <div className="col-block">
+                <h1>Finalists</h1>
+            </div>
+            <div className="row">
+                <div className="finalists block-1-3 block-tab-full">
+                {
+                    this.translate('section05.finalists').map((sponsor, index)=>{
+                        return <div className="col-block" key={index}>
+                            <div class="team">
+                                <div className="team_flag"><img src={sponsor.icon} height="50px" width="50px" /></div>
+                                <div className="team_name"><p><b>{sponsor.teamName}</b></p></div>
+                            </div>
+                            </div>
+                    })
+                }
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
     <section className="s-section target-section" >
         <div className="row">

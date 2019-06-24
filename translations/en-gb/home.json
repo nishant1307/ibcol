@@ -145,5 +145,34 @@
       {"name":"Mr. Edmond Lau","post":"Managing Director","icon":"/static/images/judge/icon_mrEdmondLau.jpg","company":"Lingfeng Capital"},
       {"name":"Mr. Ronald Yu","post":"Founder","icon":"/static/images/judge/icon_mrRonaldYu.jpg","company":"IIPCC"}
     ]
+  },
+  "section05":{
+    "pageTitle":"Finalists",
+    "finalists":[
+      {"teamName":"Palantin", "icon":"/static/images/flags/1x1/br.svg"},
+      {"teamName":"Blockbox Insights", "icon":"/static/images/flags/1x1/ca.svg"},
+      {"teamName":"Centennial College Blockchain", "icon":"/static/images/flags/1x1/ca.svg"},
+      {"teamName":"Historichain", "icon":"/static/images/flags/1x1/ca.svg"},
+      {"teamName":"OneandONLY", "icon":"/static/images/flags/1x1/ca.svg"},
+      {"teamName":"Renzimme", "icon":"/static/images/flags/1x1/ca.svg"},
+      {"teamName":"MONOPOLY", "icon":"/static/images/flags/1x1/cn.svg"},
+      {"teamName":"中山大学区块链俱乐部队", "icon":"/static/images/flags/1x1/cn.svg"},
+      {"teamName":"A1one", "icon":"/static/images/flags/1x1/hk.svg"},
+      {"teamName":"Barcoholic", "icon":"/static/images/flags/1x1/hk.svg"},
+      {"teamName":"Blockchain Pro1", "icon":"/static/images/flags/1x1/hk.svg"},
+      {"teamName":"Golden sheep", "icon":"/static/images/flags/1x1/hk.svg"},
+      {"teamName":"POWE", "icon":"/static/images/flags/1x1/hk.svg"},
+      {"teamName":"Power Of Blocks", "icon":"/static/images/flags/1x1/hk.svg"},
+      {"teamName":"Veritas", "icon":"/static/images/flags/1x1/hk.svg"},
+      {"teamName":"Code to Uncode", "icon":"/static/images/flags/1x1/in.svg"},
+      {"teamName":"Blockers", "icon":"/static/images/flags/1x1/pk.svg"},
+      {"teamName":"Aid", "icon":"/static/images/flags/1x1/ph.svg"},
+      {"teamName":"Lightwonder", "icon":"/static/images/flags/1x1/tw.svg"},
+      {"teamName":"White Box", "icon":"/static/images/flags/1x1/tw.svg"},
+      {"teamName":"我打德州當打工", "icon":"/static/images/flags/1x1/tw.svg"},
+      {"teamName":"砍掉重鏈", "icon":"/static/images/flags/1x1/tw.svg"},
+      {"teamName":"iDe (Identity Decentralized)", "icon":"/static/images/flags/1x1/us.svg"},
+      {"teamName":"Nisreen & Yunsoo", "icon":"/static/images/flags/1x1/us.svg"}
+    ]
   }
 }
