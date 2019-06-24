@@ -138,7 +138,7 @@ export default class extends React.Component {
                     {this.translate('register')}
                   </a>
                 {/* </Link> */}
-                <Link prefetch href="schedule" params={{ locale }}>
+                <Link prefetch href="schedule/#schedule" params={{ locale }}>
                   <a className="btn btn--large">
                     Agenda
                     {/* {this.translate('competitionRules')} */}
@@ -353,7 +353,7 @@ export default class extends React.Component {
                 {
                     this.translate('section05.finalists').map((sponsor, index)=>{
                         return <div className="col-block" key={index}>
-                            <div class="team">
+                            <div className="team">
                                 <div className="team_flag"><img src={sponsor.icon} height="50px" width="50px" /></div>
                                 <div className="team_name"><p><b>{sponsor.teamName}</b></p></div>
                             </div>
