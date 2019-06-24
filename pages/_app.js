@@ -193,11 +193,12 @@ class MyApp extends App {
         // console.debug('> router', router);
         // console.debug('> pageProps', pageProps);
 
-        // const requestedRoute = routes.findAndGetUrls(router.asPath);
+        const requestedRoute = routes.findAndGetUrls(router.asPath);
         // console.log('req.url', ctx.req.url);
         // console.log('> requestedRoute', requestedRoute);
 
-        if (router.query['catch-all'] !== undefined)
+        // if (router.query['catch-all'] !== undefined)
+        if (requestedRoute.route === undefined)
           ctx.res.statusCode = 404;
 
         
