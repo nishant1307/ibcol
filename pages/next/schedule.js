@@ -84,14 +84,14 @@ export default class extends React.Component {
                         <div className="schedule" >
                             <table className="day1">
                                 <tbody>
-                                    <tr>
+                                    {/* <tr>
                                         <td className="session-schedule-time blue">
                                             <p>9:00 AM - 10:00 AM</p>
                                         </td>
                                         <td className="session-schedule-detail">
                                             <h5>Shuttle Bus from Hotel to CityU</h5>
                                         </td>
-                                    </tr>
+                                    </tr> */}
                                     <tr>
                                         <td className="session-schedule-time red">
                                             <p>10:00 AM - 5:00 PM</p>
