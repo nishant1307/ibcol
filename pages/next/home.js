@@ -138,12 +138,12 @@ export default class extends React.Component {
                     {this.translate('register')}
                   </a>
                 {/* </Link> */}
-                <Link prefetch href="schedule/#schedule" params={{ locale }}>
-                  <a className="btn btn--large">
+                {/* <Link prefetch href="schedule/#schedule" params={{ locale }}> */}
+                  <a href="schedule/#schedule" className="btn btn--large">
                     Agenda
                     {/* {this.translate('competitionRules')} */}
                   </a>
-                </Link>
+                {/* </Link> */}
               </div>
 
             </div>
