@@ -124,299 +124,324 @@ export default class extends React.Component {
               <h1>
                 {this.translate('mainHeading')}
               </h1>
+             <br />
+             <br />
               <h3>
-              We have received a deluge of submission and finalists, itinerary, and travel arrangements will be announced shortly
-              </h3>
-              <h3>
-                {/* this.translate('subHeading') */}
-                <Countdown date={new Date(2019, 6, 4, 23, 59, 59, 59)}
-                  renderer={renderer}/><br/>until the Olympiad
+                Please join us for the event at City University of Hong Kong &#38; InnoCentre on Saturday, July 6, at 9:00 a.m.
+                {/* <Countdown date={new Date(2019, 6, 4, 23, 59, 59, 59)}
+                  renderer={renderer}/><br/>until the Olympiad */}
               </h3>
 
               <div className="home-content__button">
-                <Link prefetch route="registration" params={{ locale }}>
-                  <a className="btn btn--primary btn--large">
+                {/* <Link prefetch href="registration" params={{ locale }}> */}
+                  <a href="https://qrs.ly/f7a7y0r" target="_blank" className="btn btn--primary btn--large">
                     {this.translate('register')}
                   </a>
-                </Link>
-                <Link prefetch href="#timeline" params={{ locale }}>
-                  <a className="btn btn--large">
-                    {this.translate('competitionRules')}
+                {/* </Link> */}
+                {/* <Link prefetch href="schedule/#schedule" params={{ locale }}> */}
+                  <a href="#schedule" className="btn btn--large">
+                    Agenda
+                    {/* {this.translate('competitionRules')} */}
                   </a>
-                </Link>
+                {/* </Link> */}
               </div>
 
             </div>
-
-            {/* <div className="home-content__scroll">
-              <Link prefetch route="home" params={{ locale }} hash="about">
-                <a className="scroll-link smoothscroll">
-                  {this.translate('scroll')}
-                </a>
-              </Link>
-            </div> */}
-
           </div>
         </section>
-        
-
-        <section id="intro" className="s-section target-section">
-          <div className="row">
-              <div className="block-1-2 block-tab-full">
-                  <div className="col-block no-results">
-                      <div className="item-process__text">
-                          <h1>{this.translate('introSection.leftBlock.title')}</h1>
-                          <ol dangerouslySetInnerHTML={{__html: this.translate('introSection.leftBlock.infoList') }}/>
-                      </div>
-                  </div>
-                  <div className="col-block get-results">
-                      <div className="item-process__text">
-                          <h1>{this.translate('introSection.rightBlock.title')}</h1>
-                          <ol dangerouslySetInnerHTML={{__html: this.translate('introSection.rightBlock.infoList') }}/>
-                      </div>
-                  </div>
-              </div>
-          </div>
-        </section>
-
-        <section id="timeline" className="s-section target-section">
-        <div className="row">
-            <h1>{this.translate('timelineSection.heading')}</h1>
-            <div className="about-process">
-                <div className="block-1-6 block-tab-full icon timeline">
-                    <div className="col-block item-process">
-                        <div className="item-process__text">
-                            <i className="material-icons yellow">schedule</i>
-                            <h4 className="item-title">{this.translate('timelineSection.block1.title')}</h4>
-                            <p dangerouslySetInnerHTML={{__html: this.translate('timelineSection.block1.details')}}/>
-                            <span className="time-line"></span>
-                        </div>
-                    </div>
-                    <div className="col-block item-process">
-                        <div className="item-process__text">
-                            <i className="material-icons green">description</i>
-                            <h4 className="item-title">{this.translate('timelineSection.block2.title')}</h4>
-                            <p dangerouslySetInnerHTML={{__html: this.translate('timelineSection.block2.details')}}/>
-                            <span className="time-line"></span>
-                        </div>
-                    </div>
-                    <div className="col-block item-process">
-                        <div className="item-process__text">
-                            <i className="material-icons black">chat</i>
-                            <h4 className="item-title">{this.translate('timelineSection.block3.title')}</h4>
-                            <p dangerouslySetInnerHTML={{__html: this.translate('timelineSection.block3.details')}}/>
-                            <span className="time-line"></span>
-                        </div>
-                    </div>
-                    <div className="col-block item-process">
-                        <div className="item-process__text">
-                            <i className="material-icons purple">devices_other</i>
-                            <h4 className="item-title">{this.translate('timelineSection.block4.title')}</h4>
-                            <p dangerouslySetInnerHTML={{__html: this.translate('timelineSection.block4.details')}}/>
-                            <span className="time-line"></span>
-                        </div>
-                    </div>
-                    <div className="col-block item-process">
-                        <div className="item-process__text">
-                            <i className="material-icons orange">assessment</i>
-                            <h4 className="item-title">{this.translate('timelineSection.block5.title')}</h4>
-                            <p dangerouslySetInnerHTML={{__html: this.translate('timelineSection.block5.details')}}/>
-                            <span className="time-line"></span>
-                        </div>
-                    </div>
-                    <div className="col-block item-process">
-                        <div className="item-process__text">
-                            <i className="material-icons red">loop</i>
-                            <h4 className="item-title">{this.translate('timelineSection.block6.title')}</h4>
-                            <p dangerouslySetInnerHTML={{__html: this.translate('timelineSection.block6.details')}}/>
-                        </div>
-                    </div>            
-                </div>
-            </div>
-          </div>
-        </section>
-
-
-
-
-        
-
-
-
-
+            {/* THIS SECTION CAUSES SCROLLING ISSUES WITH THE HERO BANNER */}    
     <section className="s-section target-section">
-        <div className="row">
-            <div className="col-block">
-                <h1>{this.translate('section02.heading')}</h1>
-            </div>
-            <div className="about-process icon number">
-                <div className="block-1-3 block-tab-full">
-                    <div className="col-block item-process">
-                        <div className="item-process__text">
-                            <i className="gold">{this.translate('section02.awards.gold.quantity')}</i>
-                            <h4 className="item-title">{this.translate('section02.awards.gold.title')}</h4>
-                            <p>
-                                {this.translate('section02.awards.gold.description')}
-                            </p>
-                        </div>
-                    </div>
-                    <div className="col-block item-process">
-                        <div className="item-process__text">
-                            <i className="silver">{this.translate('section02.awards.silver.quantity')}</i>
-                            <h4 className="item-title">{this.translate('section02.awards.silver.title')}</h4>
-                            <p>
-                                {this.translate('section02.awards.silver.description')}
-                            </p>
-                        </div>
-                    </div>
-                    <div className="col-block item-process">
-                        <div className="item-process__text">
-                            <i className="bronze">{this.translate('section02.awards.bronze.quantity')}</i>
-                            <h4 className="item-title">{this.translate('section02.awards.bronze.title')}</h4>
-                            <p>
-                                {this.translate('section02.awards.bronze.description')}
-                            </p>
-                        </div>
-                    </div>
-{/*}
-                    <div className="col-block item-process">
-                        <div className="item-process__text">
-                            <i className="blue">{this.translate('section02.awards.nominee.quantity')}</i>
-                            <h4 className="item-title">{this.translate('section02.awards.nominee.title')}</h4>
-                            <p>
-                                {this.translate('section02.awards.nominee.description')}
-                            </p>
-                        </div>
-                    </div>
-                    <div className="col-block item-process">
-                        <div className="item-process__text">
-                            <i className="green">{this.translate('section02.awards.finalist.quantity')}</i>
-                            <h4 className="item-title">{this.translate('section02.awards.finalist.title')}</h4>
-                            <p>
-                                {this.translate('section02.awards.finalist.description')}
-                            </p>
-                        </div>
-                    </div>
-                    <div className="col-block item-process">
-                        <div className="item-process__text">
-                            <i className="red">{this.translate('section02.awards.merit.quantity')}</i>
-                            <h4 className="item-title">{this.translate('section02.awards.merit.title')}</h4>
-                            <p>
-                                {this.translate('section02.awards.merit.description')}
-                            </p>
-                        </div>
-                    </div>
-*/}
-                </div>
-            </div>
-        </div> 
-        <div className="row">
-            <div className="block-tab-full">
-                <div className="col-block">
-                    <p>
-                        {this.translate('section02.awards.note')}
-                    </p>
-                </div>
-            </div>  
-        </div>
-    </section>
-
-
-
-    <section className="s-section target-section" style={{"paddingBottom": "16rem"}}>
-        <div className="row">
-            <div className="col-block">
-                <h1>{this.translate('section01.languageTitle')}</h1>
-            </div>
-            <div className="block-1-2 block-tab-full">
-                <div className="col-block">
-                    <p>
-                        <b>{this.translate('section01.writtenLanguageLabel')}</b> <br/>
-                        {this.translate('section01.writtenLanguages')}
-                    </p>
-                </div>
-                <div className="col-block">
-                    <p>
-                        <b>{this.translate('section01.spokenLanguageLabel')}</b><br/>
-                        {this.translate('section01.spokenLanguages')}
-                    </p>
-                </div>
-            </div>       
-        </div>
-    </section>
-
-    {/* THIS SECTION CAUSES SCROLLING ISSUES WITH THE HERO BANNER */}    
-    <section className="s-section target-section" style={{"paddingBottom": "16rem"}}>
-        <div className="row">
+        {/* "Our Sponsors" */}
+        {/* <div className="row">
             <div className="col-block">
                 <h1>{this.translate('section03.pageTitle')}</h1>
+            </div>
+        </div> */}
+
+       <div className="row corporate-logo">
+
+                    <div className="col-block">
+                        <h1>{this.translate('section03.titleSponsorTitle')}</h1>
+                    </div>
+
+                    <div className="block-1-2 block-tab-full">
+
+                        {
+                            this.translate('section03.titleSponsor').map((sponsor, index)=>{
+                                return <div className="col-block" key={index}>
+                                    <a href={sponsor.url} target="_blank">
+                                        <img src={sponsor.logo} alt={sponsor.name} />
+                                    </a>
+                                    {/* <p dangerouslySetInnerHTML={{__html: sponsor.description}}/> */}
+                                </div>
+                            })
+                        }
+                        
+                    </div>
+
+                    <div className="col-block">
+                        <h1>{this.translate('section03.generalSponsorTitle')}</h1>
+                    </div>
+
+                    <div className="block-1-3 block-tab-full">
+                        {
+                            this.translate('section03.generalSponsor').map((sponsor, index)=>{
+                                return <div className="col-block" key={index}>
+                                    <a href={sponsor.url} target="_blank">
+                                        <img src={sponsor.logo} alt={sponsor.name} />
+                                    </a>
+                                    {/* <p dangerouslySetInnerHTML={{__html: sponsor.description}}/> */}
+                                </div>
+                            })
+                        }                       
+                    </div>
+
+                    <div className="col-block">
+                        <h1>{this.translate('section03.coHostTitle')}</h1>
+                    </div>
+
+                    <div className="block-1-3 block-tab-full">
+                        {
+                            this.translate('section03.coHost').map((sponsor, index)=>{
+                                return <div className="col-block" key={index}>
+                                    <a href={sponsor.url} target="_blank">
+                                        <img src={sponsor.logo} alt={sponsor.name} />
+                                    </a>
+                                    {/* <p dangerouslySetInnerHTML={{__html: sponsor.description}}/> */}
+                                </div>
+                            })
+                        }                       
+                    </div>
+
+                    <div className="col-block">
+                        <h1>{this.translate('section03.travelPartnersTitle')}</h1>
+                    </div>
+
+                    <div className="block-1-3 block-tab-full">
+                        {
+                            this.translate('section03.travelPartners').map((sponsor, index)=>{
+                                return <div className="col-block" key={index}>
+                                    <a href={sponsor.url} target="_blank">
+                                        <img src={sponsor.logo} alt={sponsor.name} />
+                                    </a>
+                                    {/* <p dangerouslySetInnerHTML={{__html: sponsor.description}}/> */}
+                                </div>
+                            })
+                        }                       
+                    </div>
+
+                    <div className="col-block">
+                        <h1>{this.translate('section03.otherPartnersTitle')}</h1>
+                    </div>
+
+                    <div className="block-1-6 block-tab-full">
+                        {
+                            this.translate('section03.others').map((sponsor, index)=>{
+                                return <div className="col-block" key={index}>
+                                    <a href={sponsor.url} target="_blank">
+                                        <img src={sponsor.logo} alt={sponsor.name} />
+                                    </a>
+                                    {/* <p dangerouslySetInnerHTML={{__html: sponsor.description}}/> */}
+                                </div>
+                            })
+                        }                       
+                    </div>
+                           
+                </div>
+        
+    </section>
+    
+    <section className="s-section target-section" >
+        <div className="row">
+            <div className="col-block">
+                <h1>Finalists</h1>
+            </div>
+            <div className="row">
+                <div className="finalists block-1-3 block-tab-full">
+                {
+                    this.translate('section05.finalists').map((sponsor, index)=>{
+                        return <div className="col-block" key={index}>
+                            <div className="team">
+                                <div className="team_flag"><img src={sponsor.icon} height="50px" width="50px" /></div>
+                                <div className="team_name"><p><b>{sponsor.teamName}</b></p></div>
+                            </div>
+                            </div>
+                    })
+                }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section className="s-section target-section" >
+        <div className="row">
+            <div className="col-block">
+                <h1>{this.translate('section04.pageTitle')}</h1>
             </div>
         </div>
 
         <div className="row corporate-logo">
-            <div className="col-block">
-                <h3>{this.translate('section03.titleSponsorTitle')}</h3>
-            </div>
-            <div className="block-1-3 block-tab-full">
+            <div className="judge block-1-3 block-tab-full">
                 {
-                    this.translate('section03.titleSponsor').map((sponsor, index)=>{
+                    this.translate('section04.judge').map((sponsor, index)=>{
                         return <div className="col-block" key={index}>
-                            <a href={sponsor.url} target="_blank">
-                                <img src={sponsor.logo} alt={sponsor.name} />
-                            </a>
+                           
+                            <img src={sponsor.icon} alt={sponsor.name} />
+                            
+                            <h5>{sponsor.name}</h5>
+                            <p className="judgepost"><b>{sponsor.post}</b></p>
+                            <p>{sponsor.company}</p>
                         </div>
                     })
                 }
             </div>
         </div>
-
-        <div className="row corporate-logo">
-            <div className="col-block">
-                <h3>{this.translate('section03.generalSponsorTitle')}</h3>
-            </div>
-            <div className="block-1-3 block-tab-full">
-            {
-                this.translate('section03.generalSponsor').map((sponsor, index)=>{
-                    return <div className="col-block" key={index}>
-                        <a href={sponsor.url} target="_blank">
-                            <img src={sponsor.logo} alt={sponsor.name} />
-                        </a>
-                    </div>
-                })
-            }                       
-            </div>
-            <div className="col-block">
-                <h3>{this.translate('section03.academicPartnersTitle')}</h3>
-            </div>
-
-            <div className="block-1-3 block-tab-full">
-            {
-                this.translate('section03.academicPartners').map((sponsor, index)=>{
-                    return <div className="col-block" key={index}>
-                        <a href={sponsor.url} target="_blank">
-                            <img src={sponsor.logo} alt={sponsor.name} />
-                        </a>
-                    </div>
-                })
-            }                       
-            </div>
-            <div className="col-block">
-                <h3>{this.translate('section03.supportingOrganisationsTitle')}</h3>
-            </div>
-            <div className="block-1-3 block-tab-full">
-            {
-                this.translate('section03.supportingOrganisations').map((sponsor, index)=>{
-                    return <div className="col-block" key={index}>
-                        <a href={sponsor.url} target="_blank">
-                            <img src={sponsor.logo} alt={sponsor.name} />
-                        </a>
-                    </div>
-                })
-            }                       
-            </div> 
-        </div>
     </section>
 
+
+
+
+
+    <section className="s-section target-section" id="schedule">
+    <div className="row">
+            <div className="col-block">
+            <h1>Schedule</h1>
+            </div>
+        </div>
+        <div className="home-schedule schedule block-1-3 block-tab-full">
+            <div className="col-block">
+                    <h4 className="item-title">Friday 5 July</h4>
+                        <h5>Workshops Day</h5>
+                             <table className="day1">
+                                <tbody>
+                                    <tr>
+                                        <td className="session-schedule-time red">
+                                            <p className="time">10:00 AM - 5:00 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>Workshop AND Lunch </h5>
+                                            <p className="location">City University of Hong Kong</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time green">
+                                            <p className="time">5:00 PM - 6:00 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>Dinner</h5>
+                                            <p className="location">HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time orange">
+                                            <p className="time">6:30 PM - 8:00 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>Opening Ceremony</h5>
+                                            <p className="location">HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                            <div className="col-block">
+                            <h4 className="item-title">Saturday 6 July</h4>
+                            <h5>Expo Day</h5>
+                            <table className="day2">
+                                <tbody>
+                                    <tr>
+                                        <td className="session-schedule-time red">
+                                            <p className="time">9:00 AM - 9:30 AM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>Opening Remarks</h5>
+                                            <p className="location">City University of Hong Kong</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time green">
+                                            <p className="time">9:30 AM - 13:30 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>Symposium</h5>
+                                            <p className="location">City University of Hong Kong</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time orange">
+                                            <p className="time">2:00 PM - 5:30 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>Lunch AND Exhibition </h5>
+                                            <p className="location">HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time blue">
+                                            <p className="time">5:30 PM - 6:00 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>Announcements</h5>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                            <div className="col-block">
+                            <h4 className="item-title">Sunday 7 July</h4>
+                            <h5>Pitch Day</h5>
+                            <table className="day3">
+                                <tbody>
+                                    <tr>
+                                        <td className="session-schedule-time red">
+                                            <p className="time">9:00 AM - 9:15 AM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>Opening</h5>
+                                            <p className="location">HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time green">
+                                            <p className="time">9:15 AM - 12:00 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>Morning Pitching Session</h5>
+                                            <p className="location">HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time orange">
+                                            <p className="time">12:00 PM - 1:00 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>Lunch</h5>
+                                            <p className="location">HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time blue">
+                                            <p className="time">1:00 PM -5:00 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>Afternoon Pitching Session</h5>
+                                            <p className="location">HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time red">
+                                            <p className="time">5:00 PM - 6:00 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>Awards cum Closing Ceremony</h5>
+                                            <p className="location">HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                         </div>
+                    </div>
+    </section>
     </ThisPageContainerComponent>
     )
   }
