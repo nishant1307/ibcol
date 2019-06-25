@@ -4611,3 +4611,21 @@ iframe {
   width: 100%;
 }
 }
+.time {
+  width: 90px;
+  margin:0;
+}
+
+
+
+.home-schedule td{
+  padding:1rem 1rem;
+}
+
+.home-schedule h5{
+  margin-top:20px;
+}
+
+.home-schedule .location {
+  margin-bottom:20px;
+}
