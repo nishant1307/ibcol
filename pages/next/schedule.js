@@ -234,7 +234,7 @@ export default class extends React.Component {
                             </div>
 
                             <div className="col-block">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14761.865903624534!2d114.1732325!3d22.3360087!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb13b4355bdf28a9d!2z6aaZ5riv5Z-O5biC5aSn5a245qWK5bu65paH5a246KGT5qiT!5e0!3m2!1szh-TW!2shk!4v1559725726775!5m2!1szh-TW!2shk" frameBorder="0" allowFullScreen></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2040.4524545556142!2d114.17281109535597!3d22.335719825840986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404073400f3ef35%3A0xeb61704ffb0ba959!2z6aaZ5riv5Z-O5biC5aSn5a24!5e0!3m2!1szh-TW!2shk!4v1561434659160!5m2!1szh-TW!2shk" frameBorder="0" allowFullScreen></iframe>
                             </div>
                         </div>
 
