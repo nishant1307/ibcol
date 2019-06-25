@@ -16,6 +16,7 @@ import Head from 'next/head';
 
 const ThisPageContainerComponent = styled(PageContainerComponent)`
 
+  
 
 `;
 
@@ -63,64 +64,63 @@ export default class extends React.Component {
 
                     </div>
                 </div>
-<<<<<<< HEAD
-                {/* <div className="row">
-          <div className="col-block">
-          <a href="#schedule"><h4 className="subhead">Schedule</h4></a>
-          <a href="#locations"><h4 className="subhead">Locations</h4></a>
-          <a href="#tips"><h4 className="subhead">Local Tips</h4></a>
+                {/* <div class="row">
+          <div class="col-block">
+          <a href="#schedule"><h4 class="subhead">Schedule</h4></a>
+          <a href="#locations"><h4 class="subhead">Locations</h4></a>
+          <a href="#tips"><h4 class="subhead">Local Tips</h4></a>
           <hr></hr>
           </div>
           
         </div> */}
 
-                {/* <section className="s-section target-section" id="schedule">
+                {/* <section class="s-section target-section" id="schedule">
 
-          <div className="row">
-              <div className="col-block">
+          <div class="row">
+              <div class="col-block">
                   <h1>Schedule</h1>
-                  <h4 className="item-title">Friday 5 July</h4>
+                  <h4 class="item-title">Friday 5 July</h4>
                   <h5>Workshops Day</h5>
                   <p>All received submissions requires at least some final adjustments. The workshop helps all team bridge the gap to meet minimal quality requirements and be ready for investors and academic “cross-examinations”.</p>
               </div>
-              <div className="schedule" >
-                  <table className="day1">
+              <div class="schedule" >
+                  <table class="day1">
                       <tbody>
                           <tr>
-                              <td className="session-schedule-time blue">
+                              <td class="session-schedule-time blue">
                                   <p>5:00 PM - 6:30 PM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Registration</h5>
                                   <p>Chamber 1A and 1B</p>
                                   <p>HKSTP InnoCentre</p>
                               </td>
                           </tr>
                           <tr>
-                              <td className="session-schedule-time red">
+                              <td class="session-schedule-time red">
                                   <p>6:30 PM - 7:00 PM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Opening Ceremony</h5>
                                   <p>Chamber 1A and 1B</p>
                                   <p>HKSTP InnoCentre</p>
                               </td>
                           </tr>
                           <tr>
-                              <td className="session-schedule-time green">
+                              <td class="session-schedule-time green">
                                   <p>7:00 PM - 8:00 PM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Dinner</h5>
                                   <p>Chamber 1A and 1B</p>
                                   <p>HKSTP InnoCentre</p>
                               </td>
                           </tr>
                           <tr>
-                              <td className="session-schedule-time orange">
+                              <td class="session-schedule-time orange">
                                   <p>8:00 PM - 9:00 PM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Games</h5>
                                   <p>Chamber 1A and 1B</p>
                                   <p>HKSTP InnoCentre</p>
@@ -128,73 +128,73 @@ export default class extends React.Component {
                           </tr>
                       </tbody>
                   </table>
-                  <h4 className="item-title">Saturday 6 July</h4>
-                  <table className="day2">
+                  <h4 class="item-title">Saturday 6 July</h4>
+                  <table class="day2">
                       <tbody>
                           <tr>
-                              <td className="session-schedule-time blue">
+                              <td class="session-schedule-time blue">
                                   <p>9:00 AM - 9:30 AM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Exhibition Opens</h5>
                                   <p>Chamber 1A and 1B</p>
                                   <p>HKSTP InnoCentre</p>
                               </td>
                           </tr>
                           <tr>
-                              <td className="session-schedule-time red">
+                              <td class="session-schedule-time red">
                                   <p>9:30 AM - 10:00 AM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Opening Remarks</h5>
                                   <p>Chamber 1A and 1B</p>
                                   <p>HKSTP InnoCentre</p>
                               </td>
                           </tr>
                           <tr>
-                              <td className="session-schedule-time green">
+                              <td class="session-schedule-time green">
                                   <p>10:00 AM - 12:00 AM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Unconference</h5>
                                   <p>Chamber 1A and 1B</p>
                               </td>
                           </tr>
                           <tr>
-                              <td className="session-schedule-time orange">
+                              <td class="session-schedule-time orange">
                                   <p>12:00 PM - 1:30 PM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Lunch</h5>
                                   <p>Chamber 1A and 1B</p>
                                   <p>HKSTP InnoCentre</p>
                               </td>
                           </tr>
                           <tr>
-                              <td className="session-schedule-time blue">
+                              <td class="session-schedule-time blue">
                                   <p>1:30 PM - 2:30 PM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Pitch Session 1</h5>
                                   <p>Meeting Room 3 and 4</p>
                                   <p>HKSTP InnoCentre</p>
                               </td>
                           </tr>
                           <tr>
-                              <td className="session-schedule-time red">
+                              <td class="session-schedule-time red">
                                   <p>3:15 PM - 4:15 PM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Pitch Session 2</h5>
                                   <p>Meeting Room 3 and 4</p>
                                   <p>HKSTP InnoCentre</p>
                               </td>
                           </tr>
                           <tr>
-                              <td className="session-schedule-time green">
+                              <td class="session-schedule-time green">
                                   <p>5:00 PM - 5:45 PM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Unconference</h5>
                                   <p>Chamber 1A and 1B</p>
                                   <p>HKSTP InnoCentre</p>
@@ -202,74 +202,74 @@ export default class extends React.Component {
                           </tr>
                       </tbody>
                   </table>
-                  <h4 className="item-title">Sunday 7 July</h4>
-                  <table className="day3">
+                  <h4 class="item-title">Sunday 7 July</h4>
+                  <table class="day3">
                       <tbody>
                           <tr>
-                              <td className="session-schedule-time blue">
+                              <td class="session-schedule-time blue">
                                   <p>9:00 AM - 9:30 AM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Exhibition Opens</h5>
                                   <p>Chamber 1A and 1B</p>
                                   <p>HKSTP InnoCentre</p>
                               </td>
                           </tr>
                           <tr>
-                              <td className="session-schedule-time red">
+                              <td class="session-schedule-time red">
                                   <p>9:30 AM - 10:30 AM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Opening Remarks</h5>
                                   <p>Chamber 1A and 1B</p>
                                   <p>HKSTP InnoCentre</p>
                               </td>
                           </tr>
                           <tr>
-                              <td className="session-schedule-time green">
+                              <td class="session-schedule-time green">
                                   <p>10:30 AM - 11:30 AM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Pitch Session 3</h5>
                                   <p>Meeting Room 3 and 4</p>
                                   <p>HKSTP InnoCentre</p>
                               </td>
                           </tr>
                           <tr>
-                              <td className="session-schedule-time orange">
+                              <td class="session-schedule-time orange">
                                   <p>12:00 PM - 1:30 PM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Lunch</h5>
                                   <p>Chamber 1A and 1B</p>
                                   <p>HKSTP InnoCentre</p>
                               </td>
                           </tr>
                           <tr>
-                              <td className="session-schedule-time blue">
+                              <td class="session-schedule-time blue">
                                   <p>1:30 PM - 2:30 PM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Pitch Session 4</h5>
                                   <p>Meeting Room 3 and 4</p>
                                   <p>HKSTP InnoCentre</p>
                               </td>
                           </tr>
                           <tr>
-                              <td className="session-schedule-time red">
+                              <td class="session-schedule-time red">
                                   <p>3:15 PM - 4:15 PM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Pitch Session 5</h5>
                                   <p>Meeting Room 3 and 4</p>
                                   <p>HKSTP InnoCentre</p>
                               </td>
                           </tr>
                           <tr>
-                              <td className="session-schedule-time green">
+                              <td class="session-schedule-time green">
                                   <p>5:00 PM - 5:45 PM</p>
                               </td>
-                              <td className="session-schedule-detail">
+                              <td class="session-schedule-detail">
                                   <h5>Closing Ceremony</h5>
                                   <p>Chamber 1A and 1B</p>
                                   <p>HKSTP InnoCentre</p>
@@ -280,8 +280,6 @@ export default class extends React.Component {
               </div>
           </div> 
         </section> */}
-=======
->>>>>>> 651eb88fe4891e68283e3688fa9b1681d3e354ef
                 <section className="s-section target-section" id="announcement">
                     <div className="row">
                         <h1>Announcement</h1>
@@ -308,7 +306,7 @@ export default class extends React.Component {
                                             <p>9:00 AM - 10:00 AM</p>
                                         </td>
                                         <td className="session-schedule-detail">
-                                            <h5>Shuttle Bus from Hotel to CityU</h5>
+                                            <p>Shuttle Bus from Hotel to CityU</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -345,6 +343,14 @@ export default class extends React.Component {
                             <p>All projects are exhibited for two audiences with very different cultures and objectives. The Symposium is for inspiring students to explore careers in the tech sector and for matching researchers with potential collaborators. The Exhibition is for introducing investors to potential investments and for matching corporations with potential collaborators.</p>
                             <table className="day2">
                                 <tbody>
+                                    <tr>
+                                        <td className="session-schedule-time blue">
+                                            <p>8:30 AM - 9:00 AM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>Shuttle Bus from Hotel to CityU</h5>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td className="session-schedule-time red">
                                             <p>9:00 AM - 9:30 AM</p>
@@ -387,20 +393,64 @@ export default class extends React.Component {
                             <table className="day3">
                                 <tbody>
                                     <tr>
+                                        <td className="session-schedule-time blue">
+                                            <p>8:30 AM - 9:00 AM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>Shuttle Bus from Hotel to CityU</h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td className="session-schedule-time red">
                                             <p>9:00 AM - 9:15 AM</p>
                                         </td>
                                         <td className="session-schedule-detail">
-                                            <h5>Opening</h5>
+                                            <h5>Opening Remarks</h5>
                                             <p>HKSTP InnoCentre</p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td className="session-schedule-time green">
-                                            <p>9:15 AM - 12:00 PM</p>
+                                            <p>9:15 AM - 10:00 AM</p>
                                         </td>
                                         <td className="session-schedule-detail">
-                                            <h5>Morning Pitching Session</h5>
+                                            <h5>1st Pitch Session (P1)</h5>
+                                            <p>HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time orange">
+                                            <p>10:00 AM - 10:15 AM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>1st Recess (R1)</h5>
+                                            <p>HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time blue">
+                                            <p>10:15 AM -11:00 AM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>2nd Pitch Session (P2)</h5>
+                                            <p>HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time red">
+                                            <p>11:00 AM - 11:15 AM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>2nd Recess (R2)</h5>
+                                            <p>HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time green">
+                                            <p>11:15 AM -12:00 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>3nd Pitch Session (P3)</h5>
                                             <p>HKSTP InnoCentre</p>
                                         </td>
                                     </tr>
@@ -409,21 +459,84 @@ export default class extends React.Component {
                                             <p>12:00 PM - 1:00 PM</p>
                                         </td>
                                         <td className="session-schedule-detail">
-                                            <h5>Lunch</h5>
+                                            <h5>3nd Recess (R3) AND Lunch</h5>
                                             <p>HKSTP InnoCentre</p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td className="session-schedule-time blue">
-                                            <p>1:00 PM -5:00 PM</p>
+                                            <p>1:00 PM - 1:45 PM</p>
                                         </td>
                                         <td className="session-schedule-detail">
-                                            <h5>Afternoon Pitching Session</h5>
+                                            <h5>4nd Pitch Session (P4)</h5>
                                             <p>HKSTP InnoCentre</p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td className="session-schedule-time red">
+                                            <p>1:45 PM - 2:00 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>4nd Recess (R4)</h5>
+                                            <p>HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time green">
+                                            <p>2:00 PM -2:45 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>5nd Pitch Session (P5)</h5>
+                                            <p>HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time orange">
+                                            <p>2:45 PM - 3:00 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>5nd Recess (R5)</h5>
+                                            <p>HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time blue">
+                                            <p>3:00 PM - 3:45 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>6nd Pitch Session (P6)</h5>
+                                            <p>HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time red">
+                                            <p>3:45 PM - 4:00 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>6nd Recess (R6)</h5>
+                                            <p>HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time green">
+                                            <p>4:00 PM -5:45 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>7nd Pitch Session (P7)</h5>
+                                            <p>HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time orange">
+                                            <p>4:45 PM - 5:00 PM</p>
+                                        </td>
+                                        <td className="session-schedule-detail">
+                                            <h5>7nd Recess (R7)</h5>
+                                            <p>HKSTP InnoCentre</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="session-schedule-time blue">
                                             <p>5:00 PM - 6:00 PM</p>
                                         </td>
                                         <td className="session-schedule-detail">
