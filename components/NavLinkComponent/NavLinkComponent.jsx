@@ -22,9 +22,9 @@ class NavLinkComponent extends React.Component {
     const isActiveRoute = (props.route === undefined) ? false : routes.findAndGetUrls(props.route, params).urls.as === router.asPath;
     // const isActiveRoute = false;
 
-    // console.log('prefetch', prefetch);
+    //console.log('prefetch', prefetch);
 
-    // console.debug('this.props', this.props);
+    console.log('this.props', this.props);
 
 
     return (
