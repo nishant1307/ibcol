@@ -15,79 +15,6 @@ import PageContainerComponent from 'components/PageContainerComponent';
 import Head from 'next/head';
 
 const ThisPageContainerComponent = styled(PageContainerComponent)`
-iframe {
-  width: 100%;
-  height: 500px;
-}
-#schedule .row {
-}
-.schedule td{
-  padding: 20px;
-  vertical-align: top;
-}
-.schedule td:first-child {
-  padding-left: 20px;
-}
-.schedule td h5 {
-  margin: 0 0 10px;
-}
-.schedule td p {
-  margin: 0 0 10px;
-}
-.schedule td.blue {
-  border-right: 5px solid blue;
-}
-.schedule td.red {
-  border-right: 5px solid red;
-}
-.schedule td.green {
-  border-right: 5px solid green;
-}
-.schedule td.orange {
-  border-right: 5px solid orange;
-}
-.session-schedule-time {
-  width: 20%;
-}
-.session-schedule-detail {
-  width: 80%;
-}
-.block-tab-full {
-  margin-bottom: 100px;
-}
-.col-block a {
-  display: inline-block;
-  margin-right: 30px;
-  padding: 30px 0;
-}
-.col-block a h4{
-  margin-bottom: 0;
-}
-.stickynav {
-  position: fixed;
-  top: 0;
-  background: white;
-  width: 100%;
-  max-width: none;
-  border-bottom: 1px solid #ececec;
-}
-.stickynav .col-block {
-  float: none;
-  text-align: center;
-}
-@media (max-width: 640px){
-
-.col-block a {
-  display: inline-block;
-  margin-right: 0;
-  padding: 10px 0;
-  width: 100%;
-}
-.schedule h4{
-  display: inline-block;
-  margin-right: 0;
-  width: 100%;
-}
 
 
 `;
@@ -630,7 +557,7 @@ export default class extends React.Component {
 
                         <div className="block-1-2 block-tab-full">
                             <div className="col-block">
-                                <h4 className="item-title">Leung Ko Yuk Tak Lecture Theatre, Yeung Kin Man Academic Building (LT-14)<br /> @ City University of Hong Kong</h4>
+                                <h4 className="item-title">Symposium @ City University of Hong Kong</h4>
                                 <a href="https://goo.gl/maps/9g11DNf6fwJt9pLN7" target="_blank" >83 Tat Chee Ave, Kowloon Tong</a>
                                 <p>City University of Hong Kong is located in the heart of Kowloon Tong amidst idyllic settings, and is surrounded by schools and is adjacent to one of the city’s most popular upscale shopping centres.</p>
                                 <p>Just as all roads lead to Rome, City University of Hong Kong is one of Hong Kong’s key epicentres. The state-of-the-art facility is just 19 minutes from the city’s CBD, 42 minutes from Hong Kong International Airport and 43 minutes from the Shenzhen border, by Mass Transit Railway. </p>
@@ -644,7 +571,7 @@ export default class extends React.Component {
 
                         <div className="block-1-2 block-tab-full">
                             <div className="col-block">
-                                <h4 className="item-title">Symposium @ Innocentre</h4>
+                                <h4 className="item-title">Exhibition @ InnoCentre</h4>
                                 <a href="https://goo.gl/maps/R2KUQ88SGkM2" target="_blank" >72 Tat Chee Ave, Kowloon Tong</a>
                                 <p>InnoCentre is located in the heart of Kowloon Tong amidst idyllic settings, and is surrounded by schools and is adjacent to one of the city’s most popular upscale shopping centres.</p>
                                 <p>Just as all roads lead to Rome, InnoCentre is one of Hong Kong’s key epicentres. The state-of-the-art facility is just 19 minutes from the city’s CBD, 42 minutes from Hong Kong International Airport and 43 minutes from the Shenzhen border, by Mass Transit Railway. </p>
