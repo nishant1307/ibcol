@@ -24,7 +24,7 @@ class NavLinkComponent extends React.Component {
 
     //console.log('prefetch', prefetch);
 
-    console.log('this.props', this.props);
+    // console.log('this.props', this.props);
 
 
     return (
