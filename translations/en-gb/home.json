@@ -168,7 +168,7 @@
       {"teamName":"Power Of Blocks", "icon":"/static/images/flags/1x1/hk.svg"},
       {"teamName":"Veritas", "icon":"/static/images/flags/1x1/hk.svg"},
       {"teamName":"Aero Knowledge Proof", "icon":"/static/images/flags/1x1/hk.svg"},
-      {"teamName":"Fintech Passion", "icon":"/static/images/flags/1x1/hk.svg"},
+      {"teamName":"FintechPassion", "icon":"/static/images/flags/1x1/hk.svg"},
       {"teamName":"TrustedAttendance", "icon":"/static/images/flags/1x1/hk.svg"},
       {"teamName":"TheGateOfTrust", "icon":"/static/images/flags/1x1/hk.svg"},
       {"teamName":"Code to Uncode", "icon":"/static/images/flags/1x1/in.svg"},
@@ -180,7 +180,8 @@
       {"teamName":"砍掉重鏈", "icon":"/static/images/flags/1x1/tw.svg"},
       {"teamName":"iDe (Identity Decentralized)", "icon":"/static/images/flags/1x1/us.svg"},
       {"teamName":"Nisreen & Yunsoo", "icon":"/static/images/flags/1x1/us.svg"},
-      {"teamName":"ProofMedic", "icon":"/static/images/flags/1x1/us.svg"}
+      {"teamName":"ProofMedic", "icon":"/static/images/flags/1x1/us.svg"},
+      {"teamName":"Turing Chain Limited", "icon":"/static/images/flags/1x1/us.svg"}
     ]
   }
 }
