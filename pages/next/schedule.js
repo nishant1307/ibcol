@@ -180,7 +180,7 @@ export default class extends React.Component {
                                             <p>8:30 AM - 9:00 AM</p>
                                         </td>
                                         <td className="session-schedule-detail">
-                                            <h5>Registration opnes</h5>
+                                            <h5>Registration opens</h5>
                                         </td>
                                     </tr>
                                     <tr>
