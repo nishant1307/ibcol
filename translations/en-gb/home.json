@@ -139,6 +139,7 @@
   "section04":{
     "pageTitle":"Our Judges",
     "judge":[
+      {"name":"Dr. Michael Wong","post":"Associate Professor of Finance","icon":"/static/images/judge/icon_drmichealwong.jpeg","company":"CityU HK"},
       {"name":"Mr. Chi Man Ngan ","post":"Blockchain Lead","icon":"/static/images/judge/icon_mrchimanngan.jpeg","company":"AIA"},
       {"name":"Mr. Danny Wu","post":"Executive Director","icon":"/static/images/judge/icon_mrDannyWu.png","company":"First Gateway Capital Limited"},
       {"name":"Mr. Dick Fong","post":"Partner","icon":"/static/images/judge/icon_mrDickFong.jpg","company":"PwC"},
