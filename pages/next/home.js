@@ -359,7 +359,7 @@ export default class extends React.Component {
                                 <tbody>
                                     <tr>
                                         <td className="session-schedule-time blue">
-                                            <p className="time">9:00 AM - 12:30 PM</p>
+                                            <p className="time">9:30 AM - 12:30 PM</p>
                                         </td>
                                         <td className="session-schedule-detail">
                                             <h5> Academic Symposium</h5>
