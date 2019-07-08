@@ -4502,12 +4502,12 @@ td.minw {
 }
 .judge h5{
   margin-top: 2rem;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .judge p {
   margin-bottom: 0.1rem;
-  text-align:center;
+  /* text-align:center; */
   
 }
 
@@ -4632,4 +4632,17 @@ iframe {
 
 .titleContent p {
   font-size: 10px;
+} 
+
+.judge .judgesImage{
+  float: left;
+  width: 50%;
+}
+
+
+.judge .judgesContent{
+  vertical-align: top;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 50px;
 }
