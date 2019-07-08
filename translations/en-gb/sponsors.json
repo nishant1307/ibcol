@@ -5,7 +5,6 @@
   "subhead":"Sponsors & Supporters of the 2019 International Blockchain Olympiad",
   "titleSponsorTitle":"Title Sponsors",
   "titleSponsor":[
-    {"name":"Cardano","url":"https://www.cardano.org","logo":"/static/images/logo-cardano.png","description":"<b>Cardano</b> is a decentralised public blockchain and cryptocurrency project and is fully open sourced. Cardano is developing a smart contract platform which seeks to deliver more advanced features than any protocol previously developed. Cardano is represented by Emurgo HK."},
     {"name":"EmurgoHK","url":"https://emurgohk.io","logo":"/static/images/logo-emurgohk.png","description":"<b>EMURGO HK</b> is the venture builder for the Cardano blockchain protocol. And now we're in Hong Kong. Located in one of the world's most dynamic business hubs, and perfectly positioned between Northeast and Southeast Asia, EmurgoHK is spreading the revolutionary Cardano protocol across the Pacific Rim."}
   ],
   "travelPartnersTitle":"Travel Partners",
