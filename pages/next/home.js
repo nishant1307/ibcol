@@ -272,31 +272,92 @@ export default class extends React.Component {
             </div>
         </div>
     </section>
-
+    
     <section className="s-section target-section" >
         <div className="row">
             <div className="col-block">
-                <h1>{this.translate('section04.pageTitle')}</h1>
+                <h1>{this.translate('section07.pageTitle')}</h1>
             </div>
         </div>
 
         <div className="row corporate-logo">
-            <div className="judge block-1-3 block-tab-full">
+            <div className="judge block-1-2 block-tab-full">
                 {
-                    this.translate('section04.judge').map((sponsor, index)=>{
+                    this.translate('section07.vip').map((sponsor, index)=>{
                         return <div className="col-block" key={index}>
-                           
-                            <img src={sponsor.icon} alt={sponsor.name} />
-                            
-                            <h5>{sponsor.name}</h5>
-                            <p className="judgepost"><b>{sponsor.post}</b></p>
-                            <p>{sponsor.company}</p>
+                            <div className="judgesImage">
+                                <img src={sponsor.icon} alt={sponsor.name} />
+                            </div>
+                            <div className="judgesContent">
+                                <h5>{sponsor.name}</h5>
+                                <p className="judgepost"><b>{sponsor.post}</b></p>
+                                <p>{sponsor.company}</p>
+                            </div>
                         </div>
                     })
                 }
             </div>
         </div>
     </section>
+
+    <section className="s-section target-section" >
+        <div className="row">
+            <div className="col-block">
+                <h1>{this.translate('section04.hostTitle')}</h1>
+            </div>
+        </div>
+
+        <div className="row corporate-logo">
+            <div className="judge block-1-2 block-tab-full">
+                {
+                    this.translate('section04.hostJudge').map((sponsor, index)=>{
+                        return <div className="col-block" key={index}>
+                            <div className="judgesImage">
+                                <img src={sponsor.icon} alt={sponsor.name} />
+                            </div>
+                            <div className="judgesContent">
+                                <h5>{sponsor.name}</h5>
+                                <p className="judgepost"><b>{sponsor.post}</b></p>
+                                <p>{sponsor.company}</p>
+                            </div>
+                        </div>
+                    })
+                }
+            </div>
+        </div>
+           
+
+            
+    </section>
+
+       <section className="s-section target-section" >
+        <div className="row">
+            <div className="col-block">
+                <h1>{this.translate('section04.guestTitle')}</h1>
+            </div>
+        </div>
+
+        <div className="row corporate-logo">
+            <div className="judge block-1-2 block-tab-full">
+                {
+                    this.translate('section04.guestjudge').map((sponsor, index)=>{
+                        return <div className="col-block" key={index}>
+                            <div className="judgesImage">
+                                <img src={sponsor.icon} alt={sponsor.name} />
+                            </div>
+                            <div className="judgesContent">
+                                <h5>{sponsor.name}</h5>
+                                <p className="judgepost"><b>{sponsor.post}</b></p>
+                                <p>{sponsor.company}</p>
+                            </div>
+                        </div>
+                    })
+                }
+            </div>
+        </div>
+    </section>
+
+
 
 
 
