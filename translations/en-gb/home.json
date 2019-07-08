@@ -137,14 +137,25 @@
     {"name":"Elos","url":"https://elosskateboards.com/","logo":"/static/images/logo-elso.png","description":"<b>Elos</b> is a skateboard built for beginners and urban commuters. It is like a mini longboard that you can bring anywhere. The wide and Stable Skateboard Deck makes it stable to learn and fun to ride. AKA: The campus board."} 
   ]},
   "section04":{
-    "pageTitle":"Our Judges",
-    "judge":[
+    "hostTitle":"Our Host Judges",
+    "hostJudge":[
+      {"name":"Dr. Lawrence Ma","post":"Founder and President","icon":"/static/images/judge/icon_drLawrenceMa.jpg","company":"Hong Kong Blockchain Society"},
       {"name":"Dr. Michael Wong","post":"Associate Professor of Finance","icon":"/static/images/judge/icon_drmichealwong.jpeg","company":"CityU HK"},
+      {"name":"Dr. Cathy Lo","post":"Strategic Planning","icon":"/static/images/judge/icon_drCathyLo.jpeg","company":"Hong Kong Science and Technology Parks Corporation"},
+      {"name":"Dr. Joanne Ng","post":"Head of Field Marketing APAC","icon":"/static/images/judge/icon_drJoanneNg.jpg","company":"R3"}
+    ],
+    "guestTitle":"Our Judges",
+    "guestjudge":[
       {"name":"Mr. Chi Man Ngan ","post":"Blockchain Lead","icon":"/static/images/judge/icon_mrchimanngan.jpeg","company":"AIA"},
-      {"name":"Mr. Danny Wu","post":"Executive Director","icon":"/static/images/judge/icon_mrDannyWu.png","company":"First Gateway Capital Limited"},
-      {"name":"Mr. Dick Fong","post":"Partner","icon":"/static/images/judge/icon_mrDickFong.jpg","company":"PwC"},
-      {"name":"Mr. Edmond Lau","post":"Managing Director","icon":"/static/images/judge/icon_mrEdmondLau.jpg","company":"Lingfeng Capital"},
-      {"name":"Mr. Ronald Yu","post":"Founder","icon":"/static/images/judge/icon_mrRonaldYu.jpg","company":"IIPCC"}
+      {"name":"Mr. Dick Fong","post":"Partner, China/HK Emerging Technology Group","icon":"/static/images/judge/icon_mrDickFong.jpg","company":"PwC"},
+      {"name":"Mr. Eric Lam","post":"Co-Founder CTO","icon":"/static/images/judge/icon_drEricLam.jpeg","company":"Eurika AI"},
+      {"name":"Mr. Jackie Hung","post":"Assistant Vice President Innovative Business & Growth","icon":"/static/images/judge/icon_mrJackieHung.jpeg","company":"HSBC Commercial Banking"},
+      {"name":"Mr. Julian Gropp","post":"Director of Asset Management","icon":"/static/images/judge/icon_mrJulianGropp.jpeg","company":"HASHED"},
+      {"name":"Mr. Kelvin Luk","post":"Director","icon":"/static/images/judge/icon_mrKelvinLuk.png","company":"ImSure Life"},
+      {"name":"Mr. Michael Chow","post":"Associate Partner, Transaction Strategy and Operations, Greater China","icon":"/static/images/judge/icon_mrMichaelChow.jpeg","company":"EY"},
+      {"name":"Mr. Ronald Yu","post":"Founder","icon":"/static/images/judge/icon_mrRonaldYu.jpg","company":"IIPCC"},
+      {"name":"Mr. William Hui","post":"Head of IT Innovation","icon":"/static/images/judge/icon_mrWilliamHui.png","company":"Manulife"},
+      {"name":"Ms. Marina Danylyuk","post":"Chief Legal Officer","icon":"/static/images/judge/icon_msMarynaDanylyuk.jpg","company":"MARK.SPACE"}
     ]
   },
   "section05":{
@@ -183,6 +194,15 @@
       {"teamName":"Nisreen & Yunsoo", "icon":"/static/images/flags/1x1/us.svg"},
       {"teamName":"ProofMedic", "icon":"/static/images/flags/1x1/us.svg"},
       {"teamName":"Turing Chain Limited", "icon":"/static/images/flags/1x1/us.svg"}
+    ]
+  },
+  "section07":{
+    "pageTitle":"Our VIPs",
+    "vip":[
+      {"name":"Mr. Albert Wong", "company":"Hong Kong Science and Technology Parks Corporation", "post":"CEO", "icon":"/static/images/vip/icon_mrAlbertWong.jpeg"},
+      {"name":"Dr. Houmin Yan", "company":"CityU College of Business", "post":"Dean", "icon":"/static/images/vip/icon_drHouminYan.jpeg"},
+      {"name":"Hon. Charles Mok", "company":"Hong Kong Legislative Council", "post":"IT Councillor", "icon":"/static/images/vip/icon_honCharlesMok.jpeg"},
+      {"name":" Mr. Gabriel Chan", "company":"International Blockchain Olympiad", "post":"Program Director", "icon":"/static/images/vip/icon_mrGabrielChan.jpg"}
     ]
   }
 }
