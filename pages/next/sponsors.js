@@ -89,8 +89,12 @@ export default class extends React.Component {
                                     <p dangerouslySetInnerHTML={{__html: sponsor.description}}/>
                                 </div>
                             })
+                           
                         }
                         
+                    </div>
+                    <div className="titleContent">
+                        <p><i>* Cardano was previously listed as a title sponsor for the 2019 International Blockchain Olympiad. For clarification purposes, Emurgo HK was and has been the sole title sponsor for the Olympiad on the 6th and 7th of July 2019 and the Cardano Foundation is not and has not been a title sponsor nor taken any role in support of this event.</i></p>
                     </div>
 
                     

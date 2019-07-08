@@ -4629,3 +4629,7 @@ iframe {
 .home-schedule .location {
   margin-bottom:20px;
 }
+
+.titleContent p {
+  font-size: 10px;
+}
