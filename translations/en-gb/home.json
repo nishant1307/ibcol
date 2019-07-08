@@ -152,7 +152,7 @@
       {"name":"Mr. Jackie Hung","post":"Assistant Vice President Innovative Business & Growth","icon":"/static/images/judge/icon_mrJackieHung.jpeg","company":"HSBC Commercial Banking"},
       {"name":"Mr. Julian Gropp","post":"Director of Asset Management","icon":"/static/images/judge/icon_mrJulianGropp.jpeg","company":"HASHED"},
       {"name":"Mr. Kelvin Luk","post":"Director","icon":"/static/images/judge/icon_mrKelvinLuk.png","company":"ImSure Life"},
-      {"name":"Mr. Michael Chow","post":"Associate Partner, Transaction Strategy and Operations, Greater China","icon":"/static/images/judge/icon_mrMichaelChow.jpeg","company":"EY"},
+      {"name":"Mr. Michael Chow","post":"Associate Partner, Transaction Strategy & Operations, China/HK","icon":"/static/images/judge/icon_mrMichaelChow.jpeg","company":"EY"},
       {"name":"Mr. Ronald Yu","post":"Founder","icon":"/static/images/judge/icon_mrRonaldYu.jpg","company":"IIPCC"},
       {"name":"Mr. William Hui","post":"Head of IT Innovation","icon":"/static/images/judge/icon_mrWilliamHui.png","company":"Manulife"},
       {"name":"Ms. Marina Danylyuk","post":"Chief Legal Officer","icon":"/static/images/judge/icon_msMarynaDanylyuk.jpg","company":"MARK.SPACE"}
@@ -200,7 +200,7 @@
     "pageTitle":"Our VIPs",
     "vip":[
       {"name":"Mr. Albert Wong", "company":"Hong Kong Science and Technology Parks Corporation", "post":"CEO", "icon":"/static/images/vip/icon_mrAlbertWong.jpeg"},
-      {"name":"Dr. Houmin Yan", "company":"CityU College of Business", "post":"Dean", "icon":"/static/images/vip/icon_drHouminYan.jpeg"},
+      {"name":"Dr. Houmin Yan", "company":"City University of Hong Kong", "post":"Dean, College of Business ", "icon":"/static/images/vip/icon_drHouminYan.jpeg"},
       {"name":"Hon. Charles Mok", "company":"Hong Kong Legislative Council", "post":"IT Councillor", "icon":"/static/images/vip/icon_honCharlesMok.jpeg"},
       {"name":" Mr. Gabriel Chan", "company":"International Blockchain Olympiad", "post":"Program Director", "icon":"/static/images/vip/icon_mrGabrielChan.jpg"}
     ]

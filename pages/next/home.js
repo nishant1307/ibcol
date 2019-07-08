@@ -272,6 +272,33 @@ export default class extends React.Component {
             </div>
         </div>
     </section>
+    
+    <section className="s-section target-section" >
+        <div className="row">
+            <div className="col-block">
+                <h1>{this.translate('section07.pageTitle')}</h1>
+            </div>
+        </div>
+
+        <div className="row corporate-logo">
+            <div className="judge block-1-2 block-tab-full">
+                {
+                    this.translate('section07.vip').map((sponsor, index)=>{
+                        return <div className="col-block" key={index}>
+                            <div className="judgesImage">
+                                <img src={sponsor.icon} alt={sponsor.name} />
+                            </div>
+                            <div className="judgesContent">
+                                <h5>{sponsor.name}</h5>
+                                <p className="judgepost"><b>{sponsor.post}</b></p>
+                                <p>{sponsor.company}</p>
+                            </div>
+                        </div>
+                    })
+                }
+            </div>
+        </div>
+    </section>
 
     <section className="s-section target-section" >
         <div className="row">
@@ -330,32 +357,7 @@ export default class extends React.Component {
         </div>
     </section>
 
-    <section className="s-section target-section" >
-        <div className="row">
-            <div className="col-block">
-                <h1>{this.translate('section07.pageTitle')}</h1>
-            </div>
-        </div>
 
-        <div className="row corporate-logo">
-            <div className="judge block-1-2 block-tab-full">
-                {
-                    this.translate('section07.vip').map((sponsor, index)=>{
-                        return <div className="col-block" key={index}>
-                            <div className="judgesImage">
-                                <img src={sponsor.icon} alt={sponsor.name} />
-                            </div>
-                            <div className="judgesContent">
-                                <h5>{sponsor.name}</h5>
-                                <p className="judgepost"><b>{sponsor.post}</b></p>
-                                <p>{sponsor.company}</p>
-                            </div>
-                        </div>
-                    })
-                }
-            </div>
-        </div>
-    </section>
 
 
 
