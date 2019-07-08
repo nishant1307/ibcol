@@ -3,10 +3,11 @@
   "seoDescription":"International Blockchain Olympiad is a multidisciplinary design and building competition. IBCOL 2019 invites students from around the world to solve real-world challenges through decentralised applications.",
   "ogImage":"static/images/ogimage.jpg",
   "subhead":"Sponsors & Supporters of the 2019 International Blockchain Olympiad",
-  "titleSponsorTitle":"Title Sponsor",
+  "titleSponsorTitle":"Title Sponsor *",
   "titleSponsor":[
     {"name":"EmurgoHK","url":"https://emurgohk.io","logo":"/static/images/logo-emurgohk.png","description":"<b>EMURGO HK</b> is the venture builder for the Cardano blockchain protocol. And now we're in Hong Kong. Located in one of the world's most dynamic business hubs, and perfectly positioned between Northeast and Southeast Asia, EmurgoHK is spreading the revolutionary Cardano protocol across the Pacific Rim."}
   ],
+  "titleContent":"* Cardano was previously listed as a title sponsor for the 2019 International Blockchain Olympiad. For clarification purposes, Emurgo HK was and has been the sole title sponsor for the Olympiad on the 6th and 7th of July 2019 and the Cardano Foundation is not and has not been a title sponsor nor taken any role in support of this event.",
   "travelPartnersTitle":"Travel Partners",
   "travelPartners":[
     {"name":"Cathay Pacific","url":"https://www.cathaypacific.com","logo":"/static/images/cathay_pacific_logo_detail.png","description":"<b>Cathay Pacific</b> is the flag carrier of Hong Kong, with its head office and main hub located at Hong Kong International Airport. The airline's operations and subsidiaries have scheduled passenger and cargo services to more than 190 destinations in more than 60 countries worldwide including codeshares and joint ventures."}
