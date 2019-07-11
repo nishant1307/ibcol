@@ -126,7 +126,9 @@ export default class extends React.Component {
                             <h5>Veritas</h5>
                             <p>
                                 Joshua Yang (Certificate accepted by IBCOL 2019 Organization Committee on behalf of winner)<br />
-                                <b>Chinese International School</b>
+                                <b>Chinese International School <br />
+                                    Hong Kong
+                                </b>
                             </p>
                         </div>
                         <div className="col-block">
@@ -212,7 +214,7 @@ export default class extends React.Component {
                                 Bill Hsu (National Taiwan University)<br />
                                 Lynsey Lin (National Tsing Hua University)<br />
                                 Huang Qi-Xian (National Tsing Hua University)<br />
-                                Tsao Yu-Han “Elaine” (National Taiwan University)<br />
+                                Elaine Tsao (National Taiwan University)<br />
                                 Jack Tseng (National Cheng-Chi University)<br />
                                 <b>
                                     Taiwan<br />
