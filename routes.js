@@ -52,7 +52,7 @@ routes
   .add({ name: 'ambassadors', pattern: '/:locale/ambassadors/', page: 'next/ambassadors' })
   .add({ name: 'sponsors', pattern: '/:locale/sponsors/', page: 'next/sponsors' })
   .add({ name: 'schedule', pattern: '/:locale/schedule/', page: 'next/schedule' })
-  .add({ name: 'winners', pattern: '/:locale/winners/', page: 'next/programme' })
+  .add({ name: 'winners', pattern: '/:locale/winners/', page: 'next/winner' })
   .add({ name: 'contact', pattern: '/:locale/contact/', page: 'next/contact' })
   .add({ name: 'registration', pattern: '/:locale/registration/', page: 'next/registration' })
   .add({ name: 'registrationLogin', pattern: '/:locale/registration/login/', page: 'next/registration/login' })
