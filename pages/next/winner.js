@@ -63,7 +63,7 @@ export default class extends React.Component {
                                     Yunsoo Kim (left)<br />
                                     Nisreen Bahrainwala (right)<br />
                                     <b>University of Michigan<br />
-                                        US</b>
+                                        USA</b>
                                 </p>
                             </div>
                             <div className="col-block">
@@ -71,10 +71,10 @@ export default class extends React.Component {
                                 <img src="/static/images/winner/medisure.jpg" alt="medisure" />
                                 <h5>Medisure</h5>
                                 <p>
-                                    Louise Lumapas<br />
-                                    Jeremiah Valero<br />
-                                    Rannzel Tongco<br />
-                                    Cris Militante<br />
+                                    Louise Lumapas,
+                                    Jeremiah Valero,
+                                    Rannzel Tongco,
+                                    Cris Militante,
                                     (left to right)<br />
                                     <b>
                                         University of San Carlos<br />
@@ -125,7 +125,7 @@ export default class extends React.Component {
                             <img src="/static/images/winner/veritas.jpg" alt="Veritas" />
                             <h5>Veritas</h5>
                             <p>
-                                Joshua Yang (missing from photo)<br />
+                                Joshua Yang (Certificate accepted by IBCOL 2019 Organization Committee on behalf of winner)<br />
                                 <b>Chinese International School</b>
                             </p>
                         </div>
@@ -149,7 +149,7 @@ export default class extends React.Component {
                                 Anthony Leung<br />
                                 Winnie Yeung (missing from photo)<br />
                                 <b>
-                                    University of Toronto
+                                    University of Toronto<br />
                                     Canada
                         </b>
                             </p>
@@ -169,7 +169,7 @@ export default class extends React.Component {
                                 Yunsoo Kim<br />
                                 <b>
                                     University of Michigan<br />
-                                    US
+                                    USA
                         </b>
                             </p>
                         </div>
@@ -194,7 +194,7 @@ export default class extends React.Component {
                                 Stephen Shang Yi Liu<br />
                                 <b>
                                     Case Western Reserve University<br />
-                                    US
+                                    USA
                         </b>
                             </p>
                         </div>
@@ -205,7 +205,7 @@ export default class extends React.Component {
 
                     <div className="block-1-2 block-tab-full">
                         <div className="col-block">
-                            <h2>People’s choice Runner-up (Tied)</h2>
+                            <h2>People’s Choice Runner-up (Tied)</h2>
                             <h5>Ogriot</h5>
                             <p>
                                 Chen BoYu (National Chiao Tung University)<br />
@@ -217,11 +217,11 @@ export default class extends React.Component {
                                 <b>
                                     Taiwan<br />
                                 </b>
-                                (no photo, not presented at the ceremony)
+                                
                     </p>
                         </div>
                         <div className="col-block">
-                            <h2>People’s choice Runner-up (Tied)</h2>
+                            <h2>People’s Choice Runner-up (Tied)</h2>
                             <h5>Aero-Knowledge Proof</h5>
                             <p>
                                 Huang Yupeng “Paul” (Guangzhou Civil Aviation College)<br />
@@ -229,7 +229,7 @@ export default class extends React.Component {
                                 <b>
                                     China<br />
                                 </b>
-                                (not presented at the ceremony)
+                                
                     </p>
                         </div>
                     </div>
