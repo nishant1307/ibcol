@@ -60,8 +60,8 @@ export default class extends React.Component {
                                 <img src="/static/images/winner/vivica.jpg" alt="vivica" />
                                 <h5>Vivica</h5>
                                 <p>
-                                    Yunsoo Kim (left)<br />
-                                    Nisreen Bahrainwala (right)<br />
+                                    Yunsoo Kim<br />
+                                    Nisreen Bahrainwala<br />
                                     <b>University of Michigan<br />
                                         USA</b>
                                 </p>
@@ -74,8 +74,7 @@ export default class extends React.Component {
                                     Louise Lumapas,
                                     Jeremiah Valero,
                                     Rannzel Tongco,
-                                    Cris Militante,
-                                    (left to right)<br />
+                                    Cris Militante<br />
                                     <b>
                                         University of San Carlos<br />
                                         Philippines
@@ -101,10 +100,11 @@ export default class extends React.Component {
                                 <img src="/static/images/winner/Aero-Knowledge_Proof1.jpg" alt="Aero-Knowledge Proof" />
                                 <h5>Aero-Knowledge Proof</h5>
                                 <p>
-                                    Huang Yupeng “Paul” (Guangzhou Civil Aviation College)<br />
-                                    Lee Gong Kuen “Jeremiah” (Hong Kong Baptist University)<br />
-                                    (left to right)<br />
-                                    <b>China</b>
+                                    Lee Gong Kuen “Jeremiah” <br />
+                                    (Hong Kong Baptist University)<br />
+                                    Huang Yupeng “Paul” <br />
+                                    <b>Guangzhou Civil Aviation College<br />
+                                    China</b>
                                 </p>
                             </div>
                         </div>
@@ -137,10 +137,11 @@ export default class extends React.Component {
                             <h5>Aero-Knowledge Proof</h5>
                             <p>
                                 Lee Gong Kuen “Jeremiah” <br />(Hong Kong Baptist University)<br />
-                                Huang Yupeng “Paul” <br />(Guangzhou Civil Aviation College)<br />
-                                <b>
+                                Huang Yupeng “Paul” <br />
+                                <b>Guangzhou Civil Aviation College<br />
+                                
                                     China
-                        </b>
+                                </b>
                             </p>
                         </div>
                         <div className="col-block">
