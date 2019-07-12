@@ -126,8 +126,8 @@ export default class extends React.Component {
               </h1>
              <br />
              <br />
-              <h3>
-                Please join us for the event at City University of Hong Kong &#38; InnoCentre on Saturday, July 6, at 9:00 a.m.
+              <h3 style={{"font-size": "2.6rem"}}>
+              International Blockchain Olympiad is a multidisciplinary design competition that invites students from around the world to apply blockchain and cryptography for solving real-world challenges.
                 {/* <Countdown date={new Date(2019, 6, 4, 23, 59, 59, 59)}
                   renderer={renderer}/><br/>until the Olympiad */}
               </h3>
@@ -140,7 +140,7 @@ export default class extends React.Component {
                 {/* </Link> */}
                 {/* <Link prefetch href="schedule/#schedule" params={{ locale }}> */}
                   <a href="#schedule" className="btn btn--large">
-                    Agenda
+                    2019 AGENDA
                     {/* {this.translate('competitionRules')} */}
                   </a>
                 {/* </Link> */}

@@ -2,9 +2,9 @@
   "pageTitle":"International Blockchain Olympiad",
   "seoDescription":"International Blockchain Olympiad is a multidisciplinary design and building competition. IBCOL 2019 invites students from around the world to solve real-world challenges through decentralised applications.",
   "ogImage":"static/images/ogimage.jpg",
-  "mainHeading":"See you on the 6th & 7th",
+  "mainHeading":"The world's largest gathering of student talent in blockchain",
   "subHeading":"July 5~7 in Hong Kong",
-  "register":"RSVP",
+  "register":"Pre-register for 2020",
   "howToJoin":"How to join",
   "competitionRules":"Competition Process",
   "scroll":"Scroll",
@@ -141,21 +141,21 @@
     "hostJudge":[
       {"name":"Dr. Lawrence Ma","post":"Founder and President","icon":"/static/images/judge/icon_drLawrenceMa.jpg","company":"Hong Kong Blockchain Society"},
       {"name":"Dr. Michael Wong","post":"Associate Professor of Finance","icon":"/static/images/judge/icon_drmichealwong.jpeg","company":"CityU HK"},
-      {"name":"Dr. Cathy Lo","post":"Strategic Planning","icon":"/static/images/judge/icon_drCathyLo.jpeg","company":"Hong Kong Science and Technology Parks Corporation"},
-      {"name":"Dr. Joanne Ng","post":"Head of Field Marketing APAC","icon":"/static/images/judge/icon_drJoanneNg.jpg","company":"R3"}
+      {"name":"Ms. Cathy Lo","post":"Strategic Planning","icon":"/static/images/judge/icon_drCathyLo.jpeg","company":"Hong Kong Science Park"},
+      {"name":"Ms. Joanne Ng","post":"Head of Field Marketing APAC","icon":"/static/images/judge/icon_drJoanneNg.jpg","company":"R3"}
     ],
     "guestTitle":"Our Judges",
     "guestjudge":[
       {"name":"Mr. Chi Man Ngan ","post":"Blockchain Lead","icon":"/static/images/judge/icon_mrchimanngan.jpeg","company":"AIA"},
       {"name":"Mr. Dick Fong","post":"Partner, China/HK Emerging Technology Group","icon":"/static/images/judge/icon_mrDickFong.jpg","company":"PwC"},
-      {"name":"Mr. Eric Lam","post":"Co-Founder CTO","icon":"/static/images/judge/icon_drEricLam.jpeg","company":"Eurika AI"},
+      {"name":"Dr. Eric Lam","post":"Co-Founder CTO","icon":"/static/images/judge/icon_drEricLam.jpeg","company":"Eurika AI"},
       {"name":"Mr. Jackie Hung","post":"Assistant Vice President Innovative Business & Growth","icon":"/static/images/judge/icon_mrJackieHung.jpeg","company":"HSBC Commercial Banking"},
       {"name":"Mr. Julian Gropp","post":"Director of Asset Management","icon":"/static/images/judge/icon_mrJulianGropp.jpeg","company":"HASHED"},
       {"name":"Mr. Kelvin Luk","post":"Director","icon":"/static/images/judge/icon_mrKelvinLuk.png","company":"ImSure Life"},
       {"name":"Mr. Michael Chow","post":"Associate Partner, Transaction Strategy & Operations, China/HK","icon":"/static/images/judge/icon_mrMichaelChow.jpeg","company":"EY"},
+      {"name":"Ms. Marina Danylyuk","post":"International Liaison","icon":"/static/images/judge/icon_msMarynaDanylyuk.jpg","company":"Hong Kong Blockchain Society"},
       {"name":"Mr. Ronald Yu","post":"Founder","icon":"/static/images/judge/icon_mrRonaldYu.jpg","company":"IIPCC"},
-      {"name":"Mr. William Hui","post":"Head of IT Innovation","icon":"/static/images/judge/icon_mrWilliamHui.png","company":"Manulife"},
-      {"name":"Ms. Marina Danylyuk","post":"Chief Legal Officer","icon":"/static/images/judge/icon_msMarynaDanylyuk.jpg","company":"MARK.SPACE"}
+      {"name":"Mr. William Hui","post":"Head of IT Innovation","icon":"/static/images/judge/icon_mrWilliamHui.png","company":"Manulife"} 
     ]
   },
   "section05":{
@@ -200,7 +200,7 @@
   "section07":{
     "pageTitle":"Our VIPs",
     "vip":[
-      {"name":"Mr. Albert Wong", "company":"Hong Kong Science and Technology Parks Corporation", "post":"CEO", "icon":"/static/images/vip/icon_mrAlbertWong.jpeg"},
+      {"name":"Mr. Albert Wong", "company":"Hong Kong Science Park", "post":"CEO", "icon":"/static/images/vip/icon_mrAlbertWong.jpeg"},
       {"name":"Dr. Houmin Yan", "company":"City University of Hong Kong", "post":"Dean, College of Business ", "icon":"/static/images/vip/icon_drHouminYan.jpeg"},
       {"name":"Hon. Charles Mok", "company":"Hong Kong Legislative Council", "post":"IT Councillor", "icon":"/static/images/vip/icon_honCharlesMok.jpeg"},
       {"name":" Mr. Gabriel Chan", "company":"International Blockchain Olympiad", "post":"Program Director", "icon":"/static/images/vip/icon_mrGabrielChan.jpg"}
