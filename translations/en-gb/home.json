@@ -146,8 +146,9 @@
     ],
     "guestTitle":"Our Judges",
     "guestjudge":[
-      {"name":"Mr. Chi Man Ngan ","post":"Blockchain Lead","icon":"/static/images/judge/icon_mrchimanngan.jpeg","company":"AIA"},
-      {"name":"Mr. Danny Wu ","post":"Executive Director","icon":"/static/images/judge/icon_mrDannyWu.png","company":"First Gateway Capital"},
+      {"name":"Mr. Alan Chan","post":"Senior Manager in Fintech, Analytics, Digital Transformation","icon":"/static/images/judge/icon_mrAlanChan.jpg","company":"PwC"},
+      {"name":"Mr. Chi Man Ngan","post":"Blockchain Lead","icon":"/static/images/judge/icon_mrchimanngan.jpeg","company":"AIA"},
+      {"name":"Mr. Danny Wu","post":"Executive Director","icon":"/static/images/judge/icon_mrDannyWu.png","company":"First Gateway Capital"},
       {"name":"Mr. Dick Fong","post":"Partner, China/HK Emerging Technology Group","icon":"/static/images/judge/icon_mrDickFong.jpg","company":"PwC"},
       {"name":"Mr. Edmond Lau","post":"Managing Director","icon":"/static/images/judge/icon_mrEdmondLau.jpg","company":"Lingfeng Capital"},
       {"name":"Dr. Eric Lam","post":"Co-Founder CTO","icon":"/static/images/judge/icon_drEricLam.jpeg","company":"Eurika AI"},
@@ -155,8 +156,9 @@
       {"name":"Mr. Julian Gropp","post":"Director of Asset Management","icon":"/static/images/judge/icon_mrJulianGropp.jpeg","company":"HASHED"},
       {"name":"Mr. Keat Lai","post":"Managing Director","icon":"/static/images/judge/icon_mrKeatLai.jpg","company":"SW7 Ventures"},
       {"name":"Mr. Kelvin Luk","post":"Director","icon":"/static/images/judge/icon_mrKelvinLuk.png","company":"ImSure Life"},
-      {"name":"Mr. Michael Chow","post":"Associate Partner, Transaction Strategy & Operations, China/HK","icon":"/static/images/judge/icon_mrMichaelChow.jpeg","company":"EY"},
       {"name":"Ms. Marina Danylyuk","post":"International Liaison","icon":"/static/images/judge/icon_msMarynaDanylyuk.jpg","company":"Hong Kong Blockchain Society"},
+      {"name":"Mr. Martin Lee","post":"Partner","icon":"/static/images/judge/icon_mrMartinLee.jpg","company":"Iridium Capital"},
+      {"name":"Mr. Michael Chow","post":"Associate Partner, Transaction Strategy & Operations, China/HK","icon":"/static/images/judge/icon_mrMichaelChow.jpeg","company":"EY"},
       {"name":"Mr. Ronald Yu","post":"Founder","icon":"/static/images/judge/icon_mrRonaldYu.jpg","company":"IIPCC"},
       {"name":"Mr. William Hui","post":"Head of IT Innovation","icon":"/static/images/judge/icon_mrWilliamHui.png","company":"Manulife"} 
     ]
