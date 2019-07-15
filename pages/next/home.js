@@ -134,7 +134,7 @@ export default class extends React.Component {
 
               <div className="home-content__button">
                 {/* <Link prefetch href="registration" params={{ locale }}> */}
-                  <a href="https://qrs.ly/f7a7y0r" target="_blank" className="btn btn--primary btn--large">
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfztPAhKyzk8Qyb4_xOvTHhRZ9uWr128bdSpNZjPcpSdCfrMw/viewform" target="_blank" className="btn btn--primary btn--large">
                     {this.translate('register')}
                   </a>
                 {/* </Link> */}
