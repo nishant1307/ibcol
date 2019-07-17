@@ -151,7 +151,6 @@
       {"name":"Mr. Danny Wu","post":"Executive Director","icon":"/static/images/judge/icon_mrDannyWu.png","company":"First Gateway Capital"},
       {"name":"Mr. Dick Fong","post":"Partner, China/HK Emerging Technology Group","icon":"/static/images/judge/icon_mrDickFong.jpg","company":"PwC"},
       {"name":"Mr. Edmond Lau","post":"Managing Director","icon":"/static/images/judge/icon_mrEdmondLau.jpg","company":"Lingfeng Capital"},
-      {"name":"Dr. Eric Lam","post":"Co-Founder CTO","icon":"/static/images/judge/icon_drEricLam.jpeg","company":"Eurika AI"},
       {"name":"Mr. Jackie Hung","post":"Assistant Vice President Innovative Business & Growth","icon":"/static/images/judge/icon_mrJackieHung.jpeg","company":"HSBC Commercial Banking"},
       {"name":"Mr. Julian Gropp","post":"Director of Asset Management","icon":"/static/images/judge/icon_mrJulianGropp.jpeg","company":"HASHED"},
       {"name":"Mr. Keat Lai","post":"Managing Director","icon":"/static/images/judge/icon_mrKeatLai.jpg","company":"SW7 Ventures"},
@@ -159,6 +158,7 @@
       {"name":"Ms. Marina Danylyuk","post":"International Liaison","icon":"/static/images/judge/icon_msMarynaDanylyuk.jpg","company":"Hong Kong Blockchain Society"},
       {"name":"Mr. Martin Lee","post":"Partner","icon":"/static/images/judge/icon_mrMartinLee.jpg","company":"Iridium Capital"},
       {"name":"Mr. Michael Chow","post":"Associate Partner, Transaction Strategy & Operations, China/HK","icon":"/static/images/judge/icon_mrMichaelChow.jpeg","company":"EY"},
+      {"name":"Dr. Peifung Eric Lam","post":"Co-Founder CTO","icon":"/static/images/judge/icon_drEricLam.jpeg","company":"Eurika AI"},
       {"name":"Mr. Ronald Yu","post":"Founder","icon":"/static/images/judge/icon_mrRonaldYu.jpg","company":"IIPCC"},
       {"name":"Mr. William Hui","post":"Head of IT Innovation","icon":"/static/images/judge/icon_mrWilliamHui.png","company":"Manulife"} 
     ]
