@@ -83,7 +83,7 @@
     
 
     { 
-      "src": "/(?<locale>[^/]*)/(?<page>(how|ambassadors|sponsors|contact|registration|admin))/", 
+      "src": "/(?<locale>[^/]*)/(?<page>(how|ambassadors|sponsors|contact|registration|admin|winners|schedule))/", 
       "dest": "/next/$page?locale=$locale",
       "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
     },
