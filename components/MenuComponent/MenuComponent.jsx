@@ -83,7 +83,45 @@ const MenuHeader = styled.header`
 
   }
   
+  // .dropbtn {
+  //   background-color: #4CAF50;
+  //   color: white;
+  //   padding: 16px;
+  //   font-size: 16px;
+  //   border: none;
+  //   cursor: pointer;
+  // }
   
+  .dropbtn {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    // background-color: rgba(255,255,255,0.5);
+    // min-width: 160px;
+    // box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content li {
+    color: black;
+    padding-top:  10px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  // .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropbtn:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropbtn:hover .dropbtn {
+    background-color: #3e8e41;
+  }
 `;
 
 
@@ -200,10 +238,23 @@ class MenuComponent extends React.Component {
           {this.translate('menu.schedule')}
         </NavLinkComponent>
       </li>
-      <li>
+
+      <li className="dropbtn">
         <NavLinkComponent prefetch route="winners" params={{ locale }}>
           Winners
         </NavLinkComponent>
+        {/* <div className="dropdown-content">
+          <li>
+            <NavLinkComponent prefetch route="winners" params={{ locale }}>
+              aaaa
+            </NavLinkComponent>
+          </li>
+          <li>
+            <NavLinkComponent prefetch route="winners" params={{ locale }}>
+              aaaa
+            </NavLinkComponent>
+          </li>
+        </div> */}
       </li>
 
       <li>
@@ -211,15 +262,15 @@ class MenuComponent extends React.Component {
           {this.translate('menu.contact')}
         </NavLinkComponent>
       </li>
-      <li className="submissionTips">
+      {/* <li className="submissionTips">
         <NavLinkComponent prefetch route="https://medium.com/international-blockchain-olympiad" params={{ locale }} target="_blank">
           {this.translate('menu.blog')}
         </NavLinkComponent>
-      </li>
+      </li> */}
 
       <li className="featured">
-        <NavLinkComponent prefetch route="registration" params={{ locale }}>
-          {this.translate('menu.registration')}
+        <NavLinkComponent prefetch route="joinus" params={{ locale }}>
+          Join Us
         </NavLinkComponent>
       </li>
 
