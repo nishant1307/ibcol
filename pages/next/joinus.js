@@ -88,7 +88,7 @@ export default class extends React.Component {
                         Special Events Team
                     </a>
                     <a href="#school-chapter">
-                        School Chapter Coordinator
+                        IBCOL School Chapter
                     </a>
                 </div>
                 <div className="col-block w-40">

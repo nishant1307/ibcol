@@ -134,14 +134,14 @@ export default class extends React.Component {
 
               <div className="home-content__button">
                 {/* <Link prefetch href="registration" params={{ locale }}> */}
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfztPAhKyzk8Qyb4_xOvTHhRZ9uWr128bdSpNZjPcpSdCfrMw/viewform" target="_blank" className="btn btn--primary btn--large">
-                    JOIN MAILING LIST
+                  <a href="joinus" className="btn btn--primary btn--large">
+                    JOIN THE TEAM
+                    {/* {this.translate('competitionRules')} */}
                   </a>
                 {/* </Link> */}
                 {/* <Link prefetch href="schedule/#schedule" params={{ locale }}> */}
-                  <a href="joinus" className="btn btn--large">
-                    JOIN THE TEAM
-                    {/* {this.translate('competitionRules')} */}
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfztPAhKyzk8Qyb4_xOvTHhRZ9uWr128bdSpNZjPcpSdCfrMw/viewform" target="_blank" className="btn btn--large">
+                    JOIN MAILING LIST
                   </a>
                 {/* </Link> */}
               </div>
