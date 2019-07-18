@@ -4646,3 +4646,61 @@ iframe {
   padding-left: 20px;
   padding-top: 50px;
 }
+
+
+.sticky-block {
+  position:-webkit-sticky; 
+  position:sticky;
+  height:auto;
+  top:110px;
+}
+.btn-joinus {
+  margin-bottom: 30px;
+}
+.join-us h4 {
+  margin-bottom: 2.5rem;
+}
+.col-block.w-20 {
+  width: 20%;
+  position:-webkit-sticky; 
+  position:sticky;
+  height:auto;
+  top:110px;
+}
+.col-block.w-20 a {
+  display: block;
+  color: #0086CA;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  margin-right:0px;
+  padding:0px;
+}
+.col-block.w-40 {
+  width: 40%;
+}
+.col-block.w-40 a {
+  padding:0 20px;
+  height: 50px !important;
+  line-height: 48px !important;
+}
+.hide-on-desktop {
+  display: none;
+}
+.join-us h2 {
+  background: none;
+  color: black;
+  padding:110px 0 0 0;
+  margin-top:-110px;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-device-width : 768px) {
+  .hide-on-mb {
+      display: none;
+  }
+  .col-block.w-40 {
+      width: 100%;
+  }
+  .hide-on-desktop {
+      display: block;
+  }
+}

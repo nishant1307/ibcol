@@ -60,6 +60,7 @@ routes
   .add({ name: 'adminLogin', pattern: '/:locale/admin/', page: 'next/admin' })
   .add({ name: 'adminVerification', pattern: '/:locale/admin/verify/:verificationCode/:email/', page: 'next/admin/verify' })
   .add({ name: 'adminDashboard', pattern: '/:locale/admin/dashboard/', page: 'next/admin/dashboard' })
+  .add({ name: 'joinus', pattern: '/:locale/joinus/', page: 'next/joinus' })
 
 
 
