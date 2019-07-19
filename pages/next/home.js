@@ -134,7 +134,7 @@ export default class extends React.Component {
 
               <div className="home-content__button">
                 {/* <Link prefetch href="registration" params={{ locale }}> */}
-                  <a href="joinus" className="btn btn--primary btn--large">
+                  <a href="join-us" className="btn btn--primary btn--large">
                     JOIN THE TEAM
                     {/* {this.translate('competitionRules')} */}
                   </a>
@@ -234,10 +234,10 @@ export default class extends React.Component {
                         <h1>{this.translate('section03.otherPartnersTitle')}</h1>
                     </div>
 
-                    <div className="block-1-6 block-tab-full">
+                    <div className="block-1-6">
                         {
                             this.translate('section03.others').map((sponsor, index)=>{
-                                return <div className="col-block" key={index}>
+                                return <div className="col-block otherPartners" key={index}>
                                     <a href={sponsor.url} target="_blank">
                                         <img src={sponsor.logo} alt={sponsor.name} />
                                     </a>
@@ -257,10 +257,10 @@ export default class extends React.Component {
                 <h1>Finalists</h1>
             </div>
             <div className="row">
-                <div className="finalists block-1-3 block-tab-full">
+                <div className="finalists block-1-3">
                 {
                     this.translate('section05.finalists').map((sponsor, index)=>{
-                        return <div className="col-block" key={index}>
+                        return <div className="col-block finalists-1-2" key={index}>
                             <div className="team">
                                 <div className="team_flag"><img src={sponsor.icon} height="50px" width="50px" /></div>
                                 <div className="team_name"><p><b>{sponsor.teamName}</b></p></div>
