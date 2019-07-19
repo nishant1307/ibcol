@@ -269,7 +269,7 @@ class MenuComponent extends React.Component {
       </li> */}
 
       <li className="featured">
-        <NavLinkComponent prefetch route="joinus" params={{ locale }}>
+        <NavLinkComponent prefetch route="join-us" params={{ locale }}>
           Join Us
         </NavLinkComponent>
       </li>
