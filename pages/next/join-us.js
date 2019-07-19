@@ -70,7 +70,7 @@ export default class extends React.Component {
         {/* <!-- end section-header --> */}
         <div className="row">
             <div className="block-1-3 block-tab-full">
-                <div className="col-block w-20 hide-on-mb">
+                <div className="col-block w-20">
                     <h4>Roles</h4>
                     <a href="#game-day">
                         Game Day Team
