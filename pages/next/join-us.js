@@ -70,7 +70,7 @@ export default class extends React.Component {
         {/* <!-- end section-header --> */}
         <div className="row">
             <div className="block-1-3 block-tab-full">
-                <div className="col-block w-20 hide-on-mb">
+                <div className="col-block w-20">
                     <h4>Roles</h4>
                     <a href="#game-day">
                         Game Day Team
@@ -250,17 +250,17 @@ export default class extends React.Component {
                     </span>
                     <br />
 
-                    <h2 id="school-chapter">School Chapter Coordinator</h2>
+                    <h2 id="school-chapter">IBCOL School Chapter</h2>
                     <h4>Role & Responsibilities</h4>
                     <p>
-                        Every successful team needs great leadership. This is exactly what the School Chapter Coordinator is for, i.e. representing IBCOL on their campus. It will be your job to work with the Student Relations Team and establish a community within your school in order to let people gain insights about the IBCOL 2020. Your responsibilities are as follows: assisting and supporting students that want to compete in IBCOL 2020, e.g. providing information sessions; finding a certified trainer (or becoming one) to deliver training sets*; collect FAQs in your school to feedback into the official FAQ on the IBCOL website in order to support the contestants; and promoting IBCOL 2020 in your school. 
+                        An IBCOL School Chapter is the official representative of IBCOL on their campus. Your School Chapter’s primary objective is to increase the chances of your school doing well in the IBCOL finals! You will work closely with the Student Relations Team and establish a community within your school in order to let people gain insights about IBCOL 2020. Your responsibilities are as follows: assisting and supporting students that want to compete in IBCOL 2020, e.g. providing information sessions; finding a certified trainer (or becoming one) to deliver training sets (more on this below); collecting FAQs in your school to feedback into the official FAQ on the IBCOL website in order to support the contestants; and promoting IBCOL 2020 in your school. 
                     </p>
                     <p>
-                        * Each training set consists of 4 courses of 2 hours each; materials are provided by the IBCOL 2020 Organizing Committee (OC20). The training set consists of the following courses: Introduction to Blockchain & Cryptography; Decentralised Application Design; Legal & Compliance for DApps; and Business Blockchain. A certified trainer is required per school in order to deliver the training sets to the contestants. You may choose to become a trainer if you like.
+                        Each training set consists of 4 courses of 2 hours each; materials are provided by the IBCOL 2020 Organizing Committee (OC20). The training set consists of the following courses: Introduction to Blockchain & Cryptography; Decentralised Application Design; Legal & Compliance for DApps; and Business Blockchain. A certified trainer is required per school in order to deliver the training sets to the contestants. You may choose to become a trainer if you like.
                     </p>
                     <h4>Perks & Benefits</h4>
                     <p>
-                        Besides an official certificate of recognition and backstage access to IBCOL events, those who are School Chapter Coordinator have a great real-world opportunity working with academic and industry professionals to build deep relationships with school administration and student groups.
+                        Besides an official certificate of recognition and backstage access to IBCOL events, those who are IBCOL School Chapter have a great real-world opportunity working with academic and industry professionals to build deep relationships with school administration and student groups.
                     </p>
                     <span className="hide-on-desktop">
                         <p>
