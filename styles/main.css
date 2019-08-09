@@ -4776,3 +4776,20 @@ iframe {
     clear:initial;
   }
 }
+
+.historyBtn a:hover{
+  text-decoration:none;
+}
+.historyBtn{
+  width: 400px;
+  height: 150px;
+  border-bottom: 10px solid #fff;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 4px;
+  padding:10px;
+}
+
+.historyBtn:hover{
+  background: rgba(0, 0, 0, 0.15);
+  transition: 1s;
+}

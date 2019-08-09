@@ -4,13 +4,11 @@ import configs from 'configs';
 import _ from 'lodash';
 import { translate } from 'helpers/translate.js';
 import translations from 'translations';
-import { transparentize } from 'polished'
-import { Link } from '/routes';
 import PageContainerComponent from 'components/PageContainerComponent';
 import Head from 'next/head';
-import Countdown from 'react-countdown-now';
 import jQuery from 'jquery';
-
+import NavLinkComponent from 'components/NavLinkComponent';
+import { Link } from '/routes';
 const $ = jQuery;
 
 const getLocaleObject = (requestedLocale) => {
@@ -32,11 +30,6 @@ const getLocaleObject = (requestedLocale) => {
     return requestedLocaleObject;
 }
 
-const renderer = ({ days, hours, minutes, seconds }) => {
-    // Render a countdown
-    return <span>{days} Days, {hours} Hrs, {minutes} Mins, {seconds} Secs</span>;
-};
-
 const ThisPageContainerComponent = styled(PageContainerComponent)`
 
 `;
@@ -46,7 +39,7 @@ export default class extends React.Component {
         return { query }
     }
 
-    translate = (t) => translate(t, 'home', this.props.query.locale);
+    translate = (t) => translate(t, 'about', this.props.query.locale);
 
     componentDidMount = () => {
         /*!
@@ -74,56 +67,59 @@ export default class extends React.Component {
                     <meta property="og:type" content="website" />
                 </Head>
 
-                <section id="home" className="s-home page-hero target-section" data-parallax="scroll" data-image-src="/static/images/bg-international-blockchain-olympiad-(ibcol).jpg" data-natural-width="3000" data-natural-height="2000" data-position-y="center">
-                    <div className="grid-overlay">
-                        <div></div>
+                <section className="s-section target-section first">
+                    <div className="row section-header">
+                        <div className="col-block">
+                            <h3 className="subhead">{this.translate('subHeading')}</h3>
+                        </div>
                     </div>
-                    <div className="home-content">
-                        <div className="row home-content__main">
-                            <h1>
-                                {this.translate('mainHeading')}
-                            </h1>
-                            <br />
-                            <br />
-                            <h3 style={{ "fontSize": "2.6rem" }}>
-                                {this.translate('subHeading')}
-                            </h3>
-                            <div className="home-content__button">
-                                <a href="join-us" className="btn btn--primary btn--large">
-                                    {this.translate('btnJoinTeam')}
-                                </a>
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfztPAhKyzk8Qyb4_xOvTHhRZ9uWr128bdSpNZjPcpSdCfrMw/viewform" target="_blank" className="btn btn--large">
-                                    {this.translate('btnJoinMalingList')}
-                                </a>
+
+                    <div className="row">
+                        <div className="col-block">
+                            <h1>{this.translate('visionSection.title')}</h1>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-block">
+                            <p>{this.translate('visionSection.content')}</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="s-section target-section">
+                    <div className="row section-header">
+                        <div className="col-block">
+                            <h1>{this.translate('storySection.title')}</h1>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="s-section target-section">
+                    <div className="row section-header">
+                        <div className="col-block">
+                            <h1>{this.translate('historySection.title')}</h1>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="block-1-2 block-tab-full">
+                            <div className="col-block">
+                                {
+                                    this.translate('historySection.historyEvent').map((historyEvent, index) => {
+                                        return <div className="historyBtn" key={index}>
+
+                                            <Link prefetch route={historyEvent.url} params={{ locale }}>
+                                                <a> <h4> {historyEvent.name}</h4> </a>
+                                            </Link>
+
+                                        </div>
+                                    })
+                                }
                             </div>
                         </div>
                     </div>
-
                 </section>
 
-                {/* Start of Partners Section */}
-                <section className="s-section target-section">
-                    <div className="row section-header">
-                        <div className="col-block">
-                            <h1>{this.translate('section01.partnerTitle')}</h1>
-                        </div>
-                    </div>
-
-                </section>
-                {/* End of Partners Section */}
-
-                {/* Start of Training Section */}
-                <section className="s-section target-section">
-                    <div className="row section-header">
-                        <div className="col-block">
-                            <h1>{this.translate('section02.trainingTitle')}</h1>
-                        </div>
-                    </div>
-
-                </section>
-                {/* End of Training Section */}
-            </ThisPageContainerComponent>
+            </ThisPageContainerComponent >
         )
     }
 }
-
