@@ -4793,3 +4793,8 @@ iframe {
   background: rgba(0, 0, 0, 0.15);
   transition: 1s;
 }
+
+.col-block a.whitepaper{
+  margin-right: 0;
+  padding: 0;
+}

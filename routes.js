@@ -38,7 +38,7 @@ const routes = require('next-routes')({
 routes
   .add({ name: 'home', pattern: '/:locale/', page: 'next/home' })
   .add({ name: 'about', pattern: '/:locale/about/', page: 'next/about' })
-  // .add({ name: 'how', pattern: '/:locale/how/', page: 'next/how' })
+  .add({ name: 'how', pattern: '/:locale/how/', page: 'next/how' })
   .add({ name: 'ambassadors', pattern: '/:locale/ambassadors/', page: 'next/ambassadors' })
   .add({ name: '2018', pattern: '/:locale/ibcol/2018/', page: 'next/ibcol/2018' })
   .add({ name: '2019', pattern: '/:locale/ibcol/2019/', page: 'next/ibcol/2019' })

@@ -7,7 +7,7 @@ import translations from 'translations';
 import PageContainerComponent from 'components/PageContainerComponent';
 import Head from 'next/head';
 import jQuery from 'jquery';
-
+import classNames from 'classnames';
 const $ = jQuery;
 
 const getLocaleObject = (requestedLocale) => {
@@ -73,30 +73,93 @@ export default class extends React.Component {
                             {/* <h3 className="subhead">{this.translate('subHeading')}</h3> */}
                         </div>
                     </div>
+
+                    <div className="row section-header">
+                        <div className="col-block">
+                            <a href="#eligibility"><h4 className="subhead">Eligibility</h4></a>
+                            <a href="#process"><h4 className="subhead">Process</h4></a>
+                            <a href="#programme"><h4 className="subhead">Programme</h4></a>
+                            <a href="#partners"><h4 className="subhead">partners</h4></a>
+                            <a href="#people"><h4 className="subhead">People</h4></a>
+                            <a href="#contestant"><h4 className="subhead">Contestant</h4></a>
+                            <a href="#photo"><h4 className="subhead">Photo</h4></a>
+                        </div>
+                    </div>
                 </section>
 
                 {/* Start of Eligibility section */}
-                <section className="s-section target-section">
+                <section className="s-section target-section" id="eligibility">
                     <div className="row">
                         <div className="col-block">
                             <h1>{this.translate('2018.eligibilitySection.title')}</h1>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-block">
+                            <font size="4"><b>{this.translate('2018.eligibilitySection.eligibilityGeneral')}</b></font>
+                            <ul>
+                                <li><font size="4">{this.translate('2018.eligibilitySection.eligibilityCategory')}</font></li>
+                                <li><font size="4">{this.translate('2018.eligibilitySection.eligibilityTeam')}</font></li>
+                            </ul>
                         </div>
                     </div>
                 </section>
                 {/* End of Eligibility section */}
 
                 {/* Start of process section */}
-                <section className="s-section target-section">
+                <section className="s-section target-section" id="process">
                     <div className="row">
                         <div className="col-block">
                             <h1>{this.translate('2018.processSection.title')}</h1>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-block">
+                            <h3>{this.translate('2018.processSection.categories.title')}</h3>
+                        </div>
+
+                        <div className="about-process icon">
+                            <div className="block-1-3 block-tab-full">
+                                {
+                                    this.translate('2018.processSection.categories.projectCategories').map((projectCategoryKey, index) => {
+                                        return <div className="col-block" key={index}>
+                                            <div className="item-process__text">
+                                                <i className={classNames("material-icons", projectCategoryKey.color)}>{projectCategoryKey.icon}</i>
+                                                <h4 className="item-title">{projectCategoryKey.name}</h4>
+                                                <p dangerouslySetInnerHTML={{ __html: projectCategoryKey.description }} />
+                                            </div>
+                                        </div>
+
+                                    })
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="row">
+                        <div className="col-block">
+                            <h3>{this.translate('2019.processSection.whitepaper.title')}</h3>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-block">
+                            <p>The most important is the whitepaper. The purpose of this competition is to solve a problem, for which you propose a solution, with which you write a proposal, which explains in complete detail how the problem shall be solved: a complete solution. The format of the paper is not the most important, but you may follow the 	&nbsp;
+                                <a className="whitepaper" href="https://medium.com/international-blockchain-olympiad/whitepaper-format-hkbcs-model-e1872b852b4e" target="_blank"> HKBCS Model</a>
+                                or the 	&nbsp;
+                                <a className="whitepaper" href="https://medium.com/international-blockchain-olympiad/whitepaper-format-r3-format-51b36998f11d" target="_blank"> R3 Model</a>
+                                as inspiration, and have a look at the general 	&nbsp;
+                                <a className="whitepaper" href="https://medium.com/international-blockchain-olympiad/writing-a-blockchain-whitepaper-1aa8b6f74a92" target="_blank">evaluation criteria</a>.
+                            </p>
                         </div>
                     </div>
                 </section>
                 {/* End of process section */}
 
                 {/* Start of programme section */}
-                <section className="s-section target-section">
+                <section className="s-section target-section" id="programme">
                     <div className="row">
                         <div className="col-block">
                             <h1>{this.translate('2018.programmeSection.title')}</h1>
@@ -106,27 +169,115 @@ export default class extends React.Component {
                 {/* End of programme section */}
 
                 {/* Start of partner section */}
-                <section className="s-section target-section">
+                <section className="s-section target-section" id="partners">
                     <div className="row">
                         <div className="col-block">
                             <h1>{this.translate('2018.partnerSection.title')}</h1>
+                        </div>
+                    </div>
+
+                    <div className="row corporate-logo">
+                        <div className="col-block">
+                            <h3>{this.translate('2018.partnerSection.keyPartnerTitle')}</h3>
+                        </div>
+
+                        <div className="block-1-3">
+                            {
+                                this.translate('2018.partnerSection.keyPartner').map((sponsor, index) => {
+                                    return <div className="col-block" key={index}>
+                                        <a href={sponsor.url} target="_blank">
+                                            <img src={sponsor.logo} alt={sponsor.name} />
+                                        </a>
+                                        {/* <p dangerouslySetInnerHTML={{__html: sponsor.description}}/> */}
+                                    </div>
+                                })
+                            }
+                        </div>
+                    </div>
+
+                    <div className="row corporate-logo">
+                        <div className="col-block">
+                            <h3>{this.translate('2018.partnerSection.supportingOrganisationTitle')}</h3>
+                        </div>
+
+                        <div className="block-1-6">
+                            {
+                                this.translate('2018.partnerSection.supportingOrganisation').map((sponsor, index) => {
+                                    return <div className="col-block" key={index}>
+                                        <a href={sponsor.url} target="_blank">
+                                            <img src={sponsor.logo} alt={sponsor.name} />
+                                        </a>
+                                        {/* <p dangerouslySetInnerHTML={{__html: sponsor.description}}/> */}
+                                    </div>
+                                })
+                            }
                         </div>
                     </div>
                 </section>
                 {/* End of partner section */}
 
                 {/* Start of people section */}
-                <section className="s-section target-section">
+                <section className="s-section target-section" id="people">
                     <div className="row">
                         <div className="col-block">
                             <h1>{this.translate('2018.peopleSection.title')}</h1>
+                        </div>
+                    </div>
+
+                    {/* VIPs */}
+                    <div className="row">
+                        <div className="col-block">
+                            <h3>{this.translate('2018.peopleSection.vipsTitle')}</h3>
+                        </div>
+                    </div>
+                    <div className="row corporate-logo">
+                        <div className="judge block-1-2 block-tab-full">
+                            {
+                                this.translate('2018.peopleSection.vips').map((sponsor, index) => {
+                                    return <div className="col-block" key={index}>
+                                        <div className="judgesImage">
+                                            <img src={sponsor.icon} alt={sponsor.name} />
+                                        </div>
+                                        <div className="judgesContent">
+                                            <h5>{sponsor.name}</h5>
+                                            <p className="judgepost"><b>{sponsor.post}</b></p>
+                                            <p>{sponsor.company}</p>
+                                        </div>
+                                    </div>
+                                })
+                            }
+                        </div>
+                    </div>
+
+                    {/* Judges */}
+                    <div className="row">
+                        <div className="col-block">
+                            <h3>{this.translate('2018.peopleSection.judgesTitle')}</h3>
+                        </div>
+                    </div>
+                    <div className="row corporate-logo">
+                        <div className="judge block-1-2 block-tab-full">
+                            {
+                                this.translate('2018.peopleSection.judges').map((sponsor, index) => {
+                                    return <div className="col-block" key={index}>
+                                        <div className="judgesImage">
+                                            <img src={sponsor.icon} alt={sponsor.name} />
+                                        </div>
+                                        <div className="judgesContent">
+                                            <h5>{sponsor.name}</h5>
+                                            <p className="judgepost"><b>{sponsor.post}</b></p>
+                                            <p>{sponsor.company}</p>
+                                        </div>
+                                    </div>
+                                })
+                            }
                         </div>
                     </div>
                 </section>
                 {/* End of people section */}
 
                 {/* Start of contestant section */}
-                <section className="s-section target-section">
+                <section className="s-section target-section" id="contestant">
                     <div className="row">
                         <div className="col-block">
                             <h1>{this.translate('2018.contestantSection.title')}</h1>
@@ -136,10 +287,16 @@ export default class extends React.Component {
                 {/* End of contestant section */}
 
                 {/* Start of photo section */}
-                <section className="s-section target-section">
+                <section className="s-section target-section" id="photo">
                     <div className="row">
                         <div className="col-block">
                             <h1>{this.translate('2018.photoSection.title')}</h1>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-block">
+                            <a href="https://www.facebook.com/pg/hkblockchainsociety/photos/?tab=album&album_id=2131634553723272&ref=page_internal" target="_blank"><h3>Facebook</h3></a>
                         </div>
                     </div>
                 </section>
