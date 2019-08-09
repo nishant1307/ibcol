@@ -1,97 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
 import { Link } from '/routes';
-
-
-
 import { media, style } from 'helpers/styledComponents.js';
-
 import NavLinkComponent from 'components/NavLinkComponent';
-
 import styled from 'styled-components';
-
 import { transparentize } from 'polished'
-import {translate} from 'helpers/translate.js';
-
+import { translate } from 'helpers/translate.js';
 import { withRouter } from 'next/router';
 
-// const MenuComponent = styled.div`
-//   display: block;
-//   ${'' /* margin-bottom: 4rem; */}
-// `;
-
-// const pagePadding = {
-//   xSmall: style.dimension.normal.pagePadding.xSmall,
-//   small: style.dimension.normal.pagePadding.small,
-//   medium: style.dimension.normal.pagePadding.medium,
-//   large: style.dimension.normal.pagePadding.large,
-//   xLarge: style.dimension.normal.pagePadding.xLarge,
-//   xxLarge: style.dimension.normal.pagePadding.xxLarge
-// }
-
-
 const MenuHeader = styled.header`
-
   li.languageMenuHeaderTrigger,
   div.languageMenuHeaderTriggerMobile {
-
     cursor: pointer;
-    
-    
-
     background-color: #EEE;
     background-size: cover;
     background-position: center center;
-
-
     border: solid 1px #CCC;
-
-
-
     border-radius: 10rem;
-
   }
 
-
   li.languageMenuHeaderTrigger {
-    
     width: 3rem;
     height: 3rem;
-    
     margin-top: -0.25rem;
-
     @media only screen and (max-width:800px) {
       display: none;
     }
-
   }
 
   div.languageMenuHeaderTriggerMobile {
     @media only screen and (min-width:801px) {
       display: none;
     }
-
     position: fixed;
     right: 10rem;
     top: 3.5rem;
-
     width: 3.5rem;
     height: 3.5rem;
-
-
   }
-  
-  // .dropbtn {
-  //   background-color: #4CAF50;
-  //   color: white;
-  //   padding: 16px;
-  //   font-size: 16px;
-  //   border: none;
-  //   cursor: pointer;
-  // }
-  
   .dropbtn {
     position: relative;
     display: inline-block;
@@ -100,21 +47,16 @@ const MenuHeader = styled.header`
   .dropdown-content {
     display: none;
     position: absolute;
-    // background-color: rgba(255,255,255,0.5);
-    // min-width: 160px;
-    // box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
-  
+
   .dropdown-content li {
     color: black;
     padding-top:  10px;
     text-decoration: none;
     display: block;
   }
-  
-  // .dropdown-content a:hover {background-color: #f1f1f1}
-  
+
   .dropbtn:hover .dropdown-content {
     display: block;
   }
@@ -124,7 +66,6 @@ const MenuHeader = styled.header`
   }
 `;
 
-
 const MobileNavBackdrop = styled.section`
   width: 100vw;
   height: 100vh;
@@ -132,9 +73,7 @@ const MobileNavBackdrop = styled.section`
   top: 0;
   left: 0;
   ${'' /* background: red; */}
-  
 `;
-
 
 class MenuComponent extends React.Component {
 
@@ -148,20 +87,7 @@ class MenuComponent extends React.Component {
 
   translate = (t, locale = this.props.router.query.locale) => translate(t, '_global', locale);
 
-  // componentWillReceiveProps = (nextProps) => {
-
-  //   // console.log('componentWillReceiveProps', nextProps);
-
-  //   if (this.props.router.route !== nextProps.router.route) {
-  //     // this.toggleMenu(false);
-  //   }
-  // }
-  
- 
   componentDidUpdate = (prevProps, prevState) => {
-    // console.log('prevProps', prevProps);
-    // console.log('this.props', this.props);
-
     if (this.props.isSticky === false && prevProps.isSticky === true) {
       this.setState({
         wasSticky: true
@@ -171,7 +97,7 @@ class MenuComponent extends React.Component {
         wasSticky: false
       })
     }
-    
+
     if (this.props.router !== undefined) {
       if (prevProps.router.asPath !== this.props.router.asPath) {
         this.setState({
@@ -181,59 +107,49 @@ class MenuComponent extends React.Component {
     }
 
   }
-  
-  
+
   toggleMobileMenu = () => {
     this.setState({
       isMobileMenuOpened: !this.state.isMobileMenuOpened
     });
   }
 
-
   render() {
     const componentName = "MenuComponent";
-
-    // console.log("this.props.style", this.props.style);
-    // console.log("this.props.className", this.props.className);
-    // console.log("this.props", this.props);
-
     const locale = this.props.locale;
-
-    // const { activeClassName, className, children, router, href, ...props } = this.props;
-
     const menuItems = <>
       <li>
         <NavLinkComponent prefetch route="home" params={{ locale }}>
           {this.translate('menu.home')}
         </NavLinkComponent>
       </li>
-  {/* <li>
+      <li>
         <NavLinkComponent prefetch route="about" params={{ locale }}>
           {this.translate('menu.about')}
         </NavLinkComponent>
-      </li> */}
-      {/* <li>
+      </li>
+      <li>
         <NavLinkComponent prefetch route="how" params={{ locale }}>
           {this.translate('menu.how')}
         </NavLinkComponent>
-      </li> */}
-  {/* <li>
-        <NavLinkComponent prefetch route="competition" params={{ locale }}>
-          {this.translate('menu.competition')}
-        </NavLinkComponent>
-      </li> */}
-  {/* <li>
-        <NavLinkComponent prefetch route="ambassadors" params={{ locale }}>
-          {this.translate('menu.ambassadors')}
-        </NavLinkComponent>
-      </li> */}
+      </li>
       <li>
-        <NavLinkComponent prefetch route="sponsors" params={{ locale }}>
-          {this.translate('menu.sponsors')}
+        <NavLinkComponent prefetch route="programme" params={{ locale }}>
+          {this.translate('menu.programme')}
+        </NavLinkComponent>
+      </li>
+      <li>
+        <NavLinkComponent prefetch route="contact" params={{ locale }}>
+          {this.translate('menu.contact')}
+        </NavLinkComponent>
+      </li>
+      <li className="featured">
+        <NavLinkComponent prefetch route="register" params={{ locale }}>
+          {this.translate('menu.registration')}
         </NavLinkComponent>
       </li>
 
-       <li>
+      {/* <li>
         <NavLinkComponent prefetch route="schedule" params={{ locale }}>
           {this.translate('menu.schedule')}
         </NavLinkComponent>
@@ -243,40 +159,22 @@ class MenuComponent extends React.Component {
         <NavLinkComponent prefetch route="winners" params={{ locale }}>
           Winners
         </NavLinkComponent>
-        {/* <div className="dropdown-content">
-          <li>
-            <NavLinkComponent prefetch route="winners" params={{ locale }}>
-              aaaa
-            </NavLinkComponent>
-          </li>
-          <li>
-            <NavLinkComponent prefetch route="winners" params={{ locale }}>
-              aaaa
-            </NavLinkComponent>
-          </li>
-        </div> */}
       </li>
-
       <li>
         <NavLinkComponent prefetch route="contact" params={{ locale }}>
           {this.translate('menu.contact')}
         </NavLinkComponent>
       </li>
-      {/* <li className="submissionTips">
-        <NavLinkComponent prefetch route="https://medium.com/international-blockchain-olympiad" params={{ locale }} target="_blank">
-          {this.translate('menu.blog')}
+      <li className="submissionTips">
+        <NavLinkComponent prefetch route="https://www.hkbcs.org/dappcamp/courses.html" params={{ locale }} target="_blank">
+          Training Courses
         </NavLinkComponent>
-      </li> */}
-
+      </li>
       <li className="featured">
         <NavLinkComponent prefetch route="join-us" params={{ locale }}>
           Join Us
         </NavLinkComponent>
-      </li>
-
-      {/*<li onClick={this.props.onToggleLanguageSelector} className="languageMenuHeaderTrigger" alt={this.translate('_locale.name')} title={this.translate('_locale.name')} style={{
-        backgroundImage: `url("/static/images/flags/1x1/${this.translate('_locale.flag')}")`
-      }}></li>*/}
+      </li> */}
     </>
 
     return (
@@ -284,69 +182,49 @@ class MenuComponent extends React.Component {
         'menu-is-open': this.state.isMobileMenuOpened === true,
         wasSticky: this.state.wasSticky
       })} style={this.props.style}>
-        
+
         <div className="header-logo">
           <Link prefetch route="home" params={{ locale }}>
             <a className="site-logo">
-              <img src="/static/images/logo-international-blockchain-olympiad-(ibcol)-subpage.png" alt={this.translate('logoTag')}/>
+              <img src="/static/images/logo-international-blockchain-olympiad-(ibcol)-subpage.png" alt={this.translate('logoTag')} />
             </a>
           </Link>
         </div>
 
         <div className="desktop-nav">
           <ul className="nav_list">
-            
             {menuItems}
-
           </ul>
         </div>
 
         {
           this.state.isMobileMenuOpened === true &&
-          
           <nav className="header-nav">
-
             <a className="header-nav__close" onClick={this.toggleMobileMenu} title="close"><span>{this.translate('close')}</span></a>
-
             <h3>{this.translate('navigateTo')}</h3>
-
             <div className="header-nav__content">
-
               <ul className="header-nav__list">
-
                 {menuItems}
-
-
-                
               </ul>
             </div>
-
           </nav>
         }
 
         {
           this.state.isMobileMenuOpened === true &&
           <MobileNavBackdrop onClick={this.toggleMobileMenu}>
-            
+
           </MobileNavBackdrop>
         }
-
-
-
-        {/*<div onClick={this.props.onToggleLanguageSelector} className="languageMenuHeaderTriggerMobile" alt={this.translate('_locale.name')} title={this.translate('_locale.name')} style={{
-        backgroundImage: `url("/static/images/flags/1x1/${this.translate('_locale.flag')}")`
-      }}></div> */}
 
         <a className="header-menu-toggle" onClick={this.toggleMobileMenu}>
           <span className="header-menu-icon"></span>
         </a>
 
-        
       </MenuHeader>
     );
   }
 }
-
 
 MenuComponent.propTypes = {
   locale: PropTypes.string.isRequired,

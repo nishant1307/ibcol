@@ -15,7 +15,8 @@
     "schedule":"Programme",
     "contact":"Contact",
     "blog":"Submission Tips",
-    "registration":"Submit Paper"
+    "registration":"Registration",
+    "programme":"Programme"
   },
   "footerMenu":{
     "backToTop":"Back to top",
