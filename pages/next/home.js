@@ -11,6 +11,7 @@ import Head from 'next/head';
 import Countdown from 'react-countdown-now';
 import jQuery from 'jquery';
 
+
 const $ = jQuery;
 
 const getLocaleObject = (requestedLocale) => {
@@ -102,14 +103,14 @@ export default class extends React.Component {
                 </section>
 
                 {/* Start of Partners Section */}
-                <section className="s-section target-section">
+                {/* <section className="s-section target-section">
                     <div className="row section-header">
                         <div className="col-block">
                             <h1>{this.translate('section01.partnerTitle')}</h1>
                         </div>
                     </div>
 
-                </section>
+                </section> */}
                 {/* End of Partners Section */}
 
                 {/* Start of Training Section */}
@@ -119,9 +120,89 @@ export default class extends React.Component {
                             <h1>{this.translate('section02.trainingTitle')}</h1>
                         </div>
                     </div>
+                    <div className="row">
+                        <div className="col-block">
+                            <h3 style={{ marginBottom: "1rem" }}>{this.translate('section02.courseTitle')}</h3>
+                            <p>{this.translate('section02.courseDesc')}</p>
+                        </div>
+                        <div className="col-block">
+                            <div className="card" >
+                                <div className="card-header" id="headingBCX">
+                                    <button className="btnCourses btn-link"><h4 style={{ marginBottom: "1rem" }}>{this.translate('section02.course01Title')}</h4></button>
+                                </div>
+                                <div className="card-body">
+                                    <div className="course-desc">
+                                        {
+                                            this.translate('section02.course01').map((course, index) => {
+                                                return <div className="course-desc" key={index}>
+                                                    <h5>{course.course01Heading}</h5>
+                                                    <b>{course.descTitle}</b>
+                                                    <p className="coursesBody">{course.course01Desc}</p>
+                                                    <b>{course.prereqTitle}</b>
+                                                    <p style={{ marginBottom: "1rem" }}>{course.course01Prereq}</p>
+                                                    <a href="https://forms.gle/yCH2PdPGTJusZePv7" target="_blank" className="btn btn--primary btnEnrol">
+                                                        {course.btnEnrol}
+                                                    </a>
+                                                </div>
+                                            })
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="card" >
+                                <div className="card-header" id="headingBCX">
+                                    <button className="btnCourses btn-link"><h4 style={{ marginBottom: "1rem" }}>{this.translate('section02.course02Title')}</h4></button>
+                                </div>
+                                <div className="card-body">
+                                    <div className="course-desc">
+                                        {
+                                            this.translate('section02.course02').map((course, index) => {
+                                                return <div className="course-desc" key={index}>
+                                                    <h5>{course.course01Heading}</h5>
+                                                    <b>{course.descTitle}</b>
+                                                    <p className="coursesBody">{course.course01Desc}</p>
+                                                    <b>{course.prereqTitle}</b>
+                                                    <p style={{ marginBottom: "1rem" }}>{course.course01Prereq}</p>
+                                                    <a href="https://forms.gle/yCH2PdPGTJusZePv7" target="_blank" className="btn btn--primary btnEnrol">
+                                                        {course.btnEnrol}
+                                                    </a>
+                                                </div>
+                                            })
+                                        }
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div className="card" >
+                                <div className="card-header" id="headingBCX">
+                                    <button className="btnCourses btn-link" data-toggle="collapse" data-target="#demo"><h4 style={{ marginBottom: "1rem" }}>{this.translate('section02.course03Title')}</h4></button>
+                                </div>
+                                <div className="card-body collapse " id="demo">
+                                    <div className="course-desc">
+                                        {
+                                            this.translate('section02.course03').map((course, index) => {
+                                                return <div className="course-desc" key={index}>
+                                                    <h5>{course.course01Heading}</h5>
+                                                    <b>{course.descTitle}</b>
+                                                    <p className="coursesBody">{course.course01Desc}</p>
+                                                    <b>{course.prereqTitle}</b>
+                                                    <p style={{ marginBottom: "1rem" }}>{course.course01Prereq}</p>
+                                                    <a href="https://forms.gle/yCH2PdPGTJusZePv7" target="_blank" className="btn btn--primary btnEnrol">
+                                                        {course.btnEnrol}
+                                                    </a>
+                                                </div>
+                                            })
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
                 {/* End of Training Section */}
+                <section className="s-section target-section">
+
+                </section>
             </ThisPageContainerComponent>
         )
     }

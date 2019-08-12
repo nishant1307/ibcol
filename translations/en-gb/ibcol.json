@@ -46,7 +46,26 @@
             }
         },
         "programmeSection": {
-            "title": "Programme"
+            "title": "Programme",
+            "workshopTitle": "Workshop",
+            "workshop": [
+                {
+                    "eventTitle": "Workshop 1/3: Blockchain from Technical First Principles",
+                    "eventContent": "In this workshop, students will learn about what blockchain is and why blockchain is useful. We will discuss the various concepts and paradigms represented by blockchain, the importance of various core components and designs of a blockchain, and the difference between blockchains and distributed ledger technology (DLT). We will introduce students to the several projects and platforms."
+                },
+                {
+                    "eventTitle": "Workshop 2/3: Legality + Compliance for Blockchain",
+                    "eventContent": "In this workshop, students will learn about some legal and regulatory rulings and interpretations from around the world, along with their impact on the blockchain industry. We will investigate how decentralised applications can co-exist with the legal and compliance infrastructure of the old world to bridge into a future with blockchain. We will also talk about token economics and anatomy of a whitepaper."
+                },
+                {
+                    "eventTitle": "Workshop 3/3: Business Strategies in Blockchain",
+                    "eventContent": "In this workshop, students will learn to address and understand the agnostic nature of blockchain technology to assess the strengths, weaknesses, opportunities, and threats of blockchain in various sectors, such as finance, manufacturing, logistics & supply chain, legal, and so forth. Throughout the workshop, we hope to encourage students to foresee the implication of blockchain in their sectors of interest."
+                }
+            ],
+            "competitionTitle":"Competition",
+            "finalTitle":"Finals: DappCamp Demo Day",
+            "finalDate":"Wednesday, May 30th, 2018",
+            "finalTime":"14:30 - 18:30"
         },
         "partnerSection": {
             "title": "Partners",
@@ -195,7 +214,7 @@
             ]
         },
         "contestantSection": {
-            "title": "Contestant"
+            "title": "Teams & Awards"
         },
         "photoSection": {
             "title": "Photo Gallery"

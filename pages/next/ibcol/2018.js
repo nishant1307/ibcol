@@ -138,7 +138,7 @@ export default class extends React.Component {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div className="row">
                         <div className="col-block">
                             <h3>{this.translate('2019.processSection.whitepaper.title')}</h3>
@@ -165,6 +165,36 @@ export default class extends React.Component {
                             <h1>{this.translate('2018.programmeSection.title')}</h1>
                         </div>
                     </div>
+
+                    {/* <!-- Workshop --> */}
+                    <div className="row">
+                        <div className="col-block">
+                            <h3>{this.translate('2018.programmeSection.workshopTitle')}</h3>
+                        </div>
+                        <div className="block-1-3">
+                            {
+                                this.translate('2018.programmeSection.workshop').map((workshop, index) => {
+                                    return <div className="col-block" key={index}>
+                                        <div className="">
+                                            <div className="">
+                                                <h4 className="">{workshop.eventTitle}</h4>
+                                                <p>{workshop.eventContent}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                })
+                            }
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-block">
+                            <h3>{this.translate('2018.programmeSection.finalTitle')}</h3>
+                            <p>{this.translate('2018.programmeSection.finalDate')}</p>
+                            <p>{this.translate('2018.programmeSection.finalTime')}</p>
+                        </div>
+                    </div>
+
                 </section>
                 {/* End of programme section */}
 
@@ -283,6 +313,207 @@ export default class extends React.Component {
                             <h1>{this.translate('2018.contestantSection.title')}</h1>
                         </div>
                     </div>
+
+                    <div className="row">
+                        <div className="block-1-2">
+                            <div className="col-block team-info">
+                                <a href="https://www.facebook.com/hkblockchainsociety/photos/a.2131634553723272.1073741830.1906928656193864/2131636500389744/?type=3&amp;theater" target="_blank">
+                                    <img src="/static/images/HKBCS-DappCamp-ISBC-2018-winners-FinTechPassion.jpg" />
+                                </a>
+                                <h4>EduCertChain <span>- PolyU</span></h4>
+                                <p>Blockchain for universities to issue virtual credentials.</p>
+                                <p style={{ width: '45%', float: 'left' }}>Kavis, Cho Tsz Kin<br />
+                                    Roman, Yuen Ching Hin</p>
+                                <p style={{ width: '45%', float: 'left' }}>Alex, Chu Lap Tung<br />
+                                    Chon, Yeung Chun Yin</p>
+                                <p style={{ clear: 'both' }}><a href="images/projects/HKBCS-DappCamp-2018-ISBC-Symposium+Finalist---FintechPassion-EduChain.pdf" target="_blank">View Team Material</a></p>
+                                <div className="winner">
+                                    <span className="prizes first" data-toggle="tooltip" data-placement="top" title="" data-original-title="1st Place">Project Presentation</span>
+                                    <span className="prizes second" data-toggle="tooltip" data-placement="top" title="" data-original-title="2nd Place">Proposal &amp; White Paper</span>
+                                    <span className="prizes Merit" data-toggle="tooltip" data-placement="top" title="" data-original-title="">Award Of Merit</span>
+                                </div>
+                            </div>
+                            <div className="col-block team-info">
+                                <a href="https://www.facebook.com/hkblockchainsociety/photos/a.2131634553723272.1073741830.1906928656193864/2131636787056382/?type=3&amp;theater" target="_blank">
+                                    <img src="/static/images/HKBCS-DappCamp-ISBC-2018-winners-NewRx.jpg" />
+                                </a>
+                                <h4>NewRx <span>- HKU / CUHK</span></h4>
+                                <p>Platform-agnostic protocol for a 21st-century prescription system with smart cards.</p>
+                                <p style={{ width: '45%', float: 'left' }}>Li Yik Sum Yalsin</p>
+                                <p style={{ width: '45%', float: 'left' }}>Ip Li Yu Leona</p>
+                                <p style={{ clear: 'both' }}><a href="images/projects/HKBCS-DappCamp-2018-ISBC-Symposium+Finalist---NewRx.jpg" target="_blank">View Team Material</a></p>
+                                <div className="winner">
+                                    <span className="prizes first" data-toggle="tooltip" data-placement="top" title="" data-original-title="1st Place">Proposal &amp; White Paper</span>
+                                    <span className="prizes third" data-toggle="tooltip" data-placement="top" title="" data-original-title="3rd Place">Project Presentation</span>
+                                    <span className="prizes Merit" data-toggle="tooltip" data-placement="top" title="" data-original-title="">Award Of Merit</span>
+                                </div>
+                            </div>
+                            <div className="col-block team-info">
+                                <a href="https://www.facebook.com/hkblockchainsociety/photos/a.2131634553723272.1073741830.1906928656193864/2131635873723140/?type=3&amp;theater" target="_blank">
+                                    <img src="/static/images/HKBCS-DappCamp-ISBC-2018-winners-Cryptowelder.jpg" />
+                                </a>
+                                <h4>Cryploma (Cryptowelder) <span>- PolyU</span></h4>
+                                <p>Blockchain-based diploma issuance &amp; verification.</p>
+                                <p style={{ width: '45%', float: 'left', 'marginBottom': '52px' }}>Wan Qinyu</p>
+                                <p style={{ width: '45%', float: 'left', 'marginBottom': '52px' }}>Li Shaokang</p>
+                                <p style={{ clear: 'both' }}><a href="images/projects/HKBCS-DappCamp-2018-ISBC-Symposium+Finalist---Cryptowelder-Cryploma.pdf" target="_blank">View Team Material</a></p>
+                                <div className="winner">
+                                    <span className="prizes second" data-toggle="tooltip" data-placement="top" title="" data-original-title="2nd Place">Project Presentation</span>
+                                    <span className="prizes third" data-toggle="tooltip" data-placement="top" title="" data-original-title="3rd Place">Proposal &amp; White Paper</span>
+                                    <span className="prizes Merit" data-toggle="tooltip" data-placement="top" title="" data-original-title="">Award Of Merit</span>
+                                </div>
+                            </div>
+                            <div className="col-block team-info">
+                                <a href="https://www.facebook.com/hkblockchainsociety/photos/a.2131634553723272.1073741830.1906928656193864/2131635600389834/?type=3&amp;theater" target="_blank">
+                                    <img src="/static/images/HKBCS-DappCamp-ISBC-2018-winners-Med-Block.jpg" />
+                                </a>
+                                <h4>Med-Block <span>- HKUST</span></h4>
+                                <p>We manage the medical information in IoT using blockchain.</p>
+                                <p><a href="mailto:medblock.blockchain@gmail.com">medblock.blockchain@gmail.com</a></p>
+                                <p style={{ clear: 'both' }}><a href="images/projects/HKBCS-DappCamp-2018-ISBC-Symposium+Finalist---Med-Block.png" target="_blank">View Team Material</a></p>
+                                <div className="winner">
+                                    <span className="prizes third" data-toggle="tooltip" data-placement="top" title="" data-original-title="3rd Place">Proposal &amp; White Paper</span>
+                                    <span className="prizes fourth" data-toggle="tooltip" data-placement="top" title="" data-original-title="4th Place">Project Presentation</span>
+                                    <span className="prizes Merit" data-toggle="tooltip" data-placement="top" title="" data-original-title="">Award Of Merit</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="block-1-3">
+                            <div className="col-block team-info">
+                                <h4>NotarTech <span>- CityU / PolyU</span></h4>
+                                <p>A project to reform the notary industry.</p>
+                                <p style={{ width: '45%', float: 'left' }}>Eve Li<br />Nick Li</p>
+                                <p style={{ clear: 'both' }}><a href="images/projects/HKBCS-DappCamp-2018-ISBC-Symposium+Finalist---TechGeeks-NotarTech.pdf" target="_blank">View Team Material</a></p>
+                                <div className="winner">
+                                    <span className="prizes fourth" data-toggle="tooltip" data-placement="top" title="" data-original-title="4th Place">Project Presentation</span>
+                                    <span className="prizes Merit" data-toggle="tooltip" data-placement="top" title="" data-original-title="">Award Of Merit</span>
+                                </div>
+                            </div>
+                            <div className="col-block team-info">
+                                <h4>Bucky <span>- CityU</span></h4>
+                                <p>A triple-win permission marketing solution.</p>
+                                <p style={{ width: '45%', float: 'left' }}>Oska Cheng<br />Natalie Chan</p>
+                                <p style={{ width: '45%', float: 'left' }}>Stephanie Kwok</p>
+                                <p style={{ clear: 'both' }}><a href="images/projects/HKBCS-DappCamp-2018-ISBC-Symposium+Finalist---Bucky.mp4" target="_blank">View Team Material</a></p>
+                                <div className="winner">
+                                    <span className="prizes Merit" data-toggle="tooltip" data-placement="top" title="" data-original-title="">Award Of Merit</span>
+                                </div>
+                            </div>
+                            <div className="col-block team-info">
+                                <h4>CardChain <span>- CityU</span></h4>
+                                <p>A blockchain-based digital business card solution.</p>
+                                <p style={{ width: '45%', float: 'left' }}>Charles Wong</p>
+                                <p style={{ clear: 'both' }}><a href="images/projects/HKBCS-DappCamp-2018-ISBC-Symposium+Finalist---CardChain.pdf" target="_blank">View Team Material</a></p>
+                                <div className="winner">
+                                    <span className="prizes Merit" data-toggle="tooltip" data-placement="top" title="" data-original-title="">Award Of Merit</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="block-1-3">
+                            <div className="col-block team-info">
+                                <h4>Lumière <span>- CityU / HKBU</span></h4>
+                                <p>Lumière solves a multi-billion dollar transparency issue in movie and advertising productions.</p>
+                                <p style={{ width: '45%', float: 'left' }}>Patrice Poujol<br />Kabir Rajput</p>
+                                <p style={{ width: '45%', float: 'left' }}>Robert Parcus</p>
+                                <p style={{ clear: 'both' }}><a href="images/projects/HKBCS-DappCamp-2018-ISBC-Symposium+Finalist---Lumiere.pdf" target="_blank">View Team Material</a></p>
+                                <div className="winner">
+                                    <span className="prizes Merit" data-toggle="tooltip" data-placement="top" title="" data-original-title="">Award Of Merit</span>
+                                </div>
+                            </div>
+                            <div className="col-block  team-info">
+                                <h4>StarToday.io <span>- HKUST</span></h4>
+                                <p>A blockchain-based crowdfunding platform that makes your dream come true.</p>
+                                <p style={{ width: '45%', float: 'left' }}>Hu Yao-Chieh<br />Goa Ang-Shu</p>
+                                <p style={{ width: '45%', float: 'left' }}>Lee Ting-Ting<br />Wu Tan Tania</p>
+                                <p style={{ clear: 'both' }}><a href="images/projects/HKBCS-DappCamp-2018-ISBC-Symposium+Finalist---StarToday.png" target="_blank">View Team Material</a></p>
+                                <div className="winner">
+                                    <span className="prizes Merit" data-toggle="tooltip" data-placement="top" title="" data-original-title="">Award Of Merit</span>
+                                </div>
+                            </div>
+                            <div className="col-block  team-info">
+                                <h4>VotingSystem <span>- PolyU</span></h4>
+                                <p>A blockchain-based voting solution.</p>
+                                <p style={{ width: '45%', float: 'left' }}>Edward Lee<br />William Mui</p>
+                                <p style={{ clear: 'both' }}><a href="images/projects/HKBCS-DappCamp-2018-ISBC-Symposium+Finalist---TeamMWE-VotingSystem.pdf" target="_blank">View Team Material</a></p>
+                                <div className="winner">
+                                    <span className="prizes Merit" data-toggle="tooltip" data-placement="top" title="" data-original-title="">Award Of Merit</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row mb-5">
+                        <div className="block-1-3">
+                            <div className="col-block  team-info">
+                                <h4>Alpha Program <span>- CityU</span></h4>
+                                <p>Transformation in Loyalty Program.</p>
+                                <p style={{ width: '45%', float: 'left' }}>James Chan</p>
+                                <p style={{ clear: 'both' }}><a href="images/projects/HKBCS-DappCamp-2018-ISBC-Symposium---AlphaProgram.jpg" target="_blank">View Team Material</a></p>
+                                <div className="winner">
+                                    <span className="prizes Merit" data-toggle="tooltip" data-placement="top" title="" data-original-title="">Award Of Merit</span>
+                                </div>
+                            </div>
+                            <div className="col-block  team-info">
+                                <h4>Credify <span>- CUHK</span></h4>
+                                <p>Providing a solution to prove the hashed attestation is on blockchain by not being a full node.</p>
+                                <p style={{ width: '45%', float: 'left' }}>Emily Yiu</p>
+                                <p style={{ clear: 'both' }}><a href="images/projects/HKBCS-DappCamp-2018-ISBC-Symposium---Credify.pdf" target="_blank">View Team Material</a></p>
+                                <div className="winner">
+                                    <span className="prizes Merit" data-toggle="tooltip" data-placement="top" title="" data-original-title="">Award Of Merit</span>
+                                </div>
+                            </div>
+                            <div className="col-block  team-info">
+                                <h4>Datax <span>- HKU</span></h4>
+                                <p>Datax allows AI researchers and businesses to crowdsource and exchange data.</p>
+                                <p style={{ width: '45%', float: 'left' }}>Hinnes Lung<br />Marvin Pang<br />Jason Lo</p>
+                                <p style={{ width: '45%', float: 'left' }}>Pinky Wong<br />Kevin Wong<br />Kevin Chu</p>
+                                <p style={{ clear: 'both' }}><a href="images/projects/HKBCS-DappCamp-2018-ISBC-Symposium---Datax.jpeg" target="_blank">View Team Material</a></p>
+                                <div className="winner">
+                                    <span className="prizes Merit" data-toggle="tooltip" data-placement="top" title="" data-original-title="">Award Of Merit</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row mb-5">
+                        <div className="block-1-3">
+                            <div className="col-block  team-info">
+                                <h4>Film Dream <span>- CityU / HKUST</span></h4>
+                                <p>The project aims to provide a multi-function website and mobile app focusing on the film industry, including crowdfunding and smart contract using blockchain application.</p>
+                                <p style={{ width: '45%', float: 'left' }}>Agnes Tsang<br />Eugene Yau</p>
+                                <p style={{ width: '45%', float: 'left' }}>Annie Kwok</p>
+                                <p style={{ clear: 'both' }}><a href="images/projects/HKBCS-DappCamp-2018-ISBC-Symposium---FilmDream.pdf" target="_blank">View Team Material</a></p>
+                                <div className="winner">
+                                    <span className="prizes Merit" data-toggle="tooltip" data-placement="top" title="" data-original-title="">Award Of Merit</span>
+                                </div>
+                            </div>
+                            <div className="col-block  team-info">
+                                <h4>Fourth Estate <span>- HKU</span></h4>
+                                <p>A secure, decentralised news data storing and sharing solution for journalists.</p>
+                                <p style={{ width: '45%', float: 'left' }}>Aaron Chong<br />Remini Yip</p>
+                                <p style={{ clear: 'both' }}><a href="images/projects/HKBCS-DappCamp-2018-ISBC-Symposium---Project D3-Fourth Estate.pdf" target="_blank">View Team Material</a></p>
+                                <div className="winner">
+                                    <span className="prizes Merit" data-toggle="tooltip" data-placement="top" title="" data-original-title="">Award Of Merit</span>
+                                </div>
+                            </div>
+                            <div className="col-block  team-info">
+                                <h4>QualiBlock <span>- CityU</span></h4>
+                                <p>QualiBlock stores your digital and verified qualifications using blockchain.</p>
+                                <p style={{ width: '45%', float: 'left' }}>Agnes Tsang<br />Eugene Yau</p>
+                                <p style={{ width: '45%', float: 'left' }}>Annie Kwok</p>
+                                <p style={{ clear: 'both' }}><a href="images/projects/HKBCS-DappCamp-2018-ISBC-Symposium---Qualiblock.pdf" target="_blank">View Team Material</a></p>
+                                <div className="winner">
+                                    <span className="prizes Merit" data-toggle="tooltip" data-placement="top" title="" data-original-title="">Award Of Merit</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                 </section>
                 {/* End of contestant section */}
 
