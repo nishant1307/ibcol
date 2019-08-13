@@ -164,9 +164,13 @@ export default class extends React.Component {
                                                         <p className="coursesBody">{course.course01Desc}</p>
                                                         <b>{course.prereqTitle}</b>
                                                         <p style={{ marginBottom: "1rem" }}>{course.course01Prereq}</p>
-                                                        <a href="https://forms.gle/yCH2PdPGTJusZePv7" target="_blank" className="btn btn--primary btnEnrol">
+                                                        {course.btnStyle == 'disable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol enrolDisable">
                                                             {course.btnEnrol}
-                                                        </a>
+                                                        </a>)}
+
+                                                        {course.btnStyle == 'enable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol">
+                                                            {course.btnEnrol}
+                                                        </a>)}
                                                     </div>
                                                 })
                                             }
@@ -189,9 +193,13 @@ export default class extends React.Component {
                                                         <p className="coursesBody">{course.course01Desc}</p>
                                                         <b>{course.prereqTitle}</b>
                                                         <p style={{ marginBottom: "1rem" }}>{course.course01Prereq}</p>
-                                                        <a href="https://forms.gle/yCH2PdPGTJusZePv7" target="_blank" className="btn btn--primary btnEnrol">
+                                                        {course.btnStyle == 'disable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol enrolDisable">
                                                             {course.btnEnrol}
-                                                        </a>
+                                                        </a>)}
+
+                                                        {course.btnStyle == 'enable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol">
+                                                            {course.btnEnrol}
+                                                        </a>)}
                                                     </div>
                                                 })
                                             }
@@ -215,9 +223,13 @@ export default class extends React.Component {
                                                         <p className="coursesBody">{course.course01Desc}</p>
                                                         <b>{course.prereqTitle}</b>
                                                         <p style={{ marginBottom: "1rem" }}>{course.course01Prereq}</p>
-                                                        <a href="https://forms.gle/yCH2PdPGTJusZePv7" target="_blank" className="btn btn--primary btnEnrol">
+                                                        {course.btnStyle == 'disable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol enrolDisable">
                                                             {course.btnEnrol}
-                                                        </a>
+                                                        </a>)}
+
+                                                        {course.btnStyle == 'enable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol">
+                                                            {course.btnEnrol}
+                                                        </a>)}
                                                     </div>
                                                 })
                                             }
