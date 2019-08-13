@@ -53,6 +53,7 @@ function getSchoolInfo(info){
         <h4>{info.fName}:</h4>
       </div>
         <div className="col-block"> {info.head1} {info.head2.length > 0 && (<span> , {info.head2}</span>)}
+
         <a href={info.facebookUrl} target="_blank">
           <img className="png-fb-icon" src="/static/sm/fb-blue.png"/>
         </a>
@@ -122,7 +123,7 @@ export default class extends React.Component {
         return (
           <li className="col-block sm" key={index}>
             <h4 className="list-title">{info.fName}:</h4>
-            <span className="list-item">{info.head1}{info.head2.length > 0 && (<span>, {info.head2}             </span>)}</span>
+            <span className="list-item">{info.head1}{info.head2.length > 0 && (<span>, {info.head2}</span>)}</span>
               <a href={info.facebookUrl} target="_blank">
                 <img className="list png-fb-icon" src="/static/sm/fb-blue.png"/>
               </a>
@@ -174,7 +175,7 @@ export default class extends React.Component {
           </div>
           </section>
 
-          <section className="s-section target-section">
+          <section className="s-section target-section last">
           <div className="row col">
               <h3 className="sm-title">{this.translate('XBCOL.title')}</h3>
               <a href={this.translate('XBCOL.facebookUrl')} target="_blank">
@@ -191,59 +192,6 @@ export default class extends React.Component {
               <ul><div className="block-1-2 block-tab-full">{getSchoolChapContactInfo}</div></ul>
           </div>
           </section>
-
-          <section className="s-section target-section last" id="schedule">
-            <div className="row">
-                <div className="col-block">
-                    <h4 className="item-title">Timeline</h4>
-                    <h5>Workshops Day</h5>
-                    <p>All received submissions requires at least some final adjustments. The workshop helps all team bridge the gap to meet minimal quality requirements and be ready for investors and academic “cross-examinations”.</p>
-                </div>
-                <div className="schedule">
-                    <table className="day1">
-                        <tbody>
-                            <tr>
-                                <td className="session-schedule-time blue">
-                                    <p>9:00 AM - 10:00 AM</p>
-                                </td>
-                                <td className="session-schedule-detail">
-                                    <p>Shuttle Bus from Hotel to CityU</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="session-schedule-time red">
-                                    <p>10:00 AM - 5:00 PM</p>
-                                </td>
-                                <td className="session-schedule-detail">
-                                    <h5>Workshop AND Lunch </h5>
-                                    <p>City University of Hong Kong</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="session-schedule-time green">
-                                    <p>5:00 PM - 6:00 PM</p>
-                                </td>
-                                <td className="session-schedule-detail">
-                                    <h5>Dinner</h5>
-                                    <p>HKSTP InnoCentre</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="session-schedule-time orange">
-                                    <p>6:30 PM - 8:00 PM</p>
-                                </td>
-                                <td className="session-schedule-detail">
-                                    <h5>Opening Ceremony</h5>
-                                    <p>HKSTP InnoCentre</p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            </section>
-
-
       </ThisPageContainerComponent>
     )
   }
