@@ -4605,6 +4605,13 @@ iframe {
   padding: 10px 0;
   width: 100%;
 }
+.col-block.sm a{
+  display: inline-block;
+  margin-right: 0;
+  padding: 10px 0;
+  width: auto;
+}
+
 .schedule h4{
   display: inline-block;
   margin-right: 0;
@@ -4922,6 +4929,40 @@ button.btnCourses{
   line-height: 0;
   padding: 0 1rem;
   letter-spacing: .2rem;
+}
+
+.png-fb-icon, .png-tg-icon {
+  width: 36px !important;
+  height: 36px !important;
+  margin-inline-end: 1rem;
+  vertical-align: middle;
+}
+.list.png-fb-icon, .list.png-tg-icon {
+  width: 36px !important;
+  height: 36px !important;
+  margin-inline-end: 1rem;
+  vertical-align: middle;
+  margin-right: auto;
+}
+.sm-title {
+  display: inline-block;
+  padding-inline-end: 9.6rem;
+}
+.head-title{
+  margin-bottom: 1rem;
+  padding-inline-end: 6rem;
+}
+.list-title{
+  padding-top: 30px;
+  margin-bottom: 0rem;
+}
+.list-item{
+  padding-inline-end: 2rem;
+}
+.btn-sm-joinus{
+  height: 3rem;
+  line-height: 2.7rem;
+  padding: 0px 9px 0px 1rem;
 }
 
 .scroll:hover{
