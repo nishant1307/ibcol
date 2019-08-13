@@ -8,7 +8,7 @@ import PageContainerComponent from 'components/PageContainerComponent';
 import Head from 'next/head';
 import jQuery from 'jquery';
 import classNames from 'classnames';
-
+import ScrollButtonComponent from 'components/ScrollButtonComponent';
 const $ = jQuery;
 
 const getLocaleObject = (requestedLocale) => {
@@ -763,6 +763,8 @@ export default class extends React.Component {
                     </div>
                 </section>
                 {/* End of photo section */}
+
+                <ScrollButtonComponent scrollStepInPx="70" delayInMs="5" />
             </ThisPageContainerComponent >
         )
     }

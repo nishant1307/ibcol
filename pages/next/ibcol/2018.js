@@ -8,6 +8,7 @@ import PageContainerComponent from 'components/PageContainerComponent';
 import Head from 'next/head';
 import jQuery from 'jquery';
 import classNames from 'classnames';
+import ScrollButtonComponent from 'components/ScrollButtonComponent';
 const $ = jQuery;
 
 const getLocaleObject = (requestedLocale) => {
@@ -32,6 +33,37 @@ const getLocaleObject = (requestedLocale) => {
 const ThisPageContainerComponent = styled(PageContainerComponent)`
 
 `;
+
+// class ScrollButton extends React.Component {
+//     constructor() {
+//         super();
+
+//         this.state = {
+//             intervalId: 0
+//         };
+//     }
+
+//     scrollStep() {
+//         if (window.pageYOffset === 0) {
+//             clearInterval(this.state.intervalId);
+//         }
+//         window.scroll(0, window.pageYOffset - this.props.scrollStepInPx);
+//     }
+
+//     scrollToTop() {
+//         let intervalId = setInterval(this.scrollStep.bind(this), this.props.delayInMs);
+//         this.setState({ intervalId: intervalId });
+//     }
+
+//     render() {
+//         return <button title='Back to top' className='btn scroll'
+//             onClick={() => { this.scrollToTop(); }}>
+//             {/* <span className='arrow-up glyphicon glyphicon-chevron-up'></span> */}
+//             Top
+//                 </button>;
+//     }
+// }
+
 
 export default class extends React.Component {
     static async getInitialProps({ req, res, query }) {
@@ -531,7 +563,10 @@ export default class extends React.Component {
                         </div>
                     </div>
                 </section>
+                
                 {/* End of photo section */}
+
+                <ScrollButtonComponent scrollStepInPx="70" delayInMs="5" />
             </ThisPageContainerComponent >
         )
     }
