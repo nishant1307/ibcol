@@ -122,12 +122,12 @@ export default class extends React.Component {
         return (
           <li className="col-block sm" key={index}>
             <h4 className="list-title">{info.fName}:</h4>
-            <span className="list-item">{info.head1}{info.head2.length > 0 && (<span>, {info.head2}</span>)}</span>
+            <span className="list-item">{info.head1}{info.head2.length > 0 && (<span>, {info.head2}             </span>)}</span>
               <a href={info.facebookUrl} target="_blank">
-                <img className="png-fb-icon" src="/static/sm/fb-blue.png"/>
+                <img className="list png-fb-icon" src="/static/sm/fb-blue.png"/>
               </a>
               <a href={info.telegramUrl} target="_blank">
-                <img className="png-tg-icon" src="/static/sm/tg-blue.png"/>
+                <img className="list png-tg-icon" src="/static/sm/tg-blue.png"/>
               </a>
             </li>
         )
@@ -195,7 +195,7 @@ export default class extends React.Component {
           <section className="s-section target-section last" id="schedule">
             <div className="row">
                 <div className="col-block">
-                    <h4 className="item-title">Friday 5 July</h4>
+                    <h4 className="item-title">Timeline</h4>
                     <h5>Workshops Day</h5>
                     <p>All received submissions requires at least some final adjustments. The workshop helps all team bridge the gap to meet minimal quality requirements and be ready for investors and academic “cross-examinations”.</p>
                 </div>
