@@ -73,15 +73,9 @@ export default class extends React.Component {
                             <h3 className="subhead">{this.translate('subHeading')}</h3>
                         </div>
                     </div>
-
                     <div className="row">
                         <div className="col-block">
-                            <h1>{this.translate('visionSection.title')}</h1>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-block">
-                            <p>{this.translate('visionSection.content')}</p>
+                            <h5 style={{marginTop:0}}>{this.translate('visionSection.content')}</h5>
                         </div>
                     </div>
                 </section>
@@ -90,6 +84,14 @@ export default class extends React.Component {
                     <div className="row section-header">
                         <div className="col-block">
                             <h1>{this.translate('storySection.title')}</h1>
+                        </div>
+                        <div className="col-block">
+                            <h3>An Analogy of Life and Death</h3>
+                            <p>The history of blockchain is analogous to the cycles of life and death in the prehistory of Earth, namely concerning biodiversity, extinction events, and adaptation of species. The Cambrian Explosion is an era approximately 541 million years ago when an unprecedented number of phyla appeared into the fossil records. After several years of low-key development, the blockchain world experienced its own Cambrian Explosion in 2017, driven by the mirage of utopia and fuelled by the abundance of money. Projects and their ICOs expanded and diversified quickly in 2016 and 2017 after ERC-20 was proposed in Nov 2015; the only extinction filter was the inability to raise money, so the majority of projects seem to be winners. The Permian-Triassic Extinction is an event approximately 252 million years ago consisting of several localised events that saw the 96% of all species go extinct when they did not have the means to adapt, aptly named the Great Dying. In the blockchain world, the P-T Extinction event is already happening, has happened already, or is still happening: a study found circa 4% of ICOs were either promising or successful—an ironic coincidence.</p>
+                            <h3>Evolution rather than Revolution</h3>
+                            <p>In the P-T Extinction of blockchain, there exists three big filters: lack of research and technical competence, lack of business competence, and lack of legal and compliance competence. Scams do not survive an obvious lack of solid technology or research, while survivors do not have any business adoption, a familiar epidemic and a classic killer of startups. The final major extinction filter is the awakening of the people to the importance of privacy and lack of privacy preservation by contemporary corporations, especially in light of the Equifax breach and the Facebook “breach” by Cambridge Analytica, coupled with the activation of GDPR—blockchain projects without the foresight of building for privacy preservation shall eventually be consigned to the dustbin of history by the power of law and regulations. The fittest shall survive because of enterprise discipline with competence in technology, legal, and business: those missing tech is all talk, but can’t build; those missing business will “build it and they will come” (classic tech startup pitfall); those missing legal are lawsuits waiting to happen.</p>
+                            <h3>An unprecedented pairing of fresh talent and entrenched problems</h3>
+                            <p>Students represent our future. Because enterprise applications represent the widest reach to all corners of humankind, the IBCOL encourages students to work and contribute to the future of humanity, where blockchain and distributed ledgers contribute immense value to all aspects of society.</p>
                         </div>
                     </div>
                 </section>
@@ -108,7 +110,7 @@ export default class extends React.Component {
                                         return <div className="historyBtn" key={index}>
 
                                             <Link prefetch route={historyEvent.url} params={{ locale }}>
-                                                <a> <h4> {historyEvent.name}</h4> </a>
+                                                <a className="btn btn--primary"> {historyEvent.name} </a>
                                             </Link>
 
                                         </div>
