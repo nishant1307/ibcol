@@ -79,7 +79,7 @@
     
 
     { 
-      "src": "/(?<locale>[^/]*)/(?<page>(how|ambassadors|sponsors|contact|registration|admin))/", 
+      "src": "/(?<locale>[^/]*)/(?<page>(about|how|ambassadors|sponsors|contact|registration|admin|ibcol))/", 
       "dest": "/next/$page?locale=$locale",
       "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
     },
@@ -114,6 +114,18 @@
     { 
       "src": "/(?<locale>[^/]*)/admin/dashboard/", 
       "dest": "/next/admin/dashboard?locale=$locale"
+    },
+
+    { 
+      "src": "/(?<locale>[^/]*)/ibcol/2018/", 
+      "dest": "/next/ibcol/2018?locale=$locale",
+      "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
+    },
+
+    { 
+      "src": "/(?<locale>[^/]*)/ibcol/2019/", 
+      "dest": "/next/ibcol/2019?locale=$locale",
+      "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
     }
     
   ]
