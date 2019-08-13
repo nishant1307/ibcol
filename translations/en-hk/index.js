@@ -4,7 +4,7 @@ module.exports = {
     "id": "en-hk",
     "name": "Hong Kong",
     "label": "Welcome",
-    "flag": "gb.svg"
+    "flag": "hk.svg"
   },
   "_global": require('./_global.json'),
   "_countries": require('./_countries.json'),
