@@ -110,7 +110,7 @@ export default class extends React.Component {
       function (info, index) {
         console.log(info, index);
         return (
-          <div className="block-1-2 block-tab-full" key={info[0]+index}>
+          <div className="block-1-2" key={info[0]+index}>
             <li className="col-block" key={index}>{getHeadInfo(info[0])}</li>
             <li className="col-block" key={index + 1}>{getHeadInfo(info[1])}</li>
           </div>
@@ -123,13 +123,17 @@ export default class extends React.Component {
         return (
           <li className="col-block sm" key={index}>
             <h4 className="list-title">{info.fName}:</h4>
-            <span className="list-item">{info.head1}{info.head2.length > 0 && (<span>, {info.head2}</span>)}</span>
-              <a href={info.facebookUrl} target="_blank">
-                <img className="list png-fb-icon" src="/static/sm/fb-blue.png"/>
-              </a>
-              <a href={info.telegramUrl} target="_blank">
-                <img className="list png-tg-icon" src="/static/sm/tg-blue.png"/>
-              </a>
+            {info.facebookUrl.length > 0 && (
+              <a href={info.facebookUrl} target="_blank" className="sm-icon">
+                <img className="png-fb-icon" src="/static/sm/fb-blue.png"/>
+              </a>)}
+            {info.facebookUrl.length > 0 && (
+              <a href={info.telegramUrl} target="_blank" className="sm-icon">
+                <img className="png-tg-icon" src="/static/sm/tg-blue.png"/>
+              </a>)}
+            <br/>
+            <a href={info.head1.linkedInUrl}  target="_blank" className="list-item">{info.head1.name}</a>
+            {info.head2.name.length > 0 && (<a href={info.head2.linkedInUrl}  target="_blank">, {info.head2.name}</a>)}
             </li>
         )
       }
@@ -175,21 +179,27 @@ export default class extends React.Component {
           </div>
           </section>
 
-          <section className="s-section target-section last">
+          <section className="target-section list-last">
           <div className="row col">
-              <h3 className="sm-title">{this.translate('XBCOL.title')}</h3>
+              <div className="sm">
+              <span className={classNames("flag-icon", this.translate('XBCOL.flag'))}></span>
+              <h3 className="sm-title flag">{this.translate('XBCOL.title')}</h3>
+              {this.translate('XBCOL.facebookUrl').length > 0 && (
               <a href={this.translate('XBCOL.facebookUrl')} target="_blank">
                 <img className="png-fb-icon" src={this.translate('facebookIcon')}/>
-              </a>
+              </a>)}
+              {this.translate('XBCOL.telegramUrl').length > 0 && (
               <a href={this.translate('XBCOL.telegramUrl')} target="_blank">
-              <img className="png-tg-icon" src={this.translate('telegramIcon')}/>
-              </a>
-              <a href="" className="btn btn--primary btn-sm-joinus">Join Us</a>
+                <img className="png-tg-icon" src={this.translate('telegramIcon')}/>
+              </a>)}
+              </div>
+              <a href="/join-us" className="btn btn--primary btn-sm-joinus">Join Us</a>
+            
               <h4 className="head-title">{this.translate('XBCOL.headTitle')}</h4>
               <ul>{getXBCOLContactInfo}</ul>
               <h4 className="sm-title  head-title">{this.translate('schoolChapter.headTitle')}</h4>
-              <a href="" className="btn btn--primary btn-sm-joinus">Join Us</a>
-              <ul><div className="block-1-2 block-tab-full">{getSchoolChapContactInfo}</div></ul>
+              <a href="/join-us" className="btn btn--primary btn-sm-joinus">Join Us</a>
+              <ul><div className="block-1-2">{getSchoolChapContactInfo}</div></ul>
           </div>
           </section>
       </ThisPageContainerComponent>

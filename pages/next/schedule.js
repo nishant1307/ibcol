@@ -13,7 +13,6 @@ import { Link } from '/routes';
 import PageContainerComponent from 'components/PageContainerComponent';
 
 import Head from 'next/head';
-import $ from 'jquery';
 
 const ThisPageContainerComponent = styled(PageContainerComponent)`
 
@@ -22,6 +21,7 @@ const ThisPageContainerComponent = styled(PageContainerComponent)`
 function getEventDetail(info){
     if(info !== undefined){
         info.map((detail,index)=>{
+            console.log('getEventDetail');
             console.log(detail, index);
             console.log(detail.date);
             return(
@@ -32,7 +32,7 @@ function getEventDetail(info){
                 //     <h5>{detail.title}</h5>
                 //     <p>{detail.venue}</p>
                 // </td>
-              );
+              )
         });
     }
   }
@@ -49,21 +49,50 @@ export default class extends React.Component {
         this.setState({ scheduleInfo: this.translate('events') });
     }    
     render() {
-        const getScheduleInfo = this.state.scheduleInfo.map(
-            function (info, index) {
-              console.log(info, index);
-              return (
-                <tr>
-                <td className="session-schedule-time blue">
-                    <h5>{info.month}</h5>
-                </td>
-                <td key={index}>
-                {getEventDetail(info.detail)}
-                </td>
-                </tr>
-              )
+        var x = 0;
+        const getScheduleInfo = this.state.scheduleInfo.map((info, index)=>{
+            
+            var body = [];
+            var colors = ["blue","red","green","yello"];
+            
+            for (var i=0;i<info.detail.length;i++){
+                
+                    if(i == 0){
+                        body.push(
+                                <tr>
+                                    <td className={`session-schedule-time ${colors[index%4]}`} rowSpan={info.detail.length}>
+                                    <h5>{info.month}</h5>
+                                    </td>
+                                    <td className={`session-schedule-time ${colors[i%4]}`}>
+                                        <h5>{info.detail[0].date}</h5>
+                                    </td>
+                                    <td className="session-schedule-detail">
+                                        <h5>{info.detail[0].title}</h5>
+                                        <p>{info.detail[0].venue}</p>
+                                    </td>
+                                </tr>);
+                    }else{
+                        var d = [];
+                         var b = [];
+                        d.push(<td className={`session-schedule-time ${colors[i%4]}`}>
+                            <h5>{info.detail[i].date}</h5>
+                            </td>);
+
+                        b.push(<td className="session-schedule-detail">
+                            <h5>{info.detail[i].title}</h5>
+                            <p>{info.detail[i].venue}</p>
+                            </td>);
+
+                        body.push(<tr>
+                                {d}
+                                {b}
+                            </tr>);
+                    }
             }
-          );
+            console.log(body)
+            return body;
+        });
+           
  
         const locale = this.props.query.locale;
 
@@ -103,6 +132,11 @@ export default class extends React.Component {
                 <div className="schedule">
                     <table className="scheduleTable">
                         <tbody>
+                        <tr>
+                            <th className="first-child-padding">Month</th>
+                            <th>Date</th>
+                            <th>Event</th>
+                        </tr>
                            {getScheduleInfo}
                         </tbody>
                     </table>
