@@ -17,12 +17,14 @@
       "detail":[ 
         {"date":"1","title":"IBCOL Training A","subtitle":"","venue":"City University of Hong Kong"},
         {"date":"31","title":"IBCOL Training B","subtitle":"","venue":"The University of Hong Kong"}
-      ]},
-      {"month":"July", 
-        "detail":[ 
-          {"date":"1","title":"IBCOL Training C","subtitle":"","venue":"City University of Hong Kong"},
-          {"date":"10","title":"IBCOL Training D","subtitle":"","venue":"The University of Hong Kong"},
-          {"date":"31","title":"IBCOL Training E","subtitle":"","venue":"The University of Hong Kong"}
-        ]}
+        ]
+    },
+    {"month":"July", 
+      "detail":[ 
+        {"date":"1","title":"IBCOL Training C","subtitle":"","venue":"City University of Hong Kong"},
+        {"date":"10","title":"IBCOL Training D","subtitle":"","venue":"The University of Hong Kong"},
+        {"date":"31","title":"IBCOL Training E","subtitle":"","venue":"The University of Hong Kong"}
+        ]
+      }
   ]
 }
