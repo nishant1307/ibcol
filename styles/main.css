@@ -4854,6 +4854,7 @@ iframe {
 
 .block-1-2 .col-block.team-info a img{
   max-height: 450px;
+  width:100%;
 }
 
 .card {
@@ -5012,6 +5013,9 @@ div.sm{
     padding: 0 1rem;
     font-size: 0.5rem;
     letter-spacing: .0rem;
+ }
+ .team-info h4{
+   margin-top:1rem;
  }
 }
 
