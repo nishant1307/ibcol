@@ -15,6 +15,7 @@
   "telegramIcon":"/static/sm/tg-blue.png",
   "XBCOL":{
       "title":"HK-BCOL",
+      "flag":"flag-icon-hk",
       "facebookUrl":"",
       "telegramUrl":"",
       "headTitle":"National Committee Head(s)",
@@ -30,8 +31,8 @@
     "title":"School Chapters",
     "headTitle":"School Chapter Head(s)",
     "schoolInfo":[
-      {"icon":"","fName":"Hong Kong Polytechnic University","sName":"PolyU","facebookUrl":"","telegramUrl":"","head1":"Alex Chu Lap Tung","head2":""},
-      {"icon":"","fName":"Chinese University of Hong Kong","sName":"CUHK","facebookUrl":"","telegramUrl":"","head1":"Roman Yuen","head2":"Kavs Cho"}
+      {"fName":"Hong Kong Polytechnic University","sName":"PolyU","facebookUrl":"","telegramUrl":"","head1":{"name":"Alex Chu Lap Tung","linkedInUrl":""},"head2":{"name":"Alex Chu Lap Tung","linkedInUrl":""}},
+      {"fName":"Chinese University of Hong Kong","sName":"CUHK","facebookUrl":"","telegramUrl":"","head1":{"name":"Roman Yuen","linkedInUrl":""},"head2":{"name":"Kavs Cho","linkedInUrl":""}}
     ]
   },
   "trainingScheduleTitle":"Training schedule",
