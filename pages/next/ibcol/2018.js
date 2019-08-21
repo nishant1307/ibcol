@@ -203,7 +203,7 @@ export default class extends React.Component {
                         <div className="col-block">
                             <h3>{this.translate('2018.programmeSection.workshopTitle')}</h3>
                         </div>
-                        <div className="block-1-3">
+                        <div className="block-1-3 block-tab-full">
                             {
                                 this.translate('2018.programmeSection.workshop').map((workshop, index) => {
                                     return <div className="col-block" key={index}>
@@ -243,7 +243,7 @@ export default class extends React.Component {
                             <h3>{this.translate('2018.partnerSection.keyPartnerTitle')}</h3>
                         </div>
 
-                        <div className="block-1-3">
+                        <div className="block-1-3 block-tab-full">
                             {
                                 this.translate('2018.partnerSection.keyPartner').map((sponsor, index) => {
                                     return <div className="col-block" key={index}>
@@ -293,7 +293,7 @@ export default class extends React.Component {
                         </div>
                     </div>
                     <div className="row corporate-logo">
-                        <div className="judge block-1-2 block-tab-full">
+                        <div className="judge block-1-2 block-tab-full ">
                             {
                                 this.translate('2018.peopleSection.vips').map((sponsor, index) => {
                                     return <div className="col-block" key={index}>
@@ -347,7 +347,7 @@ export default class extends React.Component {
                     </div>
 
                     <div className="row">
-                        <div className="block-1-2">
+                        <div className="block-1-2 block-tab-full">
                             <div className="col-block team-info">
                                 <a href="https://www.facebook.com/hkblockchainsociety/photos/a.2131634553723272.1073741830.1906928656193864/2131636500389744/?type=3&amp;theater" target="_blank">
                                     <img src="/static/images/HKBCS-DappCamp-ISBC-2018-winners-FinTechPassion.jpg" />
@@ -413,7 +413,7 @@ export default class extends React.Component {
                     </div>
 
                     <div className="row">
-                        <div className="block-1-3">
+                        <div className="block-1-3 block-tab-full">
                             <div className="col-block team-info">
                                 <h4>NotarTech <span>- CityU / PolyU</span></h4>
                                 <p>A project to reform the notary industry.</p>
@@ -446,7 +446,7 @@ export default class extends React.Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="block-1-3">
+                        <div className="block-1-3 block-tab-full">
                             <div className="col-block team-info">
                                 <h4>Lumière <span>- CityU / HKBU</span></h4>
                                 <p>Lumière solves a multi-billion dollar transparency issue in movie and advertising productions.</p>
@@ -479,7 +479,7 @@ export default class extends React.Component {
                         </div>
                     </div>
                     <div className="row mb-5">
-                        <div className="block-1-3">
+                        <div className="block-1-3 block-tab-full">
                             <div className="col-block  team-info">
                                 <h4>Alpha Program <span>- CityU</span></h4>
                                 <p>Transformation in Loyalty Program.</p>
@@ -511,7 +511,7 @@ export default class extends React.Component {
                         </div>
                     </div>
                     <div className="row mb-5">
-                        <div className="block-1-3">
+                        <div className="block-1-3 block-tab-full">
                             <div className="col-block  team-info">
                                 <h4>Film Dream <span>- CityU / HKUST</span></h4>
                                 <p>The project aims to provide a multi-function website and mobile app focusing on the film industry, including crowdfunding and smart contract using blockchain application.</p>
