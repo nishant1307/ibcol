@@ -132,8 +132,8 @@ export default class extends React.Component {
                 <img className="png-tg-icon" src="/static/sm/tg-blue.png"/>
               </a>)}
             <br/>
-            <a href={info.head1.linkedInUrl}  target="_blank" className="list-item">{info.head1.name}</a>
-            {info.head2.name.length > 0 && (<a href={info.head2.linkedInUrl}  target="_blank">, {info.head2.name}</a>)}
+            <h4><a href={info.head1.linkedInUrl}  target="_blank" className="list-item">{info.head1.name}</a>
+            {info.head2.name.length > 0 && (<a href={info.head2.linkedInUrl}  target="_blank">, {info.head2.name}</a>)}</h4>
             </li>
         )
       }

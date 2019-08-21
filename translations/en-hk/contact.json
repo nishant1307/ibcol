@@ -20,8 +20,8 @@
       "telegramUrl":"",
       "headTitle":"National Committee Head(s)",
       "headInfo":[
-        {"name":"Anson Fong","linkedInUrl":""},
-        {"name":"Prenra Singh","linkedInUrl":""}
+        {"name":"Kavis Cho","linkedInUrl":"https://www.linkedin.com/in/kavischo"},
+        {"name":"Jacky Chan","linkedInUrl":"https://www.linkedin.com/in/jackychan321"}
       ],
       "fundingTitle":"Charity/Fund",
       "deadlineTitle":"Deadline to Submit",
@@ -31,8 +31,8 @@
     "title":"School Chapters",
     "headTitle":"School Chapter Head(s)",
     "schoolInfo":[
-      {"fName":"Hong Kong Polytechnic University","sName":"PolyU","facebookUrl":"","telegramUrl":"","head1":{"name":"Alex Chu Lap Tung","linkedInUrl":""},"head2":{"name":"Alex Chu Lap Tung","linkedInUrl":""}},
-      {"fName":"Chinese University of Hong Kong","sName":"CUHK","facebookUrl":"","telegramUrl":"","head1":{"name":"Roman Yuen","linkedInUrl":""},"head2":{"name":"Kavs Cho","linkedInUrl":""}}
+      {"fName":"Hong Kong Polytechnic University","sName":"PolyU","facebookUrl":"","telegramUrl":"","head1":{"name":"Joyce Wang","linkedInUrl":""},"head2":{"name":"","linkedInUrl":""}},
+      {"fName":"The University of Hong Kong","sName":"KongU","facebookUrl":"","telegramUrl":"","head1":{"name":"Joyce Ho","linkedInUrl":"https://www.linkedin.com/in/joyce-loksee-ho-23526099/"},"head2":{"name":"","linkedInUrl":""}}
     ]
   },
   "trainingScheduleTitle":"Training schedule",
