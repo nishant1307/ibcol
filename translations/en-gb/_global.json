@@ -12,10 +12,11 @@
     "competition":"Competition",
     "ambassadors":"Students",
     "sponsors":"Sponsors",
-    "schedule":"Programme",
+    "schedule":"Schedule",
     "contact":"Contact",
     "blog":"Submission Tips",
-    "registration":"Submit Paper"
+    "registration":"Registration",
+    "programme":"Programme"
   },
   "footerMenu":{
     "backToTop":"Back to top",

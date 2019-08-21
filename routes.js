@@ -35,21 +35,13 @@ const routes = require('next-routes')({
   Router: HashAwareRouter,
 })
 
-
-// SAMPLES
-// routes
-//   .add('about')
-//   .add('blog', '/blog/:slug')
-//   .add('user', '/user/:id', 'profile')
-//   .add('/:noname/:lang(en|es)/:wow+', 'complex')
-//   .add({ name: 'beta', pattern: '/v3', page: 'next/v3' })
-
 routes
   .add({ name: 'home', pattern: '/:locale/', page: 'next/home' })
-  // .add({ name: 'about', pattern: '/:locale/about/', page: 'next/about' })
+  .add({ name: 'about', pattern: '/:locale/about/', page: 'next/about' })
   .add({ name: 'how', pattern: '/:locale/how/', page: 'next/how' })
-  // .add({ name: 'competition', pattern: '/:locale/competition/', page: 'next/competition' })
   .add({ name: 'ambassadors', pattern: '/:locale/ambassadors/', page: 'next/ambassadors' })
+  .add({ name: '2018', pattern: '/:locale/ibcol/2018/', page: 'next/ibcol/2018' })
+  .add({ name: '2019', pattern: '/:locale/ibcol/2019/', page: 'next/ibcol/2019' })
   .add({ name: 'sponsors', pattern: '/:locale/sponsors/', page: 'next/sponsors' })
   .add({ name: 'schedule', pattern: '/:locale/schedule/', page: 'next/schedule' })
   .add({ name: 'winners', pattern: '/:locale/winners/', page: 'next/winners' })
@@ -61,7 +53,5 @@ routes
   .add({ name: 'adminVerification', pattern: '/:locale/admin/verify/:verificationCode/:email/', page: 'next/admin/verify' })
   .add({ name: 'adminDashboard', pattern: '/:locale/admin/dashboard/', page: 'next/admin/dashboard' })
   .add({ name: 'join-us', pattern: '/:locale/join-us/', page: 'next/join-us' })
-
-
-
+  
   module.exports = routes

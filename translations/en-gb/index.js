@@ -11,6 +11,7 @@ module.exports = {
   "_sectors": require('./_sectors.json'),
   "_project-categories": require('./_project-categories.json'),
   "about": Object.assign({}, require('./_global.json'), require('./about.json')),
+  "ibcol": Object.assign({}, require('./_global.json'), require('./ibcol.json')),
   "how": Object.assign({}, require('./_global.json'), require('./how.json')),
   "contact": Object.assign({}, require('./_global.json'), require('./contact.json')),
   "sponsors": Object.assign({}, require('./_global.json'), require('./sponsors.json')),

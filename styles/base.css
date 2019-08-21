@@ -500,6 +500,9 @@ textarea {
   margin-left: -20px;
   margin-right: -20px;
 }
+.row.col{
+  padding: 0 20px;
+}
 
 /* column blocks
  * -------------------------------------- */
