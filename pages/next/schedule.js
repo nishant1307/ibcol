@@ -69,7 +69,7 @@ export default class extends React.Component {
                                     </td>
                                     <td className="session-schedule-detail">
                                         <h5>{info.detail[0].title}</h5>
-                                        {info.detail[0].subtitle.length > 0 && (<p><h5>{info.detail[0].subtitle}</h5></p>)}
+                                        {info.detail[0].subtitle.length > 0 && (<h5><p>{info.detail[0].subtitle}</p></h5>)}
                                         <p>{info.detail[0].venue}</p>
                                     </td>
                                 </tr>);
@@ -83,7 +83,7 @@ export default class extends React.Component {
 
                         b.push(<td className="session-schedule-detail">
                             <h5>{info.detail[i].title}</h5>
-                            {info.detail[i].subtitle.length > 0 && (<p><h5>{info.detail[i].subtitle}</h5></p>)}
+                            {info.detail[i].subtitle.length > 0 && (<h5><p>{info.detail[i].subtitle}</p></h5>)}
                             <p>{info.detail[i].venue}</p>
                             </td>);
 

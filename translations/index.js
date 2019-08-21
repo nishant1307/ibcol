@@ -18,7 +18,8 @@ module.exports = {
   // "en-gh": require('./en-gh'),
   // "en-gi": require('./en-gi'),
   // "en-gm": require('./en-gm'),
-  "en-hk": require('./en-hk')
+  "en-hk": require('./en-hk'),
+  "en-tw": require('./en-tw')
   // "en-ie": require('./en-ie'),
   // "en-in": require('./en-in'),
   // "en-jm": require('./en-jm'),
