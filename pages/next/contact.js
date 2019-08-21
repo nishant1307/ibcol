@@ -112,7 +112,7 @@ export default class extends React.Component {
         return (
           <div className="block-1-2" key={info[0]+index}>
             <li className="col-block" key={index}>{getHeadInfo(info[0])}</li>
-            <li className="col-block" key={index + 1}>{getHeadInfo(info[1])}</li>
+            {info[1] !=null && (<li className="col-block" key={index + 1}>{getHeadInfo(info[1])}</li>)}
           </div>
         )
       }
@@ -132,8 +132,8 @@ export default class extends React.Component {
                 <img className="png-tg-icon" src="/static/sm/tg-blue.png"/>
               </a>)}
             <br/>
-            <a href={info.head1.linkedInUrl}  target="_blank" className="list-item">{info.head1.name}</a>
-            {info.head2.name.length > 0 && (<a href={info.head2.linkedInUrl}  target="_blank">, {info.head2.name}</a>)}
+            <h4><a href={info.head1.linkedInUrl}  target="_blank" className="list-item">{info.head1.name}</a>
+            {info.head2.name.length > 0 && (<a href={info.head2.linkedInUrl}  target="_blank">, {info.head2.name}</a>)}</h4>
             </li>
         )
       }
@@ -197,9 +197,15 @@ export default class extends React.Component {
             
               <h4 className="head-title">{this.translate('XBCOL.headTitle')}</h4>
               <ul>{getXBCOLContactInfo}</ul>
-              <h4 className="sm-title  head-title">{this.translate('schoolChapter.headTitle')}</h4>
-              <a href="/join-us" className="btn btn--primary btn-sm-joinus">Join Us</a>
-              <ul><div className="block-1-2">{getSchoolChapContactInfo}</div></ul>
+
+              {this.translate('schoolChapter.schoolInfo')[0].fName.length > 0 && (
+                <div>
+                <h4 className="sm-title  head-title">{this.translate('schoolChapter.headTitle')}</h4>
+                <a href="/join-us" className="btn btn--primary btn-sm-joinus">Join Us</a>
+                <ul><div className="block-1-2">{getSchoolChapContactInfo}</div></ul>
+                </div>
+              )}
+
           </div>
           </section>
       </ThisPageContainerComponent>

@@ -14,25 +14,23 @@
   "facebookIcon":"/static/sm/fb-blue.png",
   "telegramIcon":"/static/sm/tg-blue.png",
   "XBCOL":{
-      "title":"HK-BCOL",
-      "flag":"flag-icon-hk",
+      "title":"TW-BCOL",
+      "flag":"flag-icon-tw",
       "facebookUrl":"",
       "telegramUrl":"",
       "headTitle":"National Committee Head(s)",
       "headInfo":[
-        {"name":"Kavis Cho","linkedInUrl":"https://www.linkedin.com/in/kavischo"},
-        {"name":"Jacky Chan","linkedInUrl":"https://www.linkedin.com/in/jackychan321"}
+        {"name":"Jarvis Chiu","linkedInUrl":"https://www.linkedin.com/in/chui-chin-chiu-53370316b/"}
       ],
       "fundingTitle":"Charity/Fund",
       "deadlineTitle":"Deadline to Submit",
-      "finalDateTitle":"HK-BCOL Final"
+      "finalDateTitle":"TW-BCOL Final"
   },
   "schoolChapter":{
     "title":"School Chapters",
     "headTitle":"School Chapter Head(s)",
     "schoolInfo":[
-      {"fName":"Hong Kong Polytechnic University","sName":"PolyU","facebookUrl":"","telegramUrl":"","head1":{"name":"Joyce Wang","linkedInUrl":""},"head2":{"name":"","linkedInUrl":""}},
-      {"fName":"The University of Hong Kong","sName":"KongU","facebookUrl":"","telegramUrl":"","head1":{"name":"Joyce Ho","linkedInUrl":"https://www.linkedin.com/in/joyce-loksee-ho-23526099/"},"head2":{"name":"","linkedInUrl":""}}
+      {"fName":"","sName":"","facebookUrl":"","telegramUrl":"","head1":{"name":"","linkedInUrl":""},"head2":{"name":"","linkedInUrl":""}}
     ]
   },
   "trainingScheduleTitle":"Training schedule",

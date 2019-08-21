@@ -53,7 +53,7 @@ export default class extends React.Component {
         const getScheduleInfo = this.state.scheduleInfo.map((info, index)=>{
             
             var body = [];
-            var colors = ["blue","red","green","yello"];
+            var colors = ["blue","red","green","orange"];
             
             for (var i=0;i<info.detail.length;i++){
                 
@@ -65,9 +65,11 @@ export default class extends React.Component {
                                     </td>
                                     <td className={`session-schedule-time ${colors[i%4]}`}>
                                         <h5>{info.detail[0].date}</h5>
+                                        {info.detail[0].time.length > 0 && (<p>{info.detail[0].time}</p>)}
                                     </td>
                                     <td className="session-schedule-detail">
                                         <h5>{info.detail[0].title}</h5>
+                                        {info.detail[0].subtitle.length > 0 && (<h5><p>{info.detail[0].subtitle}</p></h5>)}
                                         <p>{info.detail[0].venue}</p>
                                     </td>
                                 </tr>);
@@ -76,10 +78,12 @@ export default class extends React.Component {
                          var b = [];
                         d.push(<td className={`session-schedule-time ${colors[i%4]}`}>
                             <h5>{info.detail[i].date}</h5>
+                            {info.detail[i].time.length > 0 && (<p>{info.detail[i].time}</p>)}
                             </td>);
 
                         b.push(<td className="session-schedule-detail">
                             <h5>{info.detail[i].title}</h5>
+                            {info.detail[i].subtitle.length > 0 && (<h5><p>{info.detail[i].subtitle}</p></h5>)}
                             <p>{info.detail[i].venue}</p>
                             </td>);
 
