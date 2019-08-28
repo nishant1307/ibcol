@@ -45,6 +45,7 @@ import "styles/base.css";
 import "styles/vendor.css";
 import "styles/main.css";
 import "styles/flag-icon.min.css";
+// import "styles/bootstrap-iso.css";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -114,28 +115,28 @@ class MyApp extends App {
 
     
     // client side locale check
-    // if (typeof(window) === "object") {
-    //   // console.log('constructor props', props)
-    //   if (props.pageProps.query !== undefined && props.pageProps.query.locale !== undefined) {
-    //     // console.log('requested locale:', pageProps.query.locale);
-    //   //   // console.log('localeSupported?', localeSupported(pageProps.query.locale));
-    //   //   console.log('constructor pageProps', props.pageProps)
-    //   //   // console.log('router', router);
-    //     if (!localeSupported(props.pageProps.query.locale)) {
+    if (typeof(window) === "object") {
+      // console.log('constructor props', props)
+      if (props.pageProps.query !== undefined && props.pageProps.query.locale !== undefined) {
+        // console.log('requested locale:', pageProps.query.locale);
+      //   // console.log('localeSupported?', localeSupported(pageProps.query.locale));
+      //   console.log('constructor pageProps', props.pageProps)
+      //   // console.log('router', router);
+        if (!localeSupported(props.pageProps.query.locale)) {
           
 
-    //       // const requestedRoute = routes.findAndGetUrls(props.router.route.replace('/',''), {locale: props.pageProps.query.locale}).route;
+          // const requestedRoute = routes.findAndGetUrls(props.router.route.replace('/',''), {locale: props.pageProps.query.locale}).route;
 
-    //       // console.log("----->>>>>", requestedRoute);
+          // console.log("----->>>>>", requestedRoute);
 
-    //       // if (requestedRoute !== undefined && requestedRoute.name !== undefined) {
-    //         document.location = props.router.route;
-    //       // }
+          // if (requestedRoute !== undefined && requestedRoute.name !== undefined) {
+            document.location = props.router.route;
+          // }
 
           
-    //     }
-    //   }
-    // }
+        }
+      }
+    }
 
     
   }
