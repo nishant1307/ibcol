@@ -4569,6 +4569,12 @@ iframe {
 .schedule td.orange {
   border-right: 5px solid orange;
 }
+.session-schedule-year {
+  width: 10%;
+}
+.session-schedule-month {
+  width: 15%;
+}
 .session-schedule-time {
   width: 20%;
 }
@@ -5028,3 +5034,9 @@ th.first-child-padding{
   padding-bottom: 18rem;
   position:relative;
 }  
+
+.scheduleTable td
+{
+  text-align: start; 
+  vertical-align: top;
+}
