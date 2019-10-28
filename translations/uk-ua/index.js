@@ -1,5 +1,6 @@
 module.exports = {
   "_locale":{
+    "disabled": true,
     "id":"uk-ua",
     "name":"Україна",
     "label":"Ласкаво просимо",

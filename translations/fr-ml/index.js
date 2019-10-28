@@ -4,7 +4,7 @@ module.exports = {
     "name":"Mali",
     "label":"Bienvenue",
     "flag": "ml.svg",
-    "disabled": false
+        "disabled": true
   },
   "_global":require('./_global.json'),
   "_countries": require('./_countries.json'),

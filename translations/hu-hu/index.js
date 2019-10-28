@@ -1,5 +1,6 @@
 module.exports = {
   "_locale":{
+    "disabled": true,
     "id":"hu-hu",
     "name":"Magyarország",
     "label":"Üdvözlet",
