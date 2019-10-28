@@ -1,5 +1,6 @@
 module.exports = {
   "_locale":{
+    "disabled": true,
     "id":"zh-tw",
     "name":"中國台灣",
     "label":"歡迎",

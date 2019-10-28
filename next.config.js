@@ -1,18 +1,18 @@
-function moduleExists(name) {
-  try {
-    return require.resolve(name);
-  } catch (error) {
-    return false;
-  }
-}
+// function moduleExists(name) {
+//   try {
+//     return require.resolve(name);
+//   } catch (error) {
+//     return false;
+//   }
+// }
 
 
-const webpack = require('webpack')
+// const webpack = require('webpack')
 
 
-if (process.env.NODE_ENV !== 'production') {
-  require('now-env')
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   require('now-env')
+// }
 
 
 // const withOffline = moduleExists('next-offline')

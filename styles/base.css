@@ -500,6 +500,9 @@ textarea {
   margin-left: -20px;
   margin-right: -20px;
 }
+.row.col{
+  padding: 0 20px;
+}
 
 /* column blocks
  * -------------------------------------- */
@@ -786,6 +789,13 @@ textarea {
 .block-1-6 .col-block {
   width: 16.66667%;
 }
+.block-1-6 .col-block a img{
+  max-width: auto;
+  max-height: 50px;
+  width:auto;
+  height:auto;
+  
+}
 
 .block-1-5 .col-block {
   width: 20%;
@@ -811,6 +821,13 @@ textarea {
   width: 50%;
 }
 
+.block-1-2 .col-block a img{
+  max-width: auto;
+  max-height: 120px;
+  width:auto;
+  height:auto;
+  
+}
 /**
  * Clearing for block grid columns. Allow columns with 
  * different heights to align properly.
@@ -829,6 +846,13 @@ textarea {
 @media only screen and (max-width:1200px) {
   .block-m-1-6 .col-block {
     width: 16.66667%;
+  }
+  .block-1-6 .col-block a img{
+    max-width: auto;
+    max-height: 50px;
+    width:auto;
+    height:auto;
+    
   }
 
   .block-m-1-5 .col-block {
@@ -873,6 +897,13 @@ textarea {
   .block-tab-1-6 .col-block {
     width: 16.66667%;
   }
+  .block-1-6 .col-block a img{
+    max-width: auto;
+    max-height: 60px;
+    width:auto;
+    height:auto;
+    
+  }
 
   .block-tab-1-5 .col-block {
     width: 20%;
@@ -915,6 +946,13 @@ textarea {
 @media only screen and (max-width:600px) {
   .block-mob-1-6 .col-block {
     width: 16.66667%;
+  }
+  .block-1-6 .col-block a img{
+    max-width: auto;
+    max-height: 50px;
+    width:auto;
+    height:auto;
+    
   }
 
   .block-mob-1-5 .col-block {

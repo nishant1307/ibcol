@@ -1,10 +1,11 @@
 module.exports = {
   "_locale":{
+    "disabled": true,
     "id":"pt-mz",
     "name":"Moçambique",
     "label":"Bem vindo",
     "flag": "mz.svg",
-    "disabled": false
+        "disabled": true
   },
   "_global":require('./_global.json'),
   "_countries": require('./_countries.json'),

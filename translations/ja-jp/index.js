@@ -1,5 +1,6 @@
 module.exports = {
   "_locale":{
+    "disabled": true,
     "id":"ja-jp",
     "name":"日本",
     "label":"ようこそ",

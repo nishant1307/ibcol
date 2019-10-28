@@ -1,4 +1,4 @@
-const cors = (process.env.NOW_REGION === undefined) ? require('micro-cors')() : undefined;
+// const cors = require('micro-cors')();
 
 
 // console.log('cors', cors === undefined, process.env.NOW_REGION === undefined);
@@ -29,8 +29,8 @@ const storage = new Storage({
 // Micro deps
 const {send, json, text} = require('micro')
 
-if (process.env.ENV === 'local')
-  require('now-env');
+// if (process.env.ENV === 'local')
+//   require('now-env');
 
 
 
@@ -232,14 +232,13 @@ const deleteFilepondUploads = async (serverId) => {
 
 const filepodRoute = async (req, res) => {
   
-  console.log('method', req.method);
+  console.log('method >', req.method);
 
   
   
   if (req.method === 'POST') {
     // const serverId = await processFilepondUploads(req);
     // return send(res, 200, serverId);  
-
     const fileMeta = await json(req);
 
     return send(res, 200, await generateUploadMeta(fileMeta));
@@ -252,7 +251,7 @@ const filepodRoute = async (req, res) => {
     const replaceString = `${process.env.FILEPOND_API_URL ? '/' + process.env.FILEPOND_API_URL + process.env.FILEPOND_API_ENDPOINT + '/' : process.env.FILEPOND_API_ENDPOINT}`;
     console.log('replace', replaceString);
     const url = require('url');
-    const serverId = decodeURIComponent(url.parse(req.url).pathname).replace(replaceString, '');
+    const serverId = decodeURIComponent(url.parse(req.url.slice(0, -1)).pathname).replace(replaceString, '');
 
     console.log('serverId', serverId);
     
@@ -261,6 +260,8 @@ const filepodRoute = async (req, res) => {
     // console.log('uuid', uuid);
 
     const signedReadOnlyURL = await generateReadOnlyURL(serverId);
+
+    console.log('signedReadOnlyURL', signedReadOnlyURL);
 
     res.writeHead(302, {
       'Location': signedReadOnlyURL
@@ -292,4 +293,4 @@ const filepodRoute = async (req, res) => {
 
 
 
-module.exports = (cors !== undefined) ? cors(filepodRoute) : filepodRoute;
+module.exports = filepodRoute;
