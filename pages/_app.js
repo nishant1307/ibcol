@@ -107,6 +107,7 @@ const GlobalStyle = createGlobalStyle`
 class MyApp extends App {
   constructor(props) {
     super(props);
+    // console.log(props);
     this.state = {
       isLoading: false,
       showLanguageSelector: false
@@ -116,20 +117,21 @@ class MyApp extends App {
     
     // client side locale check
     if (typeof(window) === "object") {
-      // console.log('constructor props', props)
+      console.log('constructor props', props)
       if (props.pageProps.query !== undefined && props.pageProps.query.locale !== undefined) {
+        console.log(props);
         // console.log('requested locale:', pageProps.query.locale);
       //   // console.log('localeSupported?', localeSupported(pageProps.query.locale));
       //   console.log('constructor pageProps', props.pageProps)
       //   // console.log('router', router);
         if (!localeSupported(props.pageProps.query.locale)) {
-          
 
           // const requestedRoute = routes.findAndGetUrls(props.router.route.replace('/',''), {locale: props.pageProps.query.locale}).route;
 
           // console.log("----->>>>>", requestedRoute);
 
           // if (requestedRoute !== undefined && requestedRoute.name !== undefined) {
+          
             document.location = props.router.route;
           // }
 
@@ -165,12 +167,13 @@ class MyApp extends App {
     let pageProps = {}
     
     if (Component.getInitialProps) {
-      
       pageProps = await Component.getInitialProps(ctx);
+      // router.asPath = "/?locale=en-tw";
+      // router.query.locale = "en-tw";
       // console.debug('router', router);
       // console.debug('pageProps', pageProps);
+    
       if (typeof window === 'undefined') {
-        
         
 
         // correct invalid locale
@@ -179,10 +182,9 @@ class MyApp extends App {
             // console.debug('incoming pageProps >>>', pageProps);
             // console.debug('router', router);
             // console.debug('ctx.req.url', ctx.req.url);
-
             ctx.res.writeHead((process.env.ENV === 'production') ? 301 : 302, {"Location": `/_${router.route === '/next/home' ? `/${router.query.locale}` : router.route.replace('/next', '')}`});
             ctx.res.end();
-
+            
             
           }
 
@@ -215,6 +217,7 @@ class MyApp extends App {
 
     // client-side only, run on page changes, do not run on server (SSR)
     if (typeof(window) === "object") {
+    
       ReactGA.pageview(ctx.asPath);
     }
 
@@ -227,7 +230,7 @@ class MyApp extends App {
   }
   
   componentWillMount() {
-    
+
   }
 
   componentDidMount() {
@@ -269,9 +272,10 @@ class MyApp extends App {
         
 
         <StickyContainer>
-
+          { this.props.router.route != "/next/index" &&
           <Sticky topOffset={500}>
             {({
+              
               style,
   
               // the following are also available but unused in this example
@@ -287,7 +291,7 @@ class MyApp extends App {
               })}/>
             )}
           </Sticky>
-        
+          }
           {
             (pageProps.statusCode && pageProps.statusCode >= 400) ? 
               <Error statusCode={pageProps.statusCode} /> :

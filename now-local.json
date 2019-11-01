@@ -77,7 +77,7 @@
 
     { 
       "src": "/(?<locale>[^/]*)/(?<page>(how|ambassadors|sponsors|contact|registration|admin))/", 
-      "dest": "/next/$page?locale=$locale",
+      "dest": "/next/$page?locale=ad",
       "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
     },
     { 
