@@ -1,6 +1,5 @@
 module.exports = {
   "_default": require('./en-hk'),
-  // "global": require('./'),
   // "ar": require('./ar'),
   // "de-at": require('./de-at'),
   // "de-be": require('./de-be'),
@@ -13,7 +12,7 @@ module.exports = {
   // "en-bb": require('./en-bb'),
   // "en-bd": require('./en-bd'),
   // "en-bh": require('./en-bh'),
-  // "en-ca": require('./en-ca'),
+  "en-ca": require('./en-ca'),
   // "en-cm": require('./en-cm'),
   "en-gb": require('./en-gb'),
   // "en-gh": require('./en-gh'),

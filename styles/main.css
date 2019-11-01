@@ -4860,6 +4860,7 @@ iframe {
 
 .block-1-2 .col-block.team-info a img{
   max-height: 450px;
+  width:100%;
 }
 
 .card {
@@ -5019,6 +5020,9 @@ div.sm{
     font-size: 0.5rem;
     letter-spacing: .0rem;
  }
+ .team-info h4{
+   margin-top:1rem;
+ }
 }
 
 .enrolDisable {
@@ -5039,4 +5043,27 @@ th.first-child-padding{
 {
   text-align: start; 
   vertical-align: top;
+}
+.download {
+  /* background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px; */
+  padding :0 !important;
+
+}
+
+.flagImg{
+  max-height: none !important;
+  width:90px !important;
+}
+
+.countriesName {
+  text-align: center;
+}
+
+.mailing-address a {
+  padding:0;
 }
