@@ -22,7 +22,8 @@
                 "prereqTitle":"Prereq",
                 "course01Prereq":"none",
                 "btnEnrol":"Enrol",
-                "btnStyle":"enable"
+                "btnStyle":"enable",
+                "url":"https://docs.google.com/forms/d/e/1FAIpQLSdToU5To_8H1QE6MdKKfQpFlEXPOcMwlm5svuNtyzpC17yN8g/viewform"
             },
             {
                 "course01Heading":"BC 102: Blockchain Business & Legal",
@@ -31,7 +32,8 @@
                 "prereqTitle":"Prereq",
                 "course01Prereq":"none",
                 "btnEnrol":"Enrol",
-                "btnStyle":"enable"
+                "btnStyle":"enable",
+                "url":"https://docs.google.com/forms/d/e/1FAIpQLSdToU5To_8H1QE6MdKKfQpFlEXPOcMwlm5svuNtyzpC17yN8g/viewform"
             }
         ],
         "course02Title": "Certified Blockchain Professional - Advance (CBP-A)",
@@ -43,7 +45,8 @@
                 "prereqTitle":"Prereqs",
                 "course01Prereq":"BC 101, BC 102",
                 "btnEnrol":"Enrol",
-                "btnStyle":"enable"
+                "btnStyle":"enable",
+                "url":"https://docs.google.com/forms/d/e/1FAIpQLSdToU5To_8H1QE6MdKKfQpFlEXPOcMwlm5svuNtyzpC17yN8g/viewform"
             },
             {
                 "course01Heading":"BC 202: Asset Tokenization & Digital Fiat",
@@ -52,7 +55,8 @@
                 "prereqTitle":"Prereq",
                 "course01Prereq":"BC 201",
                 "btnEnrol":"Enrol",
-                "btnStyle":"enable"
+                "btnStyle":"enable",
+                "url":"https://docs.google.com/forms/d/e/1FAIpQLSdToU5To_8H1QE6MdKKfQpFlEXPOcMwlm5svuNtyzpC17yN8g/viewform"
             }
             ,
             {
@@ -62,7 +66,8 @@
                 "prereqTitle":"Prereq",
                 "course01Prereq":"BC 102",
                 "btnEnrol":"Enrol",
-                "btnStyle":"enable"
+                "btnStyle":"enable",
+                "url":"https://docs.google.com/forms/d/e/1FAIpQLSdToU5To_8H1QE6MdKKfQpFlEXPOcMwlm5svuNtyzpC17yN8g/viewform"
             }
             ,
             {
@@ -72,7 +77,8 @@
                 "prereqTitle":"Prereq",
                 "course01Prereq":"BC 201",
                 "btnEnrol":"Enrol",
-                "btnStyle":"enable"
+                "btnStyle":"enable",
+                "url":"https://docs.google.com/forms/d/e/1FAIpQLSdToU5To_8H1QE6MdKKfQpFlEXPOcMwlm5svuNtyzpC17yN8g/viewform"
             }
             ,
             {
@@ -82,7 +88,8 @@
                 "prereqTitle":"Prereq",
                 "course01Prereq":"BC 203",
                 "btnEnrol":"Enrol",
-                "btnStyle":"enable"
+                "btnStyle":"enable",
+                "url":"https://docs.google.com/forms/d/e/1FAIpQLSdToU5To_8H1QE6MdKKfQpFlEXPOcMwlm5svuNtyzpC17yN8g/viewform"
             }
         ],
         "course03Title": "Certified Blockchain Developer (CBD)",
@@ -94,7 +101,8 @@
                 "prereqTitle":"Prereq",
                 "course01Prereq":"BC 101",
                 "btnEnrol":"Enrol",
-                "btnStyle":"enable"
+                "btnStyle":"enable",
+                "url":"https://docs.google.com/forms/d/e/1FAIpQLSdToU5To_8H1QE6MdKKfQpFlEXPOcMwlm5svuNtyzpC17yN8g/viewform"
             },
             {
                 "course01Heading":"BC 302: Blockchain Engineering - HL Fabric",
@@ -103,7 +111,8 @@
                 "prereqTitle":"Prereq",
                 "course01Prereq":"BC 101",
                 "btnEnrol":"Enrol",
-                "btnStyle":"enable"
+                "btnStyle":"enable",
+                "url":"https://docs.google.com/forms/d/e/1FAIpQLSdToU5To_8H1QE6MdKKfQpFlEXPOcMwlm5svuNtyzpC17yN8g/viewform"
             }
         ]
     }
