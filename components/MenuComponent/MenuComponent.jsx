@@ -124,8 +124,8 @@ class MenuComponent extends React.Component {
         </NavLinkComponent>
       </li>
       <li>
-        <NavLinkComponent prefetch route="program" params={{ locale }}>
-          {this.translate('menu.program')}
+        <NavLinkComponent prefetch route="about" params={{ locale }}>
+          {this.translate('menu.about')}
         </NavLinkComponent>
       </li>
       {/* <li>
@@ -134,13 +134,8 @@ class MenuComponent extends React.Component {
         </NavLinkComponent>
       </li> */}
       <li>
-        <NavLinkComponent prefetch route="rules" params={{ locale }}>
-          {this.translate('menu.rules')}
-        </NavLinkComponent>
-      </li>
-      <li>
-        <NavLinkComponent prefetch route="supporters" params={{ locale }}>
-          {this.translate('menu.supporters')}
+        <NavLinkComponent prefetch route="schedule" params={{ locale }}>
+          {this.translate('menu.schedule')}
         </NavLinkComponent>
       </li>
       <li>
@@ -196,7 +191,7 @@ class MenuComponent extends React.Component {
         <div className="header-logo">
           <Link prefetch route="home" params={{ locale }}>
             <a className="site-logo">
-              <img src={this.translate('logoImage')} alt={this.translate('logoTag')} />
+              <img src="/static/images/logo-international-blockchain-olympiad-(ibcol)-subpage.png" alt={this.translate('logoTag')} />
             </a>
           </Link>
         </div>
