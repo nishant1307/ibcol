@@ -134,7 +134,7 @@ export default class extends React.Component {
                     <h4 className="item-title">{this.translate('timelineTitle')}</h4>
                 </div>
                 <div className="schedule">
-                    <table className="scheduleTable">
+                {this.translate('events')[0].month.length > 0 ? (<table className="scheduleTable">
                         <tbody>
                         <tr>
                             <th className="first-child-padding">Month</th>
@@ -143,7 +143,10 @@ export default class extends React.Component {
                         </tr>
                            {getScheduleInfo}
                         </tbody>
-                    </table>
+                    </table>): 
+                    (<div>
+                        <br/><h6 style={{"margin-inline-start": "1.2rem"}}>Coming Soon</h6>
+                    </div>)}
                 </div>
             </div>
             </section>

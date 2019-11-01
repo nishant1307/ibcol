@@ -230,6 +230,9 @@ export default class extends React.Component {
                                                         {course.btnStyle == 'enable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol">
                                                             {course.btnEnrol}
                                                         </a>)}
+                                                        
+
+                                                        
                                                     </div>
                                                 })
                                             }
