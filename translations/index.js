@@ -1,5 +1,5 @@
 module.exports = {
-  "_default": require('./en-gb'),
+  "_default": require('./en-hk'),
   // "ar": require('./ar'),
   // "de-at": require('./de-at'),
   // "de-be": require('./de-be'),
