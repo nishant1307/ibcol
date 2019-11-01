@@ -5039,8 +5039,31 @@ th.first-child-padding{
   position:relative;
 }  
 
-.scheduleTable td
-{
+.download {
+  /* background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px; */
+  padding :0 !important;
+
+}
+
+.flagImg{
+  max-height: none !important;
+  width:90px !important;
+}
+
+.countriesName {
+  text-align: center;
+}
+
+.mailing-address a {
+  padding:0;
+}
+
+.scheduleTable td {
   text-align: start; 
   vertical-align: top;
 }
