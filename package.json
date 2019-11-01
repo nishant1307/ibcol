@@ -72,7 +72,6 @@
     "filepond-plugin-file-validate-type": "^1.2.4",
     "filepond-plugin-image-exif-orientation": "^1.0.6",
     "filepond-plugin-image-preview": "^4.0.5",
-    "fsevents": "1.2.2",
     "geoip-country": "^3.2.1",
     "graphql": "^14.1.1",
     "har-validator": "^5.1.3",
