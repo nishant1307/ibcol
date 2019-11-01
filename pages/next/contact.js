@@ -36,30 +36,30 @@ const ThisPageContainerComponent = styled(PageContainerComponent)`
 
 `;
 
-function getHeadInfo(info) {
-  if (info !== undefined) {
-    return (
+function getHeadInfo(info){
+  if(info !== undefined){
+    return(
       <div>
         <h4 className="item-title"><a href={info.linkedInUrl} target="_blank">{info.name}</a></h4>
       </div>
     );
   }
 }
-function getSchoolInfo(info) {
-  if (info !== undefined) {
-    return (
+function getSchoolInfo(info){
+  if(info !== undefined){
+    return(
       <div>
-        <div className="col-block">
-          <h4>{info.fName}:</h4>
-        </div>
+      <div className="col-block">
+        <h4>{info.fName}:</h4>
+      </div>
         <div className="col-block"> {info.head1} {info.head2.length > 0 && (<span> , {info.head2}</span>)}
 
-          <a href={info.facebookUrl} target="_blank">
-            <img className="png-fb-icon" src="/static/sm/fb-blue.png" />
-          </a>
-          <a href={info.telegramUrl} target="_blank">
-            <img className="png-tg-icon" src="/static/sm/tg-blue.png" />
-          </a>
+        <a href={info.facebookUrl} target="_blank">
+          <img className="png-fb-icon" src="/static/sm/fb-blue.png"/>
+        </a>
+        <a href={info.telegramUrl} target="_blank">
+          <img className="png-tg-icon" src="/static/sm/tg-blue.png"/>
+        </a>
         </div>
       </div>
     );
@@ -68,7 +68,7 @@ function getSchoolInfo(info) {
 
 
 export default class extends React.Component {
-  state = { communitiesInfo: [], XBCOLContactInfo: [], schoolChapContactInfo: [] }
+  state = { communitiesInfo: [], XBCOLContactInfo:[], schoolChapContactInfo:[] }
   static async getInitialProps({ query }) {
     return { query }
   }
@@ -110,9 +110,9 @@ export default class extends React.Component {
       function (info, index) {
         console.log(info, index);
         return (
-          <div className="block-1-2" key={info[0] + index}>
+          <div className="block-1-2" key={info[0]+index}>
             <li className="col-block" key={index}>{getHeadInfo(info[0])}</li>
-            {info[1] != null && (<li className="col-block" key={index + 1}>{getHeadInfo(info[1])}</li>)}
+            {info[1] !=null && (<li className="col-block" key={index + 1}>{getHeadInfo(info[1])}</li>)}
           </div>
         )
       }
@@ -125,16 +125,16 @@ export default class extends React.Component {
             <h4 className="list-title">{info.fName}:</h4>
             {info.facebookUrl.length > 0 && (
               <a href={info.facebookUrl} target="_blank" className="sm-icon">
-                <img className="png-fb-icon" src="/static/sm/fb-blue.png" />
+                <img className="png-fb-icon" src="/static/sm/fb-blue.png"/>
               </a>)}
             {info.facebookUrl.length > 0 && (
               <a href={info.telegramUrl} target="_blank" className="sm-icon">
-                <img className="png-tg-icon" src="/static/sm/tg-blue.png" />
+                <img className="png-tg-icon" src="/static/sm/tg-blue.png"/>
               </a>)}
-            <br />
-            <h4><a href={info.head1.linkedInUrl} target="_blank" className="list-item">{info.head1.name}</a>
-              {info.head2.name.length > 0 && (<a href={info.head2.linkedInUrl} target="_blank">, {info.head2.name}</a>)}</h4>
-          </li>
+            <br/>
+            <h4><a href={info.head1.linkedInUrl}  target="_blank" className="list-item">{info.head1.name}</a>
+            {info.head2.name.length > 0 && (<a href={info.head2.linkedInUrl}  target="_blank">, {info.head2.name}</a>)}</h4>
+            </li>
         )
       }
     );
@@ -155,11 +155,11 @@ export default class extends React.Component {
               <h3 className="subhead">{this.translate('subhead')}</h3>
             </div>
           </div>
-        </section>
+          </section>
 
-        <section className="s-section target-section">
+          <section className="s-section target-section">
           <div className="row">
-            <div className="block-1-2 block-tab-full">
+          <div className="block-1-2 block-tab-full">
               <div className="col-block">
                 <div className="item-process__text">
                   <h3>{this.translate('mailingAddressTitle')}</h3>
@@ -175,39 +175,39 @@ export default class extends React.Component {
                   </p>
                 </div>
               </div>
-            </div>
+              </div>
           </div>
-        </section>
+          </section>
 
-        <section className="target-section list-last">
+          <section className="target-section list-last">
           <div className="row col">
-            <div className="sm">
+              <div className="sm">
               <span className={classNames("flag-icon", this.translate('XBCOL.flag'))}></span>
               <h3 className="sm-title flag">{this.translate('XBCOL.title')}</h3>
               {this.translate('XBCOL.facebookUrl').length > 0 && (
-                <a href={this.translate('XBCOL.facebookUrl')} target="_blank">
-                  <img className="png-fb-icon" src={this.translate('facebookIcon')} />
-                </a>)}
+              <a href={this.translate('XBCOL.facebookUrl')} target="_blank">
+                <img className="png-fb-icon" src={this.translate('facebookIcon')}/>
+              </a>)}
               {this.translate('XBCOL.telegramUrl').length > 0 && (
-                <a href={this.translate('XBCOL.telegramUrl')} target="_blank">
-                  <img className="png-tg-icon" src={this.translate('telegramIcon')} />
-                </a>)}
-            </div>
-            <a href="/join-us" className="btn btn--primary btn-sm-joinus">Join Us</a>
+              <a href={this.translate('XBCOL.telegramUrl')} target="_blank">
+                <img className="png-tg-icon" src={this.translate('telegramIcon')}/>
+              </a>)}
+              </div>
+              <a href="/join-us" className="btn btn--primary btn-sm-joinus">Join Us</a>
+            
+              <h4 className="head-title">{this.translate('XBCOL.headTitle')}</h4>
+              <ul>{getXBCOLContactInfo}</ul>
 
-            <h4 className="head-title">{this.translate('XBCOL.headTitle')}</h4>
-            <ul>{getXBCOLContactInfo}</ul>
-
-            {this.translate('schoolChapter.schoolInfo')[0].fName.length > 0 && (
-              <div>
+              {this.translate('schoolChapter.schoolInfo')[0].fName.length > 0 && (
+                <div>
                 <h4 className="sm-title  head-title">{this.translate('schoolChapter.headTitle')}</h4>
                 <a href="/join-us" className="btn btn--primary btn-sm-joinus">Join Us</a>
                 <ul><div className="block-1-2">{getSchoolChapContactInfo}</div></ul>
-              </div>
-            )}
+                </div>
+              )}
 
           </div>
-        </section>
+          </section>
       </ThisPageContainerComponent>
     )
   }
