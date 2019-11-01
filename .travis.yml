@@ -11,7 +11,7 @@ branches:
   - "/^feature.*$/"
   - "/^release.*$/"
   - "/^hotfix.*$/"
-before_script: npm i && node slack-notifications/travis-before_script.js
+before_script: npm install --no-optional && node slack-notifications/travis-before_script.js
 script: npm test
 before_deploy: npm install now --no-save && node slack-notifications/travis-before_deploy.js
 deploy:
