@@ -109,6 +109,7 @@ const GlobalStyle = createGlobalStyle`
 class MyApp extends App {
   constructor(props) {
     super(props);
+    // console.log(props);
     this.state = {
       isLoading: false,
       showLanguageSelector: false,
@@ -121,6 +122,7 @@ class MyApp extends App {
     if (typeof (window) === "object") {
       // console.log('constructor props', props)
       if (props.pageProps.query !== undefined && props.pageProps.query.locale !== undefined) {
+        console.log(props);
         // console.log('requested locale:', pageProps.query.locale);
         //   // console.log('localeSupported?', localeSupported(pageProps.query.locale));
         //   console.log('constructor pageProps', props.pageProps)
@@ -133,7 +135,6 @@ class MyApp extends App {
         // }
 
         if (!localeSupported(props.pageProps.query.locale)) {
-
 
           // const requestedRoute = routes.findAndGetUrls(props.router.route.replace('/',''), {locale: props.pageProps.query.locale}).route;
 
@@ -175,10 +176,12 @@ class MyApp extends App {
     let pageProps = {}
 
     if (Component.getInitialProps) {
-
       pageProps = await Component.getInitialProps(ctx);
+      // router.asPath = "/?locale=en-tw";
+      // router.query.locale = "en-tw";
       // console.debug('router', router);
       // console.debug('pageProps', pageProps);
+    
       if (typeof window === 'undefined') {
 
 
@@ -279,8 +282,52 @@ class MyApp extends App {
 
 
         <StickyContainer>
+          {
+            (this.props.router.route == "/next") ?
+              <Sticky topOffset={500}>
+                {({
+                  style,
+
+                  // the following are also available but unused in this example
+                  isSticky,
+                  wasSticky,
+                  distanceFromTop,
+                  distanceFromBottom,
+                  calculatedHeight
+                }) => (
+                    <IndexMenuComponent onToggleLanguageSelector={this.toggleLanguageSelector} distanceFromTop={distanceFromTop} calculatedHeight={calculatedHeight} isSticky={isSticky} locale={locale} className={classNames({
+                      isSticky,
+                      atTop: distanceFromTop * -1 < calculatedHeight
+                    })} />
+
+                  )}
+              </Sticky>
+
+              :
+
+              <Sticky topOffset={500}>
+                {({
+                  style,
+
+                  // the following are also available but unused in this example
+                  isSticky,
+                  wasSticky,
+                  distanceFromTop,
+                  distanceFromBottom,
+                  calculatedHeight
+                }) => (
+                    <MenuComponent onToggleLanguageSelector={this.toggleLanguageSelector} distanceFromTop={distanceFromTop} calculatedHeight={calculatedHeight} isSticky={isSticky} locale={locale} className={classNames({
+                      isSticky,
+                      atTop: distanceFromTop * -1 < calculatedHeight
+                    })} />
+
+                  )}
+              </Sticky>
+          }
+
 
           {
+
             (this.props.router.route == "/next") ?
               <Sticky topOffset={500}>
                 {({

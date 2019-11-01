@@ -5039,6 +5039,11 @@ th.first-child-padding{
   position:relative;
 }  
 
+.scheduleTable td
+{
+  text-align: start; 
+  vertical-align: top;
+}
 .download {
   /* background-color: DodgerBlue;
   border: none;
@@ -5061,9 +5066,4 @@ th.first-child-padding{
 
 .mailing-address a {
   padding:0;
-}
-
-.scheduleTable td {
-  text-align: start; 
-  vertical-align: top;
 }

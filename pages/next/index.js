@@ -222,7 +222,7 @@ export default class extends React.Component {
                         <div className="block-1-6">
                             <div className="col-block">
                                 <div className="countries">
-                                    <a href="/en-hk/about">
+                                    <a href="/en-hk/home">
                                         <div className="flag">
                                             <img className="flagImg" src="../../static/images/flags/4x3/hk.svg" />
                                         </div>
@@ -234,7 +234,7 @@ export default class extends React.Component {
                             </div>
                             <div className="col-block">
                                 <div className="countries">
-                                    <a href="/en-tw/about">
+                                    <a href="/en-tw/home">
                                         <div className="flag">
                                             <img className="flagImg" src="../../static/images/flags/4x3/tw.svg" />
                                         </div>
@@ -244,9 +244,9 @@ export default class extends React.Component {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-block">
+                            {/* <div className="col-block">
                                 <div className="countries">
-                                    <a href="/en-ca/about">
+                                    <a href="/en-ca/home">
                                         <div className="flag">
                                             <img className="flagImg" src="../../static/images/flags/4x3/ca.svg" />
                                         </div>
@@ -255,7 +255,8 @@ export default class extends React.Component {
                                     </div>
                                     </a>
                                 </div>
-                            </div>
+                            </div> */}
+
                         </div>
                     </div>
                 </section>
