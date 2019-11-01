@@ -75,7 +75,7 @@ const MobileNavBackdrop = styled.section`
   ${'' /* background: red; */}
 `;
 
-class MenuComponent extends React.Component {
+class IndexMenuComponent extends React.Component {
 
   constructor(props) {
     super(props);
@@ -115,44 +115,54 @@ class MenuComponent extends React.Component {
   }
 
   render() {
-    const componentName = "MenuComponent";
+    const componentName = "IndexMenuComponent";
     const locale = this.props.locale;
     const menuItems = <>
       <li>
-        <NavLinkComponent prefetch route="home" params={{ locale }}>
-          {this.translate('menu.home')}
-        </NavLinkComponent>
+        {/* <NavLinkComponent prefetch route="index" params={{ locale }}>
+            About
+        </NavLinkComponent> */}
+        <a href="#about">
+          About
+        </a>
       </li>
       <li>
-        <NavLinkComponent prefetch route="program" params={{ locale }}>
-          {this.translate('menu.program')}
-        </NavLinkComponent>
-      </li>
-      {/* <li>
-        <NavLinkComponent prefetch route="how" params={{ locale }}>
-          {this.translate('menu.how')}
-        </NavLinkComponent>
-      </li> */}
-      <li>
-        <NavLinkComponent prefetch route="rules" params={{ locale }}>
-          {this.translate('menu.rules')}
-        </NavLinkComponent>
+        {/* <NavLinkComponent prefetch route="history" params={{ locale }}>
+            History
+        </NavLinkComponent> */}
+         <a href="#history">
+        History
+        </a>
       </li>
       <li>
-        <NavLinkComponent prefetch route="supporters" params={{ locale }}>
-          {this.translate('menu.supporters')}
-        </NavLinkComponent>
+        {/* <NavLinkComponent prefetch route="countries" params={{ locale }}>
+           Countries
+        </NavLinkComponent> */}
+        <a href="#countries">
+        Countries
+        </a>
       </li>
       <li>
-        <NavLinkComponent prefetch route="contact" params={{ locale }}>
-          {this.translate('menu.contact')}
-        </NavLinkComponent>
+        {/* <NavLinkComponent prefetch route="download" params={{ locale }}>
+           Download
+        </NavLinkComponent> */}
+         <a href="#download">
+        Download
+        </a>
       </li>
-      <li className="featured">
+      <li>
+        {/* <NavLinkComponent prefetch route="contact" params={{ locale }}>
+          Contact
+        </NavLinkComponent> */}
+        <a href="#contact">
+        Contact
+        </a>
+      </li>
+      {/* <li className="featured">
         <NavLinkComponent prefetch route="join-us" params={{ locale }}>
           Join Us
         </NavLinkComponent>
-      </li>
+      </li> */}
       {/* <li className="featured">
         <NavLinkComponent prefetch route="register" params={{ locale }}>
           {this.translate('menu.registration')}
@@ -194,11 +204,11 @@ class MenuComponent extends React.Component {
       })} style={this.props.style}>
 
         <div className="header-logo">
-          <Link prefetch route="home" params={{ locale }}>
-            <a className="site-logo">
-              <img src={this.translate('logoImage')} alt={this.translate('logoTag')} />
+          {/* <Link prefetch route="index" params={{ locale }}> */}
+            <a className="site-logo" href="#home">
+              <img src="/static/images/logo-international-blockchain-olympiad-(ibcol)-subpage.png" alt={this.translate('logoTag')} />
             </a>
-          </Link>
+          {/* </Link> */}
         </div>
 
         <div className="desktop-nav">
@@ -236,13 +246,13 @@ class MenuComponent extends React.Component {
   }
 }
 
-MenuComponent.propTypes = {
+IndexMenuComponent.propTypes = {
   locale: PropTypes.string.isRequired,
   onToggleLanguageSelector: PropTypes.func.isRequired
 }
 
-MenuComponent.defaultProps = {
+IndexMenuComponent.defaultProps = {
 }
 
 
-export default withRouter(MenuComponent);
+export default withRouter(IndexMenuComponent);
