@@ -11,7 +11,7 @@ branches:
   - "/^feature.*$/"
   - "/^release.*$/"
   - "/^hotfix.*$/"
-before_script: npm install && rm -rf /home/travis/build/ibcol/ibcol/node_modules/fsevents && node slack-notifications/travis-before_script.js
+before_script: npm install && npm uninstall fsevents && node slack-notifications/travis-before_script.js
 script: npm test
 before_deploy: npm install now --no-save && node slack-notifications/travis-before_deploy.js
 deploy:
