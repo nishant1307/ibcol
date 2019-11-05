@@ -96,6 +96,11 @@
         "cache-control": "s-maxage=31536000, max-age=0"
       }
     },
+    { 
+      "src": "/(?<page>[^/]*)/", 
+      "dest": "/next/index",
+      "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
+    },
     {
       "src": "/(?<locale>[^/]*)/registration/login/",
       "dest": "/next/registration/login?locale=$locale"
