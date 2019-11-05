@@ -17,7 +17,13 @@ class NavLinkComponent extends React.Component {
     // console.log('routes.findAndGetUrls(props.route, props.params).urls.as', routes.findAndGetUrls(props.route, props.params).urls.as);
 
     // console.log('router.asPath', router.asPath);
-
+    // console.log('router include', router.asPath.includes("en-hk"));
+  
+    // if(router.asPath.includes("en-hk")){
+    //   router.asPath.replace("en-hk","");
+    //   console.log('router.asPath2', router.asPath);
+    // }
+    // console.log('router.asPath3', router.asPath);
     
     const isActiveRoute = (props.route === undefined) ? false : routes.findAndGetUrls(props.route, params).urls.as === router.asPath;
     // const isActiveRoute = false;
