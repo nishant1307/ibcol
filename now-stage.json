@@ -22,7 +22,9 @@
       "SALT": ")6sasasWeight-Waste-Stems-Dead-5s81*@()#@"
     }
   },
-  "regions": ["all"],
+  "regions": [
+    "all"
+  ],
   "github": {
     "enabled": false,
     "autoAlias": false,
@@ -30,34 +32,45 @@
     "autoJobCancelation": true
   },
   "builds": [
-    { "src": "node-routes/defaultRoute.js", "use": "@now/node@0.7.4" },
-    { "src": "node-routes/filepondRoute.js", "use": "@now/node@0.7.4" },
-    { "src": "next.config.js", "use": "@now/next" }
+    {
+      "src": "node-routes/defaultRoute.js",
+      "use": "@now/node@0.7.4"
+    },
+    {
+      "src": "node-routes/filepondRoute.js",
+      "use": "@now/node@0.7.4"
+    },
+    {
+      "src": "next.config.js",
+      "use": "@now/next"
+    }
   ],
   "routes": [
-
-    { 
-      "src": "/(((?!\\?|#|\\.|_next).)*((?!\\?|/|#|\\.).))", 
-      "status": 301,
-      "headers": { "Location": "/$1/" }
-    },
-
-    { "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+", "headers": { "cache-control": "immutable,max-age=31536000" } },
-
     {
-      "src": "/_next/(.*)", "dest": "/_next/$1"
+      "src": "/(((?!\\?|#|\\.|_next).)*((?!\\?|/|#|\\.).))",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/"
+      }
     },
-
+    {
+      "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+",
+      "headers": {
+        "cache-control": "immutable,max-age=31536000"
+      }
+    },
+    {
+      "src": "/_next/(.*)",
+      "dest": "/_next/$1"
+    },
     {
       "src": "/_/.*",
       "dest": "/node-routes/defaultRoute.js"
     },
-
     {
       "src": "/",
       "dest": "/node-routes/defaultRoute.js"
     },
-    
     {
       "src": "/file([/]*)",
       "dest": "/node-routes/filepondRoute.js",
@@ -72,64 +85,53 @@
         "Access-Control-Allow-Origin": "*"
       }
     },
-    
-
-    
-    { 
-      "src": "/(?<locale>[^/]*)/", 
-      "dest": "/next/home?locale=$locale"
+    {
+      "src": "/",
+      "dest": "/next"
     },
-    
-    
-    
-
-    { 
-      "src": "/(?<locale>[^/]*)/(?<page>(how|ambassadors|sponsors|contact|registration|admin|winners|schedule|join-us|about|ibcol))/", 
+    {
+      "src": "/(?<locale>[^/]*)/(?<page>(how|ambassadors|sponsors|contact|registration|admin|winners|schedule|join-us|about|ibcol))/",
       "dest": "/next/$page?locale=$locale",
-      "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
+      "headers": {
+        "cache-control": "s-maxage=31536000, max-age=0"
+      }
     },
-    { 
-      "src": "/(?<locale>[^/]*)/(?<page>[^/]*)/", 
+    {
+      "src": "/(?<locale>[^/]*)/(?<page>[^/]*)/",
       "dest": "/next/home?locale=$locale&catch-all=true",
-      "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
+      "headers": {
+        "cache-control": "s-maxage=31536000, max-age=0"
+      }
     },
-    
-
-
-
-    { 
-      "src": "/(?<locale>[^/]*)/registration/login/", 
+    {
+      "src": "/(?<locale>[^/]*)/registration/login/",
       "dest": "/next/registration/login?locale=$locale"
     },
-    
-
-    { 
-      "src": "/(?<locale>[^/]*)/registration/verify/(.*)/(.*)/", 
+    {
+      "src": "/(?<locale>[^/]*)/registration/verify/(.*)/(.*)/",
       "dest": "/next/registration/verify?locale=$locale&verificationCode=$2&email=$3"
     },
-    
-
-
-    { 
-      "src": "/(?<locale>[^/]*)/admin/verify/(.*)/(.*)/", 
+    {
+      "src": "/(?<locale>[^/]*)/admin/verify/(.*)/(.*)/",
       "dest": "/next/admin/verify?locale=$locale&verificationCode=$2&email=$3"
     },
-    
-
-    { 
-      "src": "/(?<locale>[^/]*)/admin/dashboard/", 
+    {
+      "src": "/(?<locale>[^/]*)/admin/dashboard/",
       "dest": "/next/admin/dashboard?locale=$locale"
     },
-    { 
-      "src": "/(?<locale>[^/]*)/ibcol/2018/", 
+    {
+      "src": "/(?<locale>[^/]*)/ibcol/2018/",
       "dest": "/next/ibcol/2018?locale=$locale",
-      "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
+      "headers": {
+        "cache-control": "s-maxage=31536000, max-age=0"
+      }
     },
-    { 
-      "src": "/(?<locale>[^/]*)/ibcol/2019/", 
+    {
+      "src": "/(?<locale>[^/]*)/ibcol/2019/",
       "dest": "/next/ibcol/2019?locale=$locale",
-      "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
+      "headers": {
+        "cache-control": "s-maxage=31536000, max-age=0"
+      }
     }
-    
   ]
 }
