@@ -36,8 +36,8 @@ const routes = require('next-routes')({
 })
 
 routes
-  .add({ name: 'home', pattern: '/:locale/', page: 'next/home' })
-  .add({ name: 'landing', pattern: '/:locale/landing', page: 'next/landing' })
+  .add({ name: 'home', pattern: '/:locale/home', page: 'next/home' })
+  .add({ name: 'landing', pattern: '/:locale/', page: 'next/landing' })
   .add({ name: 'history', pattern: '/:locale/history', page: 'next/history' })
   .add({ name: 'countries', pattern: '/:locale/countries', page: 'next/countries' })
   .add({ name: 'download', pattern: '/:locale/download', page: 'next/download' })
