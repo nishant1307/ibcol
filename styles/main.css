@@ -5067,3 +5067,7 @@ th.first-child-padding{
 .mailing-address a {
   padding:0;
 }
+
+#download {
+  display:none;
+}
