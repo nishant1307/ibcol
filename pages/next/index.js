@@ -256,7 +256,6 @@ export default class extends React.Component {
                                     </a>
                                 </div>
                             </div> */}
-
                         </div>
                     </div>
                 </section>
