@@ -284,7 +284,7 @@ class MyApp extends App {
         <StickyContainer>
           {
 
-            (this.props.router.route == "/next") ?
+            (this.props.router.route == "/next/landing") ?
               <Sticky topOffset={500}>
                 {({
                   style,
