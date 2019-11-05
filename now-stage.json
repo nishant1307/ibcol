@@ -86,8 +86,8 @@
       }
     },
     { 
-      "src": "/(?<locale>[^/]*)/", 
-      "dest": "/next/index?locale=$locale"
+      "src": "/", 
+      "dest": "/next/index"
     },
     {
       "src": "/(?<locale>[^/]*)/(?<page>(home|how|ambassadors|sponsors|contact|registration|admin|winners|schedule|join-us|about|ibcol|program|rules|supporters))/",
@@ -97,8 +97,8 @@
       }
     },
     { 
-      "src": "/(?<locale>[^/]*)/(?<page>[^/]*)/", 
-      "dest": "/next/index?locale=$locale&catch-all=true",
+      "src": "/(?<page>[^/]*)/", 
+      "dest": "/next/index",
       "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
     },
     {
