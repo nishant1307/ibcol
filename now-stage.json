@@ -87,7 +87,7 @@
     },
     {
       "src": "/",
-      "dest": "/next"
+      "dest": "/next/index"
     },
     {
       "src": "/(?<locale>[^/]*)/(?<page>(how|ambassadors|sponsors|contact|registration|admin|winners|schedule|join-us|about|ibcol))/",
