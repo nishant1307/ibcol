@@ -73,12 +73,25 @@ export default class extends React.Component {
                             <h3 className="subhead">{this.translate('subHeading')}</h3>
                         </div>
                     </div>
-                    {/* <div className="row">
-                        <div className="col-block">
-                            <h5 style={{marginTop:0}}>{this.translate('visionSection.content')}</h5>
-                        </div>
-                    </div> */}
+                   
                 </section>
+                <section className="s-section target-section last">
+                    <div className="row">
+                        <div className="col-block">
+                            <h4 className="item-title">{this.translate('section01.title')}</h4>
+                        </div>
+                        <div>
+
+                        {this.translate('section01.content')[0].name > 0 ? ({
+                            
+                        }): 
+                        (<div>
+                                <br/><h6 style={{"margin-inline-start": "1.2rem"}}>Coming Soon</h6>
+                        </div>)}
+
+                        </div>
+                    </div>
+             </section>
 
             
 

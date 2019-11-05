@@ -283,50 +283,6 @@ class MyApp extends App {
 
         <StickyContainer>
           {
-            (this.props.router.route == "/next") ?
-              <Sticky topOffset={500}>
-                {({
-                  style,
-
-                  // the following are also available but unused in this example
-                  isSticky,
-                  wasSticky,
-                  distanceFromTop,
-                  distanceFromBottom,
-                  calculatedHeight
-                }) => (
-                    <IndexMenuComponent onToggleLanguageSelector={this.toggleLanguageSelector} distanceFromTop={distanceFromTop} calculatedHeight={calculatedHeight} isSticky={isSticky} locale={locale} className={classNames({
-                      isSticky,
-                      atTop: distanceFromTop * -1 < calculatedHeight
-                    })} />
-
-                  )}
-              </Sticky>
-
-              :
-
-              <Sticky topOffset={500}>
-                {({
-                  style,
-
-                  // the following are also available but unused in this example
-                  isSticky,
-                  wasSticky,
-                  distanceFromTop,
-                  distanceFromBottom,
-                  calculatedHeight
-                }) => (
-                    <MenuComponent onToggleLanguageSelector={this.toggleLanguageSelector} distanceFromTop={distanceFromTop} calculatedHeight={calculatedHeight} isSticky={isSticky} locale={locale} className={classNames({
-                      isSticky,
-                      atTop: distanceFromTop * -1 < calculatedHeight
-                    })} />
-
-                  )}
-              </Sticky>
-          }
-
-
-          {
 
             (this.props.router.route == "/next") ?
               <Sticky topOffset={500}>
