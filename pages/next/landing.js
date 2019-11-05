@@ -315,7 +315,14 @@ export default class extends React.Component {
                                         </div>
                                         <div>
                                             <p>
-                                                General Enquiries
+                                                Sponsors
+                                    <br />
+                                                <a href={`mailto:info@ibcol.org`}>info@ibcol.org</a>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p>
+                                                Media
                                     <br />
                                                 <a href={`mailto:info@ibcol.org`}>info@ibcol.org</a>
                                             </p>
