@@ -179,7 +179,7 @@ export default class extends React.Component {
           </div>
         </section>
 
-        <section className="target-section list-last">
+        {/* <section className="target-section list-last">
           <div className="row col">
             <div className="sm">
               <span className={classNames("flag-icon", this.translate('XBCOL.flag'))}></span>
@@ -207,7 +207,7 @@ export default class extends React.Component {
             )}
 
           </div>
-        </section>
+        </section> */}
       </ThisPageContainerComponent>
     )
   }

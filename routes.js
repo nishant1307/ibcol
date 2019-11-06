@@ -37,11 +37,11 @@ const routes = require('next-routes')({
 
 routes
   .add({ name: 'home', pattern: '/:locale/home', page: 'next/home' })
-   .add({ name: 'index', pattern: '/', page: 'next/index' })
-   .add({ name: 'history', pattern: '/:locale/history', page: 'next/history' })
-   .add({ name: 'countries', pattern: '/:locale/countries', page: 'next/countries' })
-   .add({ name: 'download', pattern: '/:locale/download', page: 'next/download' })
-   // // // .add({ name: 'contact_id', pattern: '/:locale/contact_id', page: 'next/contact_id' })
+  .add({ name: 'landing', pattern: '/:locale/', page: 'next/landing' })
+  .add({ name: 'history', pattern: '/:locale/history', page: 'next/history' })
+  .add({ name: 'countries', pattern: '/:locale/countries', page: 'next/countries' })
+  .add({ name: 'download', pattern: '/:locale/download', page: 'next/download' })
+  // // // .add({ name: 'contact_id', pattern: '/:locale/contact_id', page: 'next/contact_id' })
   .add({ name: 'about', pattern: '/:locale/about/', page: 'next/about' })
   .add({ name: 'how', pattern: '/:locale/how/', page: 'next/how' })
   .add({ name: 'ambassadors', pattern: '/:locale/ambassadors/', page: 'next/ambassadors' })
@@ -61,5 +61,5 @@ routes
   .add({ name: 'adminVerification', pattern: '/:locale/admin/verify/:verificationCode/:email/', page: 'next/admin/verify' })
   .add({ name: 'adminDashboard', pattern: '/:locale/admin/dashboard/', page: 'next/admin/dashboard' })
   .add({ name: 'join-us', pattern: '/:locale/join-us/', page: 'next/join-us' })
-  
-  module.exports = routes
+
+module.exports = routes

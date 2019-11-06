@@ -5060,10 +5060,14 @@ th.first-child-padding{
   width:90px !important;
 }
 
-.countriesName {
+.countries {
   text-align: center;
 }
 
 .mailing-address a {
   padding:0;
+}
+
+#download {
+  display:none;
 }

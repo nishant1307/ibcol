@@ -77,8 +77,8 @@ export default class extends React.Component {
 
                     <div className="row section-header">
                         <div className="col-block">
-                            <a href="#eligibility"><h4 className="subhead">Eligibility</h4></a>
-                            <a href="#process"><h4 className="subhead">Process</h4></a>
+                            {/* <a href="#eligibility"><h4 className="subhead">Eligibility</h4></a>
+                            <a href="#process"><h4 className="subhead">Process</h4></a> */}
                             <a href="#programme"><h4 className="subhead">Programme</h4></a>
                             <a href="#partners"><h4 className="subhead">partners</h4></a>
                             <a href="#people"><h4 className="subhead">People</h4></a>
@@ -89,7 +89,7 @@ export default class extends React.Component {
                 </section>
 
                 {/* Start of Eligibility section */}
-                <section className="s-section target-section" id="eligibility">
+                {/* <section className="s-section target-section" id="eligibility">
                     <div className="row">
                         <div className="col-block">
                             <h1>{this.translate('2019.eligibilitySection.title')}</h1>
@@ -104,11 +104,11 @@ export default class extends React.Component {
                             </ul>
                         </div>
                     </div>
-                </section>
+                </section> */}
                 {/* End of Eligibility section */}
 
                 {/* Start of process section */}
-                <section className="s-section target-section" id="process">
+                {/* <section className="s-section target-section" id="process">
                     <div className="row">
                         <div className="col-block">
                             <h1>{this.translate('2019.processSection.title')}</h1>
@@ -194,7 +194,7 @@ export default class extends React.Component {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
                 {/* End of process section */}
 
                 {/* Start of programme section */}
