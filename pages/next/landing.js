@@ -215,11 +215,35 @@ export default class extends React.Component {
                 <section className="s-section target-section" id="countries">
                     <div className="row section-header">
                         <div className="col-block">
-                            <h1>Countries</h1>
+                            <h1>Blockchain Olympiad Committees</h1>
                         </div>
                     </div>
                     <div className="row">
                         <div className="block-1-6">
+                        <div className="col-block">
+                                <div className="countries">
+                                    <a href="/en-gb/home">
+                                        <div className="flag">
+                                            <img className="flagImg" src="../../static/images/flags/4x3/gb.svg" />
+                                        </div>
+                                        <div className="countriesName">
+                                            BRITANNIAN
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="col-block">
+                                <div className="countries">
+                                    <a href="/en-ca/home">
+                                        <div className="flag">
+                                            <img className="flagImg" src="../../static/images/flags/4x3/ca.svg" />
+                                        </div>
+                                        <div className="countriesName">
+                                            CANADA
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
                             <div className="col-block">
                                 <div className="countries">
                                     <a href="/en-hk/home">
@@ -228,6 +252,30 @@ export default class extends React.Component {
                                         </div>
                                         <div className="countriesName">
                                             HONG KONG
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="col-block">
+                                <div className="countries">
+                                    <a href="/en-ph/home">
+                                        <div className="flag">
+                                            <img className="flagImg" src="../../static/images/flags/4x3/ph.svg" />
+                                        </div>
+                                        <div className="countriesName">
+                                            PHILIPPINES
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="col-block">
+                                <div className="countries">
+                                    <a href="/en-sg/home">
+                                        <div className="flag">
+                                            <img className="flagImg" src="../../static/images/flags/4x3/sg.svg" />
+                                        </div>
+                                        <div className="countriesName">
+                                            SINGAPORE
                                     </div>
                                     </a>
                                 </div>
@@ -244,18 +292,20 @@ export default class extends React.Component {
                                     </a>
                                 </div>
                             </div>
-                            {/* <div className="col-block">
+                            <div className="col-block">
                                 <div className="countries">
-                                    <a href="/en-ca/home">
+                                    <a href="/en-us/home">
                                         <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/ca.svg" />
+                                            <img className="flagImg" src="../../static/images/flags/4x3/us.svg" />
                                         </div>
                                         <div className="countriesName">
-                                            CANADA
+                                            UNITED STATES
                                     </div>
                                     </a>
                                 </div>
-                            </div> */}
+                            </div>
+                            
+                        
                         </div>
                     </div>
                 </section>
@@ -317,14 +367,14 @@ export default class extends React.Component {
                                             <p>
                                                 Sponsors
                                     <br />
-                                                <a href={`mailto:info@ibcol.org`}>info@ibcol.org</a>
+                                                <a href={`mailto:support@ibcol.org`}>support@ibcol.org</a>
                                             </p>
                                         </div>
                                         <div>
                                             <p>
                                                 Media
                                     <br />
-                                                <a href={`mailto:info@ibcol.org`}>info@ibcol.org</a>
+                                                <a href={`mailto:media@ibcol.org`}>media@ibcol.org</a>
                                             </p>
                                         </div>
                                     </div>

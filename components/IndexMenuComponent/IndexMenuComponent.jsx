@@ -139,17 +139,14 @@ class IndexMenuComponent extends React.Component {
            Countries
         </NavLinkComponent> */}
         <a href="#countries">
-        Countries
+        Committees
         </a>
       </li>
-      <li>
-        {/* <NavLinkComponent prefetch route="download" params={{ locale }}>
-           Download
-        </NavLinkComponent> */}
+      {/* <li>
          <a href="#download">
         Download
         </a>
-      </li>
+      </li> */}
       <li>
         {/* <NavLinkComponent prefetch route="contact" params={{ locale }}>
           Contact
