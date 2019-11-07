@@ -4,7 +4,7 @@ import Error from 'next/error';
 // import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import {translate, localeSupported} from 'helpers/translate.js';
+import { translate, localeSupported } from 'helpers/translate.js';
 
 import ReactGA from 'react-ga';
 import { StickyContainer, Sticky } from 'react-sticky';
@@ -20,6 +20,7 @@ import routes from '/routes';
 // import css from 'styled-jsx/css';
 
 import MenuComponent from 'components/MenuComponent';
+import IndexMenuComponent from 'components/IndexMenuComponent';
 import LanguageSelectorComponent from 'components/LanguageSelectorComponent';
 // import LocaleSwitcherComponent from 'components/LocaleSwitcherComponent';
 
@@ -45,6 +46,7 @@ import "styles/base.css";
 import "styles/vendor.css";
 import "styles/main.css";
 import "styles/flag-icon.min.css";
+
 // import "styles/bootstrap-iso.css";
 
 
@@ -53,7 +55,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     /* override [class*="col-"] configs when site is deployed under ibcol-dev- scope <html> ended up with col in classname, e.g. gr__ibcol-dev-7ubigywmr_now_sh */
     padding: 0 !important;
-    width: 100vw !important;
+    width: 100% !important;
   }
   body.noScroll { /* ...or body.dialogShowing */
     height: 100%;
@@ -107,45 +109,54 @@ const GlobalStyle = createGlobalStyle`
 class MyApp extends App {
   constructor(props) {
     super(props);
+    // console.log(props);
     this.state = {
       isLoading: false,
-      showLanguageSelector: false
+      showLanguageSelector: false,
+      isIndex: true
       // width: 0, height: 0
     }
 
-    
+
     // client side locale check
-    if (typeof(window) === "object") {
+    if (typeof (window) === "object") {
       // console.log('constructor props', props)
       if (props.pageProps.query !== undefined && props.pageProps.query.locale !== undefined) {
+        console.log(props);
         // console.log('requested locale:', pageProps.query.locale);
-      //   // console.log('localeSupported?', localeSupported(pageProps.query.locale));
-      //   console.log('constructor pageProps', props.pageProps)
-      //   // console.log('router', router);
+        //   // console.log('localeSupported?', localeSupported(pageProps.query.locale));
+        //   console.log('constructor pageProps', props.pageProps)
+        //   // console.log('router', router);
+        console.log(props.router.route);
+        // if(props.router.route == "/next" || props.router.route == "/next/history"){
+        //   this.state.isIndex = true;
+        // }else{
+        //   this.state.isIndex = false;
+        // }
+
         if (!localeSupported(props.pageProps.query.locale)) {
-          
 
           // const requestedRoute = routes.findAndGetUrls(props.router.route.replace('/',''), {locale: props.pageProps.query.locale}).route;
 
           // console.log("----->>>>>", requestedRoute);
 
           // if (requestedRoute !== undefined && requestedRoute.name !== undefined) {
-            document.location = props.router.route;
+          document.location = props.router.route;
           // }
 
-          
+
         }
       }
     }
 
-    
+
   }
 
 
   toggleLanguageSelector = (show) => {
-    
-    if (typeof(show) === 'object') {
-      
+
+    if (typeof (show) === 'object') {
+
       this.setState({
         showLanguageSelector: !this.state.showLanguageSelector
       });
@@ -154,7 +165,7 @@ class MyApp extends App {
         showLanguageSelector: show
       });
     }
-    
+
   }
 
   translate = (t, locale = this.props.router.query.locale) => translate(t, '_global', locale);
@@ -163,15 +174,17 @@ class MyApp extends App {
 
   static async getInitialProps({ Component, ctx, router }) {
     let pageProps = {}
-    
+
     if (Component.getInitialProps) {
-      
       pageProps = await Component.getInitialProps(ctx);
+      // router.asPath = "/?locale=en-tw";
+      // router.query.locale = "en-tw";
       // console.debug('router', router);
       // console.debug('pageProps', pageProps);
+    
       if (typeof window === 'undefined') {
-        
-        
+
+
 
         // correct invalid locale
         if (pageProps.query !== undefined && pageProps.query.locale !== undefined) {
@@ -180,13 +193,13 @@ class MyApp extends App {
             // console.debug('router', router);
             // console.debug('ctx.req.url', ctx.req.url);
 
-            ctx.res.writeHead((process.env.ENV === 'production') ? 301 : 302, {"Location": `/_${router.route === '/next/home' ? `/${router.query.locale}` : router.route.replace('/next', '')}`});
+            ctx.res.writeHead((process.env.ENV === 'production') ? 301 : 302, { "Location": `/_${router.route === '/next/home' ? `/${router.query.locale}` : router.route.replace('/next', '')}` });
             ctx.res.end();
 
-            
+
           }
 
-          
+
 
 
         }
@@ -201,33 +214,33 @@ class MyApp extends App {
         if (router.query['catch-all'] !== undefined)
           ctx.res.statusCode = 404;
 
-        
 
-        
+
+
 
         pageProps.statusCode = ctx.res.statusCode;
-        
+
       }
 
-      
+
 
     }
 
     // client-side only, run on page changes, do not run on server (SSR)
-    if (typeof(window) === "object") {
+    if (typeof (window) === "object") {
       ReactGA.pageview(ctx.asPath);
     }
 
-    
-    
-    
 
-    
+
+
+
+
     return { pageProps }
   }
-  
+
   componentWillMount() {
-    
+
   }
 
   componentDidMount() {
@@ -235,14 +248,14 @@ class MyApp extends App {
     ReactGA.initialize('UA-113535301-3');
     ReactGA.pageview(window.location.pathname + window.location.search);
 
-    
+
     // console.log('router', this.props.router);
 
     // if ()
     // Router.replaceRoute(this.props.router.route, {
     //   locale: 'en-au'
     // });
-    
+
 
   }
 
@@ -254,42 +267,68 @@ class MyApp extends App {
     // console.log('props', this.props);
     // console.log('pageProps', pageProps);
 
-    
-    
+
+
 
     return <Container>
       <ApolloProvider client={apollo}>
-        <GlobalStyle/>
+        <GlobalStyle />
 
-        
+
         {
           this.state.showLanguageSelector === true &&
-          <LanguageSelectorComponent locale={locale} onToggleLanguageSelector={this.toggleLanguageSelector}/>
+          <LanguageSelectorComponent locale={locale} onToggleLanguageSelector={this.toggleLanguageSelector} />
         }
-        
+
 
         <StickyContainer>
-
-          <Sticky topOffset={500}>
-            {({
-              style,
-  
-              // the following are also available but unused in this example
-              isSticky,
-              wasSticky,
-              distanceFromTop,
-              distanceFromBottom,
-              calculatedHeight
-            }) => (
-              <MenuComponent onToggleLanguageSelector={this.toggleLanguageSelector} distanceFromTop={distanceFromTop} calculatedHeight={calculatedHeight} isSticky={isSticky} locale={locale} className={classNames({
-                isSticky,
-                atTop: distanceFromTop * -1 < calculatedHeight
-              })}/>
-            )}
-          </Sticky>
-        
           {
-            (pageProps.statusCode && pageProps.statusCode >= 400) ? 
+
+            (this.props.router.route == "/next/landing") ?
+              <Sticky topOffset={500}>
+                {({
+                  style,
+
+                  // the following are also available but unused in this example
+                  isSticky,
+                  wasSticky,
+                  distanceFromTop,
+                  distanceFromBottom,
+                  calculatedHeight
+                }) => (
+                    <IndexMenuComponent onToggleLanguageSelector={this.toggleLanguageSelector} distanceFromTop={distanceFromTop} calculatedHeight={calculatedHeight} isSticky={isSticky} locale={locale} className={classNames({
+                      isSticky,
+                      atTop: distanceFromTop * -1 < calculatedHeight
+                    })} />
+
+                  )}
+              </Sticky>
+
+              :
+
+              <Sticky topOffset={500}>
+                {({
+                  style,
+
+                  // the following are also available but unused in this example
+                  isSticky,
+                  wasSticky,
+                  distanceFromTop,
+                  distanceFromBottom,
+                  calculatedHeight
+                }) => (
+                    <MenuComponent onToggleLanguageSelector={this.toggleLanguageSelector} distanceFromTop={distanceFromTop} calculatedHeight={calculatedHeight} isSticky={isSticky} locale={locale} className={classNames({
+                      isSticky,
+                      atTop: distanceFromTop * -1 < calculatedHeight
+                    })} />
+
+                  )}
+              </Sticky>
+          }
+
+
+          {
+            (pageProps.statusCode && pageProps.statusCode >= 400) ?
               <Error statusCode={pageProps.statusCode} /> :
               <Component {...pageProps} locale={locale} />
           }
@@ -318,30 +357,30 @@ class MyApp extends App {
             <div className="col-full ss-copyright">
               <span dangerouslySetInnerHTML={{ __html: this.translate('copyright') }} />
             </div>
-            <br/>
+            <br />
             <div>
               <div>
-                <br/>
+                <br />
                 <a href="https://twitter.com/ibcolorg" target="_blank">
-                  <img src="/static/sm/tt.png"/>
+                  <img src="/static/sm/tt.png" />
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://www.facebook.com/ibcol.org" target="_blank">
-                  <img src="/static/sm/fb.png"/>
+                  <img src="/static/sm/fb.png" />
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://www.instagram.com/ibcol_org" target="_blank">
-                  <img src="/static/sm/ig.png"/>
+                  <img src="/static/sm/ig.png" />
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://www.linkedin.com/company/ibcol" target="_blank">
-                  <img src="/static/sm/li.png"/>
+                  <img src="/static/sm/li.png" />
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://www.youtube.com/channel/UCxN1ZN_bSlWlVWncT9QcTkg" target="_blank">
-                  <img src="/static/sm/yt.png"/>
+                  <img src="/static/sm/yt.png" />
                 </a>
-                <br/>
+                <br />
               </div>
               {/* <div className="languageMenuFooterTrigger" onClick={this.toggleLanguageSelector}>
                 <div className="languageMenuFooterTriggerIcon" alt={this.translate('_locale.name')} title={this.translate('_locale.name')} style={{
@@ -353,10 +392,10 @@ class MyApp extends App {
             </div>
             <div></div>
           </div>
-          
+
         </footer>
-        
-        
+
+
       </ApolloProvider>
     </Container>
   }
@@ -365,7 +404,7 @@ class MyApp extends App {
 
 
 MyApp.propTypes = {
-  
+
 }
 
 MyApp.defaultProps = {

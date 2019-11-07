@@ -14,25 +14,25 @@
   "facebookIcon":"/static/sm/fb-blue.png",
   "telegramIcon":"/static/sm/tg-blue.png",
   "XBCOL":{
-      "title":"HK-BCOL",
-      "flag":"flag-icon-hk",
+      "title":"GB-BCOL",
+      "flag":"flag-icon-gb",
       "facebookUrl":"",
       "telegramUrl":"",
       "headTitle":"National Committee Head(s)",
       "headInfo":[
-        {"name":"Anson Fong","linkedInUrl":""},
-        {"name":"Prenra Singh","linkedInUrl":""}
+        {"name":"","linkedInUrl":""},
+        {"name":"","linkedInUrl":""}
       ],
       "fundingTitle":"Charity/Fund",
       "deadlineTitle":"Deadline to Submit",
-      "finalDateTitle":"HK-BCOL Final"
+      "finalDateTitle":"GB-BCOL Final"
   },
   "schoolChapter":{
     "title":"School Chapters",
     "headTitle":"School Chapter Head(s)",
     "schoolInfo":[
-      {"fName":"Hong Kong Polytechnic University","sName":"PolyU","facebookUrl":"","telegramUrl":"","head1":{"name":"Alex Chu Lap Tung","linkedInUrl":""},"head2":{"name":"Alex Chu Lap Tung","linkedInUrl":""}},
-      {"fName":"Chinese University of Hong Kong","sName":"CUHK","facebookUrl":"","telegramUrl":"","head1":{"name":"Roman Yuen","linkedInUrl":""},"head2":{"name":"Kavs Cho","linkedInUrl":""}}
+      {"fName":"","sName":"","facebookUrl":"","telegramUrl":"","head1":{"name":"","linkedInUrl":""},"head2":{"name":"","linkedInUrl":""}},
+      {"fName":"","sName":"","facebookUrl":"","telegramUrl":"","head1":{"name":"","linkedInUrl":""},"head2":{"name":"","linkedInUrl":""}}
     ]
   },
   "trainingScheduleTitle":"Training schedule",

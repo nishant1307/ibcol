@@ -3,7 +3,8 @@
   "seoDescription":"International Blockchain Olympiad is a multidisciplinary design and building competition. IBCOL 2019 invites students from around the world to solve real-world challenges through decentralized applications.",
   "keywords":"",
   "ogImage":"static/images/ogimage.jpg",
-  "logoTag":"IBCOL: International Blockchain Olympiad",
+  "logoTag":"CA-BCOL: Canadian Blockchain Olympiad",
+  "logoImage":"/static/images/logo-cabcol-subpage.png",
   "titleSeparator":"|",
   "menu":{
     "home":"Home",

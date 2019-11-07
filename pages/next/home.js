@@ -45,6 +45,7 @@ const ThisPageContainerComponent = styled(PageContainerComponent)`
 
 export default class extends React.Component {
     static async getInitialProps({ req, res, query }) {
+        console.log(query);
         return { query }
     }
 
@@ -125,122 +126,35 @@ export default class extends React.Component {
                     </div>
 
                 </section>
-
-                {/* Start of Partners Section */}
-                {/* <section className="s-section target-section">
-                    <div className="row section-header">
-                        <div className="col-block">
-                            <h1>{this.translate('section01.partnerTitle')}</h1>
-                        </div>
-                    </div>
-                </section> */}
-                {/* End of Partners Section */}
-
-                {/* Start of Training Section */}
                 <section className="s-section target-section">
                     <div className="row section-header">
-                        <div className="bootstrap-iso col-block">
-                            <h1>{this.translate('section02.trainingTitle')}</h1>
+                        <div className="col-block">
+                            <h1>{this.translate('section02.title')}</h1>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-block">
-                            <h3 style={{ marginBottom: "1rem" }}>{this.translate('section02.courseTitle')}</h3>
-                            <p>{this.translate('section02.courseDesc')}</p>
-                        </div>
-                        <div className="col-block">
-                            <div className="card" >
-                                <div className="card-header" id="headingBCX">
-                                    <button className="btnCourses btn-link" onClick={this.toggle}><h4 style={{ marginBottom: "1rem" }}>{this.translate('section02.course01Title')}</h4></button>
-                                </div>
-                                <Collapse isOpened={this.state.collapse}>
-                                    <div className="card-body">
-                                        <div className="course-desc">
-                                            {
-                                                this.translate('section02.course01').map((course, index) => {
-                                                    return <div className="course-desc" key={index}>
-                                                        <h5>{course.course01Heading}</h5>
-                                                        <b>{course.descTitle}</b>
-                                                        <p className="coursesBody">{course.course01Desc}</p>
-                                                        <b>{course.prereqTitle}</b>
-                                                        <p style={{ marginBottom: "1rem" }}>{course.course01Prereq}</p>
-                                                        {course.btnStyle == 'disable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol enrolDisable">
-                                                            {course.btnEnrol}
-                                                        </a>)}
-
-                                                        {course.btnStyle == 'enable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol">
-                                                            {course.btnEnrol}
-                                                        </a>)}
-                                                    </div>
-                                                })
-                                            }
-                                        </div>
-                                    </div>
-                                </Collapse>
-                            </div>
-                            <div className="card" >
-                                <div className="card-header" id="headingBCX">
-                                    <button className="btnCourses btn-link" onClick={this.toggle2}><h4 style={{ marginBottom: "1rem" }}>{this.translate('section02.course02Title')}</h4></button>
-                                </div>
-                                <Collapse isOpened={this.state.collapse2}>
-                                    <div className="card-body">
-                                        <div className="course-desc">
-                                            {
-                                                this.translate('section02.course02').map((course, index) => {
-                                                    return <div className="course-desc" key={index}>
-                                                        <h5>{course.course01Heading}</h5>
-                                                        <b>{course.descTitle}</b>
-                                                        <p className="coursesBody">{course.course01Desc}</p>
-                                                        <b>{course.prereqTitle}</b>
-                                                        <p style={{ marginBottom: "1rem" }}>{course.course01Prereq}</p>
-                                                        {course.btnStyle == 'disable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol enrolDisable">
-                                                            {course.btnEnrol}
-                                                        </a>)}
-
-                                                        {course.btnStyle == 'enable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol">
-                                                            {course.btnEnrol}
-                                                        </a>)}
-                                                    </div>
-                                                })
-                                            }
-                                        </div>
-                                    </div>
-                                </Collapse>
-                            </div>
-
-                            <div className="card" >
-                                <div className="card-header" id="headingBCX">
-                                    <button className="btnCourses btn-link" onClick={this.toggle3}><h4 style={{ marginBottom: "1rem" }}>{this.translate('section02.course03Title')}</h4></button>
-                                </div>
-                                <Collapse isOpened={this.state.collapse3}>
-                                    <div className="card-body ">
-                                        <div className="course-desc">
-                                            {
-                                                this.translate('section02.course03').map((course, index) => {
-                                                    return <div className="course-desc" key={index}>
-                                                        <h5>{course.course01Heading}</h5>
-                                                        <b>{course.descTitle}</b>
-                                                        <p className="coursesBody">{course.course01Desc}</p>
-                                                        <b>{course.prereqTitle}</b>
-                                                        <p style={{ marginBottom: "1rem" }}>{course.course01Prereq}</p>
-                                                        {course.btnStyle == 'disable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol enrolDisable">
-                                                            {course.btnEnrol}
-                                                        </a>)}
-
-                                                        {course.btnStyle == 'enable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol">
-                                                            {course.btnEnrol}
-                                                        </a>)}
-                                                    </div>
-                                                })
-                                            }
-                                        </div>
-                                    </div>
-                                </Collapse>
-                            </div>
+                            <h5 style={{marginTop:0}}>{this.translate('section02.content')}</h5>
                         </div>
                     </div>
                 </section>
-                {/* End of Training Section */}
+
+            
+                <section className="s-section target-section">
+                    <div className="row section-header">
+                        <div className="col-block">
+                            <h1>{this.translate('section03.title')}</h1>
+                        </div>
+                        <div className="col-block">
+                            <h3>An Analogy of Life and Death</h3>
+                            <p>The history of blockchain is analogous to the cycles of life and death in the prehistory of Earth, namely concerning biodiversity, extinction events, and adaptation of species. The Cambrian Explosion is an era approximately 541 million years ago when an unprecedented number of phyla appeared into the fossil records. After several years of low-key development, the blockchain world experienced its own Cambrian Explosion in 2017, driven by the mirage of utopia and fuelled by the abundance of money. Projects and their ICOs expanded and diversified quickly in 2016 and 2017 after ERC-20 was proposed in Nov 2015; the only extinction filter was the inability to raise money, so the majority of projects seem to be winners. The Permian-Triassic Extinction is an event approximately 252 million years ago consisting of several localised events that saw the 96% of all species go extinct when they did not have the means to adapt, aptly named the Great Dying. In the blockchain world, the P-T Extinction event is already happening, has happened already, or is still happening: a study found circa 4% of ICOs were either promising or successful—an ironic coincidence.</p>
+                            <h3>Evolution rather than Revolution</h3>
+                            <p>In the P-T Extinction of blockchain, there exists three big filters: lack of research and technical competence, lack of business competence, and lack of legal and compliance competence. Scams do not survive an obvious lack of solid technology or research, while survivors do not have any business adoption, a familiar epidemic and a classic killer of startups. The final major extinction filter is the awakening of the people to the importance of privacy and lack of privacy preservation by contemporary corporations, especially in light of the Equifax breach and the Facebook “breach” by Cambridge Analytica, coupled with the activation of GDPR—blockchain projects without the foresight of building for privacy preservation shall eventually be consigned to the dustbin of history by the power of law and regulations. The fittest shall survive because of enterprise discipline with competence in technology, legal, and business: those missing tech is all talk, but can’t build; those missing business will “build it and they will come” (classic tech startup pitfall); those missing legal are lawsuits waiting to happen.</p>
+                            <h3>An unprecedented pairing of fresh talent and entrenched problems</h3>
+                            <p>Students represent our future. Because enterprise applications represent the widest reach to all corners of humankind, the IBCOL encourages students to work and contribute to the future of humanity, where blockchain and distributed ledgers contribute immense value to all aspects of society.</p>
+                        </div>
+                    </div>
+                </section>
                 <section className="s-section target-section">
 
                 </section>

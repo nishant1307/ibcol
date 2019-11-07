@@ -36,7 +36,12 @@ const routes = require('next-routes')({
 })
 
 routes
-  .add({ name: 'home', pattern: '/:locale/', page: 'next/home' })
+  .add({ name: 'home', pattern: '/:locale/home', page: 'next/home' })
+  .add({ name: 'landing', pattern: '/:locale/', page: 'next/landing' })
+  .add({ name: 'history', pattern: '/:locale/history', page: 'next/history' })
+  .add({ name: 'countries', pattern: '/:locale/countries', page: 'next/countries' })
+  .add({ name: 'download', pattern: '/:locale/download', page: 'next/download' })
+  // // // .add({ name: 'contact_id', pattern: '/:locale/contact_id', page: 'next/contact_id' })
   .add({ name: 'about', pattern: '/:locale/about/', page: 'next/about' })
   .add({ name: 'how', pattern: '/:locale/how/', page: 'next/how' })
   .add({ name: 'ambassadors', pattern: '/:locale/ambassadors/', page: 'next/ambassadors' })
@@ -45,6 +50,9 @@ routes
   .add({ name: 'sponsors', pattern: '/:locale/sponsors/', page: 'next/sponsors' })
   .add({ name: 'schedule', pattern: '/:locale/schedule/', page: 'next/schedule' })
   .add({ name: 'winners', pattern: '/:locale/winners/', page: 'next/winners' })
+  .add({ name: 'program', pattern: '/:locale/program/', page: 'next/program' })
+  .add({ name: 'rules', pattern: '/:locale/rules/', page: 'next/rules' })
+  .add({ name: 'supporters', pattern: '/:locale/supporters/', page: 'next/supporters' })
   .add({ name: 'contact', pattern: '/:locale/contact/', page: 'next/contact' })
   .add({ name: 'registration', pattern: '/:locale/registration/', page: 'next/registration' })
   .add({ name: 'registrationLogin', pattern: '/:locale/registration/login/', page: 'next/registration/login' })
@@ -53,5 +61,5 @@ routes
   .add({ name: 'adminVerification', pattern: '/:locale/admin/verify/:verificationCode/:email/', page: 'next/admin/verify' })
   .add({ name: 'adminDashboard', pattern: '/:locale/admin/dashboard/', page: 'next/admin/dashboard' })
   .add({ name: 'join-us', pattern: '/:locale/join-us/', page: 'next/join-us' })
-  
-  module.exports = routes
+
+module.exports = routes
