@@ -4,6 +4,7 @@
   "keywords":"",
   "ogImage":"static/images/ogimage.jpg",
   "logoTag":"IBCOL: Olimpíadas Internacionais de Blockchain",
+  "logoImage":"/static/images/logo-brbcol-subpage.png",
   "titleSeparator":"|",
   "menu":{
     "home":"Casa",
