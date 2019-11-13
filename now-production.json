@@ -76,20 +76,18 @@
     
     { 
       "src": "/(?<locale>[^/]*)/", 
-      "dest": "/next/home?locale=$locale"
+      "dest": "/next/landing?locale=$locale"
     },
-    
-    
-    
-
-    { 
-      "src": "/(?<locale>[^/]*)/(?<page>(how|ambassadors|sponsors|contact|registration|admin|winners|schedule|join-us))/", 
+    {
+      "src": "/(?<locale>[^/]*)/(?<page>(home|how|ambassadors|sponsors|contact|registration|admin|winners|schedule|join-us|about|ibcol|program|rules|supporters|landing))/",
       "dest": "/next/$page?locale=$locale",
-      "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
+      "headers": {
+        "cache-control": "s-maxage=31536000, max-age=0"
+      }
     },
     { 
       "src": "/(?<locale>[^/]*)/(?<page>[^/]*)/", 
-      "dest": "/next/home?locale=$locale&catch-all=true",
+      "dest": "/next/landing?locale=$locale&catch-all=true",
       "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
     },
     

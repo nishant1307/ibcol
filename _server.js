@@ -85,9 +85,9 @@ router.get('/_/:page?/', (req, res, next) => {
   routeHelpers.routeToDefaultPath(req, res, next, '/_');
 });
 
-// router.get('/', (req, res, next) => {
-//   routeHelpers.routeToDefaultPath(req, res, next);
-// });
+router.get('/', (req, res, next) => {
+  routeHelpers.routeToDefaultPath(req, res, next);
+});
 
 //────────────────────────────────────────────────────────────────────────────────
 
