@@ -220,98 +220,112 @@ export default class extends React.Component {
                     </div>
                     <div className="row">
                         <div className="block-1-6">
-                        <div className="col-block">
-                                <div className="countries">
-                                    <a href="/en-gb/home">
-                                        <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/gb.svg" />
-                                        </div>
-                                        <div className="countriesName">
-                                            BRITANNIAN
-                                    </div>
-                                    </a>
-                                </div>
-                            </div>
+                    
                             <div className="col-block">
                                 <div className="countries">
-                                    <a href="/en-ca/home">
+                                    <a href="/en-ca/home" target="_blank">
                                         <div className="flag">
                                             <img className="flagImg" src="../../static/images/flags/4x3/ca.svg" />
                                         </div>
                                         <div className="countriesName">
-                                            CANADA
+                                            Canada
                                     </div>
                                     </a>
                                 </div>
                             </div>
                             <div className="col-block">
                                 <div className="countries">
-                                    <a href="/en-hk/home">
+                                    <a href="/en-hk/home" target="_blank">
                                         <div className="flag">
                                             <img className="flagImg" src="../../static/images/flags/4x3/hk.svg" />
                                         </div>
                                         <div className="countriesName">
-                                            HONG KONG
+                                            Hong Kong
                                     </div>
                                     </a>
                                 </div>
                             </div>
                             <div className="col-block">
                                 <div className="countries">
-                                    <a href="/en-in/home">
+                                    <a href="/en-in/home" target="_blank">
                                         <div className="flag">
                                             <img className="flagImg" src="../../static/images/flags/4x3/in.svg" />
                                         </div>
                                         <div className="countriesName">
-                                            INDIAN
+                                            India
                                     </div>
                                     </a>
                                 </div>
                             </div>
                             <div className="col-block">
                                 <div className="countries">
-                                    <a href="/en-ph/home">
+                                    <a href="/en-mn/home" target="_blank">
+                                        <div className="flag">
+                                            <img className="flagImg" src="../../static/images/flags/4x3/mn.svg" />
+                                        </div>
+                                        <div className="countriesName">
+                                            Mongolia
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="col-block">
+                                <div className="countries">
+                                    <a href="/en-ph/home" target="_blank">
                                         <div className="flag">
                                             <img className="flagImg" src="../../static/images/flags/4x3/ph.svg" />
                                         </div>
                                         <div className="countriesName">
-                                            PHILIPPINES
+                                            Philippines
                                     </div>
                                     </a>
                                 </div>
                             </div>
                             <div className="col-block">
                                 <div className="countries">
-                                    <a href="/en-sg/home">
+                                    <a href="/en-sg/home" target="_blank">
                                         <div className="flag">
                                             <img className="flagImg" src="../../static/images/flags/4x3/sg.svg" />
                                         </div>
                                         <div className="countriesName">
-                                            SINGAPORE
+                                            Singapore
                                     </div>
                                     </a>
                                 </div>
                             </div>
                             <div className="col-block">
                                 <div className="countries">
-                                    <a href="/en-tw/home">
+                                    <a href="/en-tw/home" target="_blank">
                                         <div className="flag">
                                             <img className="flagImg" src="../../static/images/flags/4x3/tw.svg" />
                                         </div>
                                         <div className="countriesName">
-                                            TAIWAN
+                                            Taiwan
                                     </div>
                                     </a>
                                 </div>
                             </div>
                             <div className="col-block">
                                 <div className="countries">
-                                    <a href="/en-us/home">
+                                    <a href="/en-gb/home" target="_blank">
+                                        <div className="flag">
+                                            <img className="flagImg" src="../../static/images/flags/4x3/gb.svg" />
+                                        </div>
+                                        <div className="countriesName">
+                                       
+                                            United Kingdom
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="col-block">
+                                <div className="countries">
+                                    <a href="/en-us/home" target="_blank">
                                         <div className="flag">
                                             <img className="flagImg" src="../../static/images/flags/4x3/us.svg" />
                                         </div>
                                         <div className="countriesName">
-                                            UNITED STATES
+                                            United States
                                     </div>
                                     </a>
                                 </div>
