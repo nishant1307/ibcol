@@ -247,12 +247,36 @@ export default class extends React.Component {
                             </div>
                             <div className="col-block">
                                 <div className="countries">
+                                    <a href="/en-hu/home" target="_blank">
+                                        <div className="flag">
+                                            <img className="flagImg" src="../../static/images/flags/4x3/hu.svg" />
+                                        </div>
+                                        <div className="countriesName">
+                                        Hungary
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="col-block">
+                                <div className="countries">
                                     <a href="/en-in/home" target="_blank">
                                         <div className="flag">
                                             <img className="flagImg" src="../../static/images/flags/4x3/in.svg" />
                                         </div>
                                         <div className="countriesName">
                                             India
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="col-block">
+                                <div className="countries">
+                                    <a href="/en-jp/home" target="_blank">
+                                        <div className="flag">
+                                            <img className="flagImg" src="../../static/images/flags/4x3/jp.svg" />
+                                        </div>
+                                        <div className="countriesName">
+                                            Japan
                                     </div>
                                     </a>
                                 </div>
@@ -307,12 +331,24 @@ export default class extends React.Component {
                             </div>
                             <div className="col-block">
                                 <div className="countries">
+                                    <a href="/en-ua/home" target="_blank">
+                                        <div className="flag">
+                                            <img className="flagImg" src="../../static/images/flags/4x3/ua.svg" />
+                                        </div>
+                                        <div className="countriesName">
+                                        Ukraine
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="col-block">
+                                <div className="countries">
                                     <a href="/en-gb/home" target="_blank">
                                         <div className="flag">
                                             <img className="flagImg" src="../../static/images/flags/4x3/gb.svg" />
                                         </div>
                                         <div className="countriesName">
-                                       
+                                    
                                             United Kingdom
                                     </div>
                                     </a>

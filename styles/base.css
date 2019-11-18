@@ -954,6 +954,10 @@ textarea {
     height:auto;
     
   }
+  .block-1-6 .col-block {
+    width: 33.3333%;
+  }
+  
 
   .block-mob-1-5 .col-block {
     width: 20%;
