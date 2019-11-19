@@ -2,7 +2,7 @@ module.exports = {
   "_locale": {
     "disable": true,
     "id": "en-tw",
-    "name": "Tai Wai",
+    "name": "Taiwan",
     "label": "Welcome",
     "flag": "tw.svg"
   },

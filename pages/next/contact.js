@@ -36,35 +36,6 @@ const ThisPageContainerComponent = styled(PageContainerComponent)`
 
 `;
 
-function getHeadInfo(info) {
-  if (info !== undefined) {
-    return (
-      <div>
-        <h4 className="item-title"><a href={info.linkedInUrl} target="_blank">{info.name}</a></h4>
-      </div>
-    );
-  }
-}
-function getSchoolInfo(info) {
-  if (info !== undefined) {
-    return (
-      <div>
-        <div className="col-block">
-          <h4>{info.fName}:</h4>
-        </div>
-        <div className="col-block"> {info.head1} {info.head2.length > 0 && (<span> , {info.head2}</span>)}
-
-          <a href={info.facebookUrl} target="_blank">
-            <img className="png-fb-icon" src="/static/sm/fb-blue.png" />
-          </a>
-          <a href={info.telegramUrl} target="_blank">
-            <img className="png-tg-icon" src="/static/sm/tg-blue.png" />
-          </a>
-        </div>
-      </div>
-    );
-  }
-}
 
 
 export default class extends React.Component {
@@ -85,21 +56,9 @@ export default class extends React.Component {
     });
     this.setState({ communitiesInfo: communitiesInfo });
 
-    let XBCOLContactInfo = [];
-    this.translate('XBCOL.headInfo').forEach((info, index) => {
-      if (index % 2 === 0) {
-        XBCOLContactInfo.push([this.translate('XBCOL.headInfo')[index], this.translate('XBCOL.headInfo')[index + 1]]);
-      }
-    });
-    this.setState({ XBCOLContactInfo: XBCOLContactInfo });
+    
+    this.setState({ XBCOLContactInfo: this.translate('XBCOL.headInfo') });
 
-    // let schoolChapContactInfo = [];
-    // this.translate('schoolChapter.schoolInfo').forEach((info, index) => {
-    //   // if (index % 2 === 0) {
-    //     schoolChapContactInfo.push([this.translate('schoolChapter.schoolInfo')[index], this.translate('schoolChapter.schoolInfo')[index + 1]]);
-    //   // }
-
-    // });
     this.setState({ schoolChapContactInfo: this.translate('schoolChapter.schoolInfo') });
 
   }
@@ -110,10 +69,14 @@ export default class extends React.Component {
       function (info, index) {
         console.log(info, index);
         return (
-          <div className="block-1-2" key={info[0] + index}>
-            <li className="col-block" key={index}>{getHeadInfo(info[0])}</li>
-            {info[1] != null && (<li className="col-block" key={index + 1}>{getHeadInfo(info[1])}</li>)}
-          </div>
+          <li className="col-block" key={index}>
+          <h4 className="list-title">{info.title}:</h4>
+          <h4 className="item-title">
+            {info.linkedInUrl.length > 0 ? (
+            <a href={info.linkedInUrl} target="_blank">{info.name}</a>
+            ):(<a>{info.name}</a>)}
+          </h4>
+        </li>
         )
       }
     );
@@ -178,8 +141,9 @@ export default class extends React.Component {
             </div>
           </div>
         </section>
-
-        {/* <section className="target-section list-last">
+        
+        <section className="target-section list-last">
+        {this.translate('XBCOL.headInfo')[0].name.length > 0 && (
           <div className="row col">
             <div className="sm">
               <span className={classNames("flag-icon", this.translate('XBCOL.flag'))}></span>
@@ -194,20 +158,19 @@ export default class extends React.Component {
                 </a>)}
             </div>
             <a href="/join-us" className="btn btn--primary btn-sm-joinus">Join Us</a>
-
             <h4 className="head-title">{this.translate('XBCOL.headTitle')}</h4>
-            <ul>{getXBCOLContactInfo}</ul>
-
+            <ul><div className="block-1-2">{getXBCOLContactInfo}</div></ul>
+            
             {this.translate('schoolChapter.schoolInfo')[0].fName.length > 0 && (
               <div>
                 <h4 className="sm-title  head-title">{this.translate('schoolChapter.headTitle')}</h4>
                 <a href="/join-us" className="btn btn--primary btn-sm-joinus">Join Us</a>
                 <ul><div className="block-1-2">{getSchoolChapContactInfo}</div></ul>
               </div>
-            )}
-
-          </div>
-        </section> */}
+            )}  
+        
+          </div>)}
+        </section>
       </ThisPageContainerComponent>
     )
   }

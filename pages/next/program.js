@@ -79,105 +79,105 @@ export default class extends React.Component {
     }
 
     render() {
-        const getScheduleInfo = this.state.scheduleInfo.map((info, index)=>{
-            var body = [];
-            var colors = ["blue","red","green","orange"];
-            var yearSpanLength=0;
-            info.events.forEach(month => {
-                month.detail.forEach(date => {
-                    yearSpanLength++;
-                });
-            });
-                for(var m=0;m<info.events.length;m++){
-                    for (var i=0;i<info.events[m].detail.length;i++){
-                        if(m==0){
-                            if(i == 0){
-                                body.push(
-                                        <tr>
-                                             <td className={`session-schedule-year ${colors[index%4]}`} rowSpan={yearSpanLength}>
-                                             <h5>{info.year}</h5>
-                                             </td>
-                                            <td className={`session-schedule-month ${colors[m%4]}`} rowSpan={info.events[m].detail.length}>
-                                            <h5>{info.events[m].month}</h5>
-                                            </td>
-                                            <td className={`session-schedule-time ${colors[i%4]}`}>
-                                                <h5>{info.events[m].detail[0].date}</h5>
-                                                {info.events[m].detail[0].time.length > 0 && (<p>{info.events[m].detail[0].time}</p>)}
-                                            </td>
-                                            <td className="session-schedule-detail">
-                                                <h5>{info.events[m].detail[0].title}</h5>
-                                                {info.events[m].detail[0].subtitle.length > 0 && (<h5><p>{info.events[m].detail[0].subtitle}</p></h5>)}
-                                                <p>{info.events[m].detail[0].venue}</p>
-                                            </td>
-                                        </tr>);
-                            }else{
-                                var date = [];
-                                 var title = [];
-                                 date.push(<td className={`session-schedule-time ${colors[i%4]}`}>
-                                    <h5>{info.events[m].detail[i].date}</h5>
-                                    {info.events[m].detail[i].time.length > 0 && (<p>{info.events[m].detail[i].time}</p>)}
-                                    </td>);
+        // const getScheduleInfo = this.state.scheduleInfo.map((info, index)=>{
+        //     var body = [];
+        //     var colors = ["blue","red","green","orange"];
+        //     var yearSpanLength=0;
+        //     info.events.forEach(month => {
+        //         month.detail.forEach(date => {
+        //             yearSpanLength++;
+        //         });
+        //     });
+        //         for(var m=0;m<info.events.length;m++){
+        //             for (var i=0;i<info.events[m].detail.length;i++){
+        //                 if(m==0){
+        //                     if(i == 0){
+        //                         body.push(
+        //                                 <tr>
+        //                                      <td className={`session-schedule-year ${colors[index%4]}`} rowSpan={yearSpanLength}>
+        //                                      <h5>{info.year}</h5>
+        //                                      </td>
+        //                                     <td className={`session-schedule-month ${colors[m%4]}`} rowSpan={info.events[m].detail.length}>
+        //                                     <h5>{info.events[m].month}</h5>
+        //                                     </td>
+        //                                     <td className={`session-schedule-time ${colors[i%4]}`}>
+        //                                         <h5>{info.events[m].detail[0].date}</h5>
+        //                                         {info.events[m].detail[0].time.length > 0 && (<p>{info.events[m].detail[0].time}</p>)}
+        //                                     </td>
+        //                                     <td className="session-schedule-detail">
+        //                                         <h5>{info.events[m].detail[0].title}</h5>
+        //                                         {info.events[m].detail[0].subtitle.length > 0 && (<h5><p>{info.events[m].detail[0].subtitle}</p></h5>)}
+        //                                         <p>{info.events[m].detail[0].venue}</p>
+        //                                     </td>
+        //                                 </tr>);
+        //                     }else{
+        //                         var date = [];
+        //                          var title = [];
+        //                          date.push(<td className={`session-schedule-time ${colors[i%4]}`}>
+        //                             <h5>{info.events[m].detail[i].date}</h5>
+        //                             {info.events[m].detail[i].time.length > 0 && (<p>{info.events[m].detail[i].time}</p>)}
+        //                             </td>);
         
-                                title.push(<td className="session-schedule-detail">
-                                    <h5>{info.events[m].detail[i].title}</h5>
-                                    {info.events[m].detail[i].subtitle.length > 0 && (<h5><p>{info.events[m].detail[i].subtitle}</p></h5>)}
-                                    <p>{info.events[m].detail[i].venue}</p>
-                                    </td>);
+        //                         title.push(<td className="session-schedule-detail">
+        //                             <h5>{info.events[m].detail[i].title}</h5>
+        //                             {info.events[m].detail[i].subtitle.length > 0 && (<h5><p>{info.events[m].detail[i].subtitle}</p></h5>)}
+        //                             <p>{info.events[m].detail[i].venue}</p>
+        //                             </td>);
         
-                                body.push(
-                                    <tr>
-                                        {date}
-                                        {title}
-                                    </tr>);
+        //                         body.push(
+        //                             <tr>
+        //                                 {date}
+        //                                 {title}
+        //                             </tr>);
                                     
-                                }
+        //                         }
                 
-                        }else{
-                            if(i == 0){
-                                body.push(
-                                        <tr>
-                                            <td className={`session-schedule-month ${colors[m%4]}`} rowSpan={info.events[m].detail.length}>
-                                            <h5>{info.events[m].month}</h5>
-                                            </td>
-                                            <td className={`session-schedule-time ${colors[i%4]}`}>
-                                                <h5>{info.events[m].detail[0].date}</h5>
-                                                {info.events[m].detail[0].time.length > 0 && (<p>{info.events[m].detail[0].time}</p>)}
-                                            </td>
-                                            <td className="session-schedule-detail">
-                                                <h5>{info.events[m].detail[0].title}</h5>
-                                                {info.events[m].detail[0].subtitle.length > 0 && (<h5><p>{info.events[m].detail[0].subtitle}</p></h5>)}
-                                                <p>{info.events[m].detail[0].venue}</p>
-                                            </td>
-                                        </tr>);
-                            }else{
-                                var date = [];
-                                 var title = [];
-                                 date.push(<td className={`session-schedule-time ${colors[i%4]}`}>
-                                    <h5>{info.events[m].detail[i].date}</h5>
-                                    {info.events[m].detail[i].time.length > 0 && (<p>{info.events[m].detail[i].time}</p>)}
-                                    </td>);
+        //                 }else{
+        //                     if(i == 0){
+        //                         body.push(
+        //                                 <tr>
+        //                                     <td className={`session-schedule-month ${colors[m%4]}`} rowSpan={info.events[m].detail.length}>
+        //                                     <h5>{info.events[m].month}</h5>
+        //                                     </td>
+        //                                     <td className={`session-schedule-time ${colors[i%4]}`}>
+        //                                         <h5>{info.events[m].detail[0].date}</h5>
+        //                                         {info.events[m].detail[0].time.length > 0 && (<p>{info.events[m].detail[0].time}</p>)}
+        //                                     </td>
+        //                                     <td className="session-schedule-detail">
+        //                                         <h5>{info.events[m].detail[0].title}</h5>
+        //                                         {info.events[m].detail[0].subtitle.length > 0 && (<h5><p>{info.events[m].detail[0].subtitle}</p></h5>)}
+        //                                         <p>{info.events[m].detail[0].venue}</p>
+        //                                     </td>
+        //                                 </tr>);
+        //                     }else{
+        //                         var date = [];
+        //                          var title = [];
+        //                          date.push(<td className={`session-schedule-time ${colors[i%4]}`}>
+        //                             <h5>{info.events[m].detail[i].date}</h5>
+        //                             {info.events[m].detail[i].time.length > 0 && (<p>{info.events[m].detail[i].time}</p>)}
+        //                             </td>);
         
-                                title.push(<td className="session-schedule-detail">
-                                    <h5>{info.events[m].detail[i].title}</h5>
-                                    {info.events[m].detail[i].subtitle.length > 0 && (<h5><p>{info.events[m].detail[i].subtitle}</p></h5>)}
-                                    <p>{info.events[m].detail[i].venue}</p>
-                                    </td>);
+        //                         title.push(<td className="session-schedule-detail">
+        //                             <h5>{info.events[m].detail[i].title}</h5>
+        //                             {info.events[m].detail[i].subtitle.length > 0 && (<h5><p>{info.events[m].detail[i].subtitle}</p></h5>)}
+        //                             <p>{info.events[m].detail[i].venue}</p>
+        //                             </td>);
         
-                                body.push(
-                                    <tr>
-                                        {date}
-                                        {title}
-                                    </tr>);
+        //                         body.push(
+        //                             <tr>
+        //                                 {date}
+        //                                 {title}
+        //                             </tr>);
                                     
-                                } 
-                        }
+        //                         } 
+        //                 }
                 
-                    }
-                }
-            console.log(body)
-            return body;
-        });
-        console.log(this.state.scheduleInfo);
+        //             }
+        //         }
+        //     console.log(body)
+        //     return body;
+        // });
+        // console.log(this.state.scheduleInfo);
         const locale = this.props.query.locale;
 
         return (
@@ -279,7 +279,7 @@ export default class extends React.Component {
                     </div>
                 </section> */}
 
-                <section className="s-section target-section" id="schedule">
+                {/* <section className="s-section target-section" id="schedule">
                     <div className="row">
                         <div className="col-block">
                         <h4 className="item-title">{this.translate('section04.title')}</h4>
@@ -303,8 +303,23 @@ export default class extends React.Component {
                         </div>)}
                     </div>
                 </div>
+                </section> */}
+                
+                <section className="s-section target-section" id="connect">
+                    <div className="row section-header">
+                        <div className="col-block">
+                            <h4 className="item-title">{this.translate('section04.title')}</h4>
+                        </div>
+                    </div>
+                    <div className="row">
+                    {this.translate('section04.iframe') !== "0" ? (
+                            <div className="googleCalendar" dangerouslySetInnerHTML={ {__html: this.translate('section04.iframe')}}></div>                    
+                    ): 
+                        (<div>
+                            <br/><h6 style={{"margin-inline-start": "1.2rem"}}>Coming Soon</h6>
+                        </div>)}
+                    </div>
                 </section>
-
                 
                 <section className="s-section target-section" id="connect">
                     <div className="row section-header">

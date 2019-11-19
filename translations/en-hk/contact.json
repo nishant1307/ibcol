@@ -18,10 +18,10 @@
       "flag":"flag-icon-hk",
       "facebookUrl":"",
       "telegramUrl":"",
-      "headTitle":"National Committee Head(s)",
+      "headTitle":"National Committee",
       "headInfo":[
-        {"name":"Kavis Cho","linkedInUrl":"https://www.linkedin.com/in/kavischo"},
-        {"name":"Jacky Chan","linkedInUrl":"https://www.linkedin.com/in/jackychan321"}
+        {"title":"President","name":"Mr. Kavis Cho","linkedInUrl":"https://www.linkedin.com/in/kavischo"},
+        {"title":"Secretary General","name":"Mr. Jacky Chan","linkedInUrl":"https://www.linkedin.com/in/jackychan321"}
       ],
       "fundingTitle":"Charity/Fund",
       "deadlineTitle":"Deadline to Submit",

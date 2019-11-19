@@ -5071,3 +5071,18 @@ th.first-child-padding{
 #download {
   display:none;
 }
+
+.googleCalendar{
+  position: relative; 
+  padding-bottom: 75%;
+   height: 0; 
+   overflow: hidden;
+}
+
+.googleCalendar iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
