@@ -41,6 +41,7 @@ module.exports = {
   "en-ua": require('./en-ua'),
   // "en-ug": require('./en-ug'),
   "en-us": require('./en-us'),
+  "en-vn": require('./en-vn'),  
   // "en-za": require('./en-za'),
   // "en-zm": require('./en-zm'),
   // "en-zw": require('./en-zw'),
