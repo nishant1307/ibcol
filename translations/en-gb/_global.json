@@ -26,7 +26,7 @@
   },
   "closeMenu":"Close",
   "navigateTo":"Navigate to...",
-  "copyright":"Copyright © 2018-2019 International Blockchain Olympiad. All rights reserved.",
+  "copyright":"Copyright © 2016-2020 International Blockchain Olympiad. All rights reserved.",
   "filepond": {
     "labelMaxFileSize": "Maximum file size is {filesize}",
     "labelMaxTotalFileSizeExceeded": "File is too large",
