@@ -1,10 +1,10 @@
 module.exports = {
   "_locale": {
     "disable": true,
-    "id": "en-ie",
-    "name": "Ireland",
+    "id": "en-nl",
+    "name": "Netherlands",
     "label": "Welcome",
-    "flag": "ie.svg"
+    "flag": "nl.svg"
   },
   "_global": require('./_global.json'),
   "_countries": require('./_countries.json'),
