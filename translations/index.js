@@ -15,6 +15,7 @@ module.exports = {
   "en-ca": require('./en-ca'),
   // "en-cm": require('./en-cm'),
   "en-gb": require('./en-gb'),
+  "en-et": require('./en-et'),
   // "en-gh": require('./en-gh'),
   // "en-gi": require('./en-gi'),
   // "en-gm": require('./en-gm'),
