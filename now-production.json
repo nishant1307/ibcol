@@ -79,7 +79,7 @@
       "dest": "/next/landing?locale=$locale"
     },
     {
-      "src": "/(?<locale>[^/]*)/(?<page>(home|how|ambassadors|sponsors|contact|registration|admin|winners|schedule|join-us|about|ibcol|program|rules|supporters|landing))/",
+      "src": "/(?<locale>[^/]*)/(?<page>(home|contact|schedule|join-us|ibcol|rules|landing))/",
       "dest": "/next/$page?locale=$locale",
       "headers": {
         "cache-control": "s-maxage=31536000, max-age=0"
