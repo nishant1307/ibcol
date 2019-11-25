@@ -50,7 +50,7 @@ routes
   // .add({ name: 'sponsors', pattern: '/:locale/sponsors/', page: 'next/sponsors' })
   // .add({ name: 'schedule', pattern: '/:locale/schedule/', page: 'next/schedule' })
   // .add({ name: 'winners', pattern: '/:locale/winners/', page: 'next/winners' })
-  .add({ name: 'program', pattern: '/:locale/schedule/', page: 'next/program' })
+  .add({ name: 'program', pattern: '/:locale/program/', page: 'next/program' })
   .add({ name: 'rules', pattern: '/:locale/rules/', page: 'next/rules' })
   // .add({ name: 'supporters', pattern: '/:locale/supporters/', page: 'next/supporters' })
   .add({ name: 'contact', pattern: '/:locale/contact/', page: 'next/contact' })
