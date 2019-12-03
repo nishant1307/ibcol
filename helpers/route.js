@@ -62,7 +62,8 @@ const findDefaultPath = (req, prefix = "") => {
     
 
 
-    const id = (geo === null) ? undefined : translationsMapping[geo.country];
+    // const id = (geo === null) ? undefined : translationsMapping[geo.country];
+    const id =undefined;
 
     translationId = 
       (id === undefined) ? 

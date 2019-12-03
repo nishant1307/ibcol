@@ -1,5 +1,6 @@
 module.exports = {
-  "_default": require('./en-hk'),
+  "_default": require('./2020'),
+  "2020": require('./2020'),
   // "ar": require('./ar'),
   // "de-at": require('./de-at'),
   // "de-be": require('./de-be'),
