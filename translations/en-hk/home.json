@@ -2,12 +2,13 @@
     "pageTitle": "International Blockchain Olympiad",
     "seoDescription": "International Blockchain Olympiad is a multidisciplinary design and building competition. IBCOL 2019 invites students from around the world to solve real-world challenges through decentralised applications.",
     "ogImage": "static/images/ogimage.jpg",
-    "mainHeading": "The world's largest gathering of student talent in blockchain",
-    "subHeading": "International Blockchain Olympiad is a multidisciplinary design competition that invites students from around the world to apply blockchain and cryptography for solving real-world challenges.",
-    "btnJoinTeam": "JOIN THE TEAM",
-    "btnJoinMalingList": "JOIN MAILING LIST",
+    "mainHeading": "Offer Decentralized Solutions to Real-World Challenges",
+    "subHeading": "Meet Hong Kong’s top talents and professionals across all disciplines and industries on 13 June 2020",
+    "leftBtn": "PROGRAMME SCHEDULE",
+    "rightBtn": "RULE & ELIGIBILITY",
     "section01": {
-        "partnerTitle": "Partners"
+        "title": "About the Blockchain Olympiad",
+        "contentHTML":""
     },
     "section02": {
         "title": "Vision & Mission Statement",
