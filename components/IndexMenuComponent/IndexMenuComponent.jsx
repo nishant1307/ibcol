@@ -202,7 +202,7 @@ class IndexMenuComponent extends React.Component {
 
         <div className="header-logo">
           {/* <Link prefetch route="index" params={{ locale }}> */}
-            <a className="site-logo" href="#home">
+            <a className="site-logo" href="/">
               <img src="/static/images/logo-international-blockchain-olympiad-(ibcol)-subpage.png" alt={this.translate('logoTag')} />
             </a>
           {/* </Link> */}
