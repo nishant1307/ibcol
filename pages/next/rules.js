@@ -80,99 +80,78 @@ export default class extends React.Component {
                             <a href="#projects"><h4 className="subhead">Projects</h4></a>
                             <a href="#symposium"><h4 className="subhead">Symposium</h4></a>
                             <a href="#presentation"><h4 className="subhead">Presentation</h4></a>
-                            <a href="#registration"><h4 className="subhead">Registration</h4></a>
                         </div>
                     </div>
                 </section>
                 <section className="s-section target-section" id="contestants">
                     <div className="row section-header">
-                        <div className="col-block">
                             <h4 className="item-title">{this.translate('section01.title')}</h4>
-                        </div>
                     </div>
                     <div className="row">
-                        <div className="col-block">
-                            {
-                                this.translate('section01.content').map((content, index) => {
-                                    return <div className="col-block" key={index}>
-                                        <h5 style={{marginTop:0}}>{content}</h5>
-                                    </div>
-                                })
-                            }
+                        <ul>
+                         {this.translate('section01.content').map((content, index) => {
+                            return <li key={index}>
+                                <p style={{marginTop:0, marginBottom:0,color:"#000000"}}>{content}</p>
+                            </li>
+                        })}
+                        </ul>
                         </div>
-                    </div>
                 </section>
                 <section className="s-section target-section" id="teams">
-                    <div className="row section-header">
-                        <div className="col-block">
+                <div className="row section-header">
                             <h4 className="item-title">{this.translate('section02.title')}</h4>
-                        </div>
                     </div>
                     <div className="row">
-                        <div className="col-block">
-                            {
-                                this.translate('section02.content').map((content, index) => {
-                                    return <div className="col-block" key={index}>
-                                        <h5 style={{marginTop:0}}>{content}</h5>
-                                    </div>
-                                })
-                            }
+                        <ul>
+                         {this.translate('section02.content').map((content, index) => {
+                            return <li key={index}>
+                                <p style={{marginTop:0, marginBottom:0,color:"#000000"}}>{content}</p>
+                            </li>
+                        })}
+                        </ul>
                         </div>
-                    </div>
                 </section>
                 <section className="s-section target-section" id="projects">
-                    <div className="row section-header">
-                        <div className="col-block">
+                <div className="row section-header">
                             <h4 className="item-title">{this.translate('section03.title')}</h4>
-                        </div>
                     </div>
                     <div className="row">
-                        <div className="col-block">
-                            {
-                                this.translate('section03.content').map((content, index) => {
-                                    return <div className="col-block" key={index}>
-                                        <h5 style={{marginTop:0}}>{content}</h5>
-                                    </div>
-                                })
-                            }
+                        <ul>
+                         {this.translate('section03.content').map((content, index) => {
+                            return <li key={index}>
+                                <p style={{marginTop:0, marginBottom:0,color:"#000000"}}>{content}</p>
+                            </li>
+                        })}
+                        </ul>
                         </div>
-                    </div>
                 </section>
                 <section className="s-section target-section" id="symposium">
-                    <div className="row section-header">
-                        <div className="col-block">
+                <div className="row section-header">
                             <h4 className="item-title">{this.translate('section04.title')}</h4>
-                        </div>
                     </div>
                     <div className="row">
-                        <div className="col-block">
-                            {
-                                this.translate('section04.content').map((content, index) => {
-                                    return <div className="col-block" key={index}>
-                                        <h5 style={{marginTop:0}}>{content}</h5>
-                                    </div>
-                                })
-                            }
+                        <ul>
+                         {this.translate('section04.content').map((content, index) => {
+                            return <li key={index}>
+                                <p style={{marginTop:0, marginBottom:0,color:"#000000"}}>{content}</p>
+                            </li>
+                        })}
+                        </ul>
                         </div>
-                    </div>
                 </section>
                 <section className="s-section target-section last" id="presentation">
-                    <div className="row section-header">
-                        <div className="col-block">
+                <div className="row section-header">
                             <h4 className="item-title">{this.translate('section05.title')}</h4>
-                        </div>
                     </div>
                     <div className="row">
-                        <div className="col-block">
-                            {
-                                this.translate('section05.content').map((content, index) => {
-                                    return <div className="col-block" key={index}>
-                                        <h5 style={{marginTop:0}}>{content}</h5>
-                                    </div>
-                                })
-                            }
+                        <ul>
+                         {this.translate('section05.content').map((content, index) => {
+                            return <li key={index}>
+                                <p style={{marginTop:0, marginBottom:0,color:"#000000"}}>{content}</p>
+                            </li>
+                        })}
+                        </ul>
                         </div>
-                    </div>
                 </section>
 
             

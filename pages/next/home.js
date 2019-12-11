@@ -115,49 +115,204 @@ export default class extends React.Component {
                                 {this.translate('subHeading')}
                             </h3>
                             <div className="home-content__button">
-                                <a href="join-us" className="btn btn--primary btn--large">
-                                    {this.translate('btnJoinTeam')}
+                                <a href="./program" className="btn btn--primary btn--large">
+                                    {this.translate('leftBtn')}
                                 </a>
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfztPAhKyzk8Qyb4_xOvTHhRZ9uWr128bdSpNZjPcpSdCfrMw/viewform" target="_blank" className="btn btn--large">
-                                    {this.translate('btnJoinMalingList')}
+                                <a href="./rules" className="btn btn--large">
+                                    {this.translate('rightBtn')}
                                 </a>
                             </div>
                         </div>
                     </div>
-
+                </section>
+                <section>
+                    <div className="row">
+                        <div className="block-1-3">
+                            {/* <div className="col-block">
+                                <a href={this.translate('section05.link1')} target="_blank">
+                                    <img style={{"max-height":"450px"}} src={this.translate('section05.icon1')}/>
+                                </a>
+                            </div> */}
+                             <div className="col-block">
+                                 <a href={this.translate('section05.link2')} target="_blank">
+                                    <img style={{"max-height":"450px"}} src={this.translate('section05.icon2')}/>
+                                </a>
+                            </div>
+                            <div className="col-block">
+                                <a href={this.translate('section05.link3')} target="_blank">
+                                    <img style={{"max-height":"450px"}} src={this.translate('section05.icon3')}/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </section>
                 <section className="s-section target-section">
                     <div className="row section-header">
-                        <div className="col-block">
-                            <h1>{this.translate('section02.title')}</h1>
-                        </div>
+                        <h1>{this.translate('section01.title')}</h1>
                     </div>
                     <div className="row">
-                        <div className="col-block">
-                            <h5 style={{marginTop:0}}>{this.translate('section02.content')}</h5>
+                    <p dangerouslySetInnerHTML={{ __html: this.translate('section01.contentHTML') }} />
+                        <div className="block-1-3 icon">
+                            <div className="col-block">
+                                <div className="countries">
+                                        <div dangerouslySetInnerHTML={{ __html: this.translate('section01.icon1') }} />
+                                        <div className="countriesName">
+                                            <h5 style={{ "margin-top": "1.2rem" }}>{this.translate('section01.heading1')}</h5>
+                                            <div><p>{this.translate('section01.desc1')}</p></div>
+                                        </div>
+                                </div>
+                            </div>
+                             <div className="col-block">
+                                <div className="countries">
+                                        <div dangerouslySetInnerHTML={{ __html: this.translate('section01.icon2') }} />
+                                        <div className="countriesName">
+                                            <h5 style={{ "margin-top": "1.2rem" }}>{this.translate('section01.heading2')}</h5>
+                                            <div><p>{this.translate('section01.desc2')}</p></div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div className="col-block">
+                                <div className="countries">
+                                         <div dangerouslySetInnerHTML={{ __html: this.translate('section01.icon3') }} />
+                                        <div className="countriesName">
+                                            <h5 style={{ "margin-top": "1.2rem" }}>{this.translate('section01.heading3')}</h5>
+                                            <div><p>{this.translate('section01.desc3')}</p></div>
+                                        </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
-
-            
                 <section className="s-section target-section">
                     <div className="row section-header">
-                        <div className="col-block">
-                            <h1>{this.translate('section03.title')}</h1>
+                        <h1>{this.translate('section02.title')}</h1>
+                    </div>
+                    <div className="row">
+                        <div className="block-1-3 icon">
+                            <div className="col-block">
+                                <div className="countries">
+                                        <div dangerouslySetInnerHTML={{ __html: this.translate('section02.icon1') }} />
+                                        <div className="countriesName">
+                                            <h5 style={{ "margin-top": "1.2rem" }}>{this.translate('section02.heading1')}</h5>
+                                            <div><p>{this.translate('section02.desc1')}</p></div>
+                                        </div>
+                                </div>
+                            </div>
+                             <div className="col-block">
+                                <div className="countries">
+                                        <div dangerouslySetInnerHTML={{ __html: this.translate('section02.icon2') }} />
+                                        <div className="countriesName">
+                                            <h5 style={{ "margin-top": "1.2rem" }}>{this.translate('section02.heading2')}</h5>
+                                            <div><p>{this.translate('section02.desc2')}</p></div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div className="col-block">
+                                <div className="countries">
+                                         <div dangerouslySetInnerHTML={{ __html: this.translate('section02.icon3') }} />
+                                        <div className="countriesName">
+                                            <h5 style={{ "margin-top": "1.2rem" }}>{this.translate('section02.heading3')}</h5>
+                                            <div><p>{this.translate('section02.desc3')}</p></div>
+                                        </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="col-block">
-                            <h3>An Analogy of Life and Death</h3>
-                            <p>The history of blockchain is analogous to the cycles of life and death in the prehistory of Earth, namely concerning biodiversity, extinction events, and adaptation of species. The Cambrian Explosion is an era approximately 541 million years ago when an unprecedented number of phyla appeared into the fossil records. After several years of low-key development, the blockchain world experienced its own Cambrian Explosion in 2017, driven by the mirage of utopia and fuelled by the abundance of money. Projects and their ICOs expanded and diversified quickly in 2016 and 2017 after ERC-20 was proposed in Nov 2015; the only extinction filter was the inability to raise money, so the majority of projects seem to be winners. The Permian-Triassic Extinction is an event approximately 252 million years ago consisting of several localised events that saw the 96% of all species go extinct when they did not have the means to adapt, aptly named the Great Dying. In the blockchain world, the P-T Extinction event is already happening, has happened already, or is still happening: a study found circa 4% of ICOs were either promising or successful—an ironic coincidence.</p>
-                            <h3>Evolution rather than Revolution</h3>
-                            <p>In the P-T Extinction of blockchain, there exists three big filters: lack of research and technical competence, lack of business competence, and lack of legal and compliance competence. Scams do not survive an obvious lack of solid technology or research, while survivors do not have any business adoption, a familiar epidemic and a classic killer of startups. The final major extinction filter is the awakening of the people to the importance of privacy and lack of privacy preservation by contemporary corporations, especially in light of the Equifax breach and the Facebook “breach” by Cambridge Analytica, coupled with the activation of GDPR—blockchain projects without the foresight of building for privacy preservation shall eventually be consigned to the dustbin of history by the power of law and regulations. The fittest shall survive because of enterprise discipline with competence in technology, legal, and business: those missing tech is all talk, but can’t build; those missing business will “build it and they will come” (classic tech startup pitfall); those missing legal are lawsuits waiting to happen.</p>
-                            <h3>An unprecedented pairing of fresh talent and entrenched problems</h3>
-                            <p>Students represent our future. Because enterprise applications represent the widest reach to all corners of humankind, the IBCOL encourages students to work and contribute to the future of humanity, where blockchain and distributed ledgers contribute immense value to all aspects of society.</p>
+                    </div>
+                </section>
+                        
+                <section className="s-section target-section">
+                    <div className="row section-header">
+                            <h1>{this.translate('section03.title')}</h1>
+                        <div className="row">
+                            <img src={this.translate('section03.mainImage')}/>
+                            <br />
+                            <br />
+                            <div className="historyBtn">
+                                 <a className="btn btn--primary center" href="program">{this.translate('section03.btnText')} </a>
+                            </div>
                         </div>
                     </div>
                 </section>
                 <section className="s-section target-section">
-
+                    <div className="row section-header">
+                        <h1>{this.translate('section04.title')}</h1>
+                    </div>
+                    <div className="row">
+                        <div className="block-1-3 icon">
+                            <div className="col-block">
+                                <div className="countries">
+                                        <div dangerouslySetInnerHTML={{ __html: this.translate('section04.icon1') }} />
+                                        <div className="countriesName">
+                                            <h5 style={{ "margin-top": "1.2rem" }}>{this.translate('section04.heading1')}</h5>
+                                            <div><p>{this.translate('section04.desc1')}</p></div>
+                                        </div>
+                                </div>
+                            </div>
+                             <div className="col-block">
+                                <div className="countries">
+                                        <div dangerouslySetInnerHTML={{ __html: this.translate('section04.icon2') }} />
+                                        <div className="countriesName">
+                                            <h5 style={{ "margin-top": "1.2rem" }}>{this.translate('section04.heading2')}</h5>
+                                            <div><p>{this.translate('section04.desc2')}</p></div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div className="col-block">
+                                <div className="countries">
+                                         <div dangerouslySetInnerHTML={{ __html: this.translate('section04.icon3') }} />
+                                        <div className="countriesName">
+                                            <h5 style={{ "margin-top": "1.2rem" }}>{this.translate('section04.heading3')}</h5>
+                                            <div><p>{this.translate('section04.desc3')}</p></div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* <div className="historyBtn">
+                                 <a className="btn btn--primary center" href={this.translate('section04.btnLink')}>{this.translate('section04.btnText')} </a>
+                         </div> */}
+                    </div>
                 </section>
+                <section className="s-section target-section last">
+                    <div className="row section-header">
+                        <h1>{this.translate('section06.title')}</h1>
+                    </div>
+                    <div className="row">
+                        <div className="block-1-3 icon">
+                            <div className="col-block">
+                                <div className="countries">
+                                        <div dangerouslySetInnerHTML={{ __html: this.translate('section06.icon1') }} />
+                                        <div className="countriesName">
+                                            <h5 style={{ "margin-top": "1.2rem" }}>{this.translate('section06.heading1')}</h5>
+                                            <p dangerouslySetInnerHTML={{ __html: this.translate('section06.desc1HTML') }}/>
+                                        </div>
+                                </div>
+                            </div>
+                             <div className="col-block">
+                                <div className="countries">
+                                        <div dangerouslySetInnerHTML={{ __html: this.translate('section06.icon2') }} />
+                                        <div className="countriesName">
+                                            <h5 style={{ "margin-top": "1.2rem" }}>{this.translate('section06.heading2')}</h5>
+                                            <p dangerouslySetInnerHTML={{ __html: this.translate('section06.desc2HTML') }}/>
+                                        </div>
+                                </div>
+                            </div>
+                            <div className="col-block">
+                                <div className="countries">
+                                         <div dangerouslySetInnerHTML={{ __html: this.translate('section06.icon3') }} />
+                                        <div className="countriesName">
+                                            <h5 style={{ "margin-top": "1.2rem" }}>{this.translate('section06.heading3')}</h5>
+                                            <p dangerouslySetInnerHTML={{ __html: this.translate('section06.desc3HTML') }}/>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* <div className="historyBtn">
+                                 <a className="btn btn--primary center" href={this.translate('section06.btnLink')}>{this.translate('section06.btnText')} </a>
+                         </div> */}
+                    </div>
+                </section>
+
+
             </ThisPageContainerComponent>
         )
     }
