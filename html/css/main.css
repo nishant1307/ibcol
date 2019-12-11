@@ -986,9 +986,10 @@ input[type="button"].btn--primary:focus {
 
 /* button modifiers
 * ------------------------------------------------- */
+
 .btn.full-width,
 button.full-width {
-  width: 100%;
+  width: 50%;
   margin-right: 0;
 }
 
@@ -4151,5 +4152,11 @@ tr.last td {
 }
 .no-bottom {
   margin-bottom: 0 !important;
+}
+.btn-center {
+    display: block !important;
+    width: 40%;
+    margin-left: auto !important; 
+    margin-right: auto !important;
 }
 /*# sourceMappingURL=main.css.map */

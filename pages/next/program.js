@@ -199,121 +199,122 @@ export default class extends React.Component {
                     </div>
                     <div className="row section-header">
                         <div className="col-block">
-                            <a href="#training"><h4 className="subhead">Mentorship</h4></a>
+                            <a href="#training"><h4 className="subhead">Training</h4></a>
+                            {/* <a href="#mentorship"><h4 className="subhead">Mentorship</h4></a> */}
+                            <a href="#submission"><h4 className="subhead">Submission</h4></a>
                             <a href="#competition"><h4 className="subhead">Competition</h4></a>
-                            <a href="#internship"><h4 className="subhead">Internship</h4></a>
-                            <a href="#schedule"><h4 className="subhead">Calendar</h4></a>
-                            <a href="#connect"><h4 className="subhead">Connect</h4></a>
-                            <a href="#signup"><h4 className="subhead">Sign Up</h4></a>
+                            <a href="#calendar"><h4 className="subhead">Calendar</h4></a>
                         </div>
                     </div>
                 </section>
 
                 <section className="s-section target-section" id="training">
                     <div className="row section-header">
-                        <div className="col-block">
-                            <h4 className="item-title">{this.translate('section01.title')}</h4>
-                        </div>
+                        <h1>{this.translate('section01.title')}</h1>
                     </div>
                     <div className="row">
-                        <div className="col-block">
+                     <p>{this.translate('section01.desc')}</p>
+                     <div className="block-1-3 block-tab-full" style={{marginBottom: "0"}}>
                             {
-                                this.translate('section01.content').map((content, index) => {
-                                    return <div className="col-block" key={index}>
-                                        <h5 style={{marginTop:0}}>{content}</h5>
-                                    </div>
-                                })
+                            this.translate('section01.content').map((content, index) => {
+                                return <div className="col-block" key={index}>
+                                    <div className="training-box">
+                                        <h5 style={{marginTop:0,marginBottom:0}}>{content.sName}</h5>
+                                        <p style={{marginTop:0,marginBottom:0,color:"#000000"}}>{content.fName}</p>
+                                        </div>
+                                        <p style={{fontSize:"1.5rem",minHeight:"325px"}}>{content.desc}</p>
+                                        <a className="btn btn--primary full-width" style={{padding:"0 0",maxHeight:"30px",lineHeight:"2.3rem"}} href={this.translate('section01.btnSameLink')} target="_blank">{content.btnText} </a>
+                                        <br/>
+                                        <br/>
+                                </div>
+                            })
                             }
-                        </div>
+                     </div>
                     </div>
                 </section>
-
+                {/* Mentorship Section */}
+                {/* <section className="s-section target-section" id="mentorship">
+                    <div className="row section-header">
+                        <h1>{this.translate('section02.title')}</h1>
+                    </div>
+                    <div className="row">
+                        <p>{this.translate('section02.desc')}</p>
+                        {
+                            this.translate('section02.content').map((content, index) => {
+                                return <div key={index}>
+                                    <b>{content.key}</b>:  {content.value}
+                                </div>
+                            })
+                            }
+                        <br/>
+                    <a className="btn btn--primary" href={this.translate('section02.btnLink')}>{this.translate('section02.btnText')} </a>
+                    </div>
+                </section> */}
+                <section className="s-section target-section" id="submission">
+                    <div className="row section-header">
+                        <h1>{this.translate('section03.title')}</h1>
+                    </div>
+                    <div className="row">
+                     <div className="block-1-2 block-tab-full" style={{marginBottom: "0"}}>
+                            {
+                            this.translate('section03.content').map((content, index) => {
+                                return <div className="col-block" key={index} style={{height:"150px"}}>
+                                    <div className="training-box">
+                                        <h5 style={{marginTop:0,marginBottom:0}}>{content.key}</h5>
+                                        <p style={{marginTop:0,marginBottom:0,color:"#000000"}}>{content.value}</p>
+                                        </div>
+                                        <p style={{marginBottom:0}}>{content.desc}</p>
+                                        {/* <a className="btn btn--primary full-width" style={{padding:"0 0",maxHeight:"30px",lineHeight:"2.3rem"}} href={content.btnlink}>{content.btnText} </a> */}
+                                        <br/>
+                                        <br/>
+                                </div>
+                            })
+                            }
+                     </div>
+                    </div>
+                </section>
                 <section className="s-section target-section" id="competition">
                     <div className="row section-header">
-                        <div className="col-block">
-                            <h4 className="item-title">{this.translate('section02.title')}</h4>
-                        </div>
+                        <h1>{this.translate('section04.title')}</h1>
                     </div>
                     <div className="row">
-                        <div className="col-block">
-                            {
-                                this.translate('section02.content').map((content, index) => {
-                                    return <div className="col-block" key={index}>
-                                        <h5 style={{marginTop:0}}>{content}</h5>
+                     <p dangerouslySetInnerHTML={{ __html: this.translate('section04.contentHTML') }} />
+                        <div className="block-1-2 icon">
+                          <div className="col-block">
+                                <div className="countries">                                        
+                                    <div dangerouslySetInnerHTML={{ __html: this.translate('section04.icon1') }} />
+                                    <div className="countriesName">
+                                        <h5 style={{ "margin-top": "1.2rem" }}>{this.translate('section04.heading1')}</h5>
+                                        <div><p>{this.translate('section04.desc1')}</p></div>
                                     </div>
-                                })
-                            }
+                                </div>
+                          </div>
+                          <div className="col-block">
+                            <div className="countries">
+                                <div dangerouslySetInnerHTML={{ __html: this.translate('section04.icon2') }} />
+                                    <div className="countriesName">
+                                        <h5 style={{ "margin-top": "1.2rem" }}>{this.translate('section04.heading2')}</h5>
+                                        <p>{this.translate('section04.desc2')}</p>
+                                    </div>                                  
+                            </div>
+                          </div>
                         </div>
+                        {/* <div style={{"width": "55%","display":"block","margin-right": "auto","margin-left": "auto"}}>
+                        <a className="btn btn--primary" href="">{this.translate('section04.leftBtn')} </a>
+                        <a className="btn btn--primary" href="">{this.translate('section04.rightBtn')} </a>
+                        </div> */}
                     </div>
                 </section>
-
-                <section className="s-section target-section" id="internship">
+            
+                <section className="s-section target-section last" id="calendar">
                     <div className="row section-header">
                         <div className="col-block">
-                            <h4 className="item-title">{this.translate('section03.title')}</h4>
+                            <h4 className="item-title">{this.translate('section05.title')}</h4>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-block">
-                            {
-                                this.translate('section03.content').map((content, index) => {
-                                    return <div className="col-block" key={index}>
-                                        <h5 style={{marginTop:0}}>{content}</h5>
-                                    </div>
-                                })
-                            }
-                        </div>
-                    </div>
-                </section>
-                
-                {/* <section className="s-section target-section">
-                    <div className="row section-header">
-                        <div className="col-block">
-                            <h4>{this.translate('section04.title')}</h4>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-block">
-                            
-                        </div>
-                    </div>
-                </section> */}
-
-                {/* <section className="s-section target-section" id="schedule">
-                    <div className="row">
-                        <div className="col-block">
-                        <h4 className="item-title">{this.translate('section04.title')}</h4>
-                        </div>
-                    <div className="schedule">
-                    {this.translate('section04.timeline')[0].events[0].month.length > 0 ? (<table className="scheduleTable">
-                            <thead>
-                            <tr>
-                                <th className="first-child-padding">Year</th>
-                                <th>Month</th>
-                                <th>Date</th>
-                                <th>Event</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {getScheduleInfo}
-                            </tbody>
-                        </table>): 
-                        (<div>
-                            <br/><h6 style={{"margin-inline-start": "1.2rem"}}>Coming Soon</h6>
-                        </div>)}
-                    </div>
-                </div>
-                </section> */}
-                
-                <section className="s-section target-section" id="connect">
-                    <div className="row section-header">
-                        <div className="col-block">
-                            <h4 className="item-title">{this.translate('section04.title')}</h4>
-                        </div>
-                    </div>
-                    <div className="row">
-                    {this.translate('section04.iframe') !== "0" ? (
-                            <div className="googleCalendar" dangerouslySetInnerHTML={ {__html: this.translate('section04.iframe')}}></div>                    
+                    {this.translate('section05.iframe') !== "0" ? (
+                            <div className="googleCalendar" dangerouslySetInnerHTML={ {__html: this.translate('section05.iframe')}}></div>                    
                     ): 
                         (<div>
                             <br/><h6 style={{"margin-inline-start": "1.2rem"}}>Coming Soon</h6>
@@ -321,123 +322,6 @@ export default class extends React.Component {
                     </div>
                 </section>
                 
-                <section className="s-section target-section" id="connect">
-                    <div className="row section-header">
-                        <div className="col-block">
-                            <h4 className="item-title">{this.translate('section05.title')}</h4>
-                        </div>
-                    </div>
-                    <div className="row">
-                        {/* <div className="col-block"> */}
-                            <div dangerouslySetInnerHTML={ {__html: this.translate('section05.iframe')}}></div>
-                        {/* </div> */}
-                    </div>
-                </section>
-
-
-                <section className="s-section target-section last" id="signup">
-                    <div className="row section-header">
-                        <div className="col-block">
-                            <h4 className="item-title">{this.translate('section06.title')}</h4>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-block">
-                            <h3 style={{ marginBottom: "1rem" }}>{this.translate('section06.courseTitle')}</h3>
-                            <p>{this.translate('section06.courseDesc')}</p>
-                        </div>
-                        <div className="col-block">
-                            <div className="card" >
-                                <div className="card-header" id="headingBCX">
-                                    <button className="btnCourses btn-link" onClick={this.toggle}><h4 style={{ marginBottom: "1rem" }}>{this.translate('section06.course01Title')}</h4></button>
-                                </div>
-                                <Collapse isOpened={this.state.collapse}>
-                                    <div className="card-body">
-                                        <div className="course-desc">
-                                            {
-                                                this.translate('section06.course01').map((course, index) => {
-                                                    return <div className="course-desc" key={index}>
-                                                        <h5>{course.course01Heading}</h5>
-                                                        <b>{course.descTitle}</b>
-                                                        <p className="coursesBody">{course.course01Desc}</p>
-                                                        <b>{course.prereqTitle}</b>
-                                                        <p style={{ marginBottom: "1rem" }}>{course.course01Prereq}</p>
-                                                        {course.btnStyle == 'disable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol enrolDisable">
-                                                            {course.btnEnrol}
-                                                        </a>)}
-
-                                                        {course.btnStyle == 'enable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol">
-                                                            {course.btnEnrol}
-                                                        </a>)}
-                                                    </div>
-                                                })
-                                            }
-                                        </div>
-                                    </div>
-                                </Collapse>
-                            </div>
-                            <div className="card" >
-                                <div className="card-header" id="headingBCX">
-                                    <button className="btnCourses btn-link" onClick={this.toggle2}><h4 style={{ marginBottom: "1rem" }}>{this.translate('section06.course02Title')}</h4></button>
-                                </div>
-                                <Collapse isOpened={this.state.collapse2}>
-                                    <div className="card-body">
-                                        <div className="course-desc">
-                                            {
-                                                this.translate('section06.course02').map((course, index) => {
-                                                    return <div className="course-desc" key={index}>
-                                                        <h5>{course.course01Heading}</h5>
-                                                        <b>{course.descTitle}</b>
-                                                        <p className="coursesBody">{course.course01Desc}</p>
-                                                        <b>{course.prereqTitle}</b>
-                                                        <p style={{ marginBottom: "1rem" }}>{course.course01Prereq}</p>
-                                                        {course.btnStyle == 'disable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol enrolDisable">
-                                                            {course.btnEnrol}
-                                                        </a>)}
-
-                                                        {course.btnStyle == 'enable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol">
-                                                            {course.btnEnrol}
-                                                        </a>)}
-                                                    </div>
-                                                })
-                                            }
-                                        </div>
-                                    </div>
-                                </Collapse>
-                            </div>
-
-                            <div className="card" >
-                                <div className="card-header" id="headingBCX">
-                                    <button className="btnCourses btn-link" onClick={this.toggle3}><h4 style={{ marginBottom: "1rem" }}>{this.translate('section06.course03Title')}</h4></button>
-                                </div>
-                                <Collapse isOpened={this.state.collapse3}>
-                                    <div className="card-body ">
-                                        <div className="course-desc">
-                                            {
-                                                this.translate('section06.course03').map((course, index) => {
-                                                    return <div className="course-desc" key={index}>
-                                                        <h5>{course.course01Heading}</h5>
-                                                        <b>{course.descTitle}</b>
-                                                        <p className="coursesBody">{course.course01Desc}</p>
-                                                        <b>{course.prereqTitle}</b>
-                                                        <p style={{ marginBottom: "1rem" }}>{course.course01Prereq}</p>
-                                                        {course.btnStyle == 'disable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol enrolDisable">
-                                                            {course.btnEnrol}
-                                                        </a>)}
-
-                                                        {course.btnStyle == 'enable' && (<a href={course.url} target="_blank" className="btn btn--primary btnEnrol">
-                                                            {course.btnEnrol}
-                                                        </a>)}
-                                                    </div>
-                                                })
-                                            }
-                                        </div>
-                                    </div>
-                                </Collapse>
-                            </div>
-                        </div>
-                    </div>
-                </section>
                 {/* End of Training Section */}
             </ThisPageContainerComponent >
         )

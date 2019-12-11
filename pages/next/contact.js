@@ -39,7 +39,6 @@ const ThisPageContainerComponent = styled(PageContainerComponent)`
 
 
 export default class extends React.Component {
-  state = { communitiesInfo: [], XBCOLContactInfo: [], schoolChapContactInfo: [] }
   static async getInitialProps({ query }) {
     return { query }
   }
@@ -120,57 +119,19 @@ export default class extends React.Component {
           </div>
         </section>
 
-        <section className="s-section target-section">
+        <section className="s-section target-section last">
           <div className="row">
             <div className="block-1-2 block-tab-full">
               <div className="col-block">
                 <div className="item-process__text">
-                  <h3>{this.translate('mailingAddressTitle')}</h3>
                   <p dangerouslySetInnerHTML={{ __html: this.translate('mailingAddressHTML') }} />
-                </div>
-              </div>
-              <div className="col-block">
-                <div className="item-process__text">
-                  <h3>{this.translate('emailAddressTitle')}</h3>
-                  <p>
-                    {this.translate('generalEnquiriesLabel')}<br />
-                    <a href={`mailto:${this.translate('generalEnquiriesEmail')}`}>{this.translate('generalEnquiriesEmail')}</a>
-                  </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
         
-        <section className="target-section list-last">
-        {this.translate('XBCOL.headInfo')[0].name.length > 0 && (
-          <div className="row col">
-            <div className="sm">
-              <span className={classNames("flag-icon", this.translate('XBCOL.flag'))}></span>
-              <h3 className="sm-title flag">{this.translate('XBCOL.title')}</h3>
-              {this.translate('XBCOL.facebookUrl').length > 0 && (
-                <a href={this.translate('XBCOL.facebookUrl')} target="_blank">
-                  <img className="png-fb-icon" src={this.translate('facebookIcon')} />
-                </a>)}
-              {this.translate('XBCOL.telegramUrl').length > 0 && (
-                <a href={this.translate('XBCOL.telegramUrl')} target="_blank">
-                  <img className="png-tg-icon" src={this.translate('telegramIcon')} />
-                </a>)}
-            </div>
-            <a href="/join-us" className="btn btn--primary btn-sm-joinus">Join Us</a>
-            <h4 className="head-title">{this.translate('XBCOL.headTitle')}</h4>
-            <ul><div className="block-1-2">{getXBCOLContactInfo}</div></ul>
-            
-            {this.translate('schoolChapter.schoolInfo')[0].fName.length > 0 && (
-              <div>
-                <h4 className="sm-title  head-title">{this.translate('schoolChapter.headTitle')}</h4>
-                <a href="/join-us" className="btn btn--primary btn-sm-joinus">Join Us</a>
-                <ul><div className="block-1-2">{getSchoolChapContactInfo}</div></ul>
-              </div>
-            )}  
         
-          </div>)}
-        </section>
       </ThisPageContainerComponent>
     )
   }

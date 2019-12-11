@@ -8,6 +8,9 @@ import PageContainerComponent from 'components/PageContainerComponent';
 import Head from 'next/head';
 import jQuery from 'jquery';
 import { Link } from '/routes';
+import classNames from 'classnames';
+import { padding } from 'polished';
+
 
 const $ = jQuery;
 
@@ -35,6 +38,49 @@ const ThisPageContainerComponent = styled(PageContainerComponent)`
 `;
 
 export default class extends React.Component {
+    state = { amCommitteesInfo: [
+        {"key":"br","value":"BR-BCOL (Brazil)"},
+        {"key":"ca","value":"CA-BCOL (Canada)"},
+        {"key":"cl","value":"CL-BCOL (Chile)"},
+        {"key":"mx","value":"MX-BCOL (Mexico)"},
+        {"key":"us","value":"US-BCOL (United States)"}                
+        ], 
+        asiaCommitteesInfo: [
+            {"key":"au","value":"AU-BCOL (Australia)"},
+            {"key":"bd","value":"BD-BCOL (Bangladesh)"},
+            {"key":"cn","value":"CN-BCOL (China)"},
+            {"key":"hk","value":"HK-BCOL (Hong Kong)"},
+            {"key":"id","value":"ID-BCOL (Indonesia)"},
+            {"key":"in","value":"IN-BCOL (India)"},
+            {"key":"jp","value":"JP-BCOL (Japan)"},
+            {"key":"kh","value":"KH-BCOL (Cambodia)"},
+            {"key":"kr","value":"KR-BCOL (South Korea)"},
+            {"key":"mn","value":"MN-BCOL (Mongolia)"},
+            {"key":"my","value":"MY-BCOL (Malaysia)"},
+            {"key":"nz","value":"NZ-BCOL (New Zealand)"},
+            {"key":"ph","value":"PH-BCOL (Philippines)"},
+            {"key":"pk","value":"PK-BCOL (Pakistan)"},
+            {"key":"sg","value":"SG-BCOL (Singapore)"},
+            {"key":"th","value":"TH-BCOL (Thailand)"},
+            {"key":"tw","value":"TW-BCOL (Taiwan)"},
+            {"key":"vn","value":"VN-BCOL (Vietnam)"}            
+        ], 
+        euCommitteesInfo: [
+            {"key":"ch","value":"CH-BCOL (Switzerland)"},
+            {"key":"cz","value":"CZ-BCOL (Czechia)"},
+            {"key":"de","value":"DE-BCOL (Germany)"},
+            {"key":"ee","value":"EE-BCOL (Estonia)"},
+            {"key":"et","value":"ET-BCOL (Ethiopia)"},
+            {"key":"fr","value":"FR-BCOL (France)"},
+            {"key":"gb","value":"GB-BCOL (United Kingdom)"},
+            {"key":"hu","value":"HU-BCOL (Hungary)"},
+            {"key":"ie","value":"IE-BCOL (Ireland)"},
+            {"key":"nl","value":"NL-BCOL (Netherlands)"},
+            {"key":"pl","value":"PL-BCOL (Poland)"},
+            {"key":"ru","value":"RU-BCOL (Russia)"},
+            {"key":"sk","value":"SK-BCOL (Slovakia)"},
+            {"key":"ua","value":"UA-BCOL (Ukraine)"}            
+        ] }
     static async getInitialProps({ req, res, query }) {
         return { query }
     }
@@ -78,62 +124,83 @@ export default class extends React.Component {
                     <div className="home-content">
                         <div className="row home-content__main">
                             <h1>
-                                The world's largest gathering of student talent in blockchain
+                                Will you sit on the sidelines or get in on the game?
                             </h1>
                             <br />
                             <br />
                             <h3 style={{ "fontSize": "2.6rem" }}>
-                                International Blockchain Olympiad is a multidisciplinary design competition that invites students from around the world to apply blockchain and cryptography for solving real-world challenges.
+                                Join the world’s largest gathering of budding and reigning experts in applied blockchain and cryptography across academia, industry, government 
+                            </h3>
+                            <h3 style={{ "fontSize": "2.6rem" }}>
+                                WHAT IS YOUR BACKGROUND?
                             </h3>
                             <div className="home-content__button">
-                                <a href="/en-hk/join-us" className="btn btn--primary btn--large">
-                                    JOIN THE TEAM
+                                <a href="#sponsors" className="btn btn--primary btn--large">
+                                    I'M A COMPANY
                                 </a>
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfztPAhKyzk8Qyb4_xOvTHhRZ9uWr128bdSpNZjPcpSdCfrMw/viewform" target="_blank" className="btn btn--large">
-                                    JOIN MAILING LIST
+                                <a href="#committees" className="btn btn--large">
+                                    I'M A STUDENT
                                 </a>
                             </div>
                         </div>
                     </div>
-
                 </section>
-
-                {/* Start of Vision & Mission Section */}
-                <section className="s-section target-section" id="about">
-                    <div className="row section-header">
-                        <div className="bootstrap-iso col-block">
-                            <h1>Vision & Mission</h1>
+                <section id="sponsors">
+                    <div className="row">
+                        <div className="block-1-3">
+                            {/* <div className="col-block">
+                                <a href={this.translate('section05.link1')} target="_blank">
+                                    <img style={{"max-height":"450px"}} src={this.translate('section05.icon1')}/>
+                                </a>
+                            </div> */}
+                             <div className="col-block">
+                                 <a href="https://www.cb.cityu.edu.hk" target="_blank">
+                                    <img style={{"max-height":"450px"}} src="/static/images/IBCOL-2020-Organiser-CityU-CoB.png"/>
+                                </a>
+                            </div>
+                            <div className="col-block">
+                                <a href="https://www.hkbcs.org" target="_blank">
+                                    <img style={{"max-height":"450px"}} src="/static/images/IBCOL-2020-Organiser-HKBCS.png"/>
+                                </a>
+                            </div>
                         </div>
                     </div>
+                </section>    
+                {/* Start of Vision & Mission Section */}
+                <section className="s-section target-section" id="about">
+                <div className="row section-header">
+                        <h1>About IBCOL</h1>
+                    </div>
                     <div className="row">
-                        <div className="col-block">
-                            <p>
-                                Since 2014, there has been a fight for the public narrative of blockchain. During the euphoria of
-                                the initial coin offering boom, cryptocurrencies hijacked the definition of blockchain. Since the
-                                bubble burst, talk of legitimate blockchain projects is slowly but steadily gaining traction in the
-                                public consciousness. The IBCOL is building a sustainable blockchain talent ecosystem and
-                                take back what it means to work in blockchain. To this end, we have two missions:
-                            </p>
-                            <ul>
-                                <li>
-                                    <b>Promoting Awareness on Blockchain Technology & Applications</b>: students from
-                                    around the world will benefit from the experience of participating in the IBCOL program
-                                    of activities, which includes seminar series, specialised training and workshops,
-                                    mentoring, and networking events besides the actual competitions. This will cultivate a
-                                    genuine interest in the area of innovation, originality, creativity and cutting-edge
-                                    technology and instill the right ethical values in the younger generation for paving way
-                                    for their further exploring blockchain in the future.
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <b>Enhancing Employability by Equipping Participants with helpful Skills</b>: the
-                                    prospective and actual participants will benefit tremendously from the IBCOL
-                                    programme, as they learn practical skills and knowledge outside their disciplines and
-                                    push the boundaries of their comfort zones. Students get a taste of the real world, and
-                                    learn how to identify and overcome challenges in actually making something happen.
-                                </li>
-                            </ul>
+                    <p>The <b>I</b>nternational <b>B</b>lock<b>C</b>hain <b>OL</b>ympiad (<b>IBCOL</b>) invites current and recent students to solve real-world problems with decentralized applications, built with blockchain or distributed ledger technology. This year is the third edition of IBCOL, built on the momentum generated from <a href="/en-hk/ibcol/2018" target="_blank">IBCOL 2018</a> and <a href="/en-hk/ibcol/2019" target="_blank">IBCOL 2019</a></p>
+                        <div className="block-1-3 icon">
+                            <div className="col-block">
+                                <div className="countries">
+                                        <i class='material-icons blue'>work</i> <i class='material-icons black'>work</i> <i class='material-icons red'>work</i> <br/> <i class='material-icons yellow'>business_center</i> <i class='material-icons green'>business_center</i>
+                                        <div className="countriesName">
+                                            <h5 style={{ "margin-top": "1.2rem" }}>Business Case Competition</h5>
+                                            <p>Contestants define their own problem scopes and develop plans to solve it</p>
+                                        </div>
+                                </div>
+                            </div>
+                             <div className="col-block">
+                                <div className="countries">
+                                        <div dangerouslySetInnerHTML={{ __html: "<!-- Academic Conference --> <i class='material-icons blue'>event_seat</i> <i class='material-icons black'>event_seat</i> <i class='material-icons red'>event_seat</i> <br> <i class='material-icons yellow'>airplay</i> <i class='material-icons green'>airplay</i>" }} />
+                                        <div className="countriesName">
+                                            <h5 style={{ "margin-top": "1.2rem" }}>Academic Conference</h5>
+                                            <p>Contestants are expected to submit a whitepaper proposing their solution</p>
+                                        </div>
+                                </div>
+                            </div>
+                            <div className="col-block">
+                                <div className="countries">
+                                         <div dangerouslySetInnerHTML={{ __html: "<!-- Technical Hackathon (optional) --> <i class='material-icons blue'>laptop</i> <i class='material-icons black'>developer_mode</i> <i class='material-icons red'>laptop_chromebook</i> <br> <i class='material-icons yellow'>laptop_windows</i> <i class='material-icons green'>laptop_mac</i>"}} />
+                                        <div className="countriesName">
+                                            <h5 style={{ "margin-top": "1.2rem" }}>Technical Hackathon (optional)</h5>
+                                            <p>Contestants may build something to impress investors and employers</p>
+                                        </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -142,278 +209,86 @@ export default class extends React.Component {
 
                 {/* Start of Objective Section */}
                 <section className="s-section target-section">
-                    <div className="row section-header">
-                        <div className="bootstrap-iso col-block">
-                            <h1>Objective</h1>
-                        </div>
+                <div className="row section-header">
+                        <h1>Why now</h1>
                     </div>
                     <div className="row">
-                        <div className="col-block">
-                            <p>
-                                The IBCOL 2020 Programme
-                           </p>
-                            <ul>
-                                <li>
-                                    Provides a world-class competition that highlights the challenges of applying
-                                    blockchain and distributed ledger technologies to real-world applications
-                                </li>
-                                <li>
-                                    Promotes disciplined, multidisciplinary approach to building enterprise blockchain and
-                                    distributed ledger applications, from technical, business, and legal perspectives
-                                </li>
-                                <li>
-                                    Provides a forum for cross-cultural exchange of ideas and sharing of experience
-                                    among students, advisors, and overall between academia, industry, and government.
-                                </li>
-                                <li>
-                                    Encourages students from around the world to learn and know more about blockchain.
-                                </li>
 
-                            </ul>
+                        <div className="block-1-3 icon">
+                            <div className="col-block">
+                                <div className="countries">
+                                        <div dangerouslySetInnerHTML={{ __html: "<!-- Countless Use Cases --> <i class='material-icons blue'>developer_mode</i> <i class='material-icons yellow'>widgets</i> <i class='material-icons black'>devices</i> <br> <i class='material-icons green'>storage</i> <i class='material-icons red'>dock</i> <i class='material-icons purple'>laptop_mac</i>" }} />
+                                        <div className="countriesName">
+                                            <h5 style={{ "margin-top": "1.2rem" }}>Countless Use Cases</h5>
+                                            <p>Blockchain will generate over $24 trillion HKD by 2030 across industry verticals</p>
+                                        </div>
+                                </div>
+                            </div>
+                             <div className="col-block">
+                                <div className="countries">
+                                        <div dangerouslySetInnerHTML={{ __html: "<!-- Huge Demand for Talent --> <i class='material-icons blue'>face</i> <i class='material-icons yellow'>face</i> <i class='material-icons black'>face</i> <br> <i class='material-icons green'>face</i> <i class='material-icons red'>face</i> <i class='material-icons purple'>face</i>" }} />
+                                        <div className="countriesName">
+                                        <h5 style={{ "margin-top": "1.2rem" }}>Huge Demand for Talent</h5>
+                                            <p>There is a lack of qualified blockchain professionals around the world</p>
+                                        </div>
+                                </div>
+                            </div>
+                            <div className="col-block">
+                                <div className="countries">
+                                         <div dangerouslySetInnerHTML={{ __html: "<!-- Renewed Interest in Blockchain --> <i class='material-icons blue'>show_chart</i> <i class='material-icons black'>account_balance</i> <i class='material-icons red'>local_hospital</i> <br> <i class='material-icons yellow'>local_shipping</i> <i class='material-icons green'>color_lens</i>"}} />
+                                        <div className="countriesName">
+                                            <h5 style={{ "margin-top": "1.2rem" }}>Renewed Interest in Blockchain</h5>
+                                            <p>While cryptocurrencies waned, business and governments continued to explore</p>
+                                        </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
                 {/* End of Objective Section */}
 
-                {/* Start of History Section */}
-                <section className="s-section target-section" id="history">
-                    <div className="row section-header">
-                        <div className="col-block">
-                            <h1>History of IBCOL</h1>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="block-1-2 block-tab-full">
-                            <div className="col-block">
-                                {/* <div className="historyBtn">
-                                    <Link prefetch route="2019" params="en-hk">
-                                        <a className="btn btn--primary"> International Blockchain Olympiad 2019 </a>
-                                    </Link>
-                                </div>
-                                <div className="historyBtn">
-                                    <Link prefetch route="2018" params="en-hk">
-                                        <a className="btn btn--primary"> International Blockchain Olympiad 2018 </a>
-                                    </Link>
-                                </div> */}
-                                <div className="historyBtn">
-                                    {/* <Link prefetch route="2019" params="en-hk"> */}
-                                        <a className="btn btn--primary" href="/en-hk/ibcol/2019"> International Blockchain Olympiad 2019 </a>
-                                    {/* </Link> */}
-                                </div>
-                                <div className="historyBtn">
-                                    {/* <Link prefetch route="2018" params="en-hk"> */}
-                                        <a className="btn btn--primary" href="/en-hk/ibcol/2018"> International Blockchain Olympiad 2018 </a>
-                                    {/* </Link> */}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                {/* End of History Section */}
-
                 {/* Start of Countries Section */}
-                <section className="s-section target-section" id="countries">
+                <section className="s-section target-section" id="committees">
                     <div className="row section-header">
-                        <div className="col-block">
                             <h1>Blockchain Olympiad Committees</h1>
-                        </div>
                     </div>
                     <div className="row">
-                        <div className="block-1-6">
-                    
+                        <p>IBCOL 2020 is a competition among nominated delegates from around the world. If you would like to participate, find out more from the organizing committee of your region. If you would like to propose a new committee or join one, please <a href="mailto:pmo@ibcol.org?subject=X-BCOL">let us know</a> today!</p>
+                        <div className="block-1-3 block-tab-full">
                             <div className="col-block">
-                                <div className="countries">
-                                    <a href="/en-ca/home" target="_blank">
-                                        <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/ca.svg" />
-                                        </div>
-                                        <div className="countriesName">
-                                            Canada
+                            <h5 style={{ "margin-top": "1.2rem" }}>Americas</h5>
+                            {this.state.amCommitteesInfo.map((content, index) => {
+                                return <div className="sm">
+                                    <span className={classNames("flag-icon", `flag-icon-${content.key}`)}></span>
+                                    {/*href={`/en-${content.key}/home`}*/}
+                                <a style={{padding:"0 0 0 10px"}}  target="_blank" className="sm-title flag">{content.value}</a>
                                     </div>
-                                    </a>
-                                </div>
+                                })}
+                            </div>
+                            <div className="col-block">                            
+                            <h5 style={{ "margin-top": "1.2rem" }}>Asia-Pacific</h5>
+                            {this.state.asiaCommitteesInfo.map((content, index) => {
+                                return <div className="sm">
+                                    <span className={classNames("flag-icon", `flag-icon-${content.key}`)}></span>
+                                    {/*href={`/en-${content.key}/home`}*/}
+                                    {content.key =="hk" ? (
+                                    <a style={{padding:"0 0 0 10px"}} href={`/en-${content.key}/home`} target="_blank" className="sm-title flag">{content.value}</a>
+                                    ):(<a style={{padding:"0 0 0 10px"}} target="_blank" className="sm-title flag">{content.value}</a>
+                                    )}
+                                    </div>
+                                })}
                             </div>
                             <div className="col-block">
-                                <div className="countries">
-                                    <a href="/en-et/home" target="_blank">
-                                        <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/et.svg" />
-                                        </div>
-                                        <div className="countriesName">
-                                            Ethiopia
+                            <h5 style={{ "margin-top": "1.2rem" }}>Europe/Middle-East/Africa</h5>
+                            {this.state.euCommitteesInfo.map((content, index) => {
+                                return <div className="sm">
+                                    <span className={classNames("flag-icon", `flag-icon-${content.key}`)}></span>
+                                    {/*href={`/en-${content.key}/home`}*/}
+                                <a style={{padding:"0 0 0 10px"}}  target="_blank" className="sm-title flag">{content.value}</a>
                                     </div>
-                                    </a>
-                                </div>
+                                })}
                             </div>
-                            <div className="col-block">
-                                <div className="countries">
-                                    <a href="/en-hk/home" target="_blank">
-                                        <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/hk.svg" />
-                                        </div>
-                                        <div className="countriesName">
-                                            Hong Kong
-                                    </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-block">
-                                <div className="countries">
-                                    <a href="/en-hu/home" target="_blank">
-                                        <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/hu.svg" />
-                                        </div>
-                                        <div className="countriesName">
-                                        Hungary
-                                    </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-block">
-                                <div className="countries">
-                                    <a href="/en-in/home" target="_blank">
-                                        <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/in.svg" />
-                                        </div>
-                                        <div className="countriesName">
-                                            India
-                                    </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-block">
-                                <div className="countries">
-                                    <a href="/en-ie/home" target="_blank">
-                                        <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/ie.svg" />
-                                        </div>
-                                        <div className="countriesName">
-                                            Ireland
-                                    </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-block">
-                                <div className="countries">
-                                    <a href="/en-jp/home" target="_blank">
-                                        <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/jp.svg" />
-                                        </div>
-                                        <div className="countriesName">
-                                            Japan
-                                    </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-block">
-                                <div className="countries">
-                                    <a href="/en-mn/home" target="_blank">
-                                        <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/mn.svg" />
-                                        </div>
-                                        <div className="countriesName">
-                                            Mongolia
-                                    </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-block">
-                                <div className="countries">
-                                    <a href="/en-nl/home" target="_blank">
-                                        <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/nl.svg" />
-                                        </div>
-                                        <div className="countriesName">
-                                            Netherlands
-                                    </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-block">
-                                <div className="countries">
-                                    <a href="/en-ph/home" target="_blank">
-                                        <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/ph.svg" />
-                                        </div>
-                                        <div className="countriesName">
-                                            Philippines
-                                    </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-block">
-                                <div className="countries">
-                                    <a href="/en-sg/home" target="_blank">
-                                        <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/sg.svg" />
-                                        </div>
-                                        <div className="countriesName">
-                                            Singapore
-                                    </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-block">
-                                <div className="countries">
-                                    <a href="/en-tw/home" target="_blank">
-                                        <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/tw.svg" />
-                                        </div>
-                                        <div className="countriesName">
-                                            Taiwan
-                                    </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-block">
-                                <div className="countries">
-                                    <a href="/en-ua/home" target="_blank">
-                                        <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/ua.svg" />
-                                        </div>
-                                        <div className="countriesName">
-                                        Ukraine
-                                    </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-block">
-                                <div className="countries">
-                                    <a href="/en-gb/home" target="_blank">
-                                        <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/gb.svg" />
-                                        </div>
-                                        <div className="countriesName">
-                                            United Kingdom
-                                    </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-block">
-                                <div className="countries">
-                                    <a href="/en-us/home" target="_blank">
-                                        <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/us.svg" />
-                                        </div>
-                                        <div className="countriesName">
-                                            United States
-                                    </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-block">
-                                <div className="countries">
-                                    <a href="/en-vn/home" target="_blank">
-                                        <div className="flag">
-                                            <img className="flagImg" src="../../static/images/flags/4x3/vn.svg" />
-                                        </div>
-                                        <div className="countriesName">
-                                            Vietnam
-                                    </div>
-                                    </a>
-                                </div>
-                            </div>
-                        
+                            
                         </div>
                     </div>
                 </section>
@@ -456,39 +331,12 @@ export default class extends React.Component {
                         <div className="block-1-2 block-tab-full">
                             <div className="col-block">
                                 <div className="item-process__text">
-                                    <h3>Mailing Address</h3>
-                                    <p>IBCOL Organising Committee<br />International Blockchain Olympiad<br />333A, 3/F, Core Building 2,<br />1W Science Park Avenue,<br />Hong Kong</p>
+                                    <p>IBCOL Organising Committee<br />International Blockchain Olympiad
+                                    <br/>333A, 3/F, Core Building 2,<br />1W Science Park Avenue,<br />Hong Kong
+                                    <br/>Email: <a href="mailto:hk@ibcol.org?subject=IBCOL">hk@ibcol.org</a></p>
                                 </div>
                             </div>
-                            <div className="col-block">
-                                <div className="item-process__text">
-                                    <h3>E-mail Address</h3>
-                                    <div className="mailing-address">
-                                        <div >
-                                            <p>
-                                                General Enquiries
-                                    <br />
-                                                <a href={`mailto:info@ibcol.org`}>info@ibcol.org</a>
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                Sponsors
-                                    <br />
-                                                <a href={`mailto:support@ibcol.org`}>support@ibcol.org</a>
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                Media
-                                    <br />
-                                                <a href={`mailto:media@ibcol.org`}>media@ibcol.org</a>
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </section>
