@@ -54,12 +54,12 @@ routes
   .add({ name: 'rules', pattern: '/:locale/rules/', page: 'next/rules' })
   // .add({ name: 'supporters', pattern: '/:locale/supporters/', page: 'next/supporters' })
   .add({ name: 'contact', pattern: '/:locale/contact/', page: 'next/contact' })
-  .add({ name: 'registration', pattern: '/:locale/registration/', page: 'next/registration' })
-  .add({ name: 'registrationLogin', pattern: '/:locale/registration/login/', page: 'next/registration/login' })
-  .add({ name: 'registrationVerification', pattern: '/:locale/registration/verify/:verificationCode/:email/', page: 'next/registration/verify' })
-  .add({ name: 'adminLogin', pattern: '/:locale/admin/', page: 'next/admin' })
-  .add({ name: 'adminVerification', pattern: '/:locale/admin/verify/:verificationCode/:email/', page: 'next/admin/verify' })
-  .add({ name: 'adminDashboard', pattern: '/:locale/admin/dashboard/', page: 'next/admin/dashboard' })
+  // .add({ name: 'registration', pattern: '/:locale/registration/', page: 'next/registration' })
+  // .add({ name: 'registrationLogin', pattern: '/:locale/registration/login/', page: 'next/registration/login' })
+  // .add({ name: 'registrationVerification', pattern: '/:locale/registration/verify/:verificationCode/:email/', page: 'next/registration/verify' })
+  // .add({ name: 'adminLogin', pattern: '/:locale/admin/', page: 'next/admin' })
+  // .add({ name: 'adminVerification', pattern: '/:locale/admin/verify/:verificationCode/:email/', page: 'next/admin/verify' })
+  // .add({ name: 'adminDashboard', pattern: '/:locale/admin/dashboard/', page: 'next/admin/dashboard' })
   .add({ name: 'join-us', pattern: '/:locale/join-us/', page: 'next/join-us' })
 
 module.exports = routes
