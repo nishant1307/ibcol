@@ -160,11 +160,11 @@ class IndexMenuComponent extends React.Component {
           Join Us
         </NavLinkComponent>
       </li> */}
-      <li className="featured">
+      {/* <li className="featured">
         <NavLinkComponent prefetch route="registration" params={{ locale }}>
           {this.translate('menu.registration')}
         </NavLinkComponent>
-      </li>
+      </li> */}
 
       {/* <li>
         <NavLinkComponent prefetch route="schedule" params={{ locale }}>
