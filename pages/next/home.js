@@ -128,11 +128,11 @@ export default class extends React.Component {
                 <section>
                     <div className="row">
                         <div className="block-1-3">
-                            {/* <div className="col-block">
+                            <div className="col-block">
                                 <a href={this.translate('section05.link1')} target="_blank">
                                     <img style={{"max-height":"450px"}} src={this.translate('section05.icon1')}/>
                                 </a>
-                            </div> */}
+                            </div>
                              <div className="col-block">
                                  <a href={this.translate('section05.link2')} target="_blank">
                                     <img style={{"max-height":"450px"}} src={this.translate('section05.icon2')}/>
