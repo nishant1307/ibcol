@@ -148,11 +148,11 @@ export default class extends React.Component {
                 <section id="sponsors">
                     <div className="row">
                         <div className="block-1-3">
-                            {/* <div className="col-block">
-                                <a href={this.translate('section05.link1')} target="_blank">
-                                    <img style={{"max-height":"450px"}} src={this.translate('section05.icon1')}/>
+                            <div className="col-block">
+                                <a href="https://www.hsbc.com.hk" target="_blank">
+                                    <img style={{"max-height":"450px"}} src="/static/images/IBCOL-2020-Organiser-HSBC.png"/>
                                 </a>
-                            </div> */}
+                            </div>
                              <div className="col-block">
                                  <a href="https://www.cb.cityu.edu.hk" target="_blank">
                                     <img style={{"max-height":"450px"}} src="/static/images/IBCOL-2020-Organiser-CityU-CoB.png"/>
