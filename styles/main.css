@@ -5111,3 +5111,9 @@ th.first-child-padding{
     padding: 10px 3px 3px 3px;
     margin-bottom: 15px;
 }
+p.content{
+  margin-top:0;
+  margin-bottom:0; 
+  color: #000000;
+  font-weight: 350;
+}
