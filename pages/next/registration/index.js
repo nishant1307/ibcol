@@ -6,6 +6,7 @@ import update from 'immutability-helper';
 import fetch from 'node-fetch';
 import configs from 'configs';
 import cookies from 'browser-cookies';
+import Collapsible from 'react-collapsible';
 
 
 
@@ -411,56 +412,12 @@ export default class extends React.PureComponent {
           <meta property="og:type" content="website" />
         </Head>
 
-
-
         <section className="s-section target-section first">
-          <div className="row">
+          <div className="row section-header">
             <div className="col-full">
-              <h1>{this.translate('subhead')}</h1>
+              <h3 className="subhead">{this.translate('subhead')}</h3>
             </div>
           </div>
-        </section>
-        <section className="target-section">
-          <div id="extraRegistration" className="row">
-            <div className="col-full">
-              <div id="trainingBox">
-                <h3>{this.translate('rollingDateToSubmit')}:</h3>
-                <Countdown date={new Date(2019, 6, 4, 23, 59, 59, 59)}
-                  renderer={renderer}
-                />
-                <font size="2">{this.translate('teamNotice')}</font>
-                <div>
-                  {this.translate('pmoReminder')}
-                  <a href={`mailto:${this.translate('pmoEmailAddress')}`}>{this.translate('pmoEmailAddress')}</a>
-                </div>
-                <div>
-                  <a href="https://medium.com/international-blockchain-olympiad/blockchain-backed-bubble-tea-58934348c4f3" target="_blank">
-                    {this.translate('seeSampleHere')}</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {
-            isLoggedIn &&
-            <div id="extraRegistration" className="row">
-              <div className="col-full">
-                <div id="trainingBox">
-                  <h3>{this.translate('specialAirfares')}</h3>
-                  <h5>{this.translate('specialAirfaresContent')}</h5>
-                  {/* <h5><a href="http://eventsoffer.cathaypacific.com" target="_blank">{this.translate('specialAirfaresBook')}</a>
-                    {this.translate('specialAirfaresCodeContent')}
-                    <a href="http://www.cathaypacific.com/cx/en_HK/about-us/contact-us/worldwide-offices.html" target="_blank">{this.translate('specialAirfaresCathayPacific')}</a>
-                    {this.translate('specialAirfaresAnd')}
-                    <a href="http://www.cathaypacific.com/cx/en_HK/about-us/contact-us/worldwide-offices.html" target="_blank">{this.translate('specialAirfaresCathayDragon')}</a>
-                    {this.translate('specialAirfaresCodeContent2')}
-                    <font color="red">{this.translate('specialAirfaresCode')}</font>
-                  </h5> */}
-                   <h5 dangerouslySetInnerHTML={{__html: this.translate('specialAirfaresContent2')}}/>
-                </div>
-              </div>
-            </div>
-          }
         </section>
 
         {
@@ -476,11 +433,17 @@ export default class extends React.PureComponent {
                 <div className="col-full">
                   {
                     !isLoggedIn &&
+                    <div>
+                    <p className="content"><b>Already have a registration?</b> Enter to the login page</p>
                     <Link route="registrationLogin" params={{ locale }}>
-                      <a className="btn btn--stroke btn--primary full-width btn--large" style={{ "margin": "1rem auto 6rem" }}>
+                    <div className="historyBtn">
+                                 {/* <a className="btn btn--primary center" href="program">{this.translate('section03.btnText')} </a> */}
+                      <a className="btn btn--stroke btn--primary full-width btn--large" style={{ "margin": "1rem auto" }}>
                         {this.translate('teamLogin')}
                       </a>
+                      </div>
                     </Link>
+                    </div>
                   }
                   {
                     isLoggedIn &&
@@ -491,9 +454,6 @@ export default class extends React.PureComponent {
                       {this.translate('teamLogout')}
                     </a>
                   }
-
-
-
                 </div>
               </div>
 
@@ -503,7 +463,7 @@ export default class extends React.PureComponent {
             {this.state.showConfirmation &&
               <section className="target-section last">
 
-                <div className="row section-header">
+                <div className="row section-header" style={{marginTop:"20px"}}>
                   <div className="col-full">
                     <h3 className="subhead">{isLoggedIn ? this.translate('confirmation.updateTitle') : this.translate('confirmation.title')}</h3>
                   </div>
@@ -542,7 +502,7 @@ export default class extends React.PureComponent {
 
             }
 
-
+            
 
 
             {!this.state.showConfirmation &&
@@ -590,11 +550,116 @@ export default class extends React.PureComponent {
 
                         }}
                       </Query> :
-                      <RegistrationFormComponent onShowConfirmation={this.onShowConfirmation} locale={locale} />
+                      <div>
+                        <section  className="s-section target-section" >
+                        <div className="row">
+                        <div className="col-full">
+                        <p style={{color:"#000000"}}><b>New registration? </b>Please read this brief carefully, or skip on ahead if you are confident!</p>
+                        <div style={{ background:"#fff2cc", padding: "10px 10px 10px 10px"}}>
+                        <Collapsible trigger="‣ Click here to read registration process briefing" 
+                        triggerWhenOpen="▾ Click here to hide registration process briefing"
+                        triggerStyle={{color: "#000000",cursor: "pointer"}}>
+                          <section className="s-section" id="deadline"> 
+                              <div className="row">
+                                <div className="col-full">
+                                  <h4 className="item-title">DEADLINE</h4>
+                                  <div style={{padding:"0 0 0 5px"}}>
+                                  <p className="content">{this.translate('deadline.desc')}</p>
+                                      <ul>
+                                      {this.translate('deadline.content').map((content, index) => {
+                                          return <li key={index}>
+                                          <p className="content"><b>{content.key}</b> {content.value}</p>
+                                          </li>
+                                      })}
+                                      </ul>
+                                      </div>
+                                      </div>
+                                    </div>
+                              </section>
+                            <section className="s-section target-section" id="regFields">
+                            <div className="row">
+                              <div className="col-full">
+                                <h4 className="item-title">REGISTRATION FIELDS</h4>
+                                <div style={{padding:"0 0 0 5px"}}>
+                                <p className="content">{this.translate('regFields.desc')}</p>
+                                </div>
+                                </div>
+                              </div>
+                            </section>
+                            <section className="s-section target-section" id="teamParticular">
+                            <div className="row">
+                              <div className="col-full">
+                                <h4 className="item-title">TEAM PARTICULARS</h4>
+                                <div style={{padding:"0 0 0 5px"}}>
+                                  <ul>
+                                    {this.translate('teamParticular').map((content, index) => {
+                                        return <li key={index}>
+                                        <p className="content" dangerouslySetInnerHTML={{__html: content }}/>
+                                        </li>
+                                    })}
+                                    </ul>
+                                    </div>
+                                </div>
+                              </div>
+                            </section>
+                            <section className="s-section target-section" id="teamParticular">
+                            <div className="row">
+                              <div className="col-full">
+                                <h4 className="item-title">PERSONAL PARTICULARS</h4>
+                                <div style={{padding:"0 0 0 5px"}}>
+                                  <ul>
+                                    {this.translate('personalParticular').map((content, index) => {
+                                        return <li key={index}>
+                                        <p className="content" dangerouslySetInnerHTML={{__html: content }}/>
+                                        </li>
+                                    })}
+                                    </ul>
+                                    </div>
+                                </div>
+                              </div>
+                            </section>
+                            <section className="s-section target-section" id="projectParticular">
+                            <div className="row">
+                              <div className="col-full">
+                                <h4 className="item-title">PROJECT PARTICULARS</h4>
+                                <div style={{padding:"0 0 0 5px"}}>
+                                  <ul>
+                                    {this.translate('projectParticular').map((content, index) => {
+                                        return <li key={index}>
+                                          <p className="content" dangerouslySetInnerHTML={{__html: content }}/>
+                                        </li>
+                                    })}
+                                    </ul>
+                                </div>
+                                </div>
+                              </div>
+                            </section>
+                              <section className="s-section target-section" id="dueDiligence">
+                              <div className="row">
+                                <div className="col-full">
+                                  <h4 className="item-title">DUE DILIGENCE</h4>
+                                  <p className="content" dangerouslySetInnerHTML={{ __html: this.translate('dueDiligence.descHTML')  }} />
+                                    <div style={{padding:"0 0 0 5px"}}>
+                                    <ul>
+                                      {this.translate('dueDiligence.content').map((content, index) => {
+                                          return <li key={index}>
+                                          <p className="content"><b>{content.key}</b> {content.value}</p>
+                                          </li>
+                                      })}
+                                      </ul>
+                                      <p className="content">The Competitions Committee reserves the right to accept or reject competitors on a case-by-case basis.</p>
+                                      </div>
+                                  </div>
+                                </div>
+                              </section>
+                            </Collapsible>
+                            </div>
+                            </div>
+                            </div>
+                            </section>
+                        <RegistrationFormComponent onShowConfirmation={this.onShowConfirmation} locale={locale} />
+                     </div>
                     }
-
-
-
                   </div>
                 </div>
               </section>
