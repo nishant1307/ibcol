@@ -95,6 +95,7 @@
     "react-apollo": "^2.5.0",
     "react-bootstrap": "^1.0.0-beta.11",
     "react-collapse": "^4.0.3",
+    "react-collapsible": "^2.6.2",
     "react-countdown-now": "^2.1.0",
     "react-dom": "^16.8.6",
     "react-filepond": "^7.0.1",

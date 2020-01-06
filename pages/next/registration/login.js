@@ -439,7 +439,10 @@ export default class extends React.PureComponent {
       
       const seed = randomWords({ exactly: 3, join: ' ', formatter: (word)=> word.toUpperCase() });
 
-      // console.log('seed:', seed);
+      console.log('seed:',seed);
+      console.log('email:',this.state.record.loginEmail.trim());
+      console.log('v:',this.props.query.locale);
+      
       
       mutate({
         variables: {

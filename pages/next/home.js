@@ -115,10 +115,10 @@ export default class extends React.Component {
                                 {this.translate('subHeading')}
                             </h3>
                             <div className="home-content__button">
-                                <a href="./program" className="btn btn--primary btn--large">
+                                <a href="https://ibcol.org/en-hk/program" className="btn btn--primary btn--large">
                                     {this.translate('leftBtn')}
                                 </a>
-                                <a href="./rules" className="btn btn--large">
+                                <a href="https://ibcol.org/en-hk/rules" className="btn btn--large">
                                     {this.translate('rightBtn')}
                                 </a>
                             </div>

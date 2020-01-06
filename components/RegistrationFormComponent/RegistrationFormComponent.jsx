@@ -465,33 +465,33 @@ class RegistrationFormComponent extends React.PureComponent {
       email: true,
       phone: true,
       educationRecords: {
-        degree: true,
-        programme: true,
+        degree: false,
+        programme: false,
         institutionName: true,
-        yearOfGraduation: true,
-        state: true,
-        city: true,
+        yearOfGraduation: false,
+        state: false,
+        city: false,
         countryCode: true
       }
     },
     advisorRecords: {
-      firstName: true,
-      lastName: true,
-      email: true,
-      phone: true,
+      firstName: false,
+      lastName: false,
+      email: false,
+      phone: false,
       associationRecords: {
-        title: true,
-        sectorCode: true,
-        organisationName: true,
-        yearCommencement: true,
-        state: true,
-        city: true,
-        countryCode: true
+        title: false,
+        sectorCode: false,
+        organisationName: false,
+        yearCommencement: false,
+        state: false,
+        city: false,
+        countryCode: false
       }
     },
     projectRecords: {
       name: true,
-      projectCategoryKey: true,
+      projectCategoryKey: false,
       description: true
     }
   };
@@ -1148,7 +1148,6 @@ class RegistrationFormComponent extends React.PureComponent {
                 <FormSection>
                   
                   <h3 className="subhead">{this.translate('teamInfo')}</h3>
-
                   <FormRow>
                     <FormField>
                       {this.getLabel('teamName')}
@@ -1198,222 +1197,12 @@ class RegistrationFormComponent extends React.PureComponent {
                           <input type="email" data-name="email" data-section="studentRecords" data-student-index={studentIndex} onChange={this.onRecordChange} value={_.isEmpty(studentRecord['email']) ? "" : studentRecord['email']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
                         </FormField>
                       </FormRow>
-                      
-
-
-
-
-
-                      {
-                        studentRecord.educationRecords.map((educationRecord, studentEducationIndex) => {
-
-                          return <FormSection className="FormSection" key={studentEducationIndex}>
-                            <h3 className="subhead">{this.translate('studentEducationInfo')} {studentRecord.educationRecords.length > 1 && `#${studentEducationIndex + 1}`}
-                              {
-                                studentRecord.educationRecords.length > 1 &&
-                                <div className="remove" data-student-index={studentIndex}
-                                  data-student-education-index={studentEducationIndex} onClick={this.removeStudentEducationRecord}>{this.translate('removeStudentEducationRecord')}</div>
-                              }
-                            </h3>
-
-                            <FormRow>
-                              <FormField>
-                                {this.getLabel('studentRecords.educationRecords.degree')}
-                                <input type="text" data-name="degree" data-section="studentEducationRecords" data-student-index={studentIndex} data-student-education-index={studentEducationIndex} onChange={this.onRecordChange} value={_.isEmpty(educationRecord['degree']) ? "" : educationRecord['degree']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                              </FormField>
-
-                              <FormField>
-                                {this.getLabel('studentRecords.educationRecords.programme')}
-                                <input type="text" data-name="programme" data-section="studentEducationRecords" data-student-index={studentIndex} data-student-education-index={studentEducationIndex} onChange={this.onRecordChange} value={_.isEmpty(educationRecord['programme']) ? "" : educationRecord['programme']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                              </FormField>
-                            </FormRow>
-
-
-                            <FormRow>
-                              <FormField>
-                                {this.getLabel('studentRecords.educationRecords.institutionName')}
-                                <input type="text" data-name="institutionName" data-section="studentEducationRecords" data-student-index={studentIndex} data-student-education-index={studentEducationIndex} onChange={this.onRecordChange} value={_.isEmpty(educationRecord['institutionName']) ? "" : educationRecord['institutionName']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                              </FormField>
-
-                              <FormField>
-                                {this.getLabel('studentRecords.educationRecords.yearOfGraduation')}
-                                <select data-name="yearOfGraduation" data-section="studentEducationRecords" data-student-index={studentIndex} data-student-education-index={studentEducationIndex} onChange={this.onRecordChange} value={_.isEmpty(educationRecord['yearOfGraduation']) ? "" : educationRecord['yearOfGraduation']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred}>
-                                  <option value=""></option>
-                                  {
-                                    this.getGraduationYearRange().map((year, index) => {
-                                      return <option value={year} key={year}>{year}</option>
-                                    })
-                                  }
-                                </select>
-                              </FormField>
-                            </FormRow>
-
-                            <FormRow>
-                              <FormField>
-                                {this.getLabel('studentRecords.educationRecords.studentNumber')}
-                                <input type="text" data-name="studentNumber" data-section="studentEducationRecords" data-student-index={studentIndex} data-student-education-index={studentEducationIndex} onChange={this.onRecordChange} value={_.isEmpty(educationRecord['studentNumber']) ? "" : educationRecord['studentNumber']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                              </FormField>
-
-                              
-                            </FormRow>
-
-
-                            <FormRow>
-                              <FormField>
-                                {this.getLabel('studentRecords.educationRecords.studentCardFrontFile')}
-                                <input disabled style={{display: "none"}} type="text" data-name="studentCardFrontFileId" data-section="studentEducationRecords" data-student-index={studentIndex} data-student-education-index={studentEducationIndex} value={_.isEmpty(educationRecord['studentCardFrontFileId']) ? "" : educationRecord['studentCardFrontFileId']} />
-                                <FilePond
-                                  allowMultiple={false}
-                                  {...this.translate('filepond')}
-                                  acceptedFileTypes="image/png, image/jpeg, application/pdf"
-                                  labelFileTypeNotAllowed={this.translate('studentRecords.educationRecords.studentCardFrontFileType')}
-                                  allowFileSizeValidation={true}
-                                  maxTotalFileSize="100MB"
-                                  ref={ref => this.pondRefs.studentCardFronts[`${studentIndex}-${studentEducationIndex}`] = ref}
-                                  server={filepondServer}
-
-                                  onprocessfileabort={(file)=>{this.onPendingUploads(false)}}
-                                  onprocessfilestart={(file)=>{this.onPendingUploads()}}
-                                  onremovefile={(file)=>{
-                                    // console.log('onremovefile', file);
-                                    this.onPendingUploads(false);
-                                    this.onFilepondChange(file, {
-                                      name: "studentCardFrontFileId",
-                                      section: "studentEducationRecords",
-                                      studentIndex,
-                                      studentEducationIndex
-                                    });
-                                  }}
-                                  onprocessfile={(error, file)=>{
-                                    // console.log('onprocessfile', file, file.serverId);
-                                    this.onPendingUploads(false);
-                                    this.onFilepondChange(file, {
-                                      name: "studentCardFrontFileId",
-                                      section: "studentEducationRecords",
-                                      studentIndex,
-                                      studentEducationIndex
-                                    });
-                                  }}
-
-                                  />
-                                
-                                
-                                
-                              </FormField>
-
-                              
-
-                              <FormField>
-                                {this.getLabel('studentRecords.educationRecords.studentCardBackFile')}
-                                <input disabled style={{display: "none"}} type="text" data-name="studentCardBackFileId" data-section="studentEducationRecords" data-student-index={studentIndex} data-student-education-index={studentEducationIndex} value={_.isEmpty(educationRecord['studentCardBackFileId']) ? "" : educationRecord['studentCardBackFileId']} />
-                                <FilePond
-                                  allowMultiple={false}
-                                  {...this.translate('filepond')}
-                                  acceptedFileTypes="image/png, image/jpeg, application/pdf"
-                                  labelFileTypeNotAllowed={this.translate('studentRecords.educationRecords.studentCardBackFileType')}
-                                  allowFileSizeValidation={true}
-                                  maxTotalFileSize="100MB"
-                                  ref={ref => this.pondRefs.studentCardBacks[`${studentIndex}-${studentEducationIndex}`] = ref}
-                                  
-                                  server={filepondServer}
-                                  onprocessfileabort={(file)=>{this.onPendingUploads(false)}}
-                                  onprocessfilestart={(file)=>{this.onPendingUploads()}}
-                                  onremovefile={(file)=>{
-                                    // console.log('onremovefile', file);
-                                    this.onPendingUploads(false);
-                                    this.onFilepondChange(file, {
-                                      name: "studentCardBackFileId",
-                                      section: "studentEducationRecords",
-                                      studentIndex,
-                                      studentEducationIndex
-                                    });
-                                  }}
-                                  onprocessfile={(error, file)=>{
-                                    // console.log('onprocessfile', file, file.serverId);
-                                    this.onPendingUploads(false);
-                                    this.onFilepondChange(file, {
-                                      name: "studentCardBackFileId",
-                                      section: "studentEducationRecords",
-                                      studentIndex,
-                                      studentEducationIndex
-                                    });
-                                  }}
-
-                                  />
-                                
-                                
-                                
-                              </FormField>
-                            </FormRow>
-
-                            <FormRow>
-                              <FormField>
-                                {this.getLabel('studentRecords.educationRecords.transcriptFile')}
-                                <input disabled style={{display: "none"}} type="text" data-name="transcriptFileId" data-section="studentEducationRecords" data-student-index={studentIndex} data-student-education-index={studentEducationIndex} value={_.isEmpty(educationRecord['transcriptFileId']) ? "" : educationRecord['transcriptFileId']} />
-                                <FilePond
-                                  allowMultiple={false}
-                                  {...this.translate('filepond')}
-
-                                  acceptedFileTypes="image/png, image/jpeg, application/pdf, application/zip"
-                                  labelFileTypeNotAllowed={this.translate('studentRecords.educationRecords.transcriptFileType')}
-                                  allowFileSizeValidation={true}
-                                  maxTotalFileSize="100MB"
-                                  ref={ref => this.pondRefs.transcripts[`${studentIndex}-${studentEducationIndex}`] = ref}
-                                  
-                                  server={filepondServer}
-                                  onprocessfileabort={(file)=>{this.onPendingUploads(false)}}
-                                  onprocessfilestart={(file)=>{this.onPendingUploads()}}
-                                  onremovefile={(file)=>{
-                                    // console.log('onremovefile', file);
-                                    this.onPendingUploads(false);
-                                    this.onFilepondChange(file, {
-                                      name: "transcriptFileId",
-                                      section: "studentEducationRecords",
-                                      studentIndex,
-                                      studentEducationIndex
-                                    });
-                                  }}
-                                  onprocessfile={(error, file)=>{
-                                    // console.log('onprocessfile', file, file.serverId);
-                                    this.onPendingUploads(false);
-                                    this.onFilepondChange(file, {
-                                      name: "transcriptFileId",
-                                      section: "studentEducationRecords",
-                                      studentIndex,
-                                      studentEducationIndex
-                                    });
-                                  }}
-
-                                  />
-                                
-                                
-                                
-                              </FormField>
-
-                              
-                            </FormRow>
-
-
-                            <FormRow>
-                              <FormField>
-                                {this.getLabel('studentRecords.educationRecords.city')}
-                                <input type="text" data-name="city" data-section="studentEducationRecords" data-student-index={studentIndex} data-student-education-index={studentEducationIndex} onChange={this.onRecordChange} value={_.isEmpty(educationRecord['city']) ? "" : educationRecord['city']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                              </FormField>
-
-                              <FormField>
-                                {this.getLabel('studentRecords.educationRecords.state')}
-                                <input type="text" data-name="state" data-section="studentEducationRecords" data-student-index={studentIndex} data-student-education-index={studentEducationIndex} onChange={this.onRecordChange} value={_.isEmpty(educationRecord['state']) ? "" : educationRecord['state']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                              </FormField>
-                            </FormRow>
-
-
-
-
-
-
-                            <FormRow>
-
-                              <FormField>
+                      <FormRow>
+                        <FormField>
+                              {this.getLabel('studentRecords.educationRecords.institutionName')}
+                              <input type="text" data-name="institutionName" data-section="studentEducationRecords" data-student-index={studentIndex} data-student-education-index="0" onChange={this.onRecordChange} value={_.isEmpty(studentRecord.educationRecords[0]['institutionName']) ? "" : studentRecord.educationRecords[0]['institutionName']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
+                        </FormField>
+                        <FormField>
                                 {this.getLabel('studentRecords.educationRecords.countryCode')}
 
                                 <CountryInputSelectComponent
@@ -1421,8 +1210,8 @@ class RegistrationFormComponent extends React.PureComponent {
                                   dataName="countryCode"
                                   dataSection="studentEducationRecords"
                                   dataStudentIndex={studentIndex}
-                                  dataStudentEducationIndex={studentEducationIndex}
-                                  value={_.isEmpty(educationRecord['countryCode']) ? "" : educationRecord['countryCode']}
+                                  dataStudentEducationIndex="0"
+                                  value={_.isEmpty(studentRecord.educationRecords[0]['countryCode']) ? "" : studentRecord.educationRecords[0]['countryCode']}
                                   onFocus={this.onFieldFocused}
                                   onBlur={this.onFieldBlurred}
                                   onChange={this.onRecordChange}
@@ -1430,22 +1219,8 @@ class RegistrationFormComponent extends React.PureComponent {
                                 />
 
                               </FormField>
-                            </FormRow>
+                      </FormRow>
 
-
-
-
-
-                          </FormSection>
-
-                        })
-                      }
-
-                      <FormTools>
-                        <div data-student-index={studentIndex} onClick={this.addStudentEducationRecord}>
-                          {this.translate('addAnotherStudentEducationRecord')}
-                        </div>
-                      </FormTools>
 
                     </FormSection>
                   })
@@ -1460,169 +1235,6 @@ class RegistrationFormComponent extends React.PureComponent {
                 </FormTools>
 
 
-                {
-                  this.state.record.advisorRecords.map((advisorRecord, advisorIndex) => {
-
-                    return <FormSection className="FormSection" key={advisorIndex}>
-                      <h3 className="subhead">{this.translate('advisorInfo')} {this.state.record.advisorRecords.length > 1 && `#${advisorIndex + 1}`}
-
-                        {
-                          this.state.record.advisorRecords.length > 1 &&
-                          <div className="remove" data-advisor-index={advisorIndex} onClick={this.removeAdvisor}>{this.translate('removeAdvisor')}</div>
-                        }
-                      </h3>
-
-                      <FormRow>
-                        <FormField>
-                          {this.getLabel('advisorRecords.firstName')}
-                          <input type="text" data-name="firstName" data-section="advisorRecords" data-advisor-index={advisorIndex} onChange={this.onRecordChange} value={_.isEmpty(advisorRecord['firstName']) ? "" : advisorRecord['firstName']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                        </FormField>
-
-                        <FormField>
-                          {this.getLabel('advisorRecords.lastName')}
-                          <input type="text" data-name="lastName" data-section="advisorRecords" data-advisor-index={advisorIndex} onChange={this.onRecordChange} value={_.isEmpty(advisorRecord['lastName']) ? "" : advisorRecord['lastName']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                        </FormField>
-                      </FormRow>
-
-                      <FormRow>
-                        <FormField>
-                          {this.getLabel('advisorRecords.phoneNumber')}
-                          <input type="tel" data-name="phoneNumber" data-section="advisorRecords" data-advisor-index={advisorIndex} onChange={this.onRecordChange} value={_.isEmpty(advisorRecord['phoneNumber']) ? "" : advisorRecord['phoneNumber']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                        </FormField>
-
-                        <FormField>
-                          {this.getLabel('advisorRecords.email')}
-                          <input type="email" data-name="email" data-section="advisorRecords" data-advisor-index={advisorIndex} onChange={this.onRecordChange} value={_.isEmpty(advisorRecord['email']) ? "" : advisorRecord['email']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                        </FormField>
-                      </FormRow>
-
-
-
-
-
-                      {
-                        advisorRecord.associationRecords.map((associationRecord, associationRecordIndex) => {
-
-                          return <FormSection className="FormSection" key={associationRecordIndex}>
-                            {this.getLabel('advisorRecords.firstName')}
-                            <h3 className="subhead">{this.translate('advisorAssociationInfo')} {advisorRecord.associationRecords.length > 1 && `#${associationRecordIndex + 1}`}
-                              {
-                                advisorRecord.associationRecords.length > 1 &&
-                                <div className="remove" data-advisor-index={advisorIndex}
-                                  data-advisor-education-index={associationRecordIndex} onClick={this.removeAdvisorAssociationRecord}>{this.translate('removeAdvisorAssociationRecord')}</div>
-                              }
-                            </h3>
-
-
-                            <FormRow>
-                              <FormField>
-                                {this.getLabel('advisorRecords.associationRecords.organisationName')}
-                                <input type="text" data-name="organisationName" data-section="advisorAssociationRecords" data-advisor-index={advisorIndex} data-advisor-association-index={associationRecordIndex} onChange={this.onRecordChange} value={_.isEmpty(associationRecord['organisationName']) ? "" : associationRecord['organisationName']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                              </FormField>
-
-                            </FormRow>
-
-                            <FormRow>
-                              <FormField>
-                                {this.getLabel('advisorRecords.associationRecords.title')}
-                                <input type="text" data-name="title" data-section="advisorAssociationRecords" data-advisor-index={advisorIndex} data-advisor-association-index={associationRecordIndex} onChange={this.onRecordChange} value={_.isEmpty(associationRecord['title']) ? "" : associationRecord['title']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                              </FormField>
-
-                              <FormField>
-                                {this.getLabel('advisorRecords.associationRecords.sectorCode')}
-                                <select data-name="sectorCode" data-section="advisorAssociationRecords" data-advisor-index={advisorIndex} data-advisor-association-index={associationRecordIndex} onChange={this.onRecordChange} value={_.isEmpty(associationRecord['sectorCode']) ? "" : associationRecord['sectorCode']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred}>
-                                  <option value=""></option>
-                                  {
-                                    Object.keys(sectors).map((sectorCode, index) => {
-                                      return <option value={sectorCode} key={sectorCode}>{sectors[sectorCode]}</option>
-                                    })
-                                  }
-                                </select>
-                              </FormField>
-                            </FormRow>
-
-
-
-                            <FormRow>
-                              <FormField>
-                                {this.getLabel('advisorRecords.associationRecords.yearCommencement')}
-                                <select data-name="yearCommencement" data-section="advisorAssociationRecords" data-advisor-index={advisorIndex} data-advisor-association-index={associationRecordIndex} onChange={this.onRecordChange} value={_.isEmpty(associationRecord['yearCommencement']) ? "" : associationRecord['yearCommencement']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred}>
-                                  <option value=""></option>
-                                  {
-                                    this.getAssociationYearRange().map((year, index) => {
-                                      return <option value={year} key={year}>{year}</option>
-                                    })
-                                  }
-                                </select>
-                              </FormField>
-
-                              <FormField>
-                                {this.getLabel('advisorRecords.associationRecords.yearCessation')}
-                                <select data-name="yearCessation" data-section="advisorAssociationRecords" data-advisor-index={advisorIndex} data-advisor-association-index={associationRecordIndex} onChange={this.onRecordChange} value={_.isEmpty(associationRecord['yearCessation']) ? "" : associationRecord['yearCessation']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred}>
-                                  <option value=""> - </option>
-                                  {
-                                    this.getAssociationYearRange(associationRecord['yearCommencement']).map((year, index) => {
-                                      return <option value={year} key={year}>{year}</option>
-                                    })
-                                  }
-                                </select>
-                              </FormField>
-                            </FormRow>
-
-
-
-                            <FormRow>
-                              <FormField>
-                                {this.getLabel('advisorRecords.associationRecords.city')}
-                                <input type="text" data-name="city" data-section="advisorAssociationRecords" data-advisor-index={advisorIndex} data-advisor-association-index={associationRecordIndex} onChange={this.onRecordChange} value={_.isEmpty(associationRecord['city']) ? "" : associationRecord['city']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                              </FormField>
-                              <FormField>
-                                {this.getLabel('advisorRecords.associationRecords.state')}
-                                <input type="text" data-name="state" data-section="advisorAssociationRecords" data-advisor-index={advisorIndex} data-advisor-association-index={associationRecordIndex} onChange={this.onRecordChange} value={_.isEmpty(associationRecord['state']) ? "" : associationRecord['state']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                              </FormField>
-                            </FormRow>
-                            <FormRow>
-
-
-                              <FormField>
-                                {this.getLabel('advisorRecords.associationRecords.countryCode')}
-                                <CountryInputSelectComponent
-                                  locale={locale}
-                                  dataName="countryCode"
-                                  dataSection="advisorAssociationRecords"
-                                  dataAdvisorIndex={advisorIndex}
-                                  dataAdvisorAssociationIndex={associationRecordIndex}
-                                  value={_.isEmpty(associationRecord['countryCode']) ? "" : associationRecord['countryCode']}
-                                  onFocus={this.onFieldFocused}
-                                  onBlur={this.onFieldBlurred}
-                                  onChange={this.onRecordChange}
-                                />
-                              </FormField>
-                            </FormRow>
-                          </FormSection>
-                        })
-                      }
-
-                      <FormTools>
-                        <div data-advisor-index={advisorIndex} onClick={this.addAdvisorAssociationRecord}>
-                          {this.translate('addAnotherAdvisorAssociationRecord')}
-                        </div>
-                      </FormTools>
-
-                    </FormSection>
-                  })
-                }
-
-
-                <FormTools>
-                  <div onClick={this.addAdvisor}>
-                    {
-                      this.state.record.advisorRecords.length > 0 ?
-                        this.translate('addAnotherAdvisor')
-                        : this.translate('addAnAdvisor')
-                    }
-                  </div>
-                </FormTools>
 
 
 
@@ -1639,13 +1251,13 @@ class RegistrationFormComponent extends React.PureComponent {
                         }
                       </h3>
 
-                      <h5>{this.translate('extraInfo')} </h5>
+                      {/* <h5>{this.translate('extraInfo')} </h5> */}
                       <FormRow>
                         <FormField>
                           {this.getLabel('projectRecords.name')}
                           <input type="text" data-name="name" data-section="projectRecords" data-project-index={projectIndex} onChange={this.onRecordChange} value={_.isEmpty(projectRecord['name']) ? "" : projectRecord['name']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
                         </FormField>
-
+{/* 
                         <FormField>
                           {this.getLabel('projectRecords.projectCategoryKey')}
                           <select data-name="projectCategoryKey" data-section="projectRecords" data-project-index={projectIndex} onChange={this.onRecordChange} value={_.isEmpty(projectRecord['projectCategoryKey']) ? "" : projectRecord['projectCategoryKey']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred}>
@@ -1656,7 +1268,7 @@ class RegistrationFormComponent extends React.PureComponent {
                               })
                             }
                           </select>
-                        </FormField>
+                        </FormField> */}
                       </FormRow>
                       <FormRow>
                         <FormField>

@@ -122,12 +122,12 @@ class MyApp extends App {
     if (typeof (window) === "object") {
       // console.log('constructor props', props)
       if (props.pageProps.query !== undefined && props.pageProps.query.locale !== undefined) {
-        console.log(props);
+        // console.log(props);
         // console.log('requested locale:', pageProps.query.locale);
         //   // console.log('localeSupported?', localeSupported(pageProps.query.locale));
         //   console.log('constructor pageProps', props.pageProps)
         //   // console.log('router', router);
-        console.log(props.router.route);
+        // console.log(props.router.route);
         // if(props.router.route == "/next" || props.router.route == "/next/history"){
         //   this.state.isIndex = true;
         // }else{
