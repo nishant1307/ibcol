@@ -46,9 +46,9 @@
          {"key":"Expiry Date","value":"of the IBCOL Passport."}
       ]
     },
-  "teamInfo": "Team Information",
+  "teamInfo": "Team Particulars",
   "teamName": "Team Name",
-  "studentInfo": "Student Information",
+  "studentInfo": "Personal Particulars",
   "studentRecords": {
     "firstName": "First Name",
     "lastName": "Last Name",
@@ -122,7 +122,7 @@
   
   "addAnotherAdvisorAssociationRecord": "+ Add Another Association Record",
   "removeAdvisorAssociationRecord": "- Remove Association Record",
-  "projectInfo": "Project Information",
+  "projectInfo": "Project Particulars",
   "extraInfo":"If you have a team but not yet a project decided, please enter n/a and choose any category. You may change this information later.",
   "removeProject": "- Remove Project",
   "addAnotherProject": "+ Add Another Project",
