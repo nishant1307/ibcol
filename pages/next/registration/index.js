@@ -458,6 +458,99 @@ export default class extends React.PureComponent {
               </div>
 
             </section>
+
+
+            {this.state.showConfirmation &&
+              <section className="target-section last">
+
+                <div className="row section-header">
+                  <div className="col-full">
+                    <h3 className="subhead">{isLoggedIn ? this.translate('confirmation.updateTitle') : this.translate('confirmation.title')}</h3>
+                  </div>
+
+                </div>
+
+
+                <div className="row">
+
+                  <div className="block-tab-full">
+                    <div className="col-block" style={{ width: "100%" }}>
+                      <div className="item-process__text">
+                        <p dangerouslySetInnerHTML={{ __html: isLoggedIn ? this.translate('confirmation.updateMessage') : this.translate('confirmation.message') }} />
+                        <p>
+                          <b>{this.translate('confirmation.refTitle')}</b><br />#{this.state.confirmation.ref}
+                        </p>
+                        <p>
+                          <b>{this.translate('confirmation.teamNameTitle')}</b><br />{this.state.confirmation.teamName}
+                        </p>
+                      </div>
+                      <div className="full-width" style={{ marginBottom: "4rem" }}>
+                        <button onClick={() => {
+                          // if (isLoggedIn) {
+                          //   location.reload();
+                          // } else {
+                          //   // this.resetForm();
+                          // }
+                          location.reload();
+                        }}>{isLoggedIn ? this.translate('updateAnother') : this.translate('registerAnother')}</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </section>
+
+            }
+
+            
+
+
+            {!this.state.showConfirmation &&
+              <section className="target-section last">
+
+                <div className="row section-header">
+                  <div className="col-full">
+
+                    {isLoggedIn ?
+                      <Query query={GET_APPLICATIONS} variables={{ accessToken: { email: this.state.tokenCookie.email, token: this.state.tokenCookie.token } }}>
+                        {({ loading, error, data, refetch, networkStatus }) => {
+                          console.log('querying graphql...');
+                          {/*console.log('loading:', loading);
+                            console.log('networkStatus:', networkStatus); */}
+                          {/* console.log('error', error);
+                            console.log('data', data); */}
+                          {/* if ((networkStatus === 4) || loading) return <div className="full-width" style={{textAlign: 'center'}}>
+                                <><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></>
+                              </div>; */}
+
+                          if (error) return `Error! ${error.message}`;
+
+                          if (!_.isEmpty(data)) {
+
+                            const existingApplications = data.getApplications;
+
+                            {/* console.log('existingApplications', existingApplications); */ }
+
+                            if (this.state.currentSelectedRecordIndex === undefined) {
+                              //console.log('data', data);
+                              //this.setState({
+                              //  existingApplications,
+                              //  currentSelectedRecordIndex: 0,
+                              //  record: existingApplications[0]
+                              //})
+                            }
+
+
+                            return <RegistrationFormComponent tokenCookie={this.state.tokenCookie} onShowConfirmation={this.onShowConfirmation} isLoggedIn={isLoggedIn} locale={locale} existingApplications={existingApplications} />
+
+                          }
+
+
+                          return loader
+
+                        }}
+                      </Query> :
+                      <div>
             <section  className="s-section target-section" >
             <div className="row">
             <div className="col-full">
@@ -564,102 +657,9 @@ export default class extends React.PureComponent {
                 </div>
                 </div>
                 </section>
-
-            {this.state.showConfirmation &&
-              <section className="target-section last">
-
-                <div className="row section-header">
-                  <div className="col-full">
-                    <h3 className="subhead">{isLoggedIn ? this.translate('confirmation.updateTitle') : this.translate('confirmation.title')}</h3>
+                  <RegistrationFormComponent onShowConfirmation={this.onShowConfirmation} locale={locale} />
                   </div>
-
-                </div>
-
-
-                <div className="row">
-
-                  <div className="block-tab-full">
-                    <div className="col-block" style={{ width: "100%" }}>
-                      <div className="item-process__text">
-                        <p dangerouslySetInnerHTML={{ __html: isLoggedIn ? this.translate('confirmation.updateMessage') : this.translate('confirmation.message') }} />
-                        <p>
-                          <b>{this.translate('confirmation.refTitle')}</b><br />#{this.state.confirmation.ref}
-                        </p>
-                        <p>
-                          <b>{this.translate('confirmation.teamNameTitle')}</b><br />{this.state.confirmation.teamName}
-                        </p>
-                      </div>
-                      <div className="full-width" style={{ marginBottom: "4rem" }}>
-                        <button onClick={() => {
-                          // if (isLoggedIn) {
-                          //   location.reload();
-                          // } else {
-                          //   // this.resetForm();
-                          // }
-                          location.reload();
-                        }}>{isLoggedIn ? this.translate('updateAnother') : this.translate('registerAnother')}</button>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </section>
-
-            }
-
-            
-
-
-            {!this.state.showConfirmation &&
-              <section className="target-section last">
-
-                <div className="row section-header">
-                  <div className="col-full">
-
-                    {isLoggedIn ?
-                      <Query query={GET_APPLICATIONS} variables={{ accessToken: { email: this.state.tokenCookie.email, token: this.state.tokenCookie.token } }}>
-                        {({ loading, error, data, refetch, networkStatus }) => {
-                          console.log('querying graphql...');
-                          {/*console.log('loading:', loading);
-                            console.log('networkStatus:', networkStatus); */}
-                          {/* console.log('error', error);
-                            console.log('data', data); */}
-                          {/* if ((networkStatus === 4) || loading) return <div className="full-width" style={{textAlign: 'center'}}>
-                                <><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></>
-                              </div>; */}
-
-                          if (error) return `Error! ${error.message}`;
-
-                          if (!_.isEmpty(data)) {
-
-                            const existingApplications = data.getApplications;
-
-                            {/* console.log('existingApplications', existingApplications); */ }
-
-                            if (this.state.currentSelectedRecordIndex === undefined) {
-                              //console.log('data', data);
-                              //this.setState({
-                              //  existingApplications,
-                              //  currentSelectedRecordIndex: 0,
-                              //  record: existingApplications[0]
-                              //})
-                            }
-
-
-                            return <RegistrationFormComponent tokenCookie={this.state.tokenCookie} onShowConfirmation={this.onShowConfirmation} isLoggedIn={isLoggedIn} locale={locale} existingApplications={existingApplications} />
-
-                          }
-
-
-                          return loader
-
-                        }}
-                      </Query> :
-                      <RegistrationFormComponent onShowConfirmation={this.onShowConfirmation} locale={locale} />
                     }
-
-
-
                   </div>
                 </div>
               </section>
