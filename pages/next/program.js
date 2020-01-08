@@ -233,7 +233,7 @@ export default class extends React.Component {
                     </div>
                 </section>
                 {/* Mentorship Section */}
-                {/* <section className="s-section target-section" id="mentorship">
+                <section className="s-section target-section" id="mentorship">
                     <div className="row section-header">
                         <h1>{this.translate('section02.title')}</h1>
                     </div>
@@ -247,9 +247,9 @@ export default class extends React.Component {
                             })
                             }
                         <br/>
-                    <a className="btn btn--primary" href={this.translate('section02.btnLink')}>{this.translate('section02.btnText')} </a>
+                    <a className="btn btn--primary" href={this.translate('section02.btnLink')} target="_blank">{this.translate('section02.btnText')} </a>
                     </div>
-                </section> */}
+                </section>
                 <section className="s-section target-section" id="submission">
                     <div className="row section-header">
                         <h1>{this.translate('section03.title')}</h1>
