@@ -10,14 +10,16 @@
     "react",
     "ica"
   ],
-  "engines": { "node": "10.x" },
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
     "start": "npm run local --",
     "build": "next build",
     "now-build": "next build",
     "local-filepond": "FILEPOND_API_ENDPOINT= FILEPOND_API_URL=http://localhost:4004 GOOGLE_APPLICATION_CREDENTIALS=/tmp/gc-service-account.json  GOOGLE_APPLICATION_CREDENTIALS_DATA=$(cat .gc/service-accounts/IBCOL-bc7c0de657f9.json | base64) micro-dev node-routes/filepondRoute.js --port 4004",
     "local": "now dev --local-config now-local.json",
-    "dev": "now dev --local-config now-dev.json",
+    "_dev": "now dev --local-config now-dev.json",
     "stage": "now dev --local-config now-stage.json",
     "production": "now dev --local-config now-production.json",
     "deploy": "npm run deploy-dev",
@@ -66,7 +68,6 @@
     "country-list": "^1.1.1",
     "crypto-js": "^3.1.9-1",
     "express": "^4.16.4",
-    "express-naked-redirect": "^0.1.3",
     "file-loader": "^2.0.0",
     "filepond": "^4.3.5",
     "filepond-plugin-file-validate-size": "^2.1.3",
@@ -85,7 +86,7 @@
     "minimist": "^1.2.0",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.23",
-    "next": "^8.1.0",
+    "next": "^9.1.7",
     "next-routes": "^1.4.2",
     "next-with-apollo": "^3.4.0",
     "now-env": "^3.1.0",
@@ -111,8 +112,7 @@
     "styled-components": "^4.1.3",
     "styled-theming": "^2.2.0",
     "subscriptions-transport-ws": "^0.9.15",
-    "url-loader": "^1.1.2",
-    "webpack": "^4.29.5"
+    "url-loader": "^1.1.2"
   },
   "devDependencies": {
     "bufferutil": "^4.0.1",
