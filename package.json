@@ -10,6 +10,7 @@
     "react",
     "ica"
   ],
+  "engines": { "node": "12.x" },
   "scripts": {
     "start": "npm run local --",
     "build": "next build",
