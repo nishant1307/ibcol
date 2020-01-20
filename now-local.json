@@ -22,8 +22,8 @@
     "autoJobCancelation": true
   },
   "builds": [
-    { "src": "node-routes/defaultRoute.js", "use": "@now/node@0.7.4" },
-    { "src": "node-routes/filepondRoute.js", "use": "@now/node@0.7.4" },
+    { "src": "node-routes/defaultRoute.js", "use": "@now/node@latest" },
+    { "src": "node-routes/filepondRoute.js", "use": "@now/node@latest" },
     { "src": "next.config.js", "use": "@now/next" }
   ],
   "routes": [
