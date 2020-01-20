@@ -1,64 +1,64 @@
 {
-    "pageTitle": "Program",
-    "seoDescription": "",
-    "ogImage": "static/images/ogimage.jpg",
-    "mainHeading": "",
-    "subHeading": "Hong Kong BLOCKCHAIN OLYMPIAD Program",
-    "section01": {
-        "title": "TRAINING",
-        "desc": "Working with the Hong Kong Blockchain Society and the various universities and colleges of Hong Kong, the following set of training sessions are provided for free to current and recent students.",
-        "btnSameLink":"https://docs.google.com/forms/d/e/1FAIpQLSdToU5To_8H1QE6MdKKfQpFlEXPOcMwlm5svuNtyzpC17yN8g/viewform",
-        "content":[
-          {"sName":"BC 101","fName":"Blockchain & Cryptography","desc":"This course is an introduction to the fundamental building blocks of blockchain from high-level first principles and concepts: hash function cryptography, digital signatures, public-key cryptography, distributed computing, distributed ledgers, consensus protocols, smart contracts, privacy-preserving cryptography. A glimpse of the applications of blockchain and distributed ledger technology. Recommended prerequisite: none","btnText":"SIGN UP FOR BC 101","btnLink":""},
-          {"sName":"BC 102","fName":"Blockchain Business & Legal","desc":"This course covers the legal and compliance issues, risks, and mitigations for designing, launching, and operating an application using blockchain and cryptography. Explore from high-level some of the major use cases for applying blockchain and cryptography, especially in government, health, finance, and supply chain. A brief look into the failures of early blockchain networks, services, and businesses. Recommended prerequisite: none","btnText":"SIGN UP FOR BC 102","btnLink":""},
-          {"sName":"BC 201","fName":"Privacy & Identity","desc":"This course explores the concept, need, importance, and future of digital identity, a fundamental aspect of digital transactions that ensures integrity in connecting the physical and the digital world. Deep dive into how a legal entity may prove its own identity and check those of other parties. Scrutinize the challenges of creating, deploying, and servicing digital identity. Investigate the impact of EU GDPR. A glimpse of some advanced cryptography. Recommended prerequisite: BC 101, BC 102","btnText":"SIGN UP FOR BC 201","btnLink":""},
-          {"sName":"BC 202","fName":"Asset Tokenization & Digital Fiat","desc":"This course builds on concepts from BC 201 to explore the most popular consequence of blockchain-powered networks that is the co-creation elements: digital transaction and value-driven ecosystem and marketplace, built around cryptographically-based tokens as assets. A deep investigation into the technological challenges of tokenization, the digital representation of physical goods. Build an understanding of exchange vehicles, valuation models, and fungibility work across value networks. Examine different types of tokens, and studying the development, adoption, and sustainability of digital fiat. Recommended prerequisite: BC 201","btnText":"SIGN UP FOR BC 202","btnLink":""},
-          {"sName":"BC 203","fName":"Governance & Compliance","desc":"This course builds on concepts from BC 102 to provide in-depth understanding and management of risk and compliance challenges when applying blockchain to business scenarios. Exploring notary, governance, and other multi-stakeholder networks in the domains of standards development, policy guidance, community advocacy, knowledge, and education. Look into practical issues of permissioned and permissionless blockchains, with on-chain and off-chain governance of protocols and the applications that run on them. Deep dive into the scaling, interoperability, and crisis management of these systems over time. Recommended prerequisite: BC 102","btnText":"SIGN UP FOR BC 203","btnLink":""},
-          {"sName":"BC 204","fName":"Solutions Architecture","desc":"This course builds on all previous courses to provide the necessities for applying blockchain and cryptography to build a decentralized application. Students will learn how to identify appropriate use cases in terms of enterprise and industry impact, distilling existing business processes by devising plans with design-thinking, matching business ideas with technological tenets. Explore business modelling and design, strengths and weaknesses of blockchain-based business structures, and advantages of different economic models and token economics. Recommended prerequisite: BC 201","btnText":"SIGN UP FOR BC 204","btnLink":""},
-          {"sName":"BC 205","fName":"Advanced Training: Fintech","desc":"This course explores the use of blockchain technology in the finance sector. Three blockchain experts from the financial industry will respectively discuss how blockchain is being used in the banking, insurance and trade finance industries. Each of the lecturers will examine using real use cases on how blockchain solutions are employed to tackle industry problems and address pain points arising from business processes. The pros and cons of using blockchain vs other technologies, the challenges and risks of using blockchain and best practices for long-term success will also be addressed. The necessary financial background will be provided by the lecturers, so students participating in this course need not have any prior knowledge in finance. Recommended prerequisite: BC 203","btnText":"SIGN UP FOR BC 205","btnLink":""},
-          {"sName":"BC 301","fName":"Blockchain Engineering - R3 Corda","desc":"This is a one-day technical crash course where students will develop a comprehensive understanding of Corda, an open-source enterprise permissioned platform created by R3 in 2016. Corda is designed and built from the ground up to record, manage, and synchronise legal agreements among business entities, designed for use by regulated financial institutions and is arguably the most popular permissioned blockchain platform used by financial institutions to build blockchain applications. By the end of the training, participants will gain a good understanding of how Corda works and acquire hands-on experience of developing some basic CorDapps. This course is suitable for developers with at least intermediary programming in Java or similar. Recommended prerequisite: BC 101","btnText":"SIGN UP FOR BC 301","btnLink":""},
-          {"sName":"BC 302","fName":"Blockchain Engineering - HL Fabric","desc":"This is a one-day technical crash course where students will develop a comprehensive understanding of Hyperledger Fabric, an open-source enterprise permissioned blockchain platform created in 2016 with an initial contribution by Digital Asset and IBM and is now hosted by the Linux Foundation. Fabric is currently one of the most popular permissioned blockchain platforms used by enterprises to build applications in areas. By the end of the training, participants will gain a good understanding of how Fabric works and will acquire hands-on experience of coding some basic blockchain applications on the Fabric platform. This course is suitable for developers with at least intermediary programming in Java or similar. Recommended prerequisite: BC 101","btnText":"SIGN UP FOR BC 302","btnLink":""}
-        ]
-    },
-    "section02": {
-        "title": "MENTORSHIP",
-        "desc":"HSBC staff will provide professional mentorship to the students of Hong Kong in the areas of, but not limited to, digital banking, FinTech and communication skills. Mentors will give presentations, interact with students in smaller groups at the event, and general networking with professionals from HSBC.",
-        "content":[
-          {"key":"Event","value":"Micro-Consulting Day"},
-          {"key":"Date","value":"26 March 2020, Thursday"},
-          {"key":"Time","value":"4:00 PM – 6:00 PM"},
-          {"key":"Place","value":"19/F, Senate Room, Lau Ming Wai Academic Building, City University of Hong Kong, Kowloon Tong"}
-        ],
-        "btnText":"SIGN UP FOR MENTORING PROGRAM",
-        "btnLink":""
-    },
-    "section03": {
-        "title": "SUBMISSIONS",
-        "content":[
-          {"key":"Proof-of-Stake Day","value":"13 April 2020, 23:59 HKT","desc":"Competitors prove that they have a stake in the competition by submitting a minimum viable whitepaper outline."},
-          {"key":"Proof-of-Work Day","value":"3 May 2020, 23:59 HKT","desc":"Competitors prove that they have completed the work required to be competitive, i.e the last day to edit their paper."}
-        ],
-        "leftBtn":"REGISTER A PROJECT",
-        "rightBtn":"LEARN MORE ABOUT BLOCKCHAIN"
-    },
-    "section04": {
-      "title": "COMPETITION",
-      "contentHTML":"The HK-BCOL Finals is held <b>13 June 2020</b> at the City University of Hong Kong.",
-      "icon1":"<i class='material-icons blue'>developer_mode</i> <i class='material-icons yellow'>widgets</i> <i class='material-icons black'>devices</i> <br> <i class='material-icons green'>storage</i> <i class='material-icons red'>dock</i> <i class='material-icons purple'> laptop_chromebook</i>",
-      "heading1":"SYMPOSIUM EXPO",
-      "desc1":"Competitors have a poster board and a table for showcasing their project to judges, investors, and other VIP",
-      "icon2":"<i class='material-icons blue'>face</i> <i class='material-icons yellow'>face</i> <i class='material-icons black'>face</i> <br> <i class='material-icons green'>face</i> <i class='material-icons red'>face</i> <i class='material-icons purple'>face</i>",
-      "heading2":"PITCH PRESENTATION",
-      "desc2":"Competitors have up to twelve minutes to tell judges, investors, and other VIP about their projects on stage",
-      "leftBtn":"READ RULES IN DETAIL",
-      "rightBtn":"REGISTER A PROJECT"
-    },
-    "section05": {
-        "title": "EVENT CALENDAR",
-        "iframe":"<iframe src='https://calendar.google.com/calendar/b/6/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FHong_Kong&amp;src=aGtiY3Mub3JnX3Q2aGdzb2VtZGRiZHAzNmwxbDFqbzNsajRvQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=aGtiY3Mub3JnXzVsa2tkcmloY3YxM2U5bGd0cGVvbzZtNHNnQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=aGtiY3Mub3JnXzFuMXAydHVuMmVyMTIzNGcwcHA2ZmV2ZjU0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=ZW4uaG9uZ19rb25nI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%235A9A08&amp;color=%23DD5511&amp;color=%233366CC&amp;color=%231F753C&amp;showTitle=0&amp;title' style='border-width:0' width='800' height='600' frameborder='0' scrolling='no'></iframe>",
-        "leftBtn":"REGISTER A PROJECT",
-        "rightBtn":"LEARN MORE ABOUT BLOCKCHAIN"
-      }
-    
+  "pageTitle": "Program",
+  "seoDescription": "",
+  "ogImage": "static/images/ogimage.jpg",
+  "mainHeading": "",
+  "subHeading": "Hong Kong BLOCKCHAIN OLYMPIAD Program",
+  "section01": {
+      "title": "TRAINING",
+      "desc": "Working with the Hong Kong Blockchain Society and the various universities and colleges of Hong Kong, the following set of training sessions are provided for free to current and recent students.",
+      "btnSameLink":"https://docs.google.com/forms/d/e/1FAIpQLSdToU5To_8H1QE6MdKKfQpFlEXPOcMwlm5svuNtyzpC17yN8g/viewform",
+      "content":[
+        {"sName":"BC 101","fName":"Blockchain & Cryptography","desc":"This course is an introduction to the fundamental building blocks of blockchain from high-level first principles and concepts: hash function cryptography, digital signatures, public-key cryptography, distributed computing, distributed ledgers, consensus protocols, smart contracts, privacy-preserving cryptography. A glimpse of the applications of blockchain and distributed ledger technology. Recommended prerequisite: none","btnText":"SIGN UP FOR BC 101","btnLink":""},
+        {"sName":"BC 102","fName":"Blockchain Business & Legal","desc":"This course covers the legal and compliance issues, risks, and mitigations for designing, launching, and operating an application using blockchain and cryptography. Explore from high-level some of the major use cases for applying blockchain and cryptography, especially in government, health, finance, and supply chain. A brief look into the failures of early blockchain networks, services, and businesses. Recommended prerequisite: none","btnText":"SIGN UP FOR BC 102","btnLink":""},
+        {"sName":"BC 201","fName":"Privacy & Identity","desc":"This course explores the concept, need, importance, and future of digital identity, a fundamental aspect of digital transactions that ensures integrity in connecting the physical and the digital world. Deep dive into how a legal entity may prove its own identity and check those of other parties. Scrutinize the challenges of creating, deploying, and servicing digital identity. Investigate the impact of EU GDPR. A glimpse of some advanced cryptography. Recommended prerequisite: BC 101, BC 102","btnText":"SIGN UP FOR BC 201","btnLink":""},
+        {"sName":"BC 202","fName":"Asset Tokenization & Digital Fiat","desc":"This course builds on concepts from BC 201 to explore the most popular consequence of blockchain-powered networks that is the co-creation elements: digital transaction and value-driven ecosystem and marketplace, built around cryptographically-based tokens as assets. A deep investigation into the technological challenges of tokenization, the digital representation of physical goods. Build an understanding of exchange vehicles, valuation models, and fungibility work across value networks. Examine different types of tokens, and studying the development, adoption, and sustainability of digital fiat. Recommended prerequisite: BC 201","btnText":"SIGN UP FOR BC 202","btnLink":""},
+        {"sName":"BC 203","fName":"Governance & Compliance","desc":"This course builds on concepts from BC 102 to provide in-depth understanding and management of risk and compliance challenges when applying blockchain to business scenarios. Exploring notary, governance, and other multi-stakeholder networks in the domains of standards development, policy guidance, community advocacy, knowledge, and education. Look into practical issues of permissioned and permissionless blockchains, with on-chain and off-chain governance of protocols and the applications that run on them. Deep dive into the scaling, interoperability, and crisis management of these systems over time. Recommended prerequisite: BC 102","btnText":"SIGN UP FOR BC 203","btnLink":""},
+        {"sName":"BC 204","fName":"Solutions Architecture","desc":"This course builds on all previous courses to provide the necessities for applying blockchain and cryptography to build a decentralized application. Students will learn how to identify appropriate use cases in terms of enterprise and industry impact, distilling existing business processes by devising plans with design-thinking, matching business ideas with technological tenets. Explore business modelling and design, strengths and weaknesses of blockchain-based business structures, and advantages of different economic models and token economics. Recommended prerequisite: BC 201","btnText":"SIGN UP FOR BC 204","btnLink":""},
+        {"sName":"BC 205","fName":"Advanced Training: Fintech","desc":"This course explores the use of blockchain technology in the finance sector. Three blockchain experts from the financial industry will respectively discuss how blockchain is being used in the banking, insurance and trade finance industries. Each of the lecturers will examine using real use cases on how blockchain solutions are employed to tackle industry problems and address pain points arising from business processes. The pros and cons of using blockchain vs other technologies, the challenges and risks of using blockchain and best practices for long-term success will also be addressed. The necessary financial background will be provided by the lecturers, so students participating in this course need not have any prior knowledge in finance. Recommended prerequisite: BC 203","btnText":"SIGN UP FOR BC 205","btnLink":""},
+        {"sName":"BC 301","fName":"Blockchain Engineering - R3 Corda","desc":"This is a one-day technical crash course where students will develop a comprehensive understanding of Corda, an open-source enterprise permissioned platform created by R3 in 2016. Corda is designed and built from the ground up to record, manage, and synchronise legal agreements among business entities, designed for use by regulated financial institutions and is arguably the most popular permissioned blockchain platform used by financial institutions to build blockchain applications. By the end of the training, participants will gain a good understanding of how Corda works and acquire hands-on experience of developing some basic CorDapps. This course is suitable for developers with at least intermediary programming in Java or similar. Recommended prerequisite: BC 101","btnText":"SIGN UP FOR BC 301","btnLink":""},
+        {"sName":"BC 302","fName":"Blockchain Engineering - HL Fabric","desc":"This is a one-day technical crash course where students will develop a comprehensive understanding of Hyperledger Fabric, an open-source enterprise permissioned blockchain platform created in 2016 with an initial contribution by Digital Asset and IBM and is now hosted by the Linux Foundation. Fabric is currently one of the most popular permissioned blockchain platforms used by enterprises to build applications in areas. By the end of the training, participants will gain a good understanding of how Fabric works and will acquire hands-on experience of coding some basic blockchain applications on the Fabric platform. This course is suitable for developers with at least intermediary programming in Java or similar. Recommended prerequisite: BC 101","btnText":"SIGN UP FOR BC 302","btnLink":""}
+      ]
+  },
+  "section02": {
+      "title": "MENTORSHIP",
+      "desc":"HSBC staff will provide professional mentorship to the students of Hong Kong in the areas of, but not limited to, digital banking, FinTech and communication skills. Mentors will give presentations, interact with students in smaller groups at the event, and general networking with professionals from HSBC.",
+      "content":[
+        {"key":"Event","value":"Micro-Consulting Day"},
+        {"key":"Date","value":"26 March 2020, Thursday"},
+        {"key":"Time","value":"4:00 PM – 6:00 PM"},
+        {"key":"Place","value":"19/F, Senate Room, Lau Ming Wai Academic Building, City University of Hong Kong, Kowloon Tong"}
+      ],
+      "btnText":"SIGN UP FOR MENTORING PROGRAM",
+      "btnLink":"https://bit.ly/HKcampus"
+  },
+  "section03": {
+      "title": "SUBMISSIONS",
+      "content":[
+        {"key":"Proof-of-Stake Day","value":"13 April 2020, 23:59 HKT","desc":"Competitors prove that they have a stake in the competition by submitting a minimum viable whitepaper outline."},
+        {"key":"Proof-of-Work Day","value":"3 May 2020, 23:59 HKT","desc":"Competitors prove that they have completed the work required to be competitive, i.e the last day to edit their paper."}
+      ],
+      "leftBtn":"REGISTER A PROJECT",
+      "rightBtn":"LEARN MORE ABOUT BLOCKCHAIN"
+  },
+  "section04": {
+    "title": "COMPETITION",
+    "contentHTML":"The HK-BCOL Finals is held <b>13 June 2020</b> at the City University of Hong Kong.",
+    "icon1":"<i class='material-icons blue'>developer_mode</i> <i class='material-icons yellow'>widgets</i> <i class='material-icons black'>devices</i> <br> <i class='material-icons green'>storage</i> <i class='material-icons red'>dock</i> <i class='material-icons purple'> laptop_chromebook</i>",
+    "heading1":"SYMPOSIUM EXPO",
+    "desc1":"Competitors have a poster board and a table for showcasing their project to judges, investors, and other VIP",
+    "icon2":"<i class='material-icons blue'>face</i> <i class='material-icons yellow'>face</i> <i class='material-icons black'>face</i> <br> <i class='material-icons green'>face</i> <i class='material-icons red'>face</i> <i class='material-icons purple'>face</i>",
+    "heading2":"PITCH PRESENTATION",
+    "desc2":"Competitors have up to twelve minutes to tell judges, investors, and other VIP about their projects on stage",
+    "leftBtn":"READ RULES IN DETAIL",
+    "rightBtn":"REGISTER A PROJECT"
+  },
+  "section05": {
+      "title": "EVENT CALENDAR",
+      "iframe":"<iframe src='https://calendar.google.com/calendar/b/6/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FHong_Kong&amp;src=aGtiY3Mub3JnX3Q2aGdzb2VtZGRiZHAzNmwxbDFqbzNsajRvQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=aGtiY3Mub3JnXzVsa2tkcmloY3YxM2U5bGd0cGVvbzZtNHNnQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=aGtiY3Mub3JnXzFuMXAydHVuMmVyMTIzNGcwcHA2ZmV2ZjU0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=ZW4uaG9uZ19rb25nI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%235A9A08&amp;color=%23DD5511&amp;color=%233366CC&amp;color=%231F753C&amp;showTitle=0&amp;title' style='border-width:0' width='800' height='600' frameborder='0' scrolling='no'></iframe>",
+      "leftBtn":"REGISTER A PROJECT",
+      "rightBtn":"LEARN MORE ABOUT BLOCKCHAIN"
+    }
+  
 
 }
