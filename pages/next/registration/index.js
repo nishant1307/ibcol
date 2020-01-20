@@ -416,10 +416,24 @@ export default class extends React.PureComponent {
           <div className="row section-header">
             <div className="col-full">
               <h3 className="subhead">{this.translate('subhead')}</h3>
+              <h5 className="content">Looking for training registration? <a href="https://docs.google.com/forms/u/3/d/e/1FAIpQLSdToU5To_8H1QE6MdKKfQpFlEXPOcMwlm5svuNtyzpC17yN8g/viewform" target="_blank">Click here!</a></h5>
             </div>
           </div>
         </section>
-
+        {/* <section className="target-section">
+        <div className="row">
+          <div className="col-full">
+          <div>
+            <p className="content"><b>Looking for training registration?</b> Click here!</p>
+            <div className="historyBtn">
+             <a className="btn btn--stroke btn--primary full-width btn--large" style={{ "margin": "1rem auto" }}>
+              Training Registration
+              </a>
+             </div>
+             </div>
+            </div>
+          </div>
+        </section> */}
         {
           isValidatingToken &&
           loader
@@ -428,9 +442,9 @@ export default class extends React.PureComponent {
         {
           !isValidatingToken &&
           <>
-            <section className="target-section">
+            <section className="s-section target-section">
               <div className="row">
-                <div className="col-full">
+              <div className="col-full">
                   {
                     !isLoggedIn &&
                     <div>
