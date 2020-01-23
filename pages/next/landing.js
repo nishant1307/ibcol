@@ -46,24 +46,24 @@ export default class extends React.Component {
         {"key":"us","value":"US-BCOL (United States)"}                
         ], 
         asiaCommitteesInfo: [
-            {"key":"au","value":"AU-BCOL (Australia)"},
-            {"key":"bd","value":"BD-BCOL (Bangladesh)"},
-            {"key":"cn","value":"CN-BCOL (China)"},
-            {"key":"hk","value":"HK-BCOL (Hong Kong)"},
-            {"key":"id","value":"ID-BCOL (Indonesia)"},
-            {"key":"in","value":"IN-BCOL (India)"},
-            {"key":"jp","value":"JP-BCOL (Japan)"},
-            {"key":"kh","value":"KH-BCOL (Cambodia)"},
-            {"key":"kr","value":"KR-BCOL (South Korea)"},
-            {"key":"mn","value":"MN-BCOL (Mongolia)"},
-            {"key":"my","value":"MY-BCOL (Malaysia)"},
-            {"key":"nz","value":"NZ-BCOL (New Zealand)"},
-            {"key":"ph","value":"PH-BCOL (Philippines)"},
-            {"key":"pk","value":"PK-BCOL (Pakistan)"},
-            {"key":"sg","value":"SG-BCOL (Singapore)"},
-            {"key":"th","value":"TH-BCOL (Thailand)"},
-            {"key":"tw","value":"TW-BCOL (Taiwan)"},
-            {"key":"vn","value":"VN-BCOL (Vietnam)"}            
+            {"key":"au","value":"AU-BCOL (Australia)","href":"/en-au/home"},
+            {"key":"bd","value":"BD-BCOL (Bangladesh)","href":"https://bcolbd.org/"},
+            {"key":"cn","value":"CN-BCOL (China)","href":"/en-cn/home"},
+            {"key":"hk","value":"HK-BCOL (Hong Kong)","href":"/en-hk/home"},
+            {"key":"id","value":"ID-BCOL (Indonesia)","href":"/en-id/home"},
+            {"key":"in","value":"IN-BCOL (India)","href":"/en-in/home"},
+            {"key":"jp","value":"JP-BCOL (Japan)","href":"/en-jp/home"},
+            {"key":"kh","value":"KH-BCOL (Cambodia)","href":"/en-kh/home"},
+            {"key":"kr","value":"KR-BCOL (South Korea)","href":"/en-kr/home"},
+            {"key":"mn","value":"MN-BCOL (Mongolia)","href":"/en-mn/home"},
+            {"key":"my","value":"MY-BCOL (Malaysia)","href":"/en-my/home"},
+            {"key":"nz","value":"NZ-BCOL (New Zealand)","href":"/en-nz/home"},
+            {"key":"ph","value":"PH-BCOL (Philippines)","href":"/en-ph/home"},
+            {"key":"pk","value":"PK-BCOL (Pakistan)","href":"https://www.rnssol.com/PAK-BCOL"},
+            {"key":"sg","value":"SG-BCOL (Singapore)","href":"/en-sg/home"},
+            {"key":"th","value":"TH-BCOL (Thailand)","href":"/en-th/home"},
+            {"key":"tw","value":"TW-BCOL (Taiwan)","href":"/en-tw/home"},
+            {"key":"vn","value":"VN-BCOL (Vietnam)","href":"/en-vn/home"}            
         ], 
         euCommitteesInfo: [
             {"key":"ch","value":"CH-BCOL (Switzerland)"},
@@ -271,8 +271,8 @@ export default class extends React.Component {
                                 return <div className="sm">
                                     <span className={classNames("flag-icon", `flag-icon-${content.key}`)}></span>
                                     {/*href={`/en-${content.key}/home`}*/}
-                                    {content.key =="hk" ? (
-                                    <a style={{padding:"0 0 0 10px"}} href={`/en-${content.key}/home`} target="_blank" className="sm-title flag">{content.value}</a>
+                                    {content.key =="hk" || content.key =="pk" || content.key =="bd" ? (
+                                    <a style={{padding:"0 0 0 10px"}} href={content.href} target="_blank" className="sm-title flag">{content.value}</a>
                                     ):(<a style={{padding:"0 0 0 10px"}} target="_blank" className="sm-title flag">{content.value}</a>
                                     )}
                                     </div>
