@@ -1,7 +1,9 @@
 {
   "name": "ibcol",
   "version": "2.0.0",
-  "engines" : { "node" : ">=12.6" },
+  "engines": {
+    "node": "12.x"
+  },
   "private": true,
   "description": "",
   "main": "index.js",
@@ -11,12 +13,10 @@
     "react",
     "ica"
   ],
-  "engines": {
-    "node": "12.x"
-  },
   "scripts": {
     "start": "npm run local --",
     "build": "next build",
+    "export": "next build && next export && echo '/*    /index.html   200' > out/_redirects",
     "now-build": "next build",
     "local-filepond": "FILEPOND_API_ENDPOINT= FILEPOND_API_URL=http://localhost:4004 GOOGLE_APPLICATION_CREDENTIALS=/tmp/gc-service-account.json  GOOGLE_APPLICATION_CREDENTIALS_DATA=$(cat .gc/service-accounts/IBCOL-bc7c0de657f9.json | base64) micro-dev node-routes/filepondRoute.js --port 4004",
     "local": "now dev --local-config now-local.json",

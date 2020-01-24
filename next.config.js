@@ -77,8 +77,8 @@ const nextConfig = {
     SALT: process.env.SALT
   },
   webpack: (config) => {
-    
-    
+
+
 
     config.module.rules.push({
       test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
@@ -91,6 +91,11 @@ const nextConfig = {
       }
     })
     return config
+  },
+  exportPathMap: function() {
+    return {
+      '/': { page: 'next/home' }
+    };
   }
 }
 
@@ -100,7 +105,7 @@ console.log('process.env.NODE_ENV:', process.env.NODE_ENV);
 console.log("=========================");
 
 
-// module.exports = (process.env.NODE_ENV === 'production') 
+// module.exports = (process.env.NODE_ENV === 'production')
 // ? moduleExists('next-offline')
 // ? withOffline(withCSS(Object.assign({}, nextConfig, {
 //   workboxOpts: {
@@ -128,6 +133,3 @@ console.log("=========================");
 // : withCSS(nextConfig);
 
 module.exports = withCSS(nextConfig);
-
-
-
