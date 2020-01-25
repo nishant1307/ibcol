@@ -11,7 +11,8 @@ const localeSupported = (requestedLocale) => {
 }
 
 const translate = (key, page, locale, extras) => {
-  
+  locale="en-in"
+
   // console.log('translate', key, page, locale);
 
   const isLocaleSupported = localeSupported(locale);
@@ -31,13 +32,13 @@ const translate = (key, page, locale, extras) => {
 
   db._locale = translations[locale]['_locale'];
 
-  
-  
-  // TODO: 
+
+
+  // TODO:
   const translated = _.get(db, key)
   return _.isEmpty(translated) ? _.get(translations['_default'][page], key) : translated;
-  
-  
+
+
 
 }
 
