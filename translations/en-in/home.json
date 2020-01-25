@@ -34,8 +34,7 @@
       "section03": {
         "title": "Timeline",
         "mainImage":"/static/images/1211.PNG",
-        "btnText" :"LEARN ABOUT TRAINING PROGRAMME",
-        "btnLink" :""
+        
       },
       "section04": {
         "title": "Eligibility",
@@ -48,18 +47,10 @@
         "icon3":"<!-- Multiple Projects --> <i class='material-icons blue'>developer_mode</i> <i class='material-icons yellow'>widgets</i> <i class='material-icons black'>devices</i> <br> <i class='material-icons green'>storage</i> <i class='material-icons red'>dock</i> <i class='material-icons purple'>laptop_mac</i>",
         "heading3":"Multiple Projects",
         "desc3":" Any team can submit more than one project",
-        "btnText":"REGISTER FOR THE COMPETITION",
-        "btnLink":""
+        "btnText" :"Eligibility Rules",
+        "btnLink" :""
       },
-      "section05":{
-        "title":"Organisers",
-        "icon1":"/static/images/IBCOL-2020-Organiser-HSBC.png",
-        "icon2":"/static/images/IBCOL-2020-Organiser-CityU-CoB.png",
-        "icon3":"/static/images/IBCOL-2020-Organiser-HKBCS.png",
-        "link1":"https://www.hsbc.com.hk",
-        "link2":"https://www.cb.cityu.edu.hk",
-        "link3":"https://www.hkbcs.org"
-      },
+     
       "section06":{
         "title":"How to get started",
         "icon1":"<!-- GET TRAINED AND CERTIFIED --> <i class='material-icons blue'>local_offer</i> <i class='material-icons yellow'>local_offer</i> <i class='material-icons black'>local_offer</i><br> <i class='material-icons green'>local_offer</i> <i class='material-icons red'>local_offer</i> <i class='material-icons purple'>local_offer</i> ",
@@ -70,7 +61,7 @@
         "desc2HTML":"Listen to the emerging technology leaders and learn from their experiences. Stay tuned for more updates. ",
         "icon3":"<!-- ENGAGE WITH COMMUNITY --> <i class='material-icons blue'>developer_mode</i> <i class='material-icons yellow'>widgets</i> <i class='material-icons black'>devices</i> <br> <i class='material-icons green'>storage</i> <i class='material-icons red'>dock</i> <i class='material-icons purple'>laptop_mac</i>",
         "heading3":"ENGAGE WITH COMMUNITY",
-        "desc3HTML":"Tune in with changemakers(contestants, trainers, and mentors) across the country on Telegram. Want to stay updated? Follow us on Linkedin, Facebook, Twitter, and Instagram. <a class='inline-text-a-href' href='http://t.me/ibcol_hk'>Telegram</a> or <a class='inline-text-a-href' href='http://fb.com/ibcol.org'>Facebook</a>",
+        "desc3HTML":"Tune in with changemakers(contestants, trainers, and mentors) across the country on Telegram.<br> Want to stay updated?<br> Follow us on <a class='inline-text-a-href' href='https:/www.linkedin.com/company/zubi-io/'> Linkedin </a>, <a class='inline-text-a-href' href='https://www.facebook.com/zubi.io/'> Facebook </a>,<a class='inline-text-a-href' href='https://twitter.com/zubi_io'> Twitter </a>, and <a class='inline-text-a-href' href='https://www.instagram.com/zubi.io/'> Instagram </a>.",
         "btnText":"REGISTER FOR THE COMPETITION",
         "btnLink":""
       }
