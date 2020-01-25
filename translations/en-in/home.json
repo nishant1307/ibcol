@@ -2,7 +2,7 @@
     "pageTitle": "Indian Blockchain Olympiad",
     "seoDescription": "International Blockchain Olympiad is a multidisciplinary design and building competition. IBCOL 2019 invites students from around the world to solve real-world challenges through decentralised applications.",
     "ogImage": "static/images/ogimage.jpg",
-    "mainHeading": "World’s largest gathering of budding and reigning experts in applied blockchain and cryptography.",
+    "mainHeading": "Move beyond the ordinary.<br> Powering a new generation of humans and stretching across the borders.",
     "subHeading": "Engage with the leaders from 36+ countries.Win astounding prizes worth more than $10,00.Pitch and earn Life-Changing Opportunities.",
     "leftBtn": "PROGRAMME SCHEDULE",
     "rightBtn": "RULE & ELIGIBILITY",
@@ -11,13 +11,13 @@
         "contentHTML":"The <b><u>I</u></b>ndian <b><u>B</u></b>lock<b><u>C</u></b>hain <b><u>OL</u></b>ympiad (IN-BCOL) invites the current and recently graduated students to solve real-world problems using blockchain or distributed ledger technology. The top teams will compete with projects around the world in the <b><u>I</u></b>nternational <b><u>B</u></b>lock<b><u>C</u></b>hain <b><u>OL</u></b>ympiad (IBCOL) to be held at the City University of Hong Kong.",
         "icon1":"<!-- Business Case Competition --> <i class='material-icons blue'>work</i> <i class='material-icons black'>work</i> <i class='material-icons red'>work</i> <br> <i class='material-icons yellow'>business_center</i> <i class='material-icons green'>business_center</i>",
         "heading1":"Business Case Competition",
-        "desc1":"Contestants need to define their own problem scopes and devise a plan to solve it.",
+        "desc1":"Solve problems spanning across different landscapes.",
         "icon2":"<!-- Academic Conference --> <i class='material-icons blue'>event_seat</i> <i class='material-icons black'>event_seat</i> <i class='material-icons red'>event_seat</i> <br> <i class='material-icons yellow'>airplay</i> <i class='material-icons green'>airplay</i>",
         "heading2":"Academic Conference",
-        "desc2":"Contestants are expected to submit a whitepaper proposing their approach to a problem statement.",
+        "desc2":"Express a whole new approach and show your perspective to the world.",
         "icon3":"<!-- Technical Hackathon  --> <i class='material-icons blue'>laptop</i> <i class='material-icons black'>developer_mode</i> <i class='material-icons red'>laptop_chromebook</i> <br> <i class='material-icons yellow'>laptop_windows</i> <i class='material-icons green'>laptop_mac</i>",
         "heading3":"Technical Hackathon ",
-        "desc3":"Contestants can build something meaningful for the world or work on the problem statements provided by leading companies."
+        "desc3":"Change your mindset, build something impactful and change the mindset of others."
       },
     "section02": {
         "title": "Why now",
