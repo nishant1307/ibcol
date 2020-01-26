@@ -115,10 +115,10 @@ export default class extends React.Component {
                                 {this.translate('subHeading')}
                             </h3>
                             <div className="home-content__button">
-                                <a href="https://ibcol.org/en-hk/program" className="btn btn--primary btn--large">
+                                <a href="/program" className="btn btn--primary btn--large">
                                     {this.translate('leftBtn')}
                                 </a>
-                                <a href="https://ibcol.org/en-hk/rules" className="btn btn--large">
+                                <a href="/rules" className="btn btn--large">
                                     {this.translate('rightBtn')}
                                 </a>
                             </div>
@@ -219,7 +219,7 @@ export default class extends React.Component {
                         </div>
                     </div>
                 </section>
-                        
+
                 <section className="s-section target-section">
                     <div className="row section-header">
                             <h1>{this.translate('section03.title')}</h1>
@@ -317,4 +317,3 @@ export default class extends React.Component {
         )
     }
 }
-

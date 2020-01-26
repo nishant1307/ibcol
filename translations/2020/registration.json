@@ -39,7 +39,7 @@
       ],
   "dueDiligence":{
       "descHTML":"To determine eligibility, the Competitions Committee will verify relevant information via IBCOL Passports. If you do not already have one, please <a href='https://passport.ibcol.org/application' target='_blank'><b>apply for an IBCOL Passport here</b></a>. Information that will be verified are as follows:",
-      "content":[         
+      "content":[
          {"key":"Actual or Expected Graduation Year","value":"as written on an official school-issued document."},
          {"key":"Student Name","value":"as written on an official school-issued document."},
          {"key":"School Name","value":"as written on an official school-issued document."},
@@ -103,11 +103,11 @@
   },
 
   "studentEducationInfo": "Academic Credential",
-  
-  
-  
-  
-  
+
+
+
+
+
   "addAnotherStudent": "+ Add Another Student",
   "removeStudent": "- Remove Student",
   "addAnotherStudentEducationRecord": "+ Add Another Academic Credential",
@@ -117,9 +117,9 @@
   "addAnotherAdvisor": "+ Add Another Advisor",
   "removeAdvisor": "- Remove Advisor",
   "advisorAssociationInfo": "Association Record",
-  
-  
-  
+
+
+
   "addAnotherAdvisorAssociationRecord": "+ Add Another Association Record",
   "removeAdvisorAssociationRecord": "- Remove Association Record",
   "projectInfo": "Project Particulars",
@@ -152,7 +152,7 @@
   "loginVerifyingTitle": "Verifying Login",
   "loginVerifyingMessage": "Verifying the following seed code against <b>{verificationCode}</b>:",
   "loginVerifyingErrorMessage": "Login verification failed. Please try to verify again on the same browser login was initiated.",
-  
+
   "managingApplicationTitle": "Managing Registration",
   "noApplicationToManage": "There is no registration to manage.",
 

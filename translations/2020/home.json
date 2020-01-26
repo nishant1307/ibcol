@@ -53,12 +53,12 @@
     },
     "section05":{
       "title":"Organisers",
-      "icon1":"/static/images/IBCOL-2020-Organiser-HSBC.png",
-      "icon2":"/static/images/IBCOL-2020-Organiser-CityU-CoB.png",
-      "icon3":"/static/images/IBCOL-2020-Organiser-HKBCS.png",
-      "link1":"https://www.hsbc.com.hk",
-      "link2":"https://www.cb.cityu.edu.hk",
-      "link3":"https://www.hkbcs.org"
+      "icon1":"",
+      "icon2":"https://zubi.io/favicon.ico",
+      "icon3":"",
+      "link1":"",
+      "link2":"",
+      "link3":""
     },
     "section06":{
       "title":"How to get started",

@@ -84,7 +84,7 @@ const GlobalStyle = createGlobalStyle`
         display: inline-block;
 
         cursor: pointer;
-        
+
         width: 2rem;
         height: 2rem;
 
@@ -101,7 +101,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  
+
 `;
 
 
@@ -181,7 +181,7 @@ class MyApp extends App {
       // router.query.locale = "en-tw";
       // console.debug('router', router);
       // console.debug('pageProps', pageProps);
-    
+
       if (typeof window === 'undefined') {
 
 
@@ -361,19 +361,19 @@ class MyApp extends App {
             <div>
               <div>
                 <br />
-                <a href="https://twitter.com/ibcolorg" target="_blank">
+                <a href="https://twitter.com/zubi_io" target="_blank">
                   <img src="/static/sm/tt.png" />
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://www.facebook.com/ibcol.org" target="_blank">
+                <a href="https://www.facebook.com/zubi.io/" target="_blank">
                   <img src="/static/sm/fb.png" />
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://www.instagram.com/ibcol_org" target="_blank">
+                <a href="https://www.instagram.com/zubi.io/" target="_blank">
                   <img src="/static/sm/ig.png" />
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://www.linkedin.com/company/ibcol" target="_blank">
+                <a href="https://www.linkedin.com/showcase/zubi-community/" target="_blank">
                   <img src="/static/sm/li.png" />
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

@@ -165,8 +165,8 @@ const ThisPageContainerComponent = styled(PageContainerComponent)`
       margin-right: 2rem; */
       margin-bottom: 5rem;
     }
-    
-    
+
+
 
   }
 
@@ -246,7 +246,7 @@ const ThisPageContainerComponent = styled(PageContainerComponent)`
     }
   }
 
-  
+
 `;
 
 
@@ -516,7 +516,7 @@ export default class extends React.PureComponent {
 
             }
 
-            
+
 
 
             {!this.state.showConfirmation &&
@@ -570,10 +570,10 @@ export default class extends React.PureComponent {
                         <div className="col-full">
                         <p style={{color:"#000000"}}><b>New registration? </b>Please read this brief carefully, or skip on ahead if you are confident!</p>
                         <div style={{ background:"#fff2cc", padding: "10px 10px 10px 10px"}}>
-                        <Collapsible trigger="‣ Click here to read registration process briefing" 
+                        <Collapsible trigger="‣ Click here to read registration process briefing"
                         triggerWhenOpen="▾ Click here to hide registration process briefing"
                         triggerStyle={{color: "#000000",cursor: "pointer"}}>
-                          <section className="s-section" id="deadline"> 
+                          <section className="s-section" id="deadline">
                               <div className="row">
                                 <div className="col-full">
                                   <h4 className="item-title">DEADLINE</h4>
@@ -590,7 +590,7 @@ export default class extends React.PureComponent {
                                       </div>
                                     </div>
                               </section>
-                            <section className="s-section target-section" id="regFields">
+                          {/**  <section className="s-section target-section" id="regFields">
                             <div className="row">
                               <div className="col-full">
                                 <h4 className="item-title">REGISTRATION FIELDS</h4>
@@ -615,7 +615,7 @@ export default class extends React.PureComponent {
                                     </div>
                                 </div>
                               </div>
-                            </section>
+                            </section>*/}
                             <section className="s-section target-section" id="teamParticular">
                             <div className="row">
                               <div className="col-full">
@@ -682,21 +682,6 @@ export default class extends React.PureComponent {
 
           </>
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       </ThisPageContainerComponent>
     )
   }
