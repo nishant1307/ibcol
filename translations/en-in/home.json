@@ -2,8 +2,8 @@
     "pageTitle": "Indian Blockchain Olympiad",
     "seoDescription": "International Blockchain Olympiad is a multidisciplinary design and building competition. IBCOL 2019 invites students from around the world to solve real-world challenges through decentralised applications.",
     "ogImage": "static/images/ogimage.jpg",
-    "mainHeading": "Move beyond the ordinary.<br> Powering a new generation of humans and stretching across the borders.",
-    "subHeading": "Engage with the leaders from 36+ countries.Win astounding prizes worth more than $10,00.Pitch and earn Life-Changing Opportunities.",
+    "mainHeading": "Move beyond the ordinary. Powering a new generation of humans and stretching across the borders.",
+    "subHeading": "Engage with the leaders from 36+ countries.Win astounding prizes worth more than $10,000.Pitch and earn Life-Changing Opportunities.",
     "leftBtn": "PROGRAMME SCHEDULE",
     "rightBtn": "RULE & ELIGIBILITY",
     "section01": {
@@ -34,7 +34,8 @@
       "section03": {
         "title": "Timeline",
         "mainImage":"/static/images/1211.PNG",
-        
+        "btnText" :"",
+        "btnLink" :""
       },
       "section04": {
         "title": "Eligibility",
@@ -50,7 +51,7 @@
         "btnText" :"Eligibility Rules",
         "btnLink" :""
       },
-     
+
       "section06":{
         "title":"How to get started",
         "icon1":"<!-- GET TRAINED AND CERTIFIED --> <i class='material-icons blue'>local_offer</i> <i class='material-icons yellow'>local_offer</i> <i class='material-icons black'>local_offer</i><br> <i class='material-icons green'>local_offer</i> <i class='material-icons red'>local_offer</i> <i class='material-icons purple'>local_offer</i> ",
