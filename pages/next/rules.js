@@ -145,7 +145,7 @@ export default class extends React.Component {
                     </div>
                     <div className="row">
                         <ul>
-                         {this.translate('section05.content').map((content, index) => {
+                         {this.translate('section05.content') && this.translate('section05.content').map((content, index) => {
                             return <li key={index}>
                                 <p style={{marginTop:0, marginBottom:0,color:"#000000"}}>{content}</p>
                             </li>
@@ -154,7 +154,7 @@ export default class extends React.Component {
                         </div>
                 </section>
 
-            
+
 
             </ThisPageContainerComponent >
         )

@@ -13,7 +13,7 @@ const localeSupported = (requestedLocale) => {
 const translate = (key, page, locale, extras) => {
   locale="en-in"
 
-  // console.log('translate', key, page, locale);
+  console.log('translate', key, page, locale);
 
   const isLocaleSupported = localeSupported(locale);
 
