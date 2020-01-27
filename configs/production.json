@@ -1,5 +1,5 @@
 {
-  "graphqlURL": "https://api.ibcol.org",
-  "wsURL": "ws://api.ibcol.org:5000/",
+  "graphqlURL": "http://inbcol-backend.zubi.io",
+  "wsURL": "ws://inbcol-backend.zubi.io/",
   "url": "https://www.ibcol.org/"
 }

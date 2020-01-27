@@ -1,6 +1,6 @@
 {
   "(test)graphqlURL": "http://localhost:4000",
-  "graphqlURL": "http://api.ibcol.org",  
+  "graphqlURL": "http://inbcol-backend.zubi.io",
   "wsURL": "ws://localhost:5000/",
   "url": "http://localhost:3000/"
 }
