@@ -198,6 +198,7 @@ export default class extends React.Component {
                             <img src={this.translate('section03.mainImage')}/>
                             <br />
                             <br />
+                        </div>
                     </div>
                 </section>
                 <section className="s-section target-section">
