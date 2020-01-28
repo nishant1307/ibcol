@@ -219,10 +219,6 @@ export default class extends React.Component {
                             <img src={this.translate('section03.mainImage')}/>
                             <br />
                             <br />
-//                             <div className="historyBtn">
-//                                  <a className="btn btn--primary center" href="program">{this.translate('section03.btnText')} </a>
-//                             </div>
-                        </div>
                     </div>
                 </section>
                 <section className="s-section target-section">
