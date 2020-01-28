@@ -117,27 +117,6 @@ export default class extends React.Component {
                         </div>
                     </div>
                 </section>
-                <section>
-                    <div className="row">
-                        <div className="block-1-3">
-                            <div className="col-block">
-                                <a href={this.translate('section05.link1')} target="_blank">
-                                    <img style={{"max-height":"450px"}} src={this.translate('section05.icon1')}/>
-                                </a>
-                            </div>
-                             <div className="col-block">
-                                 <a href={this.translate('section05.link2')} target="https://zubi.io">
-                                    <img style={{"max-height":"450px"}} src={this.translate('section05.icon2')}/>
-                                </a>
-                            </div>
-                            <div className="col-block">
-                                <a href={this.translate('section05.link3')} target="_blank">
-                                    <img style={{"max-height":"450px"}} src={this.translate('section05.icon3')}/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
                 <section className="s-section target-section">
                     <div className="row section-header">
                         <h1>{this.translate('section01.title')}</h1>
