@@ -1,11 +1,11 @@
 {
     "pageTitle": "Indian Blockchain Olympiad",
-    "seoDescription": "International Blockchain Olympiad is a multidisciplinary design and building competition. IBCOL 2019 invites students from around the world to solve real-world challenges through decentralised applications.",
+    "seoDescription": "International Blockchain Olympiad is a multidisciplinary design and building competition. IBCOL 2020 invites students from around the world to solve real-world challenges through decentralised applications.",
     "ogImage": "static/images/ogimage.jpg",
-    "mainHeading": "Move beyond the ordinary. Powering a new generation of humans and stretching across the borders.",
-    "subHeading": "Engage with the leaders from 36+ countries.Win astounding prizes worth more than $10,000.Pitch and earn Life-Changing Opportunities.",
-    "leftBtn": "PROGRAMME SCHEDULE",
-    "rightBtn": "RULE & ELIGIBILITY",
+    "mainHeading": "Move beyond the ordinary.",
+    "subHeading": "Powering a new generation of humans and stretching across the borders.",
+    // "leftBtn": "PROGRAMME SCHEDULE",
+    // "rightBtn": "RULE & ELIGIBILITY",
     "section01": {
         "title": "About the Indian Blockchain Olympiad",
         "contentHTML":"The <b><u>I</u></b>ndian <b><u>B</u></b>lock<b><u>C</u></b>hain <b><u>OL</u></b>ympiad (IN-BCOL) invites the current and recently graduated students to solve real-world problems using blockchain or distributed ledger technology. The top teams will compete with projects around the world in the <b><u>I</u></b>nternational <b><u>B</u></b>lock<b><u>C</u></b>hain <b><u>OL</u></b>ympiad (IBCOL) to be held at the City University of Hong Kong.",
