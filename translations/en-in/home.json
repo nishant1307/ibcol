@@ -4,8 +4,6 @@
     "ogImage": "static/images/ogimage.jpg",
     "mainHeading": "Move beyond the ordinary.",
     "subHeading": "Powering a new generation of humans and stretching across the borders.",
-    // "leftBtn": "PROGRAMME SCHEDULE",
-    // "rightBtn": "RULE & ELIGIBILITY",
     "section01": {
         "title": "About the Indian Blockchain Olympiad",
         "contentHTML":"The <b><u>I</u></b>ndian <b><u>B</u></b>lock<b><u>C</u></b>hain <b><u>OL</u></b>ympiad (IN-BCOL) invites the current and recently graduated students to solve real-world problems using blockchain or distributed ledger technology. The top teams will compete with projects around the world in the <b><u>I</u></b>nternational <b><u>B</u></b>lock<b><u>C</u></b>hain <b><u>OL</u></b>ympiad (IBCOL) to be held at the City University of Hong Kong.",
