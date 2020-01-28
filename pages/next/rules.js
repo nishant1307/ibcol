@@ -124,7 +124,7 @@ export default class extends React.Component {
                         </ul>
                         </div>
                 </section>
-                <section className="s-section target-section" id="symposium">
+                <section className="s-section target-section" id="process">
                 <div className="row section-header">
                             <h4 className="item-title">{this.translate('section04.title')}</h4>
                     </div>
