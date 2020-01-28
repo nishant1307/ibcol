@@ -114,14 +114,6 @@ export default class extends React.Component {
                             <h3 style={{ "fontSize": "2.6rem" }}>
                                 {this.translate('subHeading')}
                             </h3>
-//                             <div className="home-content__button">
-//                                 <a href="/program" className="btn btn--primary btn--large">
-//                                     {this.translate('leftBtn')}
-//                                 </a>
-//                                 <a href="/rules" className="btn btn--large">
-//                                     {this.translate('rightBtn')}
-//                                 </a>
-//                             </div>
                         </div>
                     </div>
                 </section>
