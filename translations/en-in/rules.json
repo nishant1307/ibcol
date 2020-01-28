@@ -8,25 +8,26 @@
         "title": "CONTESTANTS",
         "content":[
             "Eligible contestants may be of any age and any education level.",
-            "Eligible contestants may be a current or recent student of a recognised educational institution.",
-            "IBCOL OC20 determines what is a recognised educational institution.",
-            "IBCOL OC20 determines who is a current or recent student based on physical or electronic verifiable proofs."
+	    "Eligible contestants must be a current or recent student of a recognised educational institution.",
+	    "IBCOL OC20 determines what is a recognised educational institution.",
+	    "IBCOL OC20 determines who is a current or recent student based on physical or electronic verifiable proofs."
         ]
     },
     "section02": {
         "title": "TEAMS",
         "content":[
             "Teams may consist of a minimum of one (1) and a maximum of six (6) contestants.",
-            "Teams may submit one (1) or more projects.",
-            "Teams with women participants will be given more preference",
-            "Teams must select one representative institution or country if contestants hail from different educational institutions or countries.",
+	    "Teams with women participants will be given more preference.",
+	    "Teams may submit one (1) or more projects.",
+	    "Teams must select one representative institution or country if contestants hail from different educational institutions or countries."
+
         ]
     },
     "section03": {
         "title": "PROJECTS",
         "content":[
             "Projects may use any blockchain network or platform.",
-            "Projects are primarily represented by a whitepaper or presentation with no limit on length nor restriction on formatting.",
+            "Projects are primarily represented by a presentation with no limit on length nor restriction on formatting.",
             "Projects can submit an optional white paper for their project.",
             "Projects may have optional technical proof-of-concept or prototype.",
             "Whitepaper and prototype are optional, however, submitting these documents will give the teams a better chance to get selected.",
@@ -40,11 +41,9 @@
 "section04": {
         "title": "PROCESS",
         "content":[
-           "The first step for participating in the International Blockchain Olympiad is Team Registration. So, all interested people must form teams and get themselves registered here. If you don’t have a team yet, join this telegram channel and find interested team-mates.",
-		   "After successful registration, each team has to submit at least one idea for their project in IBCOL. Based on the idea submissions, top projects will be chosen for the next round.",
-		   "In this round, teams need to submit detailed documents of their project like whitepaper, presentation, and/or prototype. After carefully evaluating all the projects, the top 36 teams will be selected for the IBCOL 2020 National round.",
-		   "In the National round, all teams need to present their project to a panel of judges and the top 12 teams will get a chance to represent India in the IBCOL 2020 finals in Hong Kong."
-
+           "The first step for participating in the International Blockchain Olympiad is Team Registration. So, all interested people must form teams and get themselves registered here. If you don’t have a team yet, join this forum and find interested team-mates.",
+	   "After successful registration, each team has to submit at least one idea for their project in IBCOL. In this round, teams need to submit detailed documents of their project like whitepaper, presentation, and/or prototype. After carefully evaluating all the projects, the top teams will be selected for the IBCOL 2020 National round.",
+           "In the National round, all teams need to present their project to a panel of judges and the top 12 teams will get a chance to represent India in the IBCOL 2020 finals in Hong Kong."
         ]
     }
 
