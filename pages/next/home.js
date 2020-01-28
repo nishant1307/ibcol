@@ -114,14 +114,14 @@ export default class extends React.Component {
                             <h3 style={{ "fontSize": "2.6rem" }}>
                                 {this.translate('subHeading')}
                             </h3>
-                            <div className="home-content__button">
-                                <a href="/program" className="btn btn--primary btn--large">
-                                    {this.translate('leftBtn')}
-                                </a>
-                                <a href="/rules" className="btn btn--large">
-                                    {this.translate('rightBtn')}
-                                </a>
-                            </div>
+//                             <div className="home-content__button">
+//                                 <a href="/program" className="btn btn--primary btn--large">
+//                                     {this.translate('leftBtn')}
+//                                 </a>
+//                                 <a href="/rules" className="btn btn--large">
+//                                     {this.translate('rightBtn')}
+//                                 </a>
+//                             </div>
                         </div>
                     </div>
                 </section>
@@ -134,7 +134,7 @@ export default class extends React.Component {
                                 </a>
                             </div>
                              <div className="col-block">
-                                 <a href={this.translate('section05.link2')} target="_blank">
+                                 <a href={this.translate('section05.link2')} target="https://zubi.io">
                                     <img style={{"max-height":"450px"}} src={this.translate('section05.icon2')}/>
                                 </a>
                             </div>
@@ -227,9 +227,9 @@ export default class extends React.Component {
                             <img src={this.translate('section03.mainImage')}/>
                             <br />
                             <br />
-                            <div className="historyBtn">
-                                 <a className="btn btn--primary center" href="program">{this.translate('section03.btnText')} </a>
-                            </div>
+//                             <div className="historyBtn">
+//                                  <a className="btn btn--primary center" href="program">{this.translate('section03.btnText')} </a>
+//                             </div>
                         </div>
                     </div>
                 </section>
