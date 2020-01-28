@@ -79,7 +79,6 @@ export default class extends React.Component {
                             <a href="#teams"><h4 className="subhead">Teams</h4></a>
                             <a href="#projects"><h4 className="subhead">Projects</h4></a>
                             <a href="#process"><h4 className="subhead">Process</h4></a>
-//                          <a href="#process"><h4 className="subhead">Process</h4></a>
                         </div>
                     </div>
                 </section>
