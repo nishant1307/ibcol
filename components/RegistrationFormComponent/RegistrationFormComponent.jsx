@@ -12,8 +12,6 @@ import styled from 'styled-components';
 import CryptoJS from "crypto-js";
 
 import {translate} from 'helpers/translate.js';
-
-import { Mutation } from "react-apollo";
 import gql from 'graphql-tag'
 
 import moment from 'moment';
@@ -362,8 +360,6 @@ class RegistrationFormComponent extends React.PureComponent {
   componentDidMount = () => {
     if (this.props.existingApplications.length > 0) this.loadRecord(0);
 
-
-
   }
 
 
@@ -494,7 +490,7 @@ class RegistrationFormComponent extends React.PureComponent {
       studentNumber: "",
       state: "",
       city: "",
-      countryCode: "",
+      countryCode: "IN",
       degree: "",
       programme: "",
       yearOfGraduation: ""
@@ -703,20 +699,8 @@ class RegistrationFormComponent extends React.PureComponent {
 
 
 
-  onCreateApplication = (mutate) => {
+  onCreateApplication = () => {
     if (this.state.recordIsValid) {
-      // mutation AddPage($slug: String!, $locale: String!, $localisedPageInput: LocalisedPageInput!, $schemaDefinitionInputs: [SchemaDefinitionInput]!,
-      //   $localisedFieldInputs: [LocalisedFieldInput]) {
-      // mutate({
-      //   variables: {
-      //     "application": {
-      //       "teamName": this.state.record.teamName.trim(),
-      //       "studentRecords": this.state.record.studentRecords,
-      //       "advisorRecords": this.state.record.advisorRecords,
-      //       "projectRecords": this.state.record.projectRecords
-      //     }
-      //   }
-      // });
       let entries = [];
       let projectEntries = [];
 
@@ -729,7 +713,8 @@ class RegistrationFormComponent extends React.PureComponent {
             "Last Name": student.lastName,
             "Contact Telephone Number": student.phoneNumber,
             "Email Address": student.email,
-            "School": student.educationRecords[0].institutionName
+            "School": student.educationRecords[0].institutionName,
+            "Portfolio": student.educationRecords[0].studentPortfolio
           }
         })
       });
@@ -750,15 +735,19 @@ class RegistrationFormComponent extends React.PureComponent {
           console.error(err);
           return;
         }
-        this.setState({
-          isEditorMutating: false
-        })
       });
-      base('Project Details').create(projectEntries, function(err, records) {
+      base('Project Details').create(projectEntries, (err, records) => {
         if (err) {
           console.error(err);
           return;
         }
+        this.setState({
+          isEditorMutating: false,
+        })
+        this.props.onShowConfirmation({
+          teamName: this.state.record.teamName.trim(),
+          ref: records[0].getId()
+        });
       });
 
 
@@ -1086,294 +1075,270 @@ class RegistrationFormComponent extends React.PureComponent {
     // console.log('existingApplications.length ', existingApplications.length);
 
     return (
-      <Mutation
-        mutation={this.state.currentSelectedRecordIndex === undefined ? ADD_APPLICATION : UPDATE_APPLICATION}
-        onCompleted={this.onMutationCompleted}
-        onError={this.onMutationError}
-      >
-        {(mutate, { loading, error, called, data }) => {
+      <RegistrationForm onSubmit={(e) => { e.preventDefault(); }}>
 
-          {/* this.graphQLMutateCreate = mutate; */ }
+        <FormSection className="FormSection">
+          { (isLoggedIn && this.props.existingApplications.length > 0) ?
+
+            <FormRow><FormField>{this.getLabel('managingApplicationTitle')}<select onChange={this.onManageRecordChange} value={this.state.currentSelectedRecordIndex}>
+              {
+                this.props.existingApplications.map((application, index)=>{
+                  return <option value={index} key={application.ref}>
+                    {`#${application.ref} (${application.teamName})`}
+                  </option>
+                })
+              }
+              </select></FormField></FormRow> : isLoggedIn ? <div>{this.translate('noApplicationToManage')}</div> : null
+          }
+        </FormSection>
 
 
-          return <RegistrationForm onSubmit={(e) => { e.preventDefault(); }}>
 
-            <FormSection className="FormSection">
-              { (isLoggedIn && this.props.existingApplications.length > 0) ?
+        {((isLoggedIn && this.props.existingApplications.length > 0) || (!isLoggedIn)) &&
+          <>
+            <FormSection>
 
-                <FormRow><FormField>{this.getLabel('managingApplicationTitle')}<select onChange={this.onManageRecordChange} value={this.state.currentSelectedRecordIndex}>
-                  {
-                    this.props.existingApplications.map((application, index)=>{
-                      return <option value={index} key={application.ref}>
-                        {`#${application.ref} (${application.teamName})`}
-                      </option>
-                    })
-                  }
-                  </select></FormField></FormRow> : isLoggedIn ? <div>{this.translate('noApplicationToManage')}</div> : null
+              <h3 className="subhead">{this.translate('teamInfo')}</h3>
+              <FormRow>
+                <FormField>
+                  {this.getLabel('teamName')}
+                  <input type="text" data-name="teamName" data-section="teamInfo" onChange={this.onRecordChange} value={_.isEmpty(this.state.record['teamName']) ? "" : this.state.record['teamName']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
+                </FormField>
+              </FormRow>
+
+              {
+                !_.isEmpty(this.state.mutationError) &&
+                <div className="full-width" style={{ color: "red", marginTop: "-3rem" }}>
+                  {this.state.mutationError}
+                </div>
               }
             </FormSection>
+            {
+              this.state.record.studentRecords.map((studentRecord, studentIndex) => {
 
+                return <FormSection className="FormSection" key={studentIndex}>
+                  <h3 className="subhead">{this.translate('studentInfo')} {this.state.record.studentRecords.length > 1 && `#${studentIndex + 1}`}
 
+                    {
+                      this.state.record.studentRecords.length > 1 &&
+                      <div className="remove" data-student-index={studentIndex} onClick={this.removeStudent}>{this.translate('removeStudent')}</div>
+                    }
+                  </h3>
 
-            {((isLoggedIn && this.props.existingApplications.length > 0) || (!isLoggedIn)) &&
-              <>
-                <FormSection>
-
-                  <h3 className="subhead">{this.translate('teamInfo')}</h3>
                   <FormRow>
                     <FormField>
-                      {this.getLabel('teamName')}
-                      <input type="text" data-name="teamName" data-section="teamInfo" onChange={this.onRecordChange} value={_.isEmpty(this.state.record['teamName']) ? "" : this.state.record['teamName']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
+                      {this.getLabel('studentRecords.firstName')}
+                      <input type="text" data-name="firstName" data-section="studentRecords" data-student-index={studentIndex} onChange={this.onRecordChange} value={_.isEmpty(studentRecord['firstName']) ? "" : studentRecord['firstName']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
+                    </FormField>
+
+                    <FormField>
+                      {this.getLabel('studentRecords.lastName')}
+                      <input type="text" data-name="lastName" data-section="studentRecords" data-student-index={studentIndex} onChange={this.onRecordChange} value={_.isEmpty(studentRecord['lastName']) ? "" : studentRecord['lastName']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
                     </FormField>
                   </FormRow>
 
-                  {
-                    !_.isEmpty(this.state.mutationError) &&
-                    <div className="full-width" style={{ color: "red", marginTop: "-3rem" }}>
-                      {this.state.mutationError}
-                    </div>
-                  }
-                </FormSection>
-                {
-                  this.state.record.studentRecords.map((studentRecord, studentIndex) => {
+                  <FormRow>
+                    <FormField>
+                      {this.getLabel('studentRecords.phoneNumber')}
+                      <input type="tel" data-name="phoneNumber" data-section="studentRecords" data-student-index={studentIndex} onChange={this.onRecordChange} value={_.isEmpty(studentRecord['phoneNumber']) ? "" : studentRecord['phoneNumber']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
+                    </FormField>
 
-                    return <FormSection className="FormSection" key={studentIndex}>
-                      <h3 className="subhead">{this.translate('studentInfo')} {this.state.record.studentRecords.length > 1 && `#${studentIndex + 1}`}
+                    <FormField>
+                      {this.getLabel('studentRecords.email')}
+                      <input type="email" data-name="email" data-section="studentRecords" data-student-index={studentIndex} onChange={this.onRecordChange} value={_.isEmpty(studentRecord['email']) ? "" : studentRecord['email']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
+                    </FormField>
+                  </FormRow>
+                  <FormRow>
+                    <FormField>
+                          {this.getLabel('studentRecords.educationRecords.institutionName')}
+                          <input type="text" data-name="institutionName" data-section="studentEducationRecords" data-student-index={studentIndex} data-student-education-index="0" onChange={this.onRecordChange} value={_.isEmpty(studentRecord.educationRecords[0]['institutionName']) ? "" : studentRecord.educationRecords[0]['institutionName']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
+                    </FormField>
+                    <FormField>
+                            {"Portfolio*"}
+                            <input type="text" data-name="studentPortfolio" data-section="studentEducationRecords" data-student-index={studentIndex} data-student-education-index="0" onChange={this.onRecordChange} value={_.isEmpty(studentRecord.educationRecords[0]['studentPortfolio']) ? "" : studentRecord.educationRecords[0]['studentPortfolio']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
 
-                        {
-                          this.state.record.studentRecords.length > 1 &&
-                          <div className="remove" data-student-index={studentIndex} onClick={this.removeStudent}>{this.translate('removeStudent')}</div>
-                        }
-                      </h3>
-
-                      <FormRow>
-                        <FormField>
-                          {this.getLabel('studentRecords.firstName')}
-                          <input type="text" data-name="firstName" data-section="studentRecords" data-student-index={studentIndex} onChange={this.onRecordChange} value={_.isEmpty(studentRecord['firstName']) ? "" : studentRecord['firstName']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                        </FormField>
-
-                        <FormField>
-                          {this.getLabel('studentRecords.lastName')}
-                          <input type="text" data-name="lastName" data-section="studentRecords" data-student-index={studentIndex} onChange={this.onRecordChange} value={_.isEmpty(studentRecord['lastName']) ? "" : studentRecord['lastName']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                        </FormField>
-                      </FormRow>
-
-                      <FormRow>
-                        <FormField>
-                          {this.getLabel('studentRecords.phoneNumber')}
-                          <input type="tel" data-name="phoneNumber" data-section="studentRecords" data-student-index={studentIndex} onChange={this.onRecordChange} value={_.isEmpty(studentRecord['phoneNumber']) ? "" : studentRecord['phoneNumber']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                        </FormField>
-
-                        <FormField>
-                          {this.getLabel('studentRecords.email')}
-                          <input type="email" data-name="email" data-section="studentRecords" data-student-index={studentIndex} onChange={this.onRecordChange} value={_.isEmpty(studentRecord['email']) ? "" : studentRecord['email']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                        </FormField>
-                      </FormRow>
-                      <FormRow>
-                        <FormField>
-                              {this.getLabel('studentRecords.educationRecords.institutionName')}
-                              <input type="text" data-name="institutionName" data-section="studentEducationRecords" data-student-index={studentIndex} data-student-education-index="0" onChange={this.onRecordChange} value={_.isEmpty(studentRecord.educationRecords[0]['institutionName']) ? "" : studentRecord.educationRecords[0]['institutionName']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                        </FormField>
-                        <FormField>
-                                {this.getLabel('studentRecords.educationRecords.countryCode')}
-
-                                <CountryInputSelectComponent
-                                  locale={locale}
-                                  dataName="countryCode"
-                                  dataSection="studentEducationRecords"
-                                  dataStudentIndex={studentIndex}
-                                  dataStudentEducationIndex="0"
-                                  value={_.isEmpty(studentRecord.educationRecords[0]['countryCode']) ? "" : studentRecord.educationRecords[0]['countryCode']}
-                                  onFocus={this.onFieldFocused}
-                                  onBlur={this.onFieldBlurred}
-                                  onChange={this.onRecordChange}
-
-                                />
-
-                              </FormField>
-                      </FormRow>
-
-
-                    </FormSection>
-                  })
-                }
-
-                <FormTools>
-                  <div onClick={this.addStudent}>
-                    {this.state.record.studentRecords.length < MAX_STUDENT_PER_TEAM && this.translate('addAnotherStudent')}
-                  </div>
-
-
-                </FormTools>
-
-
-
-
-
-                {
-                  this.state.record.projectRecords.map((projectRecord, projectIndex) => {
-                    {/* console.log('projectRecord', projectRecord); */}
-                    return <FormSection className="FormSection" key={projectIndex}>
-
-                      <h3 className="subhead">{this.translate('projectInfo')} {this.state.record.projectRecords.length > 1 && `#${projectIndex + 1}`}
-
-                        {
-                          this.state.record.projectRecords.length > 1 &&
-                          <div className="remove" data-project-index={projectIndex} onClick={this.removeProject}>{this.translate('removeProject')}</div>
-                        }
-                      </h3>
-
-                      {/* <h5>{this.translate('extraInfo')} </h5> */}
-                      <FormRow>
-                        <FormField>
-                          {this.getLabel('projectRecords.name')}
-                          <input type="text" data-name="name" data-section="projectRecords" data-project-index={projectIndex} onChange={this.onRecordChange} value={_.isEmpty(projectRecord['name']) ? "" : projectRecord['name']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                        </FormField>
-{/*
-                        <FormField>
-                          {this.getLabel('projectRecords.projectCategoryKey')}
-                          <select data-name="projectCategoryKey" data-section="projectRecords" data-project-index={projectIndex} onChange={this.onRecordChange} value={_.isEmpty(projectRecord['projectCategoryKey']) ? "" : projectRecord['projectCategoryKey']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred}>
-                            <option value=""></option>
-                            {
-                              Object.keys(projectCategories).map((projectCategoryKey, index) => {
-                                return <option value={projectCategoryKey} key={projectCategoryKey}>{projectCategories[projectCategoryKey].name}</option>
-                              })
-                            }
-                          </select>
-                        </FormField> */}
-                      </FormRow>
-                      <FormRow>
-                        <FormField>
-                          {this.getLabel('projectRecords.description')}
-                          <textarea type="text" data-name="description" data-section="projectRecords" data-project-index={projectIndex} onChange={this.onRecordChange} value={_.isEmpty(projectRecord['description']) ? "" : projectRecord['description']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                        </FormField>
-                      </FormRow>
-
-
-
-
-
-                      <FormRow>
-                        <FormField>
-                          {this.getLabel('projectRecords.whitepaperFile')}
-                          <input type="text" data-name="whitepaperFile" data-section="projectRecords" data-project-index={projectIndex} onChange={(e) => {
-                            this.setState({
-                              whitepaperFile: e.target.value
-                            })
-                          }} value={this.state.whitepaperFile} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
-                        </FormField>
-
-
-                      </FormRow>
-
-                      {(projectRecord.whitepaperFileIds && projectRecord.whitepaperFileIds.length > 0) &&
-                        <FormRow>
-                          <FormField>
-                            {this.getLabel('projectRecords.whitepaperSubmitted')}
-                            <div>
-                              <ol>
-                                {
-                                  projectRecord.whitepaperFileIds.slice().reverse().map((dropfile, index)=>{
-                                    return <li key={index}><a target="_blank" href={`${process.env.FILEPOND_API_URL}${process.env.FILEPOND_API_ENDPOINT}${dropfile.fileId}`}>{getFilenameFromFileId(dropfile.fileId)}</a> {dropfile.receivedAt && <span>- {moment(dropfile.receivedAt).fromNow()}</span>}</li>
-                                  })
-                                }
-                              </ol>
-                            </div>
                           </FormField>
-                        </FormRow>
-                      }
+                  </FormRow>
 
 
-
-                      {/* <FormRow>
-                        <FormField>
-                          {this.getLabel('projectRecords.presentationFile')}
-                          <input disabled style={{display: "none"}} type="text" data-name="presentationFileId" data-section="projectRecords" data-project-index={projectIndex} value={_.isEmpty(projectRecord['presentationFileId']) ? "" : projectRecord['presentationFileId']} />
-                          <FilePond
-                            allowMultiple={false}
-                            {...this.translate('filepond')}
-
-                            acceptedFileTypes="application/pdf, application/zip"
-                            labelFileTypeNotAllowed={this.translate('projectRecords.presentationFileType')}
-                            allowFileSizeValidation={true}
-                            maxTotalFileSize="500MB"
-                            server={filepondServer}
-                            onprocessfileabort={(file)=>{this.onPendingUploads(false)}}
-                            onprocessfilestart={(file)=>{this.onPendingUploads()}}
-                            onremovefile={(file)=>{
-                              // console.log('onremovefile', file);
-                              this.onPendingUploads(false);
-                              this.onFilepondChange(file, {
-                                name: "presentationFileId",
-                                section: "projectRecords",
-                                projectIndex
-                              });
-                            }}
-                            onprocessfile={(error, file)=>{
-                              // console.log('onprocessfile', file, file.serverId);
-                              this.onPendingUploads(false);
-                              this.onFilepondChange(file, {
-                                name: "presentationFileId",
-                                section: "projectRecords",
-                                projectIndex
-                              });
-                            }}
-                            />
-                        </FormField>
-                      </FormRow> */}
-
-                    </FormSection>
-                  })
-                }
-                <FormTools>
-                  <div onClick={this.addProject}>
-                    {this.state.record.projectRecords.length < MAX_PROJECT_PER_TEAM && this.translate('addAnotherProject')}
-                  </div>
-                </FormTools>
-                <FormTools>
-                  <div className="full-width">
-                    {!isLoggedIn &&
-                      <button className={classNames({
-                        disabled: this.state.recordIsValid !== true || this.state.isEditorMutating === true
-                      })} disabled={!this.state.recordIsValid || this.state.isEditorMutating === true} onClick={() => {
-                        this.onCreateApplication(mutate)
-                      }}>
-                        {
-                          !this.state.isEditorMutating ?
-                            this.translate('submit') :
-                            <><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></>
-                        }
-                      </button>
-                    }
-
-                    {isLoggedIn &&
-                      <button className={classNames({
-                        disabled: this.state.pendingUploads > 0 ||this.state.recordIsValid !== true || this.state.isEditorMutating === true
-                      })} disabled={this.state.pendingUploads > 0 || !this.state.recordIsValid || this.state.isEditorMutating === true} onClick={() => {
-                        this.onUpdateApplication(mutate)
-                      }}>
-                        {
-                          !this.state.isEditorMutating ?
-                            this.translate('update') :
-                            <><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></>
-                        }
-                      </button>
-                    }
-                  </div>
-                </FormTools>
-                {
-                  !_.isEmpty(this.state.mutationError) &&
-                  <div className="full-width" style={{ color: "red" }}>
-                    {this.state.mutationError}
-                  </div>
-                }
-              </>
+                </FormSection>
+              })
             }
 
+            <FormTools>
+              <div onClick={this.addStudent}>
+                {this.state.record.studentRecords.length < MAX_STUDENT_PER_TEAM && this.translate('addAnotherStudent')}
+              </div>
 
-          </RegistrationForm>
-        }}
-      </Mutation>
+
+            </FormTools>
+
+
+
+
+
+            {
+              this.state.record.projectRecords.map((projectRecord, projectIndex) => {
+                {/* console.log('projectRecord', projectRecord); */}
+                return <FormSection className="FormSection" key={projectIndex}>
+
+                  <h3 className="subhead">{this.translate('projectInfo')} {this.state.record.projectRecords.length > 1 && `#${projectIndex + 1}`}
+
+                    {
+                      this.state.record.projectRecords.length > 1 &&
+                      <div className="remove" data-project-index={projectIndex} onClick={this.removeProject}>{this.translate('removeProject')}</div>
+                    }
+                  </h3>
+
+                  {/* <h5>{this.translate('extraInfo')} </h5> */}
+                  <FormRow>
+                    <FormField>
+                      {this.getLabel('projectRecords.name')}
+                      <input type="text" data-name="name" data-section="projectRecords" data-project-index={projectIndex} onChange={this.onRecordChange} value={_.isEmpty(projectRecord['name']) ? "" : projectRecord['name']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
+                    </FormField>
+{/*
+                    <FormField>
+                      {this.getLabel('projectRecords.projectCategoryKey')}
+                      <select data-name="projectCategoryKey" data-section="projectRecords" data-project-index={projectIndex} onChange={this.onRecordChange} value={_.isEmpty(projectRecord['projectCategoryKey']) ? "" : projectRecord['projectCategoryKey']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred}>
+                        <option value=""></option>
+                        {
+                          Object.keys(projectCategories).map((projectCategoryKey, index) => {
+                            return <option value={projectCategoryKey} key={projectCategoryKey}>{projectCategories[projectCategoryKey].name}</option>
+                          })
+                        }
+                      </select>
+                    </FormField> */}
+                  </FormRow>
+                  <FormRow>
+                    <FormField>
+                      {this.getLabel('projectRecords.description')}
+                      <textarea type="text" data-name="description" data-section="projectRecords" data-project-index={projectIndex} onChange={this.onRecordChange} value={_.isEmpty(projectRecord['description']) ? "" : projectRecord['description']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
+                    </FormField>
+                  </FormRow>
+
+
+
+
+
+                  <FormRow>
+                    <FormField>
+                      {this.getLabel('projectRecords.whitepaperFile')}{'(Add Google Docs link in view-only mode)'}
+                      <input type="text" data-name="whitepaperFile" data-section="projectRecords" data-project-index={projectIndex} onChange={(e) => {
+                        this.setState({
+                          whitepaperFile: e.target.value
+                        })
+                      }} value={this.state.whitepaperFile} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
+                    </FormField>
+
+
+                  </FormRow>
+
+                  {(projectRecord.whitepaperFileIds && projectRecord.whitepaperFileIds.length > 0) &&
+                    <FormRow>
+                      <FormField>
+                        {this.getLabel('projectRecords.whitepaperSubmitted')}
+                        <div>
+                          <ol>
+                            {
+                              projectRecord.whitepaperFileIds.slice().reverse().map((dropfile, index)=>{
+                                return <li key={index}><a target="_blank" href={`${process.env.FILEPOND_API_URL}${process.env.FILEPOND_API_ENDPOINT}${dropfile.fileId}`}>{getFilenameFromFileId(dropfile.fileId)}</a> {dropfile.receivedAt && <span>- {moment(dropfile.receivedAt).fromNow()}</span>}</li>
+                              })
+                            }
+                          </ol>
+                        </div>
+                      </FormField>
+                    </FormRow>
+                  }
+
+
+
+                  {/* <FormRow>
+                    <FormField>
+                      {this.getLabel('projectRecords.presentationFile')}
+                      <input disabled style={{display: "none"}} type="text" data-name="presentationFileId" data-section="projectRecords" data-project-index={projectIndex} value={_.isEmpty(projectRecord['presentationFileId']) ? "" : projectRecord['presentationFileId']} />
+                      <FilePond
+                        allowMultiple={false}
+                        {...this.translate('filepond')}
+
+                        acceptedFileTypes="application/pdf, application/zip"
+                        labelFileTypeNotAllowed={this.translate('projectRecords.presentationFileType')}
+                        allowFileSizeValidation={true}
+                        maxTotalFileSize="500MB"
+                        server={filepondServer}
+                        onprocessfileabort={(file)=>{this.onPendingUploads(false)}}
+                        onprocessfilestart={(file)=>{this.onPendingUploads()}}
+                        onremovefile={(file)=>{
+                          // console.log('onremovefile', file);
+                          this.onPendingUploads(false);
+                          this.onFilepondChange(file, {
+                            name: "presentationFileId",
+                            section: "projectRecords",
+                            projectIndex
+                          });
+                        }}
+                        onprocessfile={(error, file)=>{
+                          // console.log('onprocessfile', file, file.serverId);
+                          this.onPendingUploads(false);
+                          this.onFilepondChange(file, {
+                            name: "presentationFileId",
+                            section: "projectRecords",
+                            projectIndex
+                          });
+                        }}
+                        />
+                    </FormField>
+                  </FormRow> */}
+
+                </FormSection>
+              })
+            }
+            <FormTools>
+              <div onClick={this.addProject}>
+                {this.state.record.projectRecords.length < MAX_PROJECT_PER_TEAM && this.translate('addAnotherProject')}
+              </div>
+            </FormTools>
+            <FormTools>
+              <div className="full-width">
+                {!isLoggedIn &&
+                  <button className={classNames({
+                    disabled: this.state.recordIsValid !== true || this.state.isEditorMutating === true
+                  })} disabled={!this.state.recordIsValid || this.state.isEditorMutating === true} onClick={() => {
+                    this.onCreateApplication()
+                  }}>
+                    {
+                      !this.state.isEditorMutating ?
+                        this.translate('submit') :
+                        <><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></>
+                    }
+                  </button>
+                }
+
+                {isLoggedIn &&
+                  <button className={classNames({
+                    disabled: this.state.pendingUploads > 0 ||this.state.recordIsValid !== true || this.state.isEditorMutating === true
+                  })} disabled={this.state.pendingUploads > 0 || !this.state.recordIsValid || this.state.isEditorMutating === true} onClick={() => {
+                    this.onUpdateApplication(mutate)
+                  }}>
+                    {
+                      !this.state.isEditorMutating ?
+                        this.translate('update') :
+                        <><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></>
+                    }
+                  </button>
+                }
+              </div>
+            </FormTools>
+            {
+              !_.isEmpty(this.state.mutationError) &&
+              <div className="full-width" style={{ color: "red" }}>
+                {this.state.mutationError}
+              </div>
+            }
+          </>
+        }
+
+
+      </RegistrationForm>
     );
   }
 }
