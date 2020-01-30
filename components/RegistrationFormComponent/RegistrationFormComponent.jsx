@@ -20,19 +20,6 @@ import moment from 'moment';
 import CountryInputSelectComponent from 'components/CountryInputSelectComponent';
 import axios from 'axios';
 // import FilePondComponent from 'components/FilePondComponent';
-import { FilePond, registerPlugin } from 'react-filepond';
-import '/node_modules/filepond/dist/filepond.min.css';
-
-import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
-import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation';
-import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
-import FilePondPluginFileValidateSize from 'filepond-plugin-file-validate-size';
-import '/node_modules/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
-
-
-// Register the plugins
-registerPlugin(FilePondPluginFileValidateType, FilePondPluginFileValidateSize, FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
-
 const SALT = process.env.SALT ? process.env.SALT : ")6Dc1UP*S9Night-Age-Doll-Famous-8as81*@()#@";
 
 const getFilenameFromFileId = (fileId) => {
@@ -54,7 +41,7 @@ const filepondServer = {
     // console.log('file', file);
     let cancelPutGSXHR;
     let cancelGetSignedUrlXHR;
-    
+
     axios.post(`${process.env.FILEPOND_API_URL}${process.env.FILEPOND_API_ENDPOINT}`, {
       type: file.type,
       name: file.name,
@@ -78,11 +65,11 @@ const filepondServer = {
       // formData.append('signature', response.data.policy.signature);
       // formData.append('bucket', response.data.bucket);
 
-      axios.put(`${response.data.signedUrl}`, file, 
+      axios.put(`${response.data.signedUrl}`, file,
         {
-          headers: { 
+          headers: {
             'content-type': file.type,
-            
+
           }
         }, {
           cancelToken: new CancelToken(function executor(c) {
@@ -219,13 +206,13 @@ const FormSection = styled.section`
   box-sizing: border-box;
   padding-bottom: 3rem;
   padding-top: 3rem;
-  
+
 
   > .FormSection {
     padding-left: 2.5rem;
     padding-bottom: 0rem;
     padding-top: 0rem;
-    
+
 
 
     border-left: 1rem solid #dedede52;
@@ -249,7 +236,7 @@ const FormSection = styled.section`
       }
     }
   }
-  
+
 `;
 
 const FormRow = styled.div`
@@ -274,7 +261,7 @@ const FormTools = styled.div`
     cursor: pointer;
     font-weight: bold;
     font-size: 1.45rem;
-    
+
     &:hover {
       text-decoration: underline;
     }
@@ -284,7 +271,7 @@ const FormTools = styled.div`
     }
 
 
-    
+
   }
 `;
 
@@ -292,10 +279,10 @@ const FormField = styled.label`
   flex: 1;
   width: 100%;
   box-sizing: border-box;
-  
+
   input, select, textarea {
     width: 100%;
-    
+
   }
 
   textarea {
@@ -305,7 +292,7 @@ const FormField = styled.label`
 
   &:nth-child(even){
     ${'' /* background: green; */}
-    
+
 
     ${media.mediumUp`
       margin-left: 1rem;
@@ -313,7 +300,7 @@ const FormField = styled.label`
   }
 
 
-  
+
 `;
 
 const ADD_APPLICATION = gql`
@@ -336,6 +323,8 @@ const UPDATE_APPLICATION = gql`
   }
 `;
 
+var Airtable = require('airtable');
+var base = new Airtable({apiKey: 'keyXqKEeYFY4OEkHf'}).base('appZS8oL4PJPrSqzQ');
 
 class RegistrationFormComponent extends React.PureComponent {
   constructor(props) {
@@ -359,6 +348,7 @@ class RegistrationFormComponent extends React.PureComponent {
       pendingUploads: 0,
       focusedField: undefined,
       record: this.props.record !== undefined ? this.graphQLCleanUp(this.props.record) : this.getDefaultEditorRecord(),
+      whitepaperFile: "",
       lastEditorStateChange: Date.now(),
       isEditorMutating: false,
       recordIsValid: false,
@@ -369,86 +359,23 @@ class RegistrationFormComponent extends React.PureComponent {
     };
   }
 
-  existingPondFiles = []
-
-  loadFilesToPonds = () => {
-    const record = this.state.record;
-    if (record === undefined)
-      return;
-    const fileBasePath = `${_.isEmpty(process.env.FILEPOND_API_URL)? document.location.protocol + '//' + document.location.hostname + _.isEmpty(document.location.port) ? '' :`:${document.location.port}` :process.env.FILEPOND_API_URL}${process.env.FILEPOND_API_ENDPOINT}`;
-
-    console.log('loadFilesToPonds...');
-    record.studentRecords.map((studentRecord, studentIndex) => {
-      studentRecord.educationRecords.map((educationRecord, studentEducationIndex) => {
-        console.log(`${studentIndex}-${studentEducationIndex}`, educationRecord);
-
-        if (!_.isEmpty(educationRecord.studentCardFrontFileId)) {
-          console.log(`educationRecord.studentCardFrontFileId ${educationRecord.studentCardFrontFileId}`);
-          console.log("url", `${fileBasePath}${educationRecord.studentCardFrontFileId}`);
-          this.existingPondFiles.push(educationRecord.studentCardFrontFileId);
-          this.pondRefs.studentCardFronts[`${studentIndex}-${studentEducationIndex}`].addFile(`${fileBasePath}${educationRecord.studentCardFrontFileId}`);
-        } else {
-          try {
-            this.pondRefs.studentCardFronts[`${studentIndex}-${studentEducationIndex}`].removeFile()
-          } catch (e) {
-            // console.error(e)
-          }
-        }
-
-        if (!_.isEmpty(educationRecord.studentCardBackFileId)) {
-          console.log(`educationRecord.studentCardBackFileId ${educationRecord.studentCardBackFileId}`);
-          console.log("url", `${fileBasePath}${educationRecord.studentCardBackFileId}`);
-          this.existingPondFiles.push(educationRecord.studentCardBackFileId);
-          this.pondRefs.studentCardBacks[`${studentIndex}-${studentEducationIndex}`].addFile(`${fileBasePath}${educationRecord.studentCardBackFileId}`);
-        } else {
-          try {
-            this.pondRefs.studentCardBacks[`${studentIndex}-${studentEducationIndex}`].removeFile()
-          } catch (e) {
-            // console.error(e)
-          }
-        }
-
-        if (!_.isEmpty(educationRecord.transcriptFileId)) {
-          console.log(`educationRecord.transcriptFileId ${educationRecord.transcriptFileId}`);
-          console.log("url", `${fileBasePath}${educationRecord.transcriptFileId}`);
-          this.existingPondFiles.push(educationRecord.transcriptFileId);
-          this.pondRefs.transcripts[`${studentIndex}-${studentEducationIndex}`].addFile(`${fileBasePath}${educationRecord.transcriptFileId}`);
-        } else {
-          try {
-            this.pondRefs.transcripts[`${studentIndex}-${studentEducationIndex}`].removeFile()
-          } catch (e) {
-            // console.error(e)
-          }
-        }
-        
-
-        
-
-      })
-    })
-  }
-
   componentDidMount = () => {
     if (this.props.existingApplications.length > 0) this.loadRecord(0);
-    
 
-    
+
+
   }
 
 
   componentDidUpdate = (prevProps, prevState) => {
-    
-    
+
+
 
     if (prevState.lastEditorStateChange !== this.state.lastEditorStateChange) {
       // console.log('componentDidUpdate', this.state.lastEditorStateChange);
       this.setState({
         recordIsValid: this.validateRecord(this.state.record)
       });
-    }
-
-    if (prevState.currentSelectedRecordIndex !== this.state.currentSelectedRecordIndex) {
-      this.loadFilesToPonds();
     }
 
   }
@@ -683,13 +610,13 @@ class RegistrationFormComponent extends React.PureComponent {
     console.log('meta', meta);
 
     const serverId = !_.isEmpty(file) ? file.serverId : "";
-    
+
     let updatedRecord = {};
 
     if (meta.section === 'studentEducationRecords') {
       const studentIndex = meta.studentIndex;
       const studentEducationIndex = parseInt(meta.studentEducationIndex);
-      
+
       if (_.includes(this.existingPondFiles, this.state.record.studentRecords[studentIndex].educationRecords[studentEducationIndex][meta.name])) {
         console.log('this.existingPondFiles', this.existingPondFiles);
         console.log(this.state.record.studentRecords[studentIndex].educationRecords[studentEducationIndex][meta.name]);
@@ -720,7 +647,7 @@ class RegistrationFormComponent extends React.PureComponent {
         console.log('this.existingPondFiles', this.existingPondFiles);
         console.log(this.state.record.projectRecords[projectIndex][meta.name]);
         _.pull(this.existingPondFiles, this.state.record.projectRecords[projectIndex][meta.name]);
-        
+
         return;
       }
 
@@ -751,7 +678,7 @@ class RegistrationFormComponent extends React.PureComponent {
 
 
   graphQLCleanUp = (record) => {
-    
+
     // const studentRecords = record.studentRecords;
     // const studentRecords = record.studentRecords;
     // const advisorRecords = record.advisorRecords;
@@ -775,20 +702,65 @@ class RegistrationFormComponent extends React.PureComponent {
   }
 
 
+
   onCreateApplication = (mutate) => {
     if (this.state.recordIsValid) {
       // mutation AddPage($slug: String!, $locale: String!, $localisedPageInput: LocalisedPageInput!, $schemaDefinitionInputs: [SchemaDefinitionInput]!,
       //   $localisedFieldInputs: [LocalisedFieldInput]) {
-      mutate({
-        variables: {
-          "application": {
-            "teamName": this.state.record.teamName.trim(),
-            "studentRecords": this.state.record.studentRecords,
-            "advisorRecords": this.state.record.advisorRecords,
-            "projectRecords": this.state.record.projectRecords
+      // mutate({
+      //   variables: {
+      //     "application": {
+      //       "teamName": this.state.record.teamName.trim(),
+      //       "studentRecords": this.state.record.studentRecords,
+      //       "advisorRecords": this.state.record.advisorRecords,
+      //       "projectRecords": this.state.record.projectRecords
+      //     }
+      //   }
+      // });
+      let entries = [];
+      let projectEntries = [];
+
+
+      this.state.record.studentRecords.forEach((student, i) => {
+        entries.push({
+          "fields": {
+            "Team Name": this.state.record.teamName.trim(),
+            "First Name": student.firstName,
+            "Last Name": student.lastName,
+            "Contact Telephone Number": student.phoneNumber,
+            "Email Address": student.email,
+            "School": student.educationRecords[0].institutionName
           }
+        })
+      });
+      this.state.record.projectRecords.forEach((project, i) => {
+        projectEntries.push({
+          "fields": {
+            "Team Name": this.state.record.teamName.trim(),
+            "Project Name": project.name,
+            "Project Description": project.description,
+            "WhitePaper": this.state.whitepaperFile
+          }
+        })
+      })
+
+
+      base('Registrations').create(entries, (err, records) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        this.setState({
+          isEditorMutating: false
+        })
+      });
+      base('Project Details').create(projectEntries, function(err, records) {
+        if (err) {
+          console.error(err);
+          return;
         }
       });
+
 
       this.setState({
         isEditorMutating: true,
@@ -800,7 +772,7 @@ class RegistrationFormComponent extends React.PureComponent {
       })
     }
   }
-  
+
 
   onUpdateApplication = (mutate) => {
     // console.log('onUpdateApplication');
@@ -825,13 +797,13 @@ class RegistrationFormComponent extends React.PureComponent {
         })})}},
       })
 
-      
+
       console.log('onUpdateApplication', application);
       mutate({
         variables: {
           application,
           accessToken: {
-            email: this.props.tokenCookie.email, 
+            email: this.props.tokenCookie.email,
             token: this.props.tokenCookie.token
           }
         }
@@ -1045,7 +1017,7 @@ class RegistrationFormComponent extends React.PureComponent {
       })
     }
   }
- 
+
   validateRecord = (record, parentKey) => {
     // console.log('validateRecord', record, this.requiredFields);
     let isRecordValid = true;
@@ -1140,13 +1112,13 @@ class RegistrationFormComponent extends React.PureComponent {
                   </select></FormField></FormRow> : isLoggedIn ? <div>{this.translate('noApplicationToManage')}</div> : null
               }
             </FormSection>
-            
+
 
 
             {((isLoggedIn && this.props.existingApplications.length > 0) || (!isLoggedIn)) &&
               <>
                 <FormSection>
-                  
+
                   <h3 className="subhead">{this.translate('teamInfo')}</h3>
                   <FormRow>
                     <FormField>
@@ -1257,7 +1229,7 @@ class RegistrationFormComponent extends React.PureComponent {
                           {this.getLabel('projectRecords.name')}
                           <input type="text" data-name="name" data-section="projectRecords" data-project-index={projectIndex} onChange={this.onRecordChange} value={_.isEmpty(projectRecord['name']) ? "" : projectRecord['name']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
                         </FormField>
-{/* 
+{/*
                         <FormField>
                           {this.getLabel('projectRecords.projectCategoryKey')}
                           <select data-name="projectCategoryKey" data-section="projectRecords" data-project-index={projectIndex} onChange={this.onRecordChange} value={_.isEmpty(projectRecord['projectCategoryKey']) ? "" : projectRecord['projectCategoryKey']} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred}>
@@ -1284,49 +1256,17 @@ class RegistrationFormComponent extends React.PureComponent {
                       <FormRow>
                         <FormField>
                           {this.getLabel('projectRecords.whitepaperFile')}
-                          <input disabled style={{display: "none"}} type="text" data-name="whitepaperFileId" data-section="projectRecords" data-project-index={projectIndex} value={_.isEmpty(projectRecord['whitepaperFileId']) ? "" : projectRecord['whitepaperFileId']} />
-                          <FilePond
-                            allowMultiple={false}
-                            {...this.translate('filepond')}
-
-                            acceptedFileTypes="application/pdf, application/zip"
-                            labelFileTypeNotAllowed={this.translate('projectRecords.whitepaperFileType')}
-                            allowFileSizeValidation={true}
-                            maxTotalFileSize="500MB"
-                            
-                            
-                            server={filepondServer}
-                            onprocessfileabort={(file)=>{this.onPendingUploads(false)}}
-                            onprocessfilestart={(file)=>{this.onPendingUploads()}}
-                            onremovefile={(file)=>{
-                              // console.log('onremovefile', file);
-                              this.onPendingUploads(false);
-                              this.onFilepondChange(file, {
-                                name: "whitepaperFileId",
-                                section: "projectRecords",
-                                projectIndex
-                              });
-                            }}
-                            onprocessfile={(error, file)=>{
-                              // console.log('onprocessfile', file, file.serverId);
-                              this.onPendingUploads(false);
-                              this.onFilepondChange(file, {
-                                name: "whitepaperFileId",
-                                section: "projectRecords",
-                                projectIndex
-                              });
-                            }}
-
-                            />
-                          
-                          
-                          
+                          <input type="text" data-name="whitepaperFile" data-section="projectRecords" data-project-index={projectIndex} onChange={(e) => {
+                            this.setState({
+                              whitepaperFile: e.target.value
+                            })
+                          }} value={this.state.whitepaperFile} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
                         </FormField>
 
-                        
+
                       </FormRow>
 
-                      {(projectRecord.whitepaperFileIds && projectRecord.whitepaperFileIds.length > 0) && 
+                      {(projectRecord.whitepaperFileIds && projectRecord.whitepaperFileIds.length > 0) &&
                         <FormRow>
                           <FormField>
                             {this.getLabel('projectRecords.whitepaperSubmitted')}
@@ -1342,7 +1282,7 @@ class RegistrationFormComponent extends React.PureComponent {
                           </FormField>
                         </FormRow>
                       }
-                      
+
 
 
                       {/* <FormRow>
@@ -1357,8 +1297,6 @@ class RegistrationFormComponent extends React.PureComponent {
                             labelFileTypeNotAllowed={this.translate('projectRecords.presentationFileType')}
                             allowFileSizeValidation={true}
                             maxTotalFileSize="500MB"
-                            
-                            
                             server={filepondServer}
                             onprocessfileabort={(file)=>{this.onPendingUploads(false)}}
                             onprocessfilestart={(file)=>{this.onPendingUploads()}}
@@ -1380,17 +1318,9 @@ class RegistrationFormComponent extends React.PureComponent {
                                 projectIndex
                               });
                             }}
-
                             />
-                          
-                          
-                          
                         </FormField>
-
-                        
                       </FormRow> */}
-
-
 
                     </FormSection>
                   })
@@ -1404,12 +1334,12 @@ class RegistrationFormComponent extends React.PureComponent {
                   <div className="full-width">
                     {!isLoggedIn &&
                       <button className={classNames({
-                        disabled: this.state.pendingUploads > 0 ||this.state.recordIsValid !== true || this.state.isEditorMutating === true
-                      })} disabled={this.state.pendingUploads > 0 || !this.state.recordIsValid || this.state.isEditorMutating === true} onClick={() => {
+                        disabled: this.state.recordIsValid !== true || this.state.isEditorMutating === true
+                      })} disabled={!this.state.recordIsValid || this.state.isEditorMutating === true} onClick={() => {
                         this.onCreateApplication(mutate)
                       }}>
                         {
-                          !this.state.isEditorMutating ? 
+                          !this.state.isEditorMutating ?
                             this.translate('submit') :
                             <><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></>
                         }
@@ -1423,7 +1353,7 @@ class RegistrationFormComponent extends React.PureComponent {
                         this.onUpdateApplication(mutate)
                       }}>
                         {
-                          !this.state.isEditorMutating ? 
+                          !this.state.isEditorMutating ?
                             this.translate('update') :
                             <><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></>
                         }
