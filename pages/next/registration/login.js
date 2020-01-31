@@ -22,7 +22,8 @@ import Head from 'next/head';
 
 import { Mutation, Query } from "react-apollo";
 import gql from 'graphql-tag'
-
+var Airtable = require('airtable');
+var base = new Airtable({apiKey: 'keyXqKEeYFY4OEkHf'}).base('appZS8oL4PJPrSqzQ');
 
 
 
@@ -143,13 +144,13 @@ const FormSection = styled.section`
   box-sizing: border-box;
   padding-bottom: 3rem;
   padding-top: 3rem;
-  
+
 
   > .FormSection {
     padding-left: 2.5rem;
     padding-bottom: 0rem;
     padding-top: 0rem;
-    
+
 
 
     border-left: 1rem solid #dedede52;
@@ -173,7 +174,7 @@ const FormSection = styled.section`
       }
     }
   }
-  
+
 `;
 
 const FormRow = styled.div`
@@ -198,7 +199,7 @@ const FormTools = styled.div`
     cursor: pointer;
     font-weight: bold;
     font-size: 1.45rem;
-    
+
     &:hover {
       text-decoration: underline;
     }
@@ -208,7 +209,7 @@ const FormTools = styled.div`
     }
 
 
-    
+
   }
 `;
 
@@ -216,10 +217,10 @@ const FormField = styled.label`
   flex: 1;
   width: 100%;
   box-sizing: border-box;
-  
+
   input, select, textarea {
     width: 100%;
-    
+
   }
 
   textarea {
@@ -229,7 +230,7 @@ const FormField = styled.label`
 
   &:nth-child(even){
     ${'' /* background: green; */}
-    
+
 
     ${media.mediumUp`
       margin-left: 1rem;
@@ -237,7 +238,7 @@ const FormField = styled.label`
   }
 
 
-  
+
 `;
 
 
@@ -327,7 +328,7 @@ export default class extends React.PureComponent {
           recordIsValid: this.validateRecord(this.state.record, undefined, {verificationCode: true})
         });
       }
-      
+
     }
 
   }
@@ -337,19 +338,11 @@ export default class extends React.PureComponent {
     const value = e.currentTarget.type === 'checkbox' ? e.currentTarget.checked ? "true" : "false" : e.currentTarget.value;
     // console.log('onRecordChange', fieldId, value);
     let updatedRecord = {};
-    if (e.currentTarget.getAttribute('data-section') === 'login') {
-      updatedRecord = update(this.state.record, {
-        [fieldId]: {
-          $set: value.toLowerCase()
-        }
-      })
-    } else if (e.currentTarget.getAttribute('data-section') === 'verification') {
-      updatedRecord = update(this.state.record, {
-        [fieldId]: {
-          $set: value.toUpperCase()
-        }
-      })
-    }
+    updatedRecord = update(this.state.record, {
+      [fieldId]: {
+        $set: value
+      }
+    })
 
     if (!_.isEmpty(updatedRecord)) {
       // console.log('updatedRecord', updatedRecord);
@@ -394,18 +387,18 @@ export default class extends React.PureComponent {
         })
         // isRecordValid = isRecordValid && this.validateRecord(inspect, _.isEmpty(parentKey) ? `${key}` : `${parentKey}.${key}`);
       } else {
-        
+
         isRecordValid = isRecordValid && (_.get(requiredFields, _.isEmpty(parentKey) ? `${key}` : `${parentKey}.${key}`) === true ? key === 'loginEmail' ?
             _.isEmail(record[key]) : !_.isEmpty(record[key]) : true);
 
-        
+
 
 
         // console.log('>>', _.isEmpty(parentKey) ? `${key}` : `${parentKey}.${key}`, (_.get(requiredFields, _.isEmpty(parentKey) ? `${key}` : `${parentKey}.${key}`) === true ? !_.isEmpty(record[key]) : true), isRecordValid);
       }
 
     })
-    
+
     return isRecordValid;
   }
 
@@ -414,10 +407,11 @@ export default class extends React.PureComponent {
     return record;
   }
 
-  redirectToVerification = (email, verificationCode) => {
-    console.log('redirectToVerification', email, verificationCode);
-    Router.replaceRoute('registrationVerification', {
-      email, verificationCode, locale: this.props.query.locale
+  redirectToVerification = (sessionID, teamName) => {
+    sessionStorage.setItem("registrationSessionID", sessionID)
+    sessionStorage.setItem("registrationSessionTeam", teamName.fields["Team Name"])
+    Router.replaceRoute('registration', {
+      locale: this.props.query.locale
     });
   }
 
@@ -435,33 +429,42 @@ export default class extends React.PureComponent {
 
 
   onRequestAccessToken = (mutate) => {
-    if (this.state.recordIsValid) {
-      
-      const seed = randomWords({ exactly: 3, join: ' ', formatter: (word)=> word.toUpperCase() });
 
-      console.log('seed:',seed);
-      console.log('email:',this.state.record.loginEmail.trim());
-      console.log('v:',this.props.query.locale);
-      
-      
-      mutate({
-        variables: {
-          "email": this.state.record.loginEmail.trim(),
-          seed,
-          "locale": this.props.query.locale
-        }
+
+      base('Registrations').find(this.state.record.loginEmail.toString(), (err, record) => {
+          if (err) { console.error(err); return; }
+          console.log('Retrieved', record);
+          this.setState({
+            isEditorMutating: false,
+            mutationError: undefined,
+            record: this.getDefaultEditorRecord(),
+            recordIsValid: false,
+          });
+          this.redirectToVerification(record.id, record);
       });
+
+
+      // const seed = randomWords({ exactly: 3, join: ' ', formatter: (word)=> word.toUpperCase() });
+      //
+      // console.log('seed:',seed);
+      // console.log('email:',this.state.record.loginEmail.trim());
+      // console.log('v:',this.props.query.locale);
+
+
+      // mutate({
+      //   variables: {
+      //     "email": this.state.record.loginEmail.trim(),
+      //     seed,
+      //     "locale": this.props.query.locale
+      //   }
+      // });
 
       this.setState({
         isEditorMutating: true,
         mutationError: undefined,
-        confirmation: {
-          seed
-        }
       })
-    }
   }
-  
+
 
 
   onMutationError = (error) => {
@@ -498,8 +501,8 @@ export default class extends React.PureComponent {
       });
     }
 
-    
-    
+
+
   };
 
   render() {
@@ -511,8 +514,8 @@ export default class extends React.PureComponent {
 
     const locale = this.props.query.locale;
 
-    
-    
+
+
 
     return (
       <ThisPageContainerComponent>
@@ -535,10 +538,10 @@ export default class extends React.PureComponent {
                 <h1>{this.translate('loginAwaitingTitle')}</h1>
               </div>
             </div>
-            
+
             <div className="row section-header">
               <div className="col-full">
-                
+
                 <VerificationForm onSubmit={(e) => { e.preventDefault(); }}>
 
                   <div className="item-process__text">
@@ -554,11 +557,9 @@ export default class extends React.PureComponent {
                     <button onClick={this.resetForm}>{this.translate('registerAnother')}</button>
                   </div> */}
 
-                  
+
                   <FormSection className="FormSection">
                     <h3 className="subhead">{this.translate('loginManualVerification')}</h3>
-
-                    
 
                     <FormRow>
 
@@ -567,7 +568,7 @@ export default class extends React.PureComponent {
                         <input type="text" data-name="verificationCode" data-section="verification" onChange={this.onRecordChange} value={this.state.record.verificationCode} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
                       </FormField>
                     </FormRow>
-                    
+
                     <FormTools>
                       <div className="full-width">
                         <button className={classNames({
@@ -581,10 +582,6 @@ export default class extends React.PureComponent {
                     </FormTools>
                   </FormSection>
 
-
-
-                  
-                  
                   {
                     !_.isEmpty(this.state.mutationError) &&
                     <div className="full-width" style={{ color: "red" }}>
@@ -596,14 +593,12 @@ export default class extends React.PureComponent {
             </div>
 
 
-            
 
-            
+
+
           </section>
 
         }
-
-
 
 
         {(!this.state.showConfirmation && !this.state.hasValidToken && this.state.tokenCookie === undefined) &&
@@ -630,29 +625,29 @@ export default class extends React.PureComponent {
 
                     return <LoginForm onSubmit={(e) => { e.preventDefault(); }}>
 
-                      
+
                       <FormSection className="FormSection">
                         <h3 className="subhead">{this.translate('teamLogin')}</h3>
 
-                        
+
 
                         <FormRow>
 
                           <FormField>
-                            {this.getLabel('loginEmail')}
-                            <input type="email" data-name="loginEmail" data-section="login" onChange={this.onRecordChange} value={this.state.record.loginEmail} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
+                            {"ENTER YOUR REGISTRATION ID"}
+                            <input type="text" data-name="loginEmail" data-section="login" onChange={this.onRecordChange} value={this.state.record.loginEmail} onFocus={this.onFieldFocused} onBlur={this.onFieldBlurred} />
                           </FormField>
                         </FormRow>
-                        
+
                         <FormTools>
                           <div className="full-width">
                             <button className={classNames({
-                              disabled: this.state.recordIsValid !== true || this.state.isEditorMutating === true
-                            })} disabled={!this.state.recordIsValid || this.state.isEditorMutating === true} onClick={() => {
+                              disabled: this.state.isEditorMutating === true
+                            })} disabled={this.state.isEditorMutating === true} onClick={() => {
                               this.onRequestAccessToken(mutate)
                             }}>
                               {
-                                !this.state.isEditorMutating ? 
+                                !this.state.isEditorMutating ?
                                   this.translate('loginAction') :
                                   <><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></>
                               }
@@ -663,8 +658,8 @@ export default class extends React.PureComponent {
 
 
 
-                      
-                      
+
+
                       {
                         !_.isEmpty(this.state.mutationError) &&
                         <div className="full-width" style={{ color: "red" }}>
@@ -699,13 +694,13 @@ export default class extends React.PureComponent {
                     if ((networkStatus === 4) || loading) return <div className="full-width" style={{textAlign: 'center'}}>
                         <><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></>
                       </div>;
-                    
+
                     if (error) return `Error! ${error.message}`;
 
                     if (!_.isEmpty(data)) {
                       console.log('data', data.isTokenValid);
 
-                      
+
 
                       if (!data.isTokenValid) {
                         this.clearCookie()
@@ -721,7 +716,7 @@ export default class extends React.PureComponent {
                 </Query>
 
 
-                
+
               </div>
             </div>
           </section>

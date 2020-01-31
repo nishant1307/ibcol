@@ -358,7 +358,11 @@ class RegistrationFormComponent extends React.PureComponent {
   }
 
   componentDidMount = () => {
+
     if (this.props.existingApplications.length > 0) this.loadRecord(0);
+    if(sessionStorage.getItem('registrationSessionID')){
+      
+    }
 
   }
 
@@ -598,78 +602,6 @@ class RegistrationFormComponent extends React.PureComponent {
 
   onPendingUploads = (inc = true) => {
     this.setState({pendingUploads: this.state.pendingUploads + (inc ? 1:-1)});
-  }
-
-  onFilepondChange = (file, meta) => {
-    // console.log(`onFilepondChange ${file ? file.serverId : file, meta}`);
-    console.log('file', file);
-    console.log('meta', meta);
-
-    const serverId = !_.isEmpty(file) ? file.serverId : "";
-
-    let updatedRecord = {};
-
-    if (meta.section === 'studentEducationRecords') {
-      const studentIndex = meta.studentIndex;
-      const studentEducationIndex = parseInt(meta.studentEducationIndex);
-
-      if (_.includes(this.existingPondFiles, this.state.record.studentRecords[studentIndex].educationRecords[studentEducationIndex][meta.name])) {
-        console.log('this.existingPondFiles', this.existingPondFiles);
-        console.log(this.state.record.studentRecords[studentIndex].educationRecords[studentEducationIndex][meta.name]);
-        _.pull(this.existingPondFiles, this.state.record.studentRecords[studentIndex].educationRecords[studentEducationIndex][meta.name]);
-        return;
-      }
-
-      if (this.state.record.studentRecords[studentIndex].educationRecords[studentEducationIndex][meta.name] !== serverId) {
-        console.log(`onFilepondChange ${this.state.record.studentRecords[studentIndex].educationRecords[studentEducationIndex][meta.name]} vs ${serverId}`);
-        updatedRecord = update(this.state.record, {
-          studentRecords: {
-            [studentIndex]: {
-              educationRecords: {
-                [studentEducationIndex]: {
-                  [meta.name]: {
-                    $set: serverId
-                  }
-                }
-              }
-            }
-          }
-        })
-      }
-    } else if (meta.section === 'projectRecords') {
-      const projectIndex = meta.projectIndex;
-
-      if (_.includes(this.existingPondFiles, this.state.record.projectRecords[projectIndex][meta.name])) {
-        console.log('this.existingPondFiles', this.existingPondFiles);
-        console.log(this.state.record.projectRecords[projectIndex][meta.name]);
-        _.pull(this.existingPondFiles, this.state.record.projectRecords[projectIndex][meta.name]);
-
-        return;
-      }
-
-      if (this.state.record.projectRecords[projectIndex][meta.name] !== serverId) {
-        console.log(`onFilepondChange ${this.state.record.projectRecords[projectIndex][meta.name]} vs ${serverId}`);
-
-        updatedRecord = update(this.state.record, {
-          projectRecords: {
-            [projectIndex]: {
-              [meta.name]: {
-                $set: serverId
-              }
-            }
-          }
-        })
-      }
-    }
-
-
-    if (!_.isEmpty(updatedRecord)) {
-      console.log('updatedRecord', updatedRecord);
-      this.setState({
-        record: updatedRecord,
-        lastEditorStateChange: Date.now()
-      });
-    }
   }
 
 
