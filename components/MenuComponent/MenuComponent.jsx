@@ -43,7 +43,7 @@ const MenuHeader = styled.header`
     position: relative;
     display: inline-block;
   }
-  
+
   .dropdown-content {
     display: none;
     position: absolute;
@@ -60,7 +60,7 @@ const MenuHeader = styled.header`
   .dropbtn:hover .dropdown-content {
     display: block;
   }
-  
+
   .dropbtn:hover .dropbtn {
     background-color: #3e8e41;
   }
@@ -123,11 +123,11 @@ class MenuComponent extends React.Component {
           {this.translate('menu.home')}
         </NavLinkComponent>
       </li>
-      <li>
+      {/* <li>
         <NavLinkComponent prefetch route="program" params={{ locale }}>
           {this.translate('menu.program')}
         </NavLinkComponent>
-      </li>
+      </li> */}
       {/* <li>
         <NavLinkComponent prefetch route="how" params={{ locale }}>
           {this.translate('menu.how')}
@@ -153,11 +153,11 @@ class MenuComponent extends React.Component {
           Join Us
         </NavLinkComponent>
       </li> */}
-      <li className="featured">
+      {/*<li className="featured">
         <NavLinkComponent prefetch route="registration" params={{ locale }}>
           {this.translate('menu.registration')}
         </NavLinkComponent>
-      </li>
+      </li>*/}
 
       {/* <li>
         <NavLinkComponent prefetch route="schedule" params={{ locale }}>
